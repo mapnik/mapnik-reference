@@ -1,4 +1,50 @@
 {
+    "style": {
+        "name": {
+        },
+        "filter-mode": {
+        }
+    },
+    "meta-writer": {
+        "name": {
+        },
+        "type": {
+        },
+        "file": {
+        },
+        "default-output": {
+        },
+        "output-empty": {
+        }
+    },
+    "font-set": {
+        "name": {
+        },
+        "font": {
+            "face_name": {
+            }
+        }
+    },
+    "layer" : {
+        "name": {
+        },
+        "srs": {
+        },
+        "status": {
+        },
+        "title": {
+        },
+        "abstract": {
+        },
+        "minzoom": {
+        },
+        "maxzoom": {
+        },
+        "queryable": {
+        },
+        "clear_label_cache": {
+        },
+    }, 
     "symbolizers" : {
         "map": {
             "background-color": {
@@ -12,7 +58,44 @@
                 "css": "background-image",
                 "type": "uri",
                 "description": "Map Background image"
-            }
+            },
+            "srs": {
+                "css": "srs",
+                "type": "string",
+                "description": "Map spatial reference (proj4 string)"
+            },
+            "buffer_size": {
+                "css": "buffer",
+                "api": "buffer_size",
+                "type": "uri",
+                "default-value": "0",
+                "default-meaning": "No buffer will be used",
+                "description": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with 'avoid_edges'."
+            },
+            "paths_from_xml": {
+                "css": "",
+                "api": "",
+                "default-value": "true",
+                "default-meaning": "Paths read from XML will be interpreted from the location of the XML",
+                "type": "boolean",
+                "doc": "value to control whether paths in the XML will be interpreted from the location of the XML or from the working directory of the program that calls load_map()"
+            },
+            "minimum_version": {
+                "css": "",
+                "api": "",
+                "default-value": "none",
+                "default-meaning": "Mapnik version will not be detected and no error will be thrown about compatibility",
+                "type": "string",
+                "doc": "The minumum Mapnik version (e.g. 0.7.2) needed to use certain functionality in the stylesheet"
+            },
+            "font_directory": {
+                "css": "font_directory",
+                "type": "uri",
+                "api": "",
+                "default-value": "none",
+                "default-meaning": "No fonts will be registered",
+                "doc": "Path to a directory which holds fonts which should be registered when the Map is loaded"
+            },
         },
         "polygon": {
             "fill": {
@@ -123,6 +206,16 @@
             }
         },
         "markers": {
+            "file": {
+                "css": "marker-file",
+                "type": "uri"
+            },
+            "opacity": {
+                "css": "marker-opacity",
+                "default-value": 1,
+                "default-meaning": "opaque",
+                "type": "float"
+            },
             "stroke": {
                 "css": "marker-line-color",
                 "type": "color"
@@ -162,16 +255,6 @@
             "fill": {
                 "css": "marker-fill",
                 "type": "color"
-            },
-            "opacity": {
-                "css": "marker-opacity",
-                "default-value": 1,
-                "default-meaning": "opaque",
-                "type": "float"
-            },
-            "file": {
-                "css": "marker-file",
-                "type": "uri"
             },
             "allow_overlap": {
                 "css": "marker-allow-overlap",
