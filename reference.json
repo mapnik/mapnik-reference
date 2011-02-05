@@ -21,7 +21,7 @@
         "name": {
         },
         "font": {
-            "face_name": {
+            "face-name": {
             }
         }
     },
@@ -42,7 +42,7 @@
         },
         "queryable": {
         },
-        "clear_label_cache": {
+        "clear-label-cache": {
         },
     }, 
     "symbolizers" : {
@@ -64,15 +64,15 @@
                 "type": "string",
                 "description": "Map spatial reference (proj4 string)"
             },
-            "buffer_size": {
+            "buffer-size": {
                 "css": "buffer",
-                "api": "buffer_size",
+                "api": "buffer-size",
                 "type": "uri",
                 "default-value": "0",
                 "default-meaning": "No buffer will be used",
-                "description": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with 'avoid_edges'."
+                "description": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with 'avoid-edges'."
             },
-            "paths_from_xml": {
+            "paths-from-xml": {
                 "css": "",
                 "api": "",
                 "default-value": "true",
@@ -80,7 +80,7 @@
                 "type": "boolean",
                 "doc": "value to control whether paths in the XML will be interpreted from the location of the XML or from the working directory of the program that calls load_map()"
             },
-            "minimum_version": {
+            "minimum-version": {
                 "css": "",
                 "api": "",
                 "default-value": "none",
@@ -88,8 +88,8 @@
                 "type": "string",
                 "doc": "The minumum Mapnik version (e.g. 0.7.2) needed to use certain functionality in the stylesheet"
             },
-            "font_directory": {
-                "css": "font_directory",
+            "font-directory": {
+                "css": "font-directory",
                 "type": "uri",
                 "api": "",
                 "default-value": "none",
@@ -256,7 +256,7 @@
                 "css": "marker-fill",
                 "type": "color"
             },
-            "allow_overlap": {
+            "allow-overlap": {
                 "css": "marker-allow-overlap",
                 "type": "boolean",
                 "default-value": "false",
@@ -267,7 +267,7 @@
                 "docs": "Space between repeated labels",
                 "type": "float"
             },
-            "max_error": {
+            "max-error": {
                 "css": "marker-max-error",
                 "type": "float"
             },
@@ -293,7 +293,7 @@
                 "type": "none",
                 "required": true
             },
-            "face_name": {
+            "face-name": {
                 "css": "shield-face-name",
                 "type": "string",
                 "validate": "font",
@@ -310,7 +310,7 @@
                 "type": "color",
                 "doc": "The color of the shield text"
             },
-            "minimum_distance": {
+            "minimum-distance": {
                 "css": "shield-min-distance",
                 "type": "float",
                 "default-value": 0,
@@ -322,13 +322,13 @@
                 "default-value": 0,
                 "doc": "The spacing between repeated occurrences of the same shield on a line"
             },
-            "character_spacing": {
+            "character-spacing": {
                 "css": "shield-spacing",
                 "type": "float",
                 "default-value": 0,
                 "doc": "Horizontal spacing between characters (in pixels). Currently works for point placement only, not line placement."
             },
-            "line_spacing": {
+            "line-spacing": {
                 "css": "shield-line-spacing",
                 "doc": "Vertical spacing between lines of multiline labels (in pixels)",
                 "type": "float"
@@ -392,13 +392,13 @@
                 "type": "string",
                 "default-value": ""
             },
-            "shield_dx": {
+            "shield-dx": {
                 "css": "shield-dx",
                 "type": "float",
                 "doc": "Displace shield by fixed amount, in pixels, +/- along the X axis.  A positive value will shift the shield right",
                 "default-value": 0
             },
-            "shield_dx": {
+            "shield-dx": {
                 "css": "shield-dx",
                 "type": "float",
                 "doc": "Displace shield by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the shield down",
@@ -532,7 +532,7 @@
                 "default-meaning": "auto-detected",
                 "doc": "The type of image file, e.g. png"
             },
-            "allow_overlap": {
+            "allow-overlap": {
                 "css": "point-allow-overlap",
                 "type": "boolean",
                 "default-value": "false",
@@ -564,7 +564,7 @@
                 "type": "string",
                 "required": true
             },
-            "face_name": {
+            "face-name": {
                 "css": "text-face-name",
                 "type": "string",
                 "validate": "font",
@@ -583,7 +583,7 @@
                 "type": "float",
                 "type": "none"
             },
-            "wrap_width": {
+            "wrap-width": {
                 "css": "text-wrap-width",
                 "doc": "Length of a chunk of text in characters before wrapping text",
                 "type": "float"
@@ -593,23 +593,23 @@
                 "type": "float",
                 "doc": "Distance between repeated text labels on a line"
             },
-            "character_spacing": {
+            "character-spacing": {
                 "css": "text-character-spacing",
                 "type": "float",
                 "default-value": 0,
                 "doc": "Horizontal spacing adjustment between characters in pixels"
             },
-            "line_spacing": {
+            "line-spacing": {
                 "css": "text-line-spacing",
                 "default-value": 0,
                 "type": "float",
                 "doc": "Vertical spacing adjustment between lines in pixels"
             },
-            "label_position_tolerance": {
+            "label-position-tolerance": {
                 "css": "text-label-position-tolerance",
                 "type": "float"
             },
-            "max_char_angle_delta": {
+            "max-char-angle-delta": {
                 "css": "text-max-char-angle-delta",
                 "type": "float",
                 "default-value": "none",
@@ -621,7 +621,7 @@
                 "default-value": "#000000",
                 "type": "color"
             },
-            "halo_fill": {
+            "halo-fill": {
                 "css": "text-halo-fill",
                 "docs": "Color of the text halo",
                 "type": "color",
@@ -629,7 +629,7 @@
                 "default-meaning": "white",
                 "doc": "Specifies the color of the halo around the text."
             },
-            "halo_radius": {
+            "halo-radius": {
                 "css": "text-halo-radius",
                 "doc": "Specify the radius of the halo in pixels",
                 "default-value": 0,
@@ -648,20 +648,20 @@
                 "doc": "Displace text by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the text down",
                 "default-value": 0
             },
-            "avoid_edges": {
+            "avoid-edges": {
                 "css": "text-avoid-edges",
                 "doc": "Tell positioning algorithm to avoid labeling near intersection edges.",
                 "type": "boolean"
             },
-            "minimum_distance": {
+            "minimum-distance": {
                 "css": "text-min-distance",
                 "type": "float"
             },
-            "minimum_padding": {
+            "minimum-padding": {
                 "css": "text-min-padding",
                 "type": "float"
             },
-            "allow_overlap": {
+            "allow-overlap": {
                 "css": "text-allow-overlap",
                 "type": "boolean",
                 "default-value": "false",
@@ -677,7 +677,7 @@
                 ],
                 "default-value": "point"
             },
-            "text_transform": {
+            "text-transform": {
                 "css": "text-transform",
                 "type": [
                     "none",
