@@ -1,8 +1,14 @@
 # reference.json
 
-`reference.json` is a parseable spec of what Mapnik can do - what symbolizers 
-it supports and the properties they can contain. It's useful for bulding 
-parsers, compilers, and syntax highlighting/checking for languages.
+`reference.json` is a parse-able spec of what Mapnik can do - what symbolizers 
+it supports and the properties they can contain. It's useful for building 
+parsers, tests, compilers, and syntax highlighting/checking for languages.
+
+## Status
+
+`reference.json` is a work in progress and is targeted at [Mapnik 2.0](https://trac.mapnik.org/milestone/Mapnik%202.0).
+Expect frequent updates and potential breaking changes leading up to the release.
+
 
 ## Using
 
@@ -14,5 +20,6 @@ The file can then be parsed with any of the many [json parsers](http://www.json.
 
 ## Users
 
-* [mess.js](http://github.com/developmentseed/mess.js)
-* TileMill
+* [Carto](https://github.com/mapbox/carto)
+* [TileMill](https://github.com/mapbox/tilemill)
+* [Cascadenik](https://github.com/mapnik/Cascadenik) (soon)
