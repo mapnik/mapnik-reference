@@ -700,7 +700,8 @@
                 "type": [
                     "none",
                     "uppercase",
-                    "lowercase"
+                    "lowercase",
+                    "capitalize"
                 ],
                 "doc": "Transform the case of the characters",
                 "default-value": "none"
