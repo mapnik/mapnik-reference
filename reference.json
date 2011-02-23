@@ -237,7 +237,7 @@
                     "line"
                 ]
             },
-            "type": {
+            "marker-type": {
                 "css": "marker-type",
                 "type": [
                     "arrow",
