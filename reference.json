@@ -1,4 +1,6 @@
 {
+    "version": "1.0.0",
+
     "style": {
         "name": {
         },
@@ -290,7 +292,7 @@
         "shield": {
             "name": {
                 "css": "shield-name",
-                "type": "none",
+                "type": "string",
                 "required": true
             },
             "face-name": {
@@ -338,18 +340,6 @@
                 "type": "uri",
                 "default-value": "none",
                 "doc": "Image file to render behind the shield text"
-            },
-            "width": {
-                "css": "shield-width",
-                "type": "float",
-                "default-meaning": "native width of the image",
-                "doc": "Width in pixels to scale the shield image to"
-            },
-            "height": {
-                "css": "shield-height",
-                "type": "float",
-                "default-meaning": "native height of the image",
-                "doc": "Width in pixels to scale the shield image to"
             },
             "type": {
                 "css": "shield-type",
@@ -464,6 +454,12 @@
                 "type": "none",
                 "default-meaning": "auto-detected",
                 "doc": "The type of image file, e.g. png"
+            },
+            "alignment": {
+                "css": "polygon-pattern-alignment",
+                "type": ["local","global"],
+                "default-value": "local",
+                "doc": "Specify whether to align pattern fills to the layer or to the map."
             },
             "meta-output": {
                 "css": "polygon-pattern-meta-output",
