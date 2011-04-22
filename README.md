@@ -6,9 +6,9 @@ parsers, tests, compilers, and syntax highlighting/checking for languages.
 
 ## Status
 
-`reference.json` is a work in progress and is targeted at [Mapnik 2.0](https://trac.mapnik.org/milestone/Mapnik%202.0).
-Expect frequent updates and potential breaking changes leading up to the release.
-
+`reference.json` has a version number that conforming Mapnik engines such as
+Cascadenik, Tilemill and Mapnik itself can reference to indicate their support
+of specific features. We conform to [semantic versioning](http://semver.org) to communicate change.
 
 ## Using
 
