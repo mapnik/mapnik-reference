@@ -70,7 +70,7 @@
                 "type": "uri",
                 "default-value": "0",
                 "default-meaning": "No buffer will be used",
-                "description": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with 'avoid-edges'."
+                "description": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with \"avoid-edges\"."
             },
             "paths-from-xml": {
                 "css": "",
@@ -664,7 +664,7 @@
                 ],
                 "doc": "Position of label relative to point position.",
                 "default-value": "middle",
-                "default-meaning": "Default affected by value of dy; 'bottom' for dy>0, 'top' for dy<0."
+                "default-meaning": "Default affected by value of dy; \"bottom\" for dy>0, \"top\" for dy<0."
             },
             "avoid-edges": {
                 "css": "text-avoid-edges",
