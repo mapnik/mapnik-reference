@@ -341,12 +341,6 @@
                 "default-value": "none",
                 "doc": "Image file to render behind the shield text"
             },
-            "type": {
-                "css": "shield-type",
-                "type": ["png", "jpg", "svg"],
-                "default-meaning": "auto-detected",
-                "doc": "The file type of the shield image"
-            },
             "dx": {
                 "css": "shield-text-dx",
                 "type": "float",
