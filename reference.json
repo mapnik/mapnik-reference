@@ -293,7 +293,8 @@
             "name": {
                 "css": "shield-name",
                 "type": "string",
-                "required": true
+                "required": true,
+                "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]"
             },
             "face-name": {
                 "css": "shield-face-name",
@@ -512,7 +513,8 @@
             "name": {
                 "css": "text-name",
                 "type": "string",
-                "required": true
+                "required": true,
+                "doc": "Value to use for a text label. Data columns are specified using brackets like [column_name]"
             },
             "face-name": {
                 "css": "text-face-name",
