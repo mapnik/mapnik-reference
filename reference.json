@@ -313,6 +313,16 @@
                 "type": "color",
                 "doc": "The color of the shield text"
             },
+            "placement": {
+                "css": "shield-placement",
+                "type": [
+                    "point",
+                    "line",
+                    "vertex",
+                    "interior"
+                ],
+                "default-value": "point"
+            },
             "minimum-distance": {
                 "css": "shield-min-distance",
                 "type": "float",
@@ -326,7 +336,7 @@
                 "doc": "The spacing between repeated occurrences of the same shield on a line"
             },
             "character-spacing": {
-                "css": "shield-spacing",
+                "css": "shield-character-spacing",
                 "type": "float",
                 "default-value": 0,
                 "doc": "Horizontal spacing between characters (in pixels). Currently works for point placement only, not line placement."
