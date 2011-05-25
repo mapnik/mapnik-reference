@@ -74,6 +74,14 @@
                 "default-meaning": "No buffer will be used",
                 "description": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with \"avoid-edges\"."
             },
+            "base": {
+                "css": "base",
+                "api": "",
+                "default-value": "",
+                "default-meaning": "This base path defaults to an empty string meaning that any relative paths to files referenced in styles or layers will be interpreted relative to the application process.",
+                "type": "string",
+                "doc": "Any relative paths used to reference files will be understood as relative to this directory path if the map is loaded from an in memory object rather than from the filesystem. If the map is loaded from the filesystem and this option is not provided it will be set to the directory of the stylesheet."
+            },
             "paths-from-xml": {
                 "css": "",
                 "api": "",
@@ -192,6 +200,13 @@
                 "css": "line-dasharray",
                 "type": "numbers",
                 "doc": "A pair of length values [a,b], where (a) is the dash length and (b) is the gap length respectively. More than two values are supported for more complex patterns.",
+                "default-value": "none",
+                "default-meaning": "solid line"
+            },
+            "stroke-dash-offset": {
+                "css": "line-dash-offset",
+                "type": "numbers",
+                "doc": "valid parameter but not currently used in renderers",
                 "default-value": "none",
                 "default-meaning": "solid line"
             },
