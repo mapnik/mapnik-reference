@@ -113,8 +113,8 @@
                 "api": "fill",
                 "type": "color",
                 "availability": "0.5.1",
-                "default-value": "rgb(128,128,128)",
-                "default-meaning": "grey",
+                "default-value": "rgba(128,128,128,1)",
+                "default-meaning": "gray and fully opaque (alpha = 1), same as rgb(128,128,128)",
                 "doc": "Fill color to assign to a polygon"
             },
             "gamma": {
@@ -149,8 +149,9 @@
         "line": {
             "stroke": {
                 "css": "line-color",
-                "default-value": "black",
+                "default-value": "rgba(0,0,0,1)",
                 "type": "color",
+                "default-meaning": "black and fully opaque (alpha = 1), same as rgb(0,0,0)",
                 "doc": "The color of a drawn line"
             },
             "stroke-width": {
