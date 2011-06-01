@@ -473,7 +473,11 @@
                 "type": [
                     "fast",
                     "bilinear",
-                    "bilinear8"
+                    "bilinear8",
+                    "bicubic",
+                    "spline16",
+                    "gaussian",
+                    "lanczos"
                 ]
             }
         },
