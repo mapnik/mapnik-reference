@@ -680,6 +680,13 @@
                 "css": "text-min-padding",
                 "type": "float"
             },
+            "minimum-path-length": {
+                "css": "text-min-path-length",
+                "type": "float",
+                "default-value": 0,
+                "default-meaning": "place labels on all paths",
+                "doc": "Place labels only on paths longer than this value."
+            },
             "allow-overlap": {
                 "css": "text-allow-overlap",
                 "type": "boolean",
