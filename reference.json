@@ -103,8 +103,8 @@
                 "type": "uri",
                 "api": "",
                 "default-value": "none",
-                "default-meaning": "No fonts will be registered",
-                "doc": "Path to a directory which holds fonts which should be registered when the Map is loaded"
+                "default-meaning": "No map-specific fonts will be registered",
+                "doc": "Path to a directory which holds fonts which should be registered when the Map is loaded (in addition to any fonts that may be automatically registered)."
             }
         },
         "polygon": {
@@ -286,7 +286,7 @@
             "allow-overlap": {
                 "css": "marker-allow-overlap",
                 "type": "boolean",
-                "default-value": "false",
+                "default-value": false,
                 "default-meaning": "do not allow overlap"
             },
             "spacing": {
@@ -348,6 +348,12 @@
                 ],
                 "default-value": "point"
             },
+            "avoid-edges": {
+                "css": "shield-avoid-edges",
+                "doc": "Tell positioning algorithm to avoid labeling near intersection edges.",
+                "type": "boolean",
+                "default": false
+            },
             "minimum-distance": {
                 "css": "shield-min-distance",
                 "type": "float",
@@ -359,6 +365,18 @@
                 "type": "float",
                 "default-value": 0,
                 "doc": "The spacing between repeated occurrences of the same shield on a line"
+            },
+            "wrap-width": {
+                "css": "shield-wrap-width",
+                "type": "float",
+                "default-value": 0,
+                "doc": "Length before wrapping long names."
+            },
+            "wrap-character": {
+                "css": "shield-wrap-character",
+                "type": "string",
+                "default-value": " ",
+                "doc": "Use this character instead of a space to wrap long names."
             },
             "halo-fill": {
                 "css": "shield-halo-fill",
@@ -415,6 +433,47 @@
                 "type": "float",
                 "doc": "Displace shield by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the text down",
                 "default-value": 0
+            },
+            "opacity": {
+                "css": "shield-opacity",
+                "type": "float",
+                "doc": "(Default 1.0) - opacity of the image used for the shield",
+                "default-value": 1
+            },
+            "text-opacity": {
+                "css": "shield-text-opacity",
+                "type": "float",
+                "doc": "(Default 1.0) - opacity of the text placed on top of the shield",
+                "default-value": 1
+            },
+            "horizontal-alignment": {
+                "css": "shield-horizontal-alignment",
+                "type": "string",
+                "doc": "The shield's horizontal alignment from its centerpoint",
+                "default": "middle"
+            },
+            "text-transform": {
+                "css": "shield-text-transform",
+                "type": [
+                    "none",
+                    "uppercase",
+                    "lowercase",
+                    "capitalize"
+                ],
+                "doc": "Transform the case of the characters",
+                "default-value": "none"
+            },
+            "no-text": {
+                "css": "shield-no-text",
+                "type": "boolean",
+                "doc": "Whether the shield should make room for a text label.",
+                "default": "false"
+            },
+            "justify-alignment": {
+                "css": "shield-justify-alignment",
+                "type": "string",
+                "doc": "Define how text in a shield's label is justified",
+                "default": "middle"
             },
             "meta-output": {
                 "css": "shield-meta-output",
@@ -523,7 +582,7 @@
             "allow-overlap": {
                 "css": "point-allow-overlap",
                 "type": "boolean",
-                "default-value": "false",
+                "default-value": false,
                 "default-meaning": "do not allow overlap"
             },
             "ignore-placement": {
@@ -597,6 +656,12 @@
                 "css": "text-wrap-width",
                 "doc": "Length of a chunk of text in characters before wrapping text",
                 "type": "float"
+            },
+            "wrap-character": {
+                "css": "text-wrap-character",
+                "type": "string",
+                "default-value": " ",
+                "doc": "Use this character instead of a space to wrap long text."
             },
             "spacing": {
                 "css": "text-spacing",
@@ -689,10 +754,17 @@
                 "css": "text-min-padding",
                 "type": "float"
             },
+            "minimum-path-length": {
+                "css": "text-min-path-length",
+                "type": "float",
+                "default-value": 0,
+                "default-meaning": "place labels on all paths",
+                "doc": "Place labels only on paths longer than this value."
+            },
             "allow-overlap": {
                 "css": "text-allow-overlap",
                 "type": "boolean",
-                "default-value": "false",
+                "default-value": false,
                 "default-meaning": "do not allow overlap"
             },
             "placement": {
@@ -730,6 +802,16 @@
                 ],
                 "doc": "Transform the case of the characters",
                 "default-value": "none"
+            },
+            "justify-alignment": {
+                "css": "text-align",
+                "type": [
+                    "left",
+                    "right",
+                    "center"
+                ],
+                "doc": "Set the text alignment.",
+                "default-value": "center"
             },
             "meta-output": {
                 "css": "text-meta-output",
