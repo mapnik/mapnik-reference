@@ -291,7 +291,7 @@
             },
             "spacing": {
                 "css": "marker-spacing",
-                "docs": "Space between repeated labels",
+                "doc": "Space between repeated labels",
                 "type": "float"
             },
             "max-error": {
@@ -384,7 +384,6 @@
             },
             "halo-fill": {
                 "css": "shield-halo-fill",
-                "docs": "Color of the text halo",
                 "type": "color",
                 "default-value": "#FFFFFF",
                 "default-meaning": "white",
@@ -710,7 +709,6 @@
             },
             "halo-fill": {
                 "css": "text-halo-fill",
-                "docs": "Color of the text halo",
                 "type": "color",
                 "default-value": "#FFFFFF",
                 "default-meaning": "white",
@@ -998,3 +996,4 @@
         "transparent":  [0, 0, 0, 0]
     }
 }
+
