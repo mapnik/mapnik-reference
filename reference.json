@@ -767,6 +767,11 @@
                 "default-value": false,
                 "default-meaning": "do not allow overlap"
             },
+            "orientation": {
+                "css": "text-orientation",
+                "type": "float",
+                "doc": "Rotate the text."
+            },
             "placement": {
                 "css": "text-placement",
                 "type": [
