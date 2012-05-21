@@ -135,6 +135,15 @@
                 "default-value": 1,
                 "default-meaning": "opaque"
             },
+            "smooth": {
+                "css": "polygon-smooth",
+                "api": "smooth",
+                "type": "float",
+                "default-value": 0,
+                "default-meaning": "no smoothing",
+                "range": "0-1",
+                "doc": "Amount of smoothing applied"
+            },
             "meta-output": {
                 "css": "polygon-meta-output",
                 "type": "string",
@@ -211,6 +220,15 @@
                 "doc": "valid parameter but not currently used in renderers",
                 "default-value": "none",
                 "default-meaning": "solid line"
+            },
+            "smooth": {
+                "css": "line-smooth",
+                "api": "smooth",
+                "type": "float",
+                "default-value": 0,
+                "default-meaning": "no smoothing",
+                "range": "0-1",
+                "doc": "Amount of smoothing applied"
             },
             "meta-output": {
                 "css": "line-meta-output",
@@ -307,6 +325,13 @@
                 "default-value": false,
                 "doc": "Control whether overlapping markers are shown or hidden.",
                 "default-meaning": "Do not allow makers to overlap with each other - overlapping markers will not be shown."
+            },
+            "ignore-placement": {
+                "css": "marker-ignore-placement",
+                "type": "boolean",
+                "default-value": false,
+                "default-meaning": "do not store the bbox of this marker in the collision detector cache",
+                "doc": "value to control whether the placement of the feature will prevent the placement of other features"
             },
             "spacing": {
                 "css": "marker-spacing",
@@ -479,7 +504,12 @@
             },
             "horizontal-alignment": {
                 "css": "shield-horizontal-alignment",
-                "type": "string",
+                "type": [
+                    "left",
+                    "middle",
+                    "right",
+                    "auto"
+                ],
                 "doc": "The shield's horizontal alignment from its centerpoint",
                 "default": "middle"
             },
@@ -857,6 +887,17 @@
                 ],
                 "doc": "Transform the case of the characters",
                 "default-value": "none"
+            },
+            "horizontal-alignment": {
+                "css": "text-horizontal-alignment",
+                "type": [
+                    "left",
+                    "middle",
+                    "right",
+                    "auto"
+                ],
+                "doc": "The text's horizontal alignment from its centerpoint",
+                "default": "middle"
             },
             "justify-alignment": {
                 "css": "text-align",
