@@ -22,4 +22,3 @@ The file can then be parsed with any of the many [json parsers](http://www.json.
 
 * [Carto](https://github.com/mapbox/carto)
 * [TileMill](https://github.com/mapbox/tilemill)
-* [Cascadenik](https://github.com/mapnik/Cascadenik) (soon)
