@@ -303,13 +303,13 @@
             },
             "width": {
                 "css": "marker-width",
-                "default-value": 5,
+                "default-value": 10,
                 "doc": "The height of the marker, if using one of the default types.",
                 "type": "float"
             },
             "height": {
                 "css": "marker-height",
-                "default-value": 5,
+                "default-value": 10,
                 "doc": "The height of the marker, if using one of the default types.",
                 "type": "float"
             },
