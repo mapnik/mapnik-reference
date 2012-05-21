@@ -71,15 +71,12 @@
             },
             "buffer-size": {
                 "css": "buffer",
-                "api": "buffer-size",
-                "type": "uri",
                 "default-value": "0",
                 "default-meaning": "No buffer will be used",
                 "doc": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with \"avoid-edges\"."
             },
             "base": {
                 "css": "base",
-                "api": "",
                 "default-value": "",
                 "default-meaning": "This base path defaults to an empty string meaning that any relative paths to files referenced in styles or layers will be interpreted relative to the application process.",
                 "type": "string",
@@ -87,7 +84,6 @@
             },
             "paths-from-xml": {
                 "css": "",
-                "api": "",
                 "default-value": true,
                 "default-meaning": "Paths read from XML will be interpreted from the location of the XML",
                 "type": "boolean",
@@ -95,7 +91,6 @@
             },
             "minimum-version": {
                 "css": "",
-                "api": "",
                 "default-value": "none",
                 "default-meaning": "Mapnik version will not be detected and no error will be thrown about compatibility",
                 "type": "string",
@@ -104,7 +99,7 @@
             "font-directory": {
                 "css": "font-directory",
                 "type": "uri",
-                "api": "",
+                "type": "string",
                 "default-value": "none",
                 "default-meaning": "No map-specific fonts will be registered",
                 "doc": "Path to a directory which holds fonts which should be registered when the Map is loaded (in addition to any fonts that may be automatically registered)."
@@ -113,7 +108,6 @@
         "polygon": {
             "fill": {
                 "css": "polygon-fill",
-                "api": "fill",
                 "type": "color",
                 "default-value": "rgba(128,128,128,1)",
                 "default-meaning": "gray and fully opaque (alpha = 1), same as rgb(128,128,128)",
@@ -121,7 +115,6 @@
             },
             "gamma": {
                 "css": "polygon-gamma",
-                "api": "gamma",
                 "type": "float",
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
@@ -137,7 +130,6 @@
             },
             "smooth": {
                 "css": "polygon-smooth",
-                "api": "smooth",
                 "type": "float",
                 "default-value": 0,
                 "default-meaning": "no smoothing",
@@ -200,7 +192,6 @@
             },
             "stroke-gamma": {
                 "css": "line-gamma",
-                "api": "gamma",
                 "type": "float",
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
@@ -223,7 +214,6 @@
             },
             "smooth": {
                 "css": "line-smooth",
-                "api": "smooth",
                 "type": "float",
                 "default-value": 0,
                 "default-meaning": "no smoothing",
@@ -585,7 +575,6 @@
             },
             "gamma": {
                 "css": "polygon-pattern-gamma",
-                "api": "gamma",
                 "type": "float",
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
