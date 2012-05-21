@@ -628,6 +628,13 @@
                 ],
                 "doc": "The blending technique used to overlay this raster image on the layer below. Normal simply covers the layer. Grain merge adds the two layers together and subtracts 128 from the value, making the resulting area sometimes high-contrast. Screen often gives a lighter, washed-out appearance. Multiply multiplies the pixels, giving a high-contrast result. Divide divides the upper layer by the lower layer, making a lighter version."
             },
+            "filter-factor": {
+                "css": "raster-filter-factor",
+                "default-value": -1,
+                "default-meaning": "Allow the datasource to choose appropriate downscaling.",
+                "type": "float",
+                "doc": "This is used by the Raster or Gdal datasources to pre-downscale images using overviews. Higher numbers can sometimes cause much better scaled image output, at the cost of speed."
+            },
             "scaling": {
                 "css": "raster-scaling",
                 "type": [
