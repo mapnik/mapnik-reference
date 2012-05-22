@@ -268,13 +268,13 @@
             },
             "width": {
                 "css": "marker-width",
-                "default-value": 5,
+                "default-value": 10,
                 "doc": "The height of the marker, if using one of the default types.",
                 "type": "float"
             },
             "height": {
                 "css": "marker-height",
-                "default-value": 5,
+                "default-value": 10,
                 "doc": "The height of the marker, if using one of the default types.",
                 "type": "float"
             },
@@ -569,6 +569,13 @@
                 ],
                 "default-value": "fast",
                 "doc": "The scaling algorithm used to making different resolution versions of this raster layer. Bilinear is a good compromise between speed and accuracy, while lanczos gives the highest quality."
+            },
+            "mesh-size": {
+                "css": "raster-mesh-size",
+                "default-value": 16,
+                "default-meaning": "Reprojection mesh will be 1/16 of the resolution of the source image",
+                "type": "integer",
+                "doc": "A reduced resolution mesh is used for raster reprojection, and the total image size is divided by the mesh-size to determine the quality of that mesh. Values for mesh-size larger than the default will result in faster reprojection but might lead to distortion."
             }
         },
         "point": {
