@@ -7,18 +7,6 @@
         "filter-mode": {
         }
     },
-    "meta-writer": {
-        "name": {
-        },
-        "type": {
-        },
-        "file": {
-        },
-        "default-output": {
-        },
-        "output-empty": {
-        }
-    },
     "font-set": {
         "name": {
         },
@@ -136,18 +124,6 @@
                 "default-meaning": "no smoothing",
                 "range": "0-1",
                 "doc": "Amount of smoothing applied"
-            },
-            "meta-output": {
-                "css": "polygon-meta-output",
-                "type": "string",
-                "default-value": "",
-                "default-meaning": "No MetaWriter Output"
-            },
-            "meta-writer": {
-                "css": "polygon-meta-writer",
-                "type": "string",
-                "default-value": "",
-                "default-meaning": "No MetaWriter specified"
             }
         },
         "line": {
@@ -220,17 +196,6 @@
                 "default-meaning": "no smoothing",
                 "range": "0-1",
                 "doc": "Amount of smoothing applied"
-            },
-            "meta-output": {
-                "css": "line-meta-output",
-                "type": "string",
-                "default-value": "",
-                "default-meaning": "No MetaWriter Output"
-            },
-            "meta-writer": {
-                "css": "line-meta-writer",
-                "type": "string",
-                "default-value": ""
             },
             "rasterizer": {
                 "css": "line-rasterizer",
@@ -342,17 +307,6 @@
                 "default-value": "",
                 "default-meaning": "no transformation",
                 "type": "string"
-            },
-            "meta-output": {
-                "css": "marker-meta-output",
-                "type": "string",
-                "default-value": "",
-                "default-meaning": "No MetaWriter Output"
-            },
-            "meta-writer": {
-                "css": "marker-meta-writer",
-                "type": "string",
-                "default-value": "none"
             }
         },
         "shield": {
@@ -527,17 +481,6 @@
                 "type": "string",
                 "doc": "Define how text in a shield's label is justified",
                 "default-value": "middle"
-            },
-            "meta-output": {
-                "css": "shield-meta-output",
-                "type": "string",
-                "default-value": "",
-                "default-meaning": "No MetaWriter Output"
-            },
-            "meta-writer": {
-                "css": "shield-meta-writer",
-                "type": "string",
-                "default-value": ""
             }
         },
         "line-pattern": {
@@ -547,17 +490,6 @@
                 "default-value": "none",
                 "required": true,
                 "doc": "An image file to be repeated and warped along a line"
-            },
-            "meta-output": {
-                "css": "line-pattern-meta-output",
-                "type": "string",
-                "default-value": "",
-                "default-meaning": "No MetaWriter Output"
-            },
-            "meta-writer": {
-                "css": "line-pattern-meta-writer",
-                "type": "string",
-                "default-value": ""
             }
         },
         "polygon-pattern": {
@@ -581,17 +513,6 @@
                 "default-meaning": "fully antialiased",
                 "range": "0-1",
                 "doc": "Level of antialiasing of polygon pattern edges"
-            },
-            "meta-output": {
-                "css": "polygon-pattern-meta-output",
-                "type": "string",
-                "default-value": "",
-                "default-meaning": "No MetaWriter Output"
-            },
-            "meta-writer": {
-                "css": "polygon-pattern-meta-writer",
-                "type": "string",
-                "default-value": ""
             }
         },
         "raster": {
@@ -687,17 +608,6 @@
                 "default-value": "",
                 "default-meaning": "No transformation",
                 "doc": "SVG transformation definition"
-            },
-            "meta-output": {
-                "css": "point-meta-output",
-                "type": "string",
-                "default-value": "",
-                "default-meaning": "No MetaWriter Output"
-            },
-            "meta-writer": {
-                "css": "point-meta-writer",
-                "type": "string",
-                "default-value": ""
             }
         },
         "text": {
@@ -909,17 +819,6 @@
                 ],
                 "doc": "Set the text alignment.",
                 "default-value": "center"
-            },
-            "meta-output": {
-                "css": "text-meta-output",
-                "type": "string",
-                "default-value": "",
-                "default-meaning": "No MetaWriter Output"
-            },
-            "meta-writer": {
-                "css": "text-meta-writer",
-                "type": "string",
-                "default-value": ""
             }
         },
         "building": {
