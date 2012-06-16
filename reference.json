@@ -197,6 +197,13 @@
                 "range": "0-1",
                 "doc": "Amount of smoothing applied"
             },
+            "offset": {
+                "css": "line-offset",
+                "type": "float",
+                "default-value": 0,
+                "default-meaning": "no offset",
+                "doc": "Offsets a line a number of pixels parallel to its actual path. Postive values move the line left, negative values move it right (relative to the directionality of the line)."
+            },
             "rasterizer": {
                 "css": "line-rasterizer",
                 "type": [
