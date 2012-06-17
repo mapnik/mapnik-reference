@@ -123,7 +123,7 @@
                 "default-value": 0,
                 "default-meaning": "no smoothing",
                 "range": "0-1",
-                "doc": "Amount of smoothing applied"
+                "doc": "Smooths out polygon angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             }
         },
         "line": {
@@ -195,7 +195,7 @@
                 "default-value": 0,
                 "default-meaning": "no smoothing",
                 "range": "0-1",
-                "doc": "Amount of smoothing applied"
+                "doc": "Smooths out line angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
             "offset": {
                 "css": "line-offset",
