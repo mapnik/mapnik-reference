@@ -1,3 +1,4 @@
 test:
-	python test.py
-	node test.js
+	python test/test.py
+
+.PHONY: test

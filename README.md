@@ -1,24 +1,36 @@
 # reference.json
 
-`reference.json` is a parse-able spec of what Mapnik can do - what symbolizers 
-it supports and the properties they can contain. It's useful for building 
+`reference.json` is a parse-able spec of what Mapnik can do - what symbolizers
+it supports and the properties they can contain. It's useful for building
 parsers, tests, compilers, and syntax highlighting/checking for languages.
 
-## Status
+## Versioning
 
-`reference.json` has a version number that conforming Mapnik engines such as
-Cascadenik, Tilemill and Mapnik itself can reference to indicate their support
-of specific features. We conform to [semantic versioning](http://semver.org) to communicate change.
+The version of this repository indicates the schema of the reference.json file.
+Schema changes of any type are expected to change the implementation requirements
+of a parser, so they will increment the major version of this repository in
+[semver style](http://semver.org/).
+
+The directories in this repository correspond to 
 
 ## Using
 
-To simply grab the reference.json file,
+This is a valid [npm](http://npmjs.org/) module and thus is pretty easy to use from
+[node.js](http://nodejs.org/).
 
-    curl https://github.com/mapnik/reference.json/raw/master/reference.json
+    npm install mapnik-reference
+
+Other implementations will want to simply copy the [JSON](http://www.json.org/) file
+from the desired implementation, like `2.0.1/reference.json`.
 
 The file can then be parsed with any of the many [json parsers](http://www.json.org/).
 
+## Testing
+
+Tests require python:
+
+    make test
+
 ## Users
 
-* [Carto](https://github.com/mapbox/carto)
-* [TileMill](https://github.com/mapbox/tilemill)
+* [carto.js](https://github.com/mapbox/carto)
