@@ -1,6 +1,6 @@
-# reference.json
+# mapnik-reference
 
-`reference.json` is a parse-able spec of what Mapnik can do - what symbolizers
+`mapnik-reference` is a parse-able spec of what Mapnik can do - what symbolizers
 it supports and the properties they can contain. It's useful for building
 parsers, tests, compilers, and syntax highlighting/checking for languages.
 
@@ -19,6 +19,14 @@ This is a valid [npm](http://npmjs.org/) module and thus is pretty easy to use f
 [node.js](http://nodejs.org/).
 
     npm install mapnik-reference
+
+Once installing it as a dependency (like it's used in Carto), it can be included
+and used for a specific version of Mapnik:
+
+```javascript
+var mapnik_reference = require('mapnik-reference');
+var data = mapnik_reference.version['2.1.0'];
+```
 
 Other implementations will want to simply copy the [JSON](http://www.json.org/) file
 from the desired implementation, like `2.0.1/reference.json`.

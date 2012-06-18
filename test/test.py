@@ -18,5 +18,6 @@ for v in versions:
         for i in sym[1].items():
             assert 'type' in i[1].keys(), '%s: type not in %s' % (sym[0], i[0])
             assert 'doc' in i[1].keys(), '%s: doc string not in %s' % (sym[0], i[0])
+            assert 'css' in i[1].keys(), '%s: css not in %s' % (sym[0], i[0])
 
 print '... oh yeah, tests passed'
