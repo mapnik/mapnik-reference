@@ -1,5 +1,5 @@
 {
-    "version": "1.0.0",
+    "version": "2.1.0",
     "style": {
         "name": {
         },
@@ -254,6 +254,7 @@
                     "point",
                     "line"
                 ],
+                "doc": "Attempt to place markers on a point once or on a line repeatedly",
                 "default-value": "line"
             },
             "marker-type": {
@@ -375,6 +376,7 @@
             "minimum-padding": {
                 "css": "shield-min-padding",
                 "default-value": 0,
+                "doc": "Determines the minimum amount of padding that a shield gets relative to other shields",
                 "type": "float"
             },
             "wrap-width": {
@@ -684,7 +686,8 @@
             "label-position-tolerance": {
                 "css": "text-label-position-tolerance",
                 "default-value": 0,
-                "type": "float"
+                "type": "float",
+                "doc": "Allows the label to be displaced from its ideal position by a number of pixels"
             },
             "max-char-angle-delta": {
                 "css": "text-max-char-angle-delta",
@@ -755,6 +758,7 @@
             },
             "minimum-padding": {
                 "css": "text-min-padding",
+                "doc": "Determines the minimum amount of padding that a text symbolizer gets relative to other text",
                 "type": "float"
             },
             "minimum-path-length": {
@@ -784,7 +788,8 @@
                     "vertex",
                     "interior"
                 ],
-                "default-value": "point"
+                "default-value": "point",
+                "doc": "Control the style of placement of a point versus the geometry it is attached to."
             },
             "placement-type": {
                 "css": "text-placement-type",
