@@ -35,6 +35,57 @@
         }
     },
     "symbolizers" : {
+        "*": {
+            "image-filters": {
+                "css": "image-filters",
+                "default-value": "none",
+                "default-meaning": "no filters",
+                "type": "imagefilters",
+                "doc": "A list of image filters. Currently supported are agg-stack-blur, emboss, blur, gray, sobel, edge-detect, x-gradient, y-gradient, sharpen"
+            },
+            "comp-op": {
+                "css": "composite-operation",
+                "default-value": "src-over",
+                "default-meaning": "add the current layer on top of other layers",
+                "doc": "Composite operation. This defines how this layer should behave relative to layers atop or below it.",
+                "type": ["clear",
+                    "src",
+                    "dst",
+                    "src-over",
+                    "dst-over",
+                    "src-in",
+                    "dst-in",
+                    "src-out",
+                    "dst-out",
+                    "src-atop",
+                    "dst-atop",
+                    "xor",
+                    "plus",
+                    "minus",
+                    "multiply",
+                    "screen",
+                    "overlay",
+                    "darken",
+                    "lighten",
+                    "color-dodge",
+                    "color-burn",
+                    "hard-light",
+                    "soft-light",
+                    "difference",
+                    "exclusion",
+                    "contrast",
+                    "invert",
+                    "invert-rgb",
+                    "grain-merge",
+                    "grain-extract",
+                    "hue",
+                    "saturation",
+                    "color",
+                    "value",
+                    "color-spin"
+                ]
+            }
+        },
         "map": {
             "background-color": {
                 "css": "background-color",
@@ -58,15 +109,13 @@
             },
             "buffer-size": {
                 "css": "buffer",
-                "api": "buffer-size",
-                "type": "uri",
                 "default-value": "0",
+                "type":"float",
                 "default-meaning": "No buffer will be used",
                 "doc": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with \"avoid-edges\"."
             },
             "base": {
                 "css": "base",
-                "api": "",
                 "default-value": "",
                 "default-meaning": "This base path defaults to an empty string meaning that any relative paths to files referenced in styles or layers will be interpreted relative to the application process.",
                 "type": "string",
@@ -74,7 +123,6 @@
             },
             "paths-from-xml": {
                 "css": "",
-                "api": "",
                 "default-value": true,
                 "default-meaning": "Paths read from XML will be interpreted from the location of the XML",
                 "type": "boolean",
@@ -82,7 +130,6 @@
             },
             "minimum-version": {
                 "css": "",
-                "api": "",
                 "default-value": "none",
                 "default-meaning": "Mapnik version will not be detected and no error will be thrown about compatibility",
                 "type": "string",
@@ -91,7 +138,7 @@
             "font-directory": {
                 "css": "font-directory",
                 "type": "uri",
-                "api": "",
+                "type": "string",
                 "default-value": "none",
                 "default-meaning": "No map-specific fonts will be registered",
                 "doc": "Path to a directory which holds fonts which should be registered when the Map is loaded (in addition to any fonts that may be automatically registered)."
@@ -100,7 +147,6 @@
         "polygon": {
             "fill": {
                 "css": "polygon-fill",
-                "api": "fill",
                 "type": "color",
                 "default-value": "rgba(128,128,128,1)",
                 "default-meaning": "gray and fully opaque (alpha = 1), same as rgb(128,128,128)",
@@ -108,7 +154,6 @@
             },
             "gamma": {
                 "css": "polygon-gamma",
-                "api": "gamma",
                 "type": "float",
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
@@ -124,12 +169,11 @@
             },
             "smooth": {
                 "css": "polygon-smooth",
-                "api": "smooth",
                 "type": "float",
                 "default-value": 0,
                 "default-meaning": "no smoothing",
                 "range": "0-1",
-                "doc": "Amount of smoothing applied"
+                "doc": "Smooths out polygon angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             }
         },
         "line": {
@@ -175,7 +219,6 @@
             },
             "stroke-gamma": {
                 "css": "line-gamma",
-                "api": "gamma",
                 "type": "float",
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
@@ -198,12 +241,18 @@
             },
             "smooth": {
                 "css": "line-smooth",
-                "api": "smooth",
                 "type": "float",
                 "default-value": 0,
                 "default-meaning": "no smoothing",
                 "range": "0-1",
-                "doc": "Amount of smoothing applied"
+                "doc": "Smooths out line angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
+            },
+            "offset": {
+                "css": "line-offset",
+                "type": "float",
+                "default-value": 0,
+                "default-meaning": "no offset",
+                "doc": "Offsets a line a number of pixels parallel to its actual path. Postive values move the line left, negative values move it right (relative to the directionality of the line)."
             },
             "rasterizer": {
                 "css": "line-rasterizer",
@@ -518,7 +567,6 @@
             },
             "gamma": {
                 "css": "polygon-pattern-gamma",
-                "api": "gamma",
                 "type": "float",
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
@@ -536,19 +584,15 @@
             },
             "mode": {
                 "css": "raster-mode",
-                "default-value": "normal",
-                "type": [
-                    "normal",
-                    "grain_merge",
-                    "grain_merge2",
-                    "multiply",
-                    "multiply2",
-                    "divide",
-                    "divide2",
-                    "screen",
-                    "hard_light"
+                "default-value": "src-over",
+                "default-meaning": "add the current layer on top of other layers",
+                "doc": "Composite operation. This defines how this layer should behave relative to layers atop or below it.",
+                "type": ["clear", "src", "dst", "src-over", "dst-over", "src-in", "dst-in", "src-out",
+                         "dst-out", "src-atop", "dst-atop", "xor", "plus", "minus", "multiply", "screen",
+                         "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light",
+                         "difference", "exclusion", "contrast", "invert", "invert-rgb", "grain-merge", "grain-extract"
                 ],
-                "doc": "The blending technique used to overlay this raster image on the layer below. Normal simply covers the layer. Grain merge adds the two layers together and subtracts 128 from the value, making the resulting area sometimes high-contrast. Screen often gives a lighter, washed-out appearance. Multiply multiplies the pixels, giving a high-contrast result. Divide divides the upper layer by the lower layer, making a lighter version."
+                "doc": "The blending technique used to overlay this raster image on the layer below. 'src-over' simply covers the layer. Grain merge adds the two layers together and subtracts 128 from the value, making the resulting area sometimes high-contrast. Screen often gives a lighter, washed-out appearance. Multiply multiplies the pixels, giving a high-contrast result. Divide divides the upper layer by the lower layer, making a lighter version."
             },
             "filter-factor": {
                 "css": "raster-filter-factor",
