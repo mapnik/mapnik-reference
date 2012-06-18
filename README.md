@@ -11,7 +11,9 @@ Schema changes of any type are expected to change the implementation requirement
 of a parser, so they will increment the major version of this repository in
 [semver style](http://semver.org/).
 
-The directories in this repository correspond to 
+The directories in this repository directly correspond to released versions of Mapnik
+and the next targeted release of Mapnik. The latest reference, usually targeted
+toward a pre-release, is copied into `/latest` for convenience.
 
 ## Using
 
