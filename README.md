@@ -15,6 +15,18 @@ The directories in this repository directly correspond to released versions of M
 and the next targeted release of Mapnik. The latest reference, usually targeted
 toward a pre-release, is copied into `/latest` for convenience.
 
+## Meaning
+
+The structure of the file is as such:
+
+* `version`: the version of Mapnik targeted. Same as the containing directory.
+* `style`: properties of the `Style` XML element
+* `font-set`: properties of the `FontSet` XML element
+* `layer`: properties of the `Layer` XML element
+* `symbolizers/*`: properties that apply to **all** symbolizers
+* `symbolizers/symbolizer`: properties that apply to **each** type of symbolizer
+* `colors`: named colors supported by Mapnik. see `include/mapnik/css_color_grammar.hpp`
+
 ## Using
 
 This is a valid [npm](http://npmjs.org/) module and thus is pretty easy to use from
