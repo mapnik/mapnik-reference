@@ -94,7 +94,7 @@
                     "saturation",
                     "color",
                     "value",
-                    "color-spin"
+                    "colorize-alpha"
                 ]
             },
             "opacity": {
@@ -233,7 +233,7 @@
                     "saturation",
                     "color",
                     "value",
-                    "color-spin"
+                    "colorize-alpha"
                 ]
             }
         },
@@ -363,7 +363,7 @@
                     "saturation",
                     "color",
                     "value",
-                    "color-spin"
+                    "colorize-alpha"
                 ]
             }
         },
@@ -508,7 +508,7 @@
                     "saturation",
                     "color",
                     "value",
-                    "color-spin"
+                    "colorize-alpha"
                 ]
             }
         },
@@ -725,7 +725,7 @@
                     "saturation",
                     "color",
                     "value",
-                    "color-spin"
+                    "colorize-alpha"
                 ]
             }
         },
@@ -894,7 +894,7 @@
                     "saturation",
                     "color",
                     "value",
-                    "color-spin"
+                    "colorize-alpha"
                 ]
             }
         },
@@ -1150,7 +1150,7 @@
                     "saturation",
                     "color",
                     "value",
-                    "color-spin"
+                    "colorize-alpha"
                 ]
             }
         },
@@ -1212,7 +1212,7 @@
                     "saturation",
                     "color",
                     "value",
-                    "color-spin"
+                    "colorize-alpha"
                 ]
             }
         }
