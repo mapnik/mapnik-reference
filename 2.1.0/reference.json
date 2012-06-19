@@ -40,8 +40,19 @@
                 "css": "image-filters",
                 "default-value": "none",
                 "default-meaning": "no filters",
-                "type": "imagefilters",
-                "doc": "A list of image filters. Currently supported are agg-stack-blur, emboss, blur, gray, sobel, edge-detect, x-gradient, y-gradient, sharpen"
+                "type": "functions",
+                "functions": [
+                    ["agg-stack-blur", 2],
+                    ["emboss", 0],
+                    ["blur", 0],
+                    ["gray", 0],
+                    ["sobel", 0],
+                    ["edge-detect", 0],
+                    ["x-gradient", 0],
+                    ["y-gradient", 0],
+                    ["sharpen", 0]
+                ],
+                "doc": "A list of image filters."
             },
             "comp-op": {
                 "css": "composite-operation",
@@ -1355,4 +1366,6 @@
         "transparent":  [0, 0, 0, 0]
     }
 }
+
+
 

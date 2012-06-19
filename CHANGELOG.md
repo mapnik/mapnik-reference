@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+#### 2.0.0
+
+* The style-property `image-filters` becomes of the `functions`
+  type and gains `[name, arity]` specs for each function.
+
 #### 1.0.0
 
 * For the property `buffer-size` under the Map symbolizer,

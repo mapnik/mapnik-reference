@@ -40,8 +40,19 @@
                 "css": "image-filters",
                 "default-value": "none",
                 "default-meaning": "no filters",
-                "type": "imagefilters",
-                "doc": "A list of image filters. Currently supported are agg-stack-blur, emboss, blur, gray, sobel, edge-detect, x-gradient, y-gradient, sharpen"
+                "type": "functions",
+                "functions": [
+                    ["agg-stack-blur", 2],
+                    ["emboss", 0],
+                    ["blur", 0],
+                    ["gray", 0],
+                    ["sobel", 0],
+                    ["edge-detect", 0],
+                    ["x-gradient", 0],
+                    ["y-gradient", 0],
+                    ["sharpen", 0]
+                ],
+                "doc": "A list of image filters."
             },
             "comp-op": {
                 "css": "composite-operation",
@@ -84,6 +95,13 @@
                     "value",
                     "color-spin"
                 ]
+            },
+            "opacity": {
+                "css": "opacity",
+                "type": "float",
+                "doc": "An alpha value for the style (which means an alpha applied to all features in separate buffer and then composited back to main buffer)",
+                "default-value": 1,
+                "default-meaning": "no separate buffer will be used and no alpha will be applied to the style after rendering"
             }
         },
         "map": {
@@ -1153,6 +1171,48 @@
                 "doc": "The height of the building in pixels.",
                 "type": "float",
                 "default-value": "0"
+            },
+            "comp-op": {
+                "css": "building-composite-operation",
+                "default-value": "src-over",
+                "default-meaning": "add the current symbolizer on top of other symbolizer",
+                "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
+                "type": ["clear",
+                    "src",
+                    "dst",
+                    "src-over",
+                    "dst-over",
+                    "src-in",
+                    "dst-in",
+                    "src-out",
+                    "dst-out",
+                    "src-atop",
+                    "dst-atop",
+                    "xor",
+                    "plus",
+                    "minus",
+                    "multiply",
+                    "screen",
+                    "overlay",
+                    "darken",
+                    "lighten",
+                    "color-dodge",
+                    "color-burn",
+                    "hard-light",
+                    "soft-light",
+                    "difference",
+                    "exclusion",
+                    "contrast",
+                    "invert",
+                    "invert-rgb",
+                    "grain-merge",
+                    "grain-extract",
+                    "hue",
+                    "saturation",
+                    "color",
+                    "value",
+                    "color-spin"
+                ]
             }
         }
     },
@@ -1306,4 +1366,6 @@
         "transparent":  [0, 0, 0, 0]
     }
 }
+
+
 
