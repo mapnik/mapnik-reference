@@ -57,7 +57,7 @@
                 "doc": "Map spatial reference (proj4 string)"
             },
             "buffer-size": {
-                "css": "buffer",
+                "css": "buffer-size",
                 "api": "buffer-size",
                 "type": "uri",
                 "default-value": "0",

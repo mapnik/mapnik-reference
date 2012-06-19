@@ -108,7 +108,7 @@
                 "doc": "Map spatial reference (proj4 string)"
             },
             "buffer-size": {
-                "css": "buffer",
+                "css": "buffer-size",
                 "default-value": "0",
                 "type":"float",
                 "default-meaning": "No buffer will be used",
