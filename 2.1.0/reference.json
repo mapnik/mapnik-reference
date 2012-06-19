@@ -50,6 +50,7 @@
                     ["edge-detect", 0],
                     ["x-gradient", 0],
                     ["y-gradient", 0],
+                    ["invert", 0],
                     ["sharpen", 0]
                 ],
                 "doc": "A list of image filters."

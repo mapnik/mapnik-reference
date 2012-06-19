@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+#### 2.1.0
+
+* Add `invert()` image filter function
+* Rename `color-spin` compositing to `colorize-alpha`
+
 #### 2.0.0
 
 * The style-property `image-filters` becomes of the `functions`
