@@ -84,6 +84,13 @@
                     "value",
                     "color-spin"
                 ]
+            },
+            "opacity": {
+                "css": "opacity",
+                "type": "float",
+                "doc": "An alpha value for the style (which means an alpha applied to all features in separate buffer and then composited back to main buffer)",
+                "default-value": 1,
+                "default-meaning": "no separate buffer will be used and no alpha will be applied to the style after rendering"
             }
         },
         "map": {
