@@ -848,7 +848,7 @@
                 "doc": "How this point should be placed. Centroid calculates the geometric center of a polygon, which can be outside of it, while interior always places inside of a polygon.",
                 "default-value": "centroid"
             },
-            "transform": {
+            "image-transform": {
                 "css": "point-transform",
                 "type": "functions",
                 "functions": [
