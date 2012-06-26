@@ -909,7 +909,7 @@
         "text": {
             "name": {
                 "css": "text-name",
-                "type": "string",
+                "type": "expression",
                 "required": true,
                 "default-value": "",
                 "serialization": "content",
@@ -1178,7 +1178,7 @@
             "height": {
                 "css": "building-height",
                 "doc": "The height of the building in pixels.",
-                "type": "float",
+                "type": "expression",
                 "default-value": "0"
             },
             "comp-op": {
