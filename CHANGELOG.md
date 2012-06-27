@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+#### 2.2.0
+
+* Add `raster-composite-operation`
+
 #### 2.1.0
 
 * Add `invert()` image filter function
