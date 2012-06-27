@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+#### 2.2.1
+
+* Fixed type definition of `font-directory`, ensuring it is interpreted as a uri
+
 #### 2.2.0
 
 * Add `raster-composite-operation`

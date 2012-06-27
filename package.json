@@ -1,8 +1,8 @@
 {
-  "author": "",
+  "author": "Mapnik Developers",
   "name": "mapnik-reference",
   "description": "Reference for Mapnik Styling Options",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/mapnik/reference.json.git"
