@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+#### 2.2.2
+
+* Fixed type definition of `font-directory` in reference targeting latest mapnik
+
 #### 2.2.1
 
 * Fixed type definition of `font-directory`, ensuring it is interpreted as a uri
