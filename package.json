@@ -5,7 +5,7 @@
   "version": "2.2.2",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mapnik/reference.json.git"
+    "url": "git://github.com/mapnik/mapnik-reference.git"
   },
   "dependencies": {},
   "devDependencies": {},
