@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+#### 3.0.0
+
+* Add `expression` type
+* Add `functions` type
+* Add transform function definitions for `point-transform` and,
+  eventually, other transforms
+
 #### 2.2.0
 
 * Add `raster-composite-operation`

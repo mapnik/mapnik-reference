@@ -890,9 +890,17 @@
                 "doc": "How this point should be placed. Centroid calculates the geometric center of a polygon, which can be outside of it, while interior always places inside of a polygon.",
                 "default-value": "centroid"
             },
-            "transform": {
+            "image-transform": {
                 "css": "point-transform",
-                "type": "string",
+                "type": "functions",
+                "functions": [
+                    ["matrix", 6],
+                    ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
+                    ["skewX", 1],
+                    ["skewY", 1]
+                ],
                 "default-value": "",
                 "default-meaning": "No transformation",
                 "doc": "SVG transformation definition"
@@ -943,7 +951,7 @@
         "text": {
             "name": {
                 "css": "text-name",
-                "type": "string",
+                "type": "expression",
                 "required": true,
                 "default-value": "",
                 "serialization": "content",
@@ -1212,7 +1220,7 @@
             "height": {
                 "css": "building-height",
                 "doc": "The height of the building in pixels.",
-                "type": "float",
+                "type": "expression",
                 "default-value": "0"
             },
             "comp-op": {
