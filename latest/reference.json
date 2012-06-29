@@ -660,7 +660,7 @@
                     "auto"
                 ],
                 "doc": "The shield's horizontal alignment from its centerpoint",
-                "default-value": "middle"
+                "default-value": "auto"
             },
             "vertical-alignment": {
                 "css": "shield-vertical-alignment",
@@ -692,9 +692,14 @@
             },
             "justify-alignment": {
                 "css": "shield-justify-alignment",
-                "type": "string",
+                "type": [
+                    "left",
+                    "center",
+                    "right",
+                    "auto"
+                ],
                 "doc": "Define how text in a shield's label is justified",
-                "default-value": "middle"
+                "default-value": "auto"
             },
             "comp-op": {
                 "css": "shield-composite-operation",
@@ -758,7 +763,10 @@
             },
             "alignment": {
                 "css": "polygon-pattern-alignment",
-                "type": ["local","global"],
+                "type": [
+                    "local",
+                    "global"
+                ],
                 "default-value": "local",
                 "doc": "Specify whether to align pattern fills to the layer or to the map."
             },
@@ -1072,10 +1080,11 @@
                 "type": [
                   "top",
                   "middle",
-                  "bottom"
+                  "bottom",
+                  "auto"
                 ],
                 "doc": "Position of label relative to point position.",
-                "default-value": "middle",
+                "default-value": "auto",
                 "default-meaning": "Default affected by value of dy; \"bottom\" for dy>0, \"top\" for dy<0."
             },
             "avoid-edges": {
@@ -1159,17 +1168,18 @@
                     "auto"
                 ],
                 "doc": "The text's horizontal alignment from its centerpoint",
-                "default-value": "middle"
+                "default-value": "auto"
             },
             "justify-alignment": {
                 "css": "text-align",
                 "type": [
                     "left",
                     "right",
-                    "center"
+                    "center",
+                    "auto"
                 ],
-                "doc": "Set the text alignment.",
-                "default-value": "center"
+                "doc": "Define how text is justified",
+                "default-value": "auto"
             },
             "comp-op": {
                 "css": "text-composite-operation",
