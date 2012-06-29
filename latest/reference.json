@@ -578,6 +578,12 @@
                 "default-value": 0,
                 "doc": "Length before wrapping long names."
             },
+            "wrap-before": {
+                "css": "shield-wrap-before",
+                "type": "boolean",
+                "default-value": false,
+                "doc": "Wrap text before wrap-width is reached. If false, wrapped lines will be a bit longer than wrap-width."
+            },
             "wrap-character": {
                 "css": "shield-wrap-character",
                 "type": "string",
@@ -992,6 +998,12 @@
                 "doc": "Length of a chunk of text in characters before wrapping text",
                 "default-value": 0,
                 "type": "float"
+            },
+            "wrap-before": {
+                "css": "shield-wrap-before",
+                "type": "boolean",
+                "default-value": false,
+                "doc": "Wrap text before wrap-width is reached. If false, wrapped lines will be a bit longer than wrap-width."
             },
             "wrap-character": {
                 "css": "text-wrap-character",
