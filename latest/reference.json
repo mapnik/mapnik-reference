@@ -514,7 +514,7 @@
         "shield": {
             "name": {
                 "css": "shield-name",
-                "type": "string",
+                "type": "expression",
                 "required": true,
                 "serialization": "content",
                 "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]"
