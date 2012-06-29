@@ -421,13 +421,13 @@
                 "css": "marker-width",
                 "default-value": 10,
                 "doc": "The height of the marker, if using one of the default types.",
-                "type": "float"
+                "type": "expression"
             },
             "height": {
                 "css": "marker-height",
                 "default-value": 10,
                 "doc": "The height of the marker, if using one of the default types.",
-                "type": "float"
+                "type": "expression"
             },
             "fill": {
                 "css": "marker-fill",
@@ -554,6 +554,13 @@
                 "type": "boolean",
                 "default-value": false
             },
+            "allow-overlap": {
+                "css": "shield-allow-overlap",
+                "type": "boolean",
+                "default-value": false,
+                "doc": "Control whether overlapping shields are shown or hidden.",
+                "default-meaning": "Do not allow shields to overlap with other map elements already placed."
+            },
             "minimum-distance": {
                 "css": "shield-min-distance",
                 "type": "float",
@@ -577,6 +584,12 @@
                 "type": "float",
                 "default-value": 0,
                 "doc": "Length before wrapping long names."
+            },
+            "wrap-before": {
+                "css": "shield-wrap-before",
+                "type": "boolean",
+                "default-value": false,
+                "doc": "Wrap text before wrap-width is reached. If false, wrapped lines will be a bit longer than wrap-width."
             },
             "wrap-character": {
                 "css": "shield-wrap-character",
@@ -660,6 +673,17 @@
                     "auto"
                 ],
                 "doc": "The shield's horizontal alignment from its centerpoint",
+                "default-value": "auto"
+            },
+            "vertical-alignment": {
+                "css": "shield-vertical-alignment",
+                "type": [
+                    "top",
+                    "middle",
+                    "bottom",
+                    "auto"
+                ],
+                "doc": "The shield's vertical alignment from its centerpoint",
                 "default-value": "middle"
             },
             "text-transform": {
@@ -681,9 +705,14 @@
             },
             "justify-alignment": {
                 "css": "shield-justify-alignment",
-                "type": "string",
+                "type": [
+                    "left",
+                    "center",
+                    "right",
+                    "auto"
+                ],
                 "doc": "Define how text in a shield's label is justified",
-                "default-value": "middle"
+                "default-value": "auto"
             },
             "comp-op": {
                 "css": "shield-composite-operation",
@@ -747,7 +776,10 @@
             },
             "alignment": {
                 "css": "polygon-pattern-alignment",
-                "type": ["local","global"],
+                "type": [
+                    "local",
+                    "global"
+                ],
                 "default-value": "local",
                 "doc": "Specify whether to align pattern fills to the layer or to the map."
             },
@@ -889,7 +921,7 @@
                 "doc": "How this point should be placed. Centroid calculates the geometric center of a polygon, which can be outside of it, while interior always places inside of a polygon.",
                 "default-value": "centroid"
             },
-            "transform": {
+            "image-transform": {
                 "css": "point-transform",
                 "type": "functions",
                 "functions": [
@@ -950,7 +982,7 @@
         "text": {
             "name": {
                 "css": "text-name",
-                "type": "string",
+                "type": "expression",
                 "required": true,
                 "default-value": "",
                 "serialization": "content",
@@ -981,6 +1013,12 @@
                 "doc": "Length of a chunk of text in characters before wrapping text",
                 "default-value": 0,
                 "type": "float"
+            },
+            "wrap-before": {
+                "css": "text-wrap-before",
+                "type": "boolean",
+                "default-value": false,
+                "doc": "Wrap text before wrap-width is reached. If false, wrapped lines will be a bit longer than wrap-width."
             },
             "wrap-character": {
                 "css": "text-wrap-character",
@@ -1061,10 +1099,11 @@
                 "type": [
                   "top",
                   "middle",
-                  "bottom"
+                  "bottom",
+                  "auto"
                 ],
                 "doc": "Position of label relative to point position.",
-                "default-value": "middle",
+                "default-value": "auto",
                 "default-meaning": "Default affected by value of dy; \"bottom\" for dy>0, \"top\" for dy<0."
             },
             "avoid-edges": {
@@ -1148,17 +1187,19 @@
                     "auto"
                 ],
                 "doc": "The text's horizontal alignment from its centerpoint",
-                "default-value": "middle"
+                "default-value": "auto"
             },
             "justify-alignment": {
                 "css": "text-align",
                 "type": [
                     "left",
                     "right",
-                    "center"
+                    "center",
+                    "auto"
                 ],
-                "doc": "Set the text alignment.",
-                "default-value": "center"
+                "doc": "Define how text is justified",
+                "default-value": "auto",
+                "default-meaning": "Auto alignment means that text will be centered by default except when using the `placement-type` parameter - in that case either right or left justification will be used automatically depending on where the text could be fit given the `text-placements` directives"
             },
             "comp-op": {
                 "css": "text-composite-operation",
@@ -1219,7 +1260,7 @@
             "height": {
                 "css": "building-height",
                 "doc": "The height of the building in pixels.",
-                "type": "float",
+                "type": "expression",
                 "default-value": "0"
             },
             "comp-op": {
@@ -1416,3 +1457,4 @@
         "transparent":  [0, 0, 0, 0]
     }
 }
+
