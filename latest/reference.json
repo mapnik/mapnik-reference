@@ -554,6 +554,13 @@
                 "type": "boolean",
                 "default-value": false
             },
+            "allow-overlap": {
+                "css": "shield-allow-overlap",
+                "type": "boolean",
+                "default-value": false,
+                "doc": "Control whether overlapping shields are shown or hidden.",
+                "default-meaning": "Do not allow shields to overlap with other map elements already placed."
+            },
             "minimum-distance": {
                 "css": "shield-min-distance",
                 "type": "float",
@@ -1179,7 +1186,8 @@
                     "auto"
                 ],
                 "doc": "Define how text is justified",
-                "default-value": "auto"
+                "default-value": "auto",
+                "default-meaning": "Auto alignment means that text will be centered by default except when using the `placement-type` parameter - in that case either right or left justification will be used automatically depending on where the text could be fit given the `text-placements` directives"
             },
             "comp-op": {
                 "css": "text-composite-operation",
