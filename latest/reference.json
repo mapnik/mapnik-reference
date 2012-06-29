@@ -421,13 +421,13 @@
                 "css": "marker-width",
                 "default-value": 10,
                 "doc": "The height of the marker, if using one of the default types.",
-                "type": "float"
+                "type": "expression"
             },
             "height": {
                 "css": "marker-height",
                 "default-value": 10,
                 "doc": "The height of the marker, if using one of the default types.",
-                "type": "float"
+                "type": "expression"
             },
             "fill": {
                 "css": "marker-fill",
