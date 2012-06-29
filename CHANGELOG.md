@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+#### 3.1.0
+
+* Add `shield-allow-overlap`
+* Add `shield-vertical-alignment`
+* Add `text-wrap-before` and `shield-wrap-before`
+* Made `marker-width`, `marker-height`, and `shield-name` expressions
+* Fixed default value for text/shield alignment properties
+
 #### 3.0.0
 
 * Add `expression` type
