@@ -662,6 +662,17 @@
                 "doc": "The shield's horizontal alignment from its centerpoint",
                 "default-value": "middle"
             },
+            "vertical-alignment": {
+                "css": "shield-vertical-alignment",
+                "type": [
+                    "top",
+                    "middle",
+                    "bottom",
+                    "auto"
+                ],
+                "doc": "The shield's vertical alignment from its centerpoint",
+                "default-value": "middle"
+            },
             "text-transform": {
                 "css": "shield-text-transform",
                 "type": [
