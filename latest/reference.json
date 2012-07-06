@@ -822,15 +822,27 @@
             "scaling": {
                 "css": "raster-scaling",
                 "type": [
+                    "near",
                     "fast",
                     "bilinear",
                     "bilinear8",
                     "bicubic",
                     "spline16",
+                    "spline36",
+                    "hanning",
+                    "hamming",
+                    "hermite",
+                    "kaiser",
+                    "quadric",
+                    "catrom",
                     "gaussian",
-                    "lanczos"
+                    "bessel",
+                    "mitchell",
+                    "sinc",
+                    "lanczos",
+                    "blackman"
                 ],
-                "default-value": "fast",
+                "default-value": "near",
                 "doc": "The scaling algorithm used to making different resolution versions of this raster layer. Bilinear is a good compromise between speed and accuracy, while lanczos gives the highest quality."
             },
             "mesh-size": {
