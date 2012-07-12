@@ -299,6 +299,13 @@
                 "default-value": "none",
                 "default-meaning": "solid line"
             },
+            "clip": {
+                "css": "line-clip",
+                "type": "boolean",
+                "default-value": true,
+                "default-meaning": "geometry will be clipped to map bounds before rendering",
+                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+            },
             "smooth": {
                 "css": "line-smooth",
                 "type": "float",
@@ -1150,7 +1157,7 @@
             },
             "orientation": {
                 "css": "text-orientation",
-                "type": "float",
+                "type": "expression",
                 "doc": "Rotate the text."
             },
             "placement": {
