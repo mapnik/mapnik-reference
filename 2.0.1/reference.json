@@ -58,9 +58,8 @@
             },
             "buffer-size": {
                 "css": "buffer-size",
-                "api": "buffer-size",
-                "type": "uri",
                 "default-value": "0",
+                "type":"float",
                 "default-meaning": "No buffer will be used",
                 "doc": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with \"avoid-edges\"."
             },
