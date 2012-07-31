@@ -56,7 +56,7 @@
                 "doc": "A list of image filters."
             },
             "comp-op": {
-                "css": "composite-operation",
+                "css": "comp-op",
                 "default-value": "src-over",
                 "default-meaning": "add the current layer on top of other layers",
                 "doc": "Composite operation. This defines how this layer should behave relative to layers atop or below it.",
@@ -194,7 +194,7 @@
                 "doc": "Smooths out polygon angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
             "comp-op": {
-                "css": "polygon-composite-operation",
+                "css": "polygon-comp-op",
                 "default-value": "src-over",
                 "default-meaning": "add the current symbolizer on top of other symbolizer",
                 "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
@@ -331,7 +331,7 @@
                 "doc": "Exposes an alternate AGG rendering method that sacrifices some accuracy for speed."
             },
             "comp-op": {
-                "css": "line-composite-operation",
+                "css": "line-comp-op",
                 "default-value": "src-over",
                 "default-meaning": "add the current symbolizer on top of other symbolizer",
                 "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
@@ -484,7 +484,7 @@
                 "doc": "SVG transformation definition"
             },
             "comp-op": {
-                "css": "marker-composite-operation",
+                "css": "marker-comp-op",
                 "default-value": "src-over",
                 "default-meaning": "add the current symbolizer on top of other symbolizer",
                 "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
@@ -712,6 +712,12 @@
                 "doc": "Transform the case of the characters",
                 "default-value": "none"
             },
+            "no-text": {
+                "css": "shield-no-text",
+                "type": "boolean",
+                "doc": "Whether the shield should make room for a text label.",
+                "default-value": "false"
+            },
             "justify-alignment": {
                 "css": "shield-justify-alignment",
                 "type": [
@@ -724,7 +730,7 @@
                 "default-value": "auto"
             },
             "comp-op": {
-                "css": "shield-composite-operation",
+                "css": "shield-comp-op",
                 "default-value": "src-over",
                 "default-meaning": "add the current symbolizer on top of other symbolizer",
                 "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
@@ -862,7 +868,7 @@
                 "doc": "A reduced resolution mesh is used for raster reprojection, and the total image size is divided by the mesh-size to determine the quality of that mesh. Values for mesh-size larger than the default will result in faster reprojection but might lead to distortion."
             },
             "comp-op": {
-                "css": "raster-composite-operation",
+                "css": "raster-comp-op",
                 "default-value": "src-over",
                 "default-meaning": "add the current symbolizer on top of other symbolizer",
                 "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
@@ -958,7 +964,7 @@
                 "doc": "SVG transformation definition"
             },
             "comp-op": {
-                "css": "point-composite-operation",
+                "css": "point-comp-op",
                 "default-value": "src-over",
                 "default-meaning": "add the current symbolizer on top of other symbolizer",
                 "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
@@ -1223,7 +1229,7 @@
                 "default-meaning": "Auto alignment means that text will be centered by default except when using the `placement-type` parameter - in that case either right or left justification will be used automatically depending on where the text could be fit given the `text-placements` directives"
             },
             "comp-op": {
-                "css": "text-composite-operation",
+                "css": "text-comp-op",
                 "default-value": "src-over",
                 "default-meaning": "add the current symbolizer on top of other symbolizer",
                 "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
@@ -1283,48 +1289,6 @@
                 "doc": "The height of the building in pixels.",
                 "type": "expression",
                 "default-value": "0"
-            },
-            "comp-op": {
-                "css": "building-composite-operation",
-                "default-value": "src-over",
-                "default-meaning": "add the current symbolizer on top of other symbolizer",
-                "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
-                "type": ["clear",
-                    "src",
-                    "dst",
-                    "src-over",
-                    "dst-over",
-                    "src-in",
-                    "dst-in",
-                    "src-out",
-                    "dst-out",
-                    "src-atop",
-                    "dst-atop",
-                    "xor",
-                    "plus",
-                    "minus",
-                    "multiply",
-                    "screen",
-                    "overlay",
-                    "darken",
-                    "lighten",
-                    "color-dodge",
-                    "color-burn",
-                    "hard-light",
-                    "soft-light",
-                    "difference",
-                    "exclusion",
-                    "contrast",
-                    "invert",
-                    "invert-rgb",
-                    "grain-merge",
-                    "grain-extract",
-                    "hue",
-                    "saturation",
-                    "color",
-                    "value",
-                    "colorize-alpha"
-                ]
             }
         }
     },
