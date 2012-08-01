@@ -205,7 +205,7 @@
                 "doc": "Exposes an alternate AGG rendering method that sacrifices some accuracy for speed."
             }
         },
-        "marker": {
+        "markers": {
             "file": {
                 "css": "marker-file",
                 "doc": "An SVG file that this marker shows at each placement. If no file is given, the marker will show an ellipse.",
