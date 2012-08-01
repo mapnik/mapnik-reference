@@ -16,6 +16,9 @@ for v in versions:
     for sym in reference['symbolizers'].items():
         assert sym[1]
         for i in sym[1].items():
+            if sym[0] not in ['map','*']:
+                css_name = i[1]['css']
+                assert sym[0] in css_name, "'%s' not properly prefixed by '%s'" % (css_name,sym[0])
             assert 'type' in i[1].keys(), '%s: type not in %s' % (sym[0], i[0])
             assert 'doc' in i[1].keys(), '%s: doc string not in %s' % (sym[0], i[0])
             assert 'css' in i[1].keys(), '%s: css not in %s' % (sym[0], i[0])

@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
-var reference = require("..");
+var references = require("..");
 
-var lint_ref = function(reference) {
-    var symbolizers = reference.symbolizers;
+var lint_ref = function(ver) {
+    var ref = references.version[ver]
+    var symbolizers = ref.symbolizers;
 
     console.log('Missing doc properties');
     console.log('----------------------');
@@ -48,11 +49,6 @@ var lint_ref = function(reference) {
     console.log(missing_doc_properties, 'missing default-value');
 }
 
-console.log('\n\n---> 2.0.1');
-lint_ref(reference.version['2.0.1']);
-
-console.log('\n\n---> 2.1.0');
-lint_ref(reference.version['2.1.0']);
-
-console.log('\n\n---> latest');
-lint_ref(reference.version['latest']);
+for (var key in references.version) {
+    lint_ref(key);
+};
