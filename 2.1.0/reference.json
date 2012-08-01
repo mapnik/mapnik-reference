@@ -380,7 +380,7 @@
                 ]
             }
         },
-        "markers": {
+        "marker": {
             "file": {
                 "css": "marker-file",
                 "doc": "An SVG file that this marker shows at each placement. If no file is given, the marker will show an ellipse.",
@@ -894,7 +894,7 @@
                 "doc": "Level of antialiasing of polygon pattern edges"
             },
             "opacity": {
-                "css": "polygon-opacity",
+                "css": "polygon-pattern-opacity",
                 "type": "float",
                 "doc": "(Default 1.0) - Apply an opacity level to the image used for the pattern",
                 "default-value": 1,
