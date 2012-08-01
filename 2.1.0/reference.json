@@ -741,12 +741,6 @@
                 "doc": "Transform the case of the characters",
                 "default-value": "none"
             },
-            "no-text": {
-                "css": "shield-no-text",
-                "type": "boolean",
-                "doc": "Whether the shield should make room for a text label.",
-                "default-value": "false"
-            },
             "justify-alignment": {
                 "css": "shield-justify-alignment",
                 "type": [
@@ -971,7 +965,7 @@
                 "default-meaning": "opaque",
                 "type": "float",
                 "doc": "The opacity of the raster symbolizer on top of other symbolizers."
-            }
+            },
             "filter-factor": {
                 "css": "raster-filter-factor",
                 "default-value": -1,

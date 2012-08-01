@@ -965,7 +965,7 @@
                 "default-meaning": "opaque",
                 "type": "float",
                 "doc": "The opacity of the raster symbolizer on top of other symbolizers."
-            }
+            },
             "filter-factor": {
                 "css": "raster-filter-factor",
                 "default-value": -1,
