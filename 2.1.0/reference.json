@@ -185,13 +185,20 @@
                 "default-value": 1,
                 "default-meaning": "opaque"
             },
+            "clip": {
+                "css": "polygon-clip",
+                "type": "boolean",
+                "default-value": true,
+                "default-meaning": "geometry will be clipped to map bounds before rendering",
+                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+            },
             "smooth": {
                 "css": "polygon-smooth",
                 "type": "float",
                 "default-value": 0,
                 "default-meaning": "no smoothing",
                 "range": "0-1",
-                "doc": "Smooths out polygon angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
+                "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
             "comp-op": {
                 "css": "polygon-comp-op",
@@ -292,7 +299,7 @@
                 "default-value": "none",
                 "default-meaning": "solid line"
             },
-            "stroke-dash-offset": {
+            "stroke-dashoffset": {
                 "css": "line-dash-offset",
                 "type": "numbers",
                 "doc": "valid parameter but not currently used in renderers",
@@ -312,7 +319,7 @@
                 "default-value": 0,
                 "default-meaning": "no smoothing",
                 "range": "0-1",
-                "doc": "Smooths out line angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
+                "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
             "offset": {
                 "css": "line-offset",
@@ -383,7 +390,14 @@
             },
             "opacity": {
                 "css": "marker-opacity",
-                "doc": "The overall opacity of the marker",
+                "doc": "The overall opacity of the marker, if set, overrides both the opacity of both the fill and stroke",
+                "default-value": 1,
+                "default-meaning": "The stroke-opacity and fill-opacity will be used",
+                "type": "float"
+            },
+            "fill-opacity": {
+                "css": "marker-fill-opacity",
+                "doc": "The fill opacity of the marker",
                 "default-value": 1,
                 "default-meaning": "opaque",
                 "type": "float"
@@ -482,6 +496,21 @@
                 "default-value": "",
                 "default-meaning": "No transformation",
                 "doc": "SVG transformation definition"
+            },
+            "clip": {
+                "css": "marker-clip",
+                "type": "boolean",
+                "default-value": true,
+                "default-meaning": "geometry will be clipped to map bounds before rendering",
+                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+            },
+            "smooth": {
+                "css": "marker-smooth",
+                "type": "float",
+                "default-value": 0,
+                "default-meaning": "no smoothing",
+                "range": "0-1",
+                "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
             "comp-op": {
                 "css": "marker-comp-op",
@@ -729,6 +758,13 @@
                 "doc": "Define how text in a shield's label is justified",
                 "default-value": "auto"
             },
+            "clip": {
+                "css": "shield-clip",
+                "type": "boolean",
+                "default-value": true,
+                "default-meaning": "geometry will be clipped to map bounds before rendering",
+                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+            },
             "comp-op": {
                 "css": "shield-comp-op",
                 "default-value": "src-over",
@@ -779,6 +815,63 @@
                 "default-value": "none",
                 "required": true,
                 "doc": "An image file to be repeated and warped along a line"
+            },
+            "clip": {
+                "css": "line-pattern-clip",
+                "type": "boolean",
+                "default-value": true,
+                "default-meaning": "geometry will be clipped to map bounds before rendering",
+                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+            },
+            "smooth": {
+                "css": "line-pattern-smooth",
+                "type": "float",
+                "default-value": 0,
+                "default-meaning": "no smoothing",
+                "range": "0-1",
+                "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
+            },
+            "comp-op": {
+                "css": "line-pattern-comp-op",
+                "default-value": "src-over",
+                "default-meaning": "add the current symbolizer on top of other symbolizer",
+                "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
+                "type": ["clear",
+                    "src",
+                    "dst",
+                    "src-over",
+                    "dst-over",
+                    "src-in",
+                    "dst-in",
+                    "src-out",
+                    "dst-out",
+                    "src-atop",
+                    "dst-atop",
+                    "xor",
+                    "plus",
+                    "minus",
+                    "multiply",
+                    "screen",
+                    "overlay",
+                    "darken",
+                    "lighten",
+                    "color-dodge",
+                    "color-burn",
+                    "hard-light",
+                    "soft-light",
+                    "difference",
+                    "exclusion",
+                    "contrast",
+                    "invert",
+                    "invert-rgb",
+                    "grain-merge",
+                    "grain-extract",
+                    "hue",
+                    "saturation",
+                    "color",
+                    "value",
+                    "colorize-alpha"
+                ]
             }
         },
         "polygon-pattern": {
@@ -805,6 +898,70 @@
                 "default-meaning": "fully antialiased",
                 "range": "0-1",
                 "doc": "Level of antialiasing of polygon pattern edges"
+            },
+            "opacity": {
+                "css": "polygon-opacity",
+                "type": "float",
+                "doc": "(Default 1.0) - Apply an opacity level to the image used for the pattern",
+                "default-value": 1,
+                "default-meaning": "The image is rendered without modifications"
+            },
+            "clip": {
+                "css": "polygon-pattern-clip",
+                "type": "boolean",
+                "default-value": true,
+                "default-meaning": "geometry will be clipped to map bounds before rendering",
+                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+            },
+            "smooth": {
+                "css": "polygon-pattern-smooth",
+                "type": "float",
+                "default-value": 0,
+                "default-meaning": "no smoothing",
+                "range": "0-1",
+                "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
+            },
+            "comp-op": {
+                "css": "polygon-pattern-comp-op",
+                "default-value": "src-over",
+                "default-meaning": "add the current symbolizer on top of other symbolizer",
+                "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
+                "type": ["clear",
+                    "src",
+                    "dst",
+                    "src-over",
+                    "dst-over",
+                    "src-in",
+                    "dst-in",
+                    "src-out",
+                    "dst-out",
+                    "src-atop",
+                    "dst-atop",
+                    "xor",
+                    "plus",
+                    "minus",
+                    "multiply",
+                    "screen",
+                    "overlay",
+                    "darken",
+                    "lighten",
+                    "color-dodge",
+                    "color-burn",
+                    "hard-light",
+                    "soft-light",
+                    "difference",
+                    "exclusion",
+                    "contrast",
+                    "invert",
+                    "invert-rgb",
+                    "grain-merge",
+                    "grain-extract",
+                    "hue",
+                    "saturation",
+                    "color",
+                    "value",
+                    "colorize-alpha"
+                ]
             }
         },
         "raster": {
@@ -814,19 +971,7 @@
                 "default-meaning": "opaque",
                 "type": "float",
                 "doc": "The opacity of the raster symbolizer on top of other symbolizers."
-            },
-            "mode": {
-                "css": "raster-mode",
-                "default-value": "src-over",
-                "default-meaning": "add the current layer on top of other layers",
-                "doc": "Composite operation. This defines how this layer should behave relative to layers atop or below it.",
-                "type": ["clear", "src", "dst", "src-over", "dst-over", "src-in", "dst-in", "src-out",
-                         "dst-out", "src-atop", "dst-atop", "xor", "plus", "minus", "multiply", "screen",
-                         "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light",
-                         "difference", "exclusion", "contrast", "invert", "invert-rgb", "grain-merge", "grain-extract"
-                ],
-                "doc": "The blending technique used to overlay this raster image on the layer below. 'src-over' simply covers the layer. Grain merge adds the two layers together and subtracts 128 from the value, making the resulting area sometimes high-contrast. Screen often gives a lighter, washed-out appearance. Multiply multiplies the pixels, giving a high-contrast result. Divide divides the upper layer by the lower layer, making a lighter version."
-            },
+            }
             "filter-factor": {
                 "css": "raster-filter-factor",
                 "default-value": -1,
@@ -1227,6 +1372,13 @@
                 "doc": "Define how text is justified",
                 "default-value": "auto",
                 "default-meaning": "Auto alignment means that text will be centered by default except when using the `placement-type` parameter - in that case either right or left justification will be used automatically depending on where the text could be fit given the `text-placements` directives"
+            },
+            "clip": {
+                "css": "text-clip",
+                "type": "boolean",
+                "default-value": true,
+                "default-meaning": "geometry will be clipped to map bounds before rendering",
+                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
             },
             "comp-op": {
                 "css": "text-comp-op",
