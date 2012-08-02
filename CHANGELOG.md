@@ -25,7 +25,7 @@
 
 #### 2.2.0
 
-* Add `raster-composite-operation`
+* Add `raster-comp-op` (temporarily named `raster-composite-operation`)
 
 #### 2.1.0
 
