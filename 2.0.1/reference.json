@@ -188,7 +188,7 @@
                 "default-value": "none",
                 "default-meaning": "solid line"
             },
-            "stroke-dash-offset": {
+            "stroke-dashoffset": {
                 "css": "line-dash-offset",
                 "type": "numbers",
                 "doc": "valid parameter but not currently used in renderers",
