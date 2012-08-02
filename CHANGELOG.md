@@ -1,5 +1,15 @@
 ## CHANGELOG
 
+#### 4.0.1
+
+Tagged Aug 2,2012
+
+Updated for Mapnik a22b31b0cc
+
+* Added `line-gamma-method` and `polygon-gamma-method`
+* Added `line-miterlimit`
+* Removed remaining `shield-no-text` from `latest/reference.json`
+
 #### 4.0.0
 
 Tagged Aug 1, 2012

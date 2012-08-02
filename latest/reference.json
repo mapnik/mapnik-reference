@@ -170,6 +170,13 @@
                 "default-meaning": "gray and fully opaque (alpha = 1), same as rgb(128,128,128)",
                 "doc": "Fill color to assign to a polygon"
             },
+            "fill-opacity": {
+                "css": "polygon-opacity",
+                "type": "float",
+                "doc": "The opacity of the polygon",
+                "default-value": 1,
+                "default-meaning": "opaque"
+            },
             "gamma": {
                 "css": "polygon-gamma",
                 "type": "float",
@@ -178,12 +185,18 @@
                 "range": "0-1",
                 "doc": "Level of antialiasing of polygon edges"
             },
-            "fill-opacity": {
-                "css": "polygon-opacity",
-                "type": "float",
-                "doc": "The opacity of the polygon",
-                "default-value": 1,
-                "default-meaning": "opaque"
+            "gamma-method": {
+                "css": "polygon-gamma-method",
+                "type": [
+                    "power",
+                    "linear",
+                    "none",
+                    "threshold",
+                    "multiply"
+                ],
+                "default-value": "power",
+                "default-meaning": "pow(x,gamma) is used to calculate pixel gamma, which produces slightly smoother line and polygon antialiasing than the 'linear' method, while other methods are usually only used to disable AA",
+                "doc": "An Antigrain Geometry specific rendering hint to control the quality of antialiasing. Under the hood in Mapnik this method is used in combination with the 'gamma' value (which defaults to 1). The methods are in the AGG source at https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions.h"
             },
             "clip": {
                 "css": "polygon-clip",
@@ -292,6 +305,19 @@
                 "range": "0-1",
                 "doc": "Level of antialiasing of stroke line"
             },
+            "stroke-gamma-method": {
+                "css": "line-gamma-method",
+                "type": [
+                    "power",
+                    "linear",
+                    "none",
+                    "threshold",
+                    "multiply"
+                ],
+                "default-value": "power",
+                "default-meaning": "pow(x,gamma) is used to calculate pixel gamma, which produces slightly smoother line and polygon antialiasing than the 'linear' method, while other methods are usually only used to disable AA",
+                "doc": "An Antigrain Geometry specific rendering hint to control the quality of antialiasing. Under the hood in Mapnik this method is used in combination with the 'gamma' value (which defaults to 1). The methods are in the AGG source at https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions.h"
+            },
             "stroke-dasharray": {
                 "css": "line-dasharray",
                 "type": "numbers",
@@ -302,9 +328,16 @@
             "stroke-dashoffset": {
                 "css": "line-dash-offset",
                 "type": "numbers",
-                "doc": "valid parameter but not currently used in renderers",
+                "doc": "valid parameter but not currently used in renderers (only exists for experimental svg support in Mapnik which is not yet enabled)",
                 "default-value": "none",
                 "default-meaning": "solid line"
+            },
+            "stroke-miterlimit": {
+                "css": "line-miterlimit",
+                "type": "float",
+                "doc": "The limit on the ratio of the miter length to the stroke-width. Used to automatically convert miter joins to bevel joins for sharp angles to avoid the miter extending beyond the thickness of the stroking path. Normally will not need to be set, but a larger value can sometimes help avoid jaggy artifacts.",
+                "default-value": 4.0,
+                "default-meaning": "Will auto-convert miters to bevel line joins when theta is less than 29 degrees as per the SVG spec: 'miterLength / stroke-width = 1 / sin ( theta / 2 )'"
             },
             "clip": {
                 "css": "line-clip",
@@ -740,12 +773,6 @@
                 ],
                 "doc": "Transform the case of the characters",
                 "default-value": "none"
-            },
-            "no-text": {
-                "css": "shield-no-text",
-                "type": "boolean",
-                "doc": "Whether the shield should make room for a text label.",
-                "default-value": "false"
             },
             "justify-alignment": {
                 "css": "shield-justify-alignment",
