@@ -1,5 +1,28 @@
 ## CHANGELOG
 
+#### 4.0.0
+
+Tagged Aug 1, 2012
+
+Updated for Mapnik a22b31b0cc
+
+* Now `transform` properties are `functions` type
+* Added `fill-opacity` for markers
+* Exposed clip and smooth on all appropriate symbolizers
+* Declared `text-orientation` as expression type
+* Matched `transform` naming with Mapnik
+* Fixed default value for `raster-scaling` to `near`
+* Added more `raster-scaling` types:
+  `near,spline36,hanning,hamming,hermite,kaiser,quadric,catrom,bessel,mitchell,sinc,blackman`
+* Removed `raster-mode`, use `raster-comp-op` instead
+* Added polygon-pattern-opacity - newly supported in Mapnik
+* Fixed up which symbolizers support `comp-op` (removed buildings, added line-pattern)
+* Removed `no-text` for shield symbolizer since Mapnik >= 2.1.x no longer uses this.
+* Fixed naming of `stroke-dashoffset`
+* Renamed all instances of `composite-operation` to `comp-op` to match mapnik/svg spec
+* Fixed `buffer-size` type in 2.0.1 reference (uri -> float)
+* Improved tests: run them with `make test`
+
 #### 3.1.0
 
 * Add `shield-allow-overlap`
