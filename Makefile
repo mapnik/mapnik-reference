@@ -1,5 +1,6 @@
-test:
-	./node_modules/mocha/bin/mocha
+all:
+
+check test: 
 	python test/test.py
 
 .PHONY: test
