@@ -1,6 +1,10 @@
 ## CHANGELOG
 
-#### xxxx
+#### 4.0.2
+
+Tagged Aug 8, 2012
+
+Updated when Mapnik master was at 7847af51e7
 
 * Made `point-file` optional
 * Added `marker-ignore-placement` to 2.0.1 as per backport (https://github.com/mapnik/mapnik/issues/1163)
@@ -8,9 +12,9 @@
 
 #### 4.0.1
 
-Tagged Aug 2,2012
+Tagged Aug 2, 2012
 
-Updated for Mapnik a22b31b0cc
+Updated when Mapnik master was at a22b31b0cc
 
 * Added `line-gamma-method` and `polygon-gamma-method`
 * Added `line-miterlimit`
@@ -20,7 +24,7 @@ Updated for Mapnik a22b31b0cc
 
 Tagged Aug 1, 2012
 
-Updated for Mapnik a22b31b0cc
+Updated when Mapnik master was at a22b31b0cc
 
 * Now `transform` properties are `functions` type
 * Added `fill-opacity` for markers
