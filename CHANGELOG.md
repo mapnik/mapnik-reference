@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+#### xxxx
+
+* Made `point-file` optional
+* Added `marker-ignore-placement` to 2.0.1 as per backport (https://github.com/mapnik/mapnik/issues/1163)
+* Added new 2.0.2 reference - an exact copy of 2.0.1 as no changes were made in Mapnik between these releases
+
 #### 4.0.1
 
 Tagged Aug 2,2012
