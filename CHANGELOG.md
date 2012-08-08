@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+#### 4.0.3
+
+Tagged Aug 8, 2012
+
+Updated when Mapnik master was at 7847af51e7
+
+* Corrected internally reported versions for `latest` and `2.0.2`
+
 #### 4.0.2
 
 Tagged Aug 8, 2012
