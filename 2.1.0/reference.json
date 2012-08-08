@@ -1086,7 +1086,7 @@
             "file": {
                 "css": "point-file",
                 "type": "uri",
-                "required": true,
+                "required": false,
                 "default-value": "none",
                 "doc": "Image file to represent a point"
             },
