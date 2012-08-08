@@ -13,6 +13,7 @@ for v in versions:
     print '-- testing %s/reference.json' % v
     reference = json.load(open('%s/reference.json' % v, 'r'))
     assert reference
+    assert reference['version'] == v,"%s not eq to %s" % (reference['version'],v)
     for sym in reference['symbolizers'].items():
         assert sym[1]
         for i in sym[1].items():
