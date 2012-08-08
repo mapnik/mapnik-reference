@@ -500,7 +500,7 @@
                 "css": "marker-ignore-placement",
                 "type": "boolean",
                 "default-value": false,
-                "default-meaning": "do not store the bbox of this marker in the collision detector cache",
+                "default-meaning": "do not store the bbox of this geometry in the collision detector cache",
                 "doc": "value to control whether the placement of the feature will prevent the placement of other features"
             },
             "spacing": {
@@ -1101,7 +1101,7 @@
                 "css": "point-ignore-placement",
                 "type": "boolean",
                 "default-value": false,
-                "default-meaning": "do not store the bbox of this point in the collision detector cache",
+                "default-meaning": "do not store the bbox of this geometry in the collision detector cache",
                 "doc": "value to control whether the placement of the feature will prevent the placement of other features"
             },
             "opacity": {
