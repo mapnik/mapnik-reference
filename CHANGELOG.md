@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+#### 4.0.4
+
+Tagged Aug 15, 2012
+
+Updated when Mapnik master was at 4cf1484
+
+* Removed experimental `colorize-alpha` comp-op to match Mapnik removal (https://github.com/mapnik/mapnik/issues/1371).
+
 #### 4.0.3
 
 Tagged Aug 8, 2012

@@ -1,5 +1,5 @@
 {
-    "version": "2.1.0",
+    "version": "latest",
     "style": {
         "name": {
         },
@@ -93,8 +93,7 @@
                     "hue",
                     "saturation",
                     "color",
-                    "value",
-                    "colorize-alpha"
+                    "value"
                 ]
             },
             "opacity": {
@@ -251,8 +250,7 @@
                     "hue",
                     "saturation",
                     "color",
-                    "value",
-                    "colorize-alpha"
+                    "value"
                 ]
             }
         },
@@ -408,8 +406,7 @@
                     "hue",
                     "saturation",
                     "color",
-                    "value",
-                    "colorize-alpha"
+                    "value"
                 ]
             }
         },
@@ -583,8 +580,7 @@
                     "hue",
                     "saturation",
                     "color",
-                    "value",
-                    "colorize-alpha"
+                    "value"
                 ]
             }
         },
@@ -830,8 +826,7 @@
                     "hue",
                     "saturation",
                     "color",
-                    "value",
-                    "colorize-alpha"
+                    "value"
                 ]
             }
         },
@@ -896,8 +891,7 @@
                     "hue",
                     "saturation",
                     "color",
-                    "value",
-                    "colorize-alpha"
+                    "value"
                 ]
             }
         },
@@ -986,8 +980,7 @@
                     "hue",
                     "saturation",
                     "color",
-                    "value",
-                    "colorize-alpha"
+                    "value"
                 ]
             }
         },
@@ -1077,8 +1070,7 @@
                     "hue",
                     "saturation",
                     "color",
-                    "value",
-                    "colorize-alpha"
+                    "value"
                 ]
             }
         },
@@ -1173,8 +1165,7 @@
                     "hue",
                     "saturation",
                     "color",
-                    "value",
-                    "colorize-alpha"
+                    "value"
                 ]
             }
         },
@@ -1445,8 +1436,7 @@
                     "hue",
                     "saturation",
                     "color",
-                    "value",
-                    "colorize-alpha"
+                    "value"
                 ]
             }
         },
