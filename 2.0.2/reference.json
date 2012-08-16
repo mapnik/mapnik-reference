@@ -259,7 +259,7 @@
             "width": {
                 "css": "marker-width",
                 "default-value": 10,
-                "doc": "The height of the marker, if using one of the default types.",
+                "doc": "The width of the marker, if using one of the default types.",
                 "type": "float"
             },
             "height": {
