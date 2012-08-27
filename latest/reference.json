@@ -211,7 +211,6 @@
                 "default-meaning": "no separate buffer will be used and no alpha will be applied to the style after rendering"
             }
         },
-
         "map": {
             "background-color": {
                 "css": "background-color",
@@ -574,9 +573,9 @@
                     "line",
                     "interior"
                 ],
-                "default-value": "point"
+                "default-value": "point",
                 "default-meaning": "Place markers at the center point (centroid) of the geometry",
-                "doc": "Attempt to place markers on a point, in the center of a polygon, or if markers-placement:line, then multiple times along a line. 'interior' placement can be used to ensure that points placed on polygons are forced to be inside the polygon interior",
+                "doc": "Attempt to place markers on a point, in the center of a polygon, or if markers-placement:line, then multiple times along a line. 'interior' placement can be used to ensure that points placed on polygons are forced to be inside the polygon interior"
             },
             "marker-type": {
                 "css": "marker-type",
