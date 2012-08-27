@@ -1,37 +1,144 @@
 {
     "version": "2.1.0",
     "style": {
-        "name": {
-        },
         "filter-mode": {
-        }
-    },
-    "font-set": {
-        "name": {
+            "type": [
+                "all",
+                "first"
+            ],
+            "doc": "Control the processing behavior of Rule filters within a Style. If 'all' is used then all Rules are processed sequentially independent of whether any previous filters matched. If 'first' is used then it means processing ends after the first match (a positive filter evaluation) and no further Rules in the Style are processed ('first' is usually the default for CSS implementations on top of Mapnik to simplify translation from CSS to Mapnik XML)",
+            "default-value": "all",
+            "default-meaning": "All Rules in a Style are processed whether they have filters or not and whether or not the filter conditions evaluate to true."
         },
-        "font": {
-            "face-name": {
-            }
+        "image-filters": {
+            "css": "image-filters",
+            "default-value": "none",
+            "default-meaning": "no filters",
+            "type": "functions",
+            "functions": [
+                ["agg-stack-blur", 2],
+                ["emboss", 0],
+                ["blur", 0],
+                ["gray", 0],
+                ["sobel", 0],
+                ["edge-detect", 0],
+                ["x-gradient", 0],
+                ["y-gradient", 0],
+                ["invert", 0],
+                ["sharpen", 0]
+            ],
+            "doc": "A list of image filters."
+        },
+        "comp-op": {
+            "css": "comp-op",
+            "default-value": "src-over",
+            "default-meaning": "add the current layer on top of other layers",
+            "doc": "Composite operation. This defines how this layer should behave relative to layers atop or below it.",
+            "type": ["clear",
+                "src",
+                "dst",
+                "src-over",
+                "dst-over",
+                "src-in",
+                "dst-in",
+                "src-out",
+                "dst-out",
+                "src-atop",
+                "dst-atop",
+                "xor",
+                "plus",
+                "minus",
+                "multiply",
+                "screen",
+                "overlay",
+                "darken",
+                "lighten",
+                "color-dodge",
+                "color-burn",
+                "hard-light",
+                "soft-light",
+                "difference",
+                "exclusion",
+                "contrast",
+                "invert",
+                "invert-rgb",
+                "grain-merge",
+                "grain-extract",
+                "hue",
+                "saturation",
+                "color",
+                "value"
+            ]
+        },
+        "opacity": {
+            "css": "opacity",
+            "type": "float",
+            "doc": "An alpha value for the style (which means an alpha applied to all features in separate buffer and then composited back to main buffer)",
+            "default-value": 1,
+            "default-meaning": "no separate buffer will be used and no alpha will be applied to the style after rendering"
         }
     },
     "layer" : {
         "name": {
+            "default-value": "",
+            "type":"string",
+            "required" : true,
+            "default-meaning": "No layer name has been provided",
+            "doc": "The name of a layer. Can be anything you wish and is not strictly validated, but ideally unique  in the map"
         },
         "srs": {
+            "default-value": "",
+            "type":"string",
+            "default-meaning": "No srs value is provided and the value will be inherited from the Map's srs",
+            "doc": "The spatial reference system definition for the layer, aka the projection. Can either be a proj4 literal string like '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs' or, if the proper proj4 epsg/nad/etc identifier files are installed, a string that uses an id like: '+init=epsg:4326'"
         },
         "status": {
-        },
-        "title": {
-        },
-        "abstract": {
+            "default-value": true,
+            "type":"boolean",
+            "default-meaning": "This layer will be marked as active and available for processing",
+            "doc": "A property that can be set to false to disable this layer from being processed"
         },
         "minzoom": {
+            "default-value": "0",
+            "type":"float",
+            "default-meaning": "The layer will be visible at the minimum possible scale",
+            "doc": "The minimum scale denominator that this layer will be visible at. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6"
         },
         "maxzoom": {
+            "default-value": "1.79769e+308",
+            "type":"float",
+            "default-meaning": "The layer will be visible at the maximum possible scale",
+            "doc": "The maximum scale denominator that this layer will be visible at. The default is the numeric limit of the C++ double type, which may vary slightly by system, but is likely a massive number like 1.79769e+308 and ensures that this layer will always be visible unless the value is reduced. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6"
         },
         "queryable": {
+            "default-value": false,
+            "type":"boolean",
+            "default-meaning": "The layer will not be available for the direct querying of data values",
+            "doc": "This property was added for GetFeatureInfo/WMS compatibility and is rarely used. It is off by default meaning that in a WMS context the layer will not be able to be queried unless the property is explicitly set to true"
         },
         "clear-label-cache": {
+            "default-value": false,
+            "type":"boolean",
+            "default-meaning": "The renderer's collision detector cache (used for avoiding duplicate labels and overlapping markers) will not be cleared immediately before processing this layer",
+            "doc": "This property, by default off, can be enabled to allow a user to clear the collision detector cache before a given layer is processed. This may be desirable to ensure that a given layers data shows up on the map even if it normally would not because of collisions with previously rendered labels or markers"
+        },
+        "group-by": {
+            "default-value": "",
+            "type":"string",
+            "default-meaning": "No special layer grouping will be used during rendering",
+            "doc": "https://github.com/mapnik/mapnik/wiki/Grouped-rendering"
+        },
+        "buffer-size": {
+            "default-value": "0",
+            "type":"float",
+            "default-meaning": "No buffer will be used",
+            "doc": "Extra tolerance around the Layer extent (in pixels) used to when querying and (potentially) clipping the layer data during rendering"
+        },
+        "maximum-extent": {
+            "default-value": "none",
+            "type":"bbox",
+            "default-meaning": "No clipping extent will be used",
+            "doc": "An extent to be used to limit the bounds used to query this specific layer data during rendering. Should be minx, miny, maxx, maxy in the coordinates of the Layer."
         }
     },
     "symbolizers" : {
@@ -123,6 +230,8 @@
             "srs": {
                 "css": "srs",
                 "type": "string",
+                "default-value": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+                "default-meaning": "The proj4 literal of EPSG:4326 is assumed to be the Map's spatial reference and all data from layers within this map will be plotted using this coordinate system. If any layers do not declare an srs value then they will be assumed to be in the same srs as the Map and not transformations will be needed to plot them in the Map's coordinate space",
                 "doc": "Map spatial reference (proj4 string)"
             },
             "buffer-size": {
@@ -131,6 +240,13 @@
                 "type":"float",
                 "default-meaning": "No buffer will be used",
                 "doc": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with \"avoid-edges\"."
+            },
+            "maximum-extent": {
+                "css": "",
+                "default-value": "none",
+                "type":"bbox",
+                "default-meaning": "No clipping extent will be used",
+                "doc": "An extent to be used to limit the bounds used to query all layers during rendering. Should be minx, miny, maxx, maxy in the coordinates of the Map."
             },
             "base": {
                 "css": "base",
@@ -454,10 +570,12 @@
                 "css": "marker-placement",
                 "type": [
                     "point",
-                    "line"
+                    "line",
+                    "interior"
                 ],
-                "doc": "Attempt to place markers on a point once or on a line repeatedly",
-                "default-value": "line"
+                "default-value": "point",
+                "default-meaning": "Place markers at the center point (centroid) of the geometry",
+                "doc": "Attempt to place markers on a point, in the center of a polygon, or if markers-placement:line, then multiple times along a line. 'interior' placement can be used to ensure that points placed on polygons are forced to be inside the polygon interior"
             },
             "marker-type": {
                 "css": "marker-type",
@@ -588,9 +706,15 @@
             "name": {
                 "css": "shield-name",
                 "type": "expression",
-                "required": true,
                 "serialization": "content",
                 "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]"
+            },
+            "file": {
+                "css": "shield-file",
+                "required": true,
+                "type": "uri",
+                "default-value": "none",
+                "doc": "Image file to render behind the shield text"
             },
             "face-name": {
                 "css": "shield-face-name",
@@ -694,12 +818,6 @@
                 "css": "shield-line-spacing",
                 "doc": "Vertical spacing between lines of multiline labels (in pixels)",
                 "type": "float"
-            },
-            "file": {
-                "css": "shield-file",
-                "type": "uri",
-                "default-value": "none",
-                "doc": "Image file to render behind the shield text"
             },
             "dx": {
                 "css": "shield-text-dx",
@@ -1242,8 +1360,8 @@
             "max-char-angle-delta": {
                 "css": "text-max-char-angle-delta",
                 "type": "float",
-                "default-value": "none",
-                "doc": "If present, the maximum angle change, in degrees, allowed between adjacent characters in a label.  This will stop label placement around sharp corners."
+                "default-value": "22.5",
+                "doc": "The maximum angle change, in degrees, allowed between adjacent characters in a label. This value internally is converted to radians to the default is 22.5*math.pi/180.0. The higher the value the fewer labels will be placed around around sharp corners."
             },
             "fill": {
                 "css": "text-fill",
