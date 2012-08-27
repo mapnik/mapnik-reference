@@ -211,6 +211,7 @@
                 "default-meaning": "no separate buffer will be used and no alpha will be applied to the style after rendering"
             }
         },
+
         "map": {
             "background-color": {
                 "css": "background-color",
@@ -230,6 +231,8 @@
             "srs": {
                 "css": "srs",
                 "type": "string",
+                "default-value": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+                "default-meaning": "The proj4 literal of EPSG:4326 is assumed to be the Map's spatial reference and all data from layers within this map will be plotted using this coordinate system. If any layers do not declare an srs value then they will be assumed to be in the same srs as the Map and not transformations will be needed to plot them in the Map's coordinate space",
                 "doc": "Map spatial reference (proj4 string)"
             },
             "buffer-size": {
@@ -238,6 +241,13 @@
                 "type":"float",
                 "default-meaning": "No buffer will be used",
                 "doc": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with \"avoid-edges\"."
+            },
+            "maximum-extent": {
+                "css": "",
+                "default-value": "none",
+                "type":"bbox",
+                "default-meaning": "No clipping extent will be used",
+                "doc": "An extent to be used to limit the bounds used to query all layers during rendering. Should be minx, miny, maxx, maxy in the coordinates of the Map."
             },
             "base": {
                 "css": "base",
