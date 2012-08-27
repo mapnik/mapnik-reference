@@ -1,17 +1,81 @@
 {
     "version": "latest",
     "style": {
-        "name": {
-        },
         "filter-mode": {
-        }
-    },
-    "font-set": {
-        "name": {
+            "type": [
+                "all",
+                "first"
+            ],
+            "doc": "Control the processing behavior of Rule filters within a Style. If 'all' is used then all Rules are processed sequentially independent of whether any previous filters matched. If 'first' is used then it means processing ends after the first match (a positive filter evaluation) and no further Rules in the Style are processed ('first' is usually the default for CSS implementations on top of Mapnik to simplify translation from CSS to Mapnik XML)",
+            "default-value": "all",
+            "default-meaning": "All Rules in a Style are processed whether they have filters or not and whether or not the filter conditions evaluate to true."
         },
-        "font": {
-            "face-name": {
-            }
+        "image-filters": {
+            "css": "image-filters",
+            "default-value": "none",
+            "default-meaning": "no filters",
+            "type": "functions",
+            "functions": [
+                ["agg-stack-blur", 2],
+                ["emboss", 0],
+                ["blur", 0],
+                ["gray", 0],
+                ["sobel", 0],
+                ["edge-detect", 0],
+                ["x-gradient", 0],
+                ["y-gradient", 0],
+                ["invert", 0],
+                ["sharpen", 0]
+            ],
+            "doc": "A list of image filters."
+        },
+        "comp-op": {
+            "css": "comp-op",
+            "default-value": "src-over",
+            "default-meaning": "add the current layer on top of other layers",
+            "doc": "Composite operation. This defines how this layer should behave relative to layers atop or below it.",
+            "type": ["clear",
+                "src",
+                "dst",
+                "src-over",
+                "dst-over",
+                "src-in",
+                "dst-in",
+                "src-out",
+                "dst-out",
+                "src-atop",
+                "dst-atop",
+                "xor",
+                "plus",
+                "minus",
+                "multiply",
+                "screen",
+                "overlay",
+                "darken",
+                "lighten",
+                "color-dodge",
+                "color-burn",
+                "hard-light",
+                "soft-light",
+                "difference",
+                "exclusion",
+                "contrast",
+                "invert",
+                "invert-rgb",
+                "grain-merge",
+                "grain-extract",
+                "hue",
+                "saturation",
+                "color",
+                "value"
+            ]
+        },
+        "opacity": {
+            "css": "opacity",
+            "type": "float",
+            "doc": "An alpha value for the style (which means an alpha applied to all features in separate buffer and then composited back to main buffer)",
+            "default-value": 1,
+            "default-meaning": "no separate buffer will be used and no alpha will be applied to the style after rendering"
         }
     },
     "layer" : {
