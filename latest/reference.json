@@ -571,10 +571,12 @@
                 "css": "marker-placement",
                 "type": [
                     "point",
-                    "line"
+                    "line",
+                    "interior"
                 ],
-                "doc": "Attempt to place markers on a point once or on a line repeatedly",
-                "default-value": "line"
+                "default-value": "point"
+                "default-meaning": "Place markers at the center point (centroid) of the geometry",
+                "doc": "Attempt to place markers on a point, in the center of a polygon, or if markers-placement:line, then multiple times along a line. 'interior' placement can be used to ensure that points placed on polygons are forced to be inside the polygon interior",
             },
             "marker-type": {
                 "css": "marker-type",
