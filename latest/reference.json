@@ -705,7 +705,6 @@
             "name": {
                 "css": "shield-name",
                 "type": "expression",
-                "required": true,
                 "serialization": "content",
                 "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]"
             },
@@ -814,6 +813,7 @@
             },
             "file": {
                 "css": "shield-file",
+                "required": true,
                 "type": "uri",
                 "default-value": "none",
                 "doc": "Image file to render behind the shield text"
