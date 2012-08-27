@@ -1359,8 +1359,8 @@
             "max-char-angle-delta": {
                 "css": "text-max-char-angle-delta",
                 "type": "float",
-                "default-value": "none",
-                "doc": "If present, the maximum angle change, in degrees, allowed between adjacent characters in a label.  This will stop label placement around sharp corners."
+                "default-value": "22.5",
+                "doc": "The maximum angle change, in degrees, allowed between adjacent characters in a label. This value internally is converted to radians to the default is 22.5*math.pi/180.0. The higher the value the fewer labels will be placed around around sharp corners."
             },
             "fill": {
                 "css": "text-fill",
