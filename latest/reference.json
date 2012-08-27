@@ -709,6 +709,13 @@
                 "serialization": "content",
                 "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]"
             },
+            "file": {
+                "css": "shield-file",
+                "required": true,
+                "type": "uri",
+                "default-value": "none",
+                "doc": "Image file to render behind the shield text"
+            },
             "face-name": {
                 "css": "shield-face-name",
                 "type": "string",
@@ -811,13 +818,6 @@
                 "css": "shield-line-spacing",
                 "doc": "Vertical spacing between lines of multiline labels (in pixels)",
                 "type": "float"
-            },
-            "file": {
-                "css": "shield-file",
-                "required": true,
-                "type": "uri",
-                "default-value": "none",
-                "doc": "Image file to render behind the shield text"
             },
             "dx": {
                 "css": "shield-text-dx",
