@@ -1,37 +1,59 @@
 {
     "version": "2.0.2",
     "style": {
-        "name": {
-        },
         "filter-mode": {
-        }
-    },
-    "font-set": {
-        "name": {
-        },
-        "font": {
-            "face-name": {
-            }
+            "type": [
+                "all",
+                "first"
+            ],
+            "doc": "Control the processing behavior of Rule filters within a Style. If 'all' is used then all Rules are processed sequentially independent of whether any previous filters matched. If 'first' is used then it means processing ends after the first match (a positive filter evaluation) and no further Rules in the Style are processed ('first' is usually the default for CSS implementations on top of Mapnik to simplify translation from CSS to Mapnik XML)",
+            "default-value": "all",
+            "default-meaning": "All Rules in a Style are processed whether they have filters or not and whether or not the filter conditions evaluate to true."
         }
     },
     "layer" : {
         "name": {
+            "default-value": "",
+            "type":"string",
+            "required" : true,
+            "default-meaning": "No layer name has been provided",
+            "doc": "The name of a layer. Can be anything you wish and is not strictly validated, but ideally unique  in the map"
         },
         "srs": {
+            "default-value": "",
+            "type":"string",
+            "default-meaning": "No srs value is provided and the value will be inherited from the Map's srs",
+            "doc": "The spatial reference system definition for the layer, aka the projection. Can either be a proj4 literal string like '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs' or, if the proper proj4 epsg/nad/etc identifier files are installed, a string that uses an id like: '+init=epsg:4326'"
         },
         "status": {
-        },
-        "title": {
-        },
-        "abstract": {
+            "default-value": true,
+            "type":"boolean",
+            "default-meaning": "This layer will be marked as active and available for processing",
+            "doc": "A property that can be set to false to disable this layer from being processed"
         },
         "minzoom": {
+            "default-value": "0",
+            "type":"float",
+            "default-meaning": "The layer will be visible at the minimum possible scale",
+            "doc": "The minimum scale denominator that this layer will be visible at. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6"
         },
         "maxzoom": {
+            "default-value": "1.79769e+308",
+            "type":"float",
+            "default-meaning": "The layer will be visible at the maximum possible scale",
+            "doc": "The maximum scale denominator that this layer will be visible at. The default is the numeric limit of the C++ double type, which may vary slightly by system, but is likely a massive number like 1.79769e+308 and ensures that this layer will always be visible unless the value is reduced. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6"
         },
         "queryable": {
+            "default-value": false,
+            "type":"boolean",
+            "default-meaning": "The layer will not be available for the direct querying of data values",
+            "doc": "This property was added for GetFeatureInfo/WMS compatibility and is rarely used. It is off by default meaning that in a WMS context the layer will not be able to be queried unless the property is explicitly set to true"
         },
         "clear-label-cache": {
+            "default-value": false,
+            "type":"boolean",
+            "default-meaning": "The renderer's collision detector cache (used for avoiding duplicate labels and overlapping markers) will not be cleared immediately before processing this layer",
+            "doc": "This property, by default off, can be enabled to allow a user to clear the collision detector cache before a given layer is processed. This may be desirable to ensure that a given layers data shows up on the map even if it normally would not because of collisions with previously rendered labels or markers"
         }
     },
     "symbolizers" : {
@@ -54,6 +76,8 @@
             "srs": {
                 "css": "srs",
                 "type": "string",
+                "default-value": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+                "default-meaning": "The proj4 literal of EPSG:4326 is assumed to be the Map's spatial reference and all data from layers within this map will be plotted using this coordinate system. If any layers do not declare an srs value then they will be assumed to be in the same srs as the Map and not transformations will be needed to plot them in the Map's coordinate space",
                 "doc": "Map spatial reference (proj4 string)"
             },
             "buffer-size": {
@@ -63,9 +87,15 @@
                 "default-meaning": "No buffer will be used",
                 "doc": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with \"avoid-edges\"."
             },
+            "maximum-extent": {
+                "css": "",
+                "default-value": "none",
+                "type":"bbox",
+                "default-meaning": "No clipping extent will be used",
+                "doc": "An extent to be used to limit the bounds used to query all layers during rendering. Should be minx, miny, maxx, maxy in the coordinates of the Map."
+            },
             "base": {
                 "css": "base",
-                "api": "",
                 "default-value": "",
                 "default-meaning": "This base path defaults to an empty string meaning that any relative paths to files referenced in styles or layers will be interpreted relative to the application process.",
                 "type": "string",
@@ -73,7 +103,6 @@
             },
             "paths-from-xml": {
                 "css": "",
-                "api": "",
                 "default-value": true,
                 "default-meaning": "Paths read from XML will be interpreted from the location of the XML",
                 "type": "boolean",
@@ -81,7 +110,6 @@
             },
             "minimum-version": {
                 "css": "",
-                "api": "",
                 "default-value": "none",
                 "default-meaning": "Mapnik version will not be detected and no error will be thrown about compatibility",
                 "type": "string",
@@ -90,7 +118,6 @@
             "font-directory": {
                 "css": "font-directory",
                 "type": "uri",
-                "api": "",
                 "default-value": "none",
                 "default-meaning": "No map-specific fonts will be registered",
                 "doc": "Path to a directory which holds fonts which should be registered when the Map is loaded (in addition to any fonts that may be automatically registered)."
