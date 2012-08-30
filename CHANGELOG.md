@@ -1,5 +1,25 @@
 ## CHANGELOG
 
+#### 4.0.5
+
+Tagged Aug 30, 2012
+
+Updated when Mapnik master was at 2e44e8c4
+
+* Various docs fixes
+
+* Added `interior` option for `markers-placement`
+
+* Fixed required values for shields with Mapnik >= 2.1
+
+* Added `map-maximum-extent`
+
+* Fixed up layer and style properties in all versions
+
+* Remove `font-set` which was uneeded
+
+* Fixed doc string for `marker-width`.
+
 #### 4.0.4
 
 Tagged Aug 15, 2012
