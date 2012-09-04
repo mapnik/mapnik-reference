@@ -778,9 +778,9 @@
             },
             "wrap-width": {
                 "css": "shield-wrap-width",
-                "type": "float",
+                "type": "unsigned",
                 "default-value": 0,
-                "doc": "Length before wrapping long names."
+                "doc": "Length of a chunk of text in characters before wrapping text"
             },
             "wrap-before": {
                 "css": "shield-wrap-before",
@@ -817,7 +817,7 @@
             "line-spacing": {
                 "css": "shield-line-spacing",
                 "doc": "Vertical spacing between lines of multiline labels (in pixels)",
-                "type": "float"
+                "type": "unsigned"
             },
             "dx": {
                 "css": "shield-text-dx",
@@ -1305,7 +1305,7 @@
             },
             "size": {
                 "css": "text-size",
-                "type": "unsigned",
+                "type": "float",
                 "default-value": 10,
                 "doc": "Text size in pixels"
             },
@@ -1336,7 +1336,7 @@
             "spacing": {
                 "css": "text-spacing",
                 "type": "unsigned",
-                "doc": "Distance between repeated text labels on a line"
+                "doc": "Distance between repeated text labels on a line (aka. label-spacing)"
             },
             "character-spacing": {
                 "css": "text-character-spacing",
