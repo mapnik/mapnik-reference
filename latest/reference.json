@@ -810,7 +810,7 @@
             },
             "character-spacing": {
                 "css": "shield-character-spacing",
-                "type": "float",
+                "type": "unsigned",
                 "default-value": 0,
                 "doc": "Horizontal spacing between characters (in pixels). Currently works for point placement only, not line placement."
             },
@@ -1147,7 +1147,7 @@
                 "css": "raster-mesh-size",
                 "default-value": 16,
                 "default-meaning": "Reprojection mesh will be 1/16 of the resolution of the source image",
-                "type": "integer",
+                "type": "unsigned",
                 "doc": "A reduced resolution mesh is used for raster reprojection, and the total image size is divided by the mesh-size to determine the quality of that mesh. Values for mesh-size larger than the default will result in faster reprojection but might lead to distortion."
             },
             "comp-op": {
@@ -1305,7 +1305,7 @@
             },
             "size": {
                 "css": "text-size",
-                "type": "float",
+                "type": "unsigned",
                 "default-value": 10,
                 "doc": "Text size in pixels"
             },
@@ -1313,14 +1313,13 @@
                 "css": "text-ratio",
                 "doc": "Define the amount of text (of the total) present on successive lines when wrapping occurs",
                 "default-value": 0,
-                "type": "float",
-                "type": "none"
+                "type": "unsigned"
             },
             "wrap-width": {
                 "css": "text-wrap-width",
                 "doc": "Length of a chunk of text in characters before wrapping text",
                 "default-value": 0,
-                "type": "float"
+                "type": "unsigned"
             },
             "wrap-before": {
                 "css": "text-wrap-before",
@@ -1336,7 +1335,7 @@
             },
             "spacing": {
                 "css": "text-spacing",
-                "type": "float",
+                "type": "unsigned",
                 "doc": "Distance between repeated text labels on a line"
             },
             "character-spacing": {
@@ -1348,13 +1347,13 @@
             "line-spacing": {
                 "css": "text-line-spacing",
                 "default-value": 0,
-                "type": "float",
+                "type": "unsigned",
                 "doc": "Vertical spacing adjustment between lines in pixels"
             },
             "label-position-tolerance": {
                 "css": "text-label-position-tolerance",
                 "default-value": 0,
-                "type": "float",
+                "type": "unsigned",
                 "doc": "Allows the label to be displaced from its ideal position by a number of pixels"
             },
             "max-char-angle-delta": {
