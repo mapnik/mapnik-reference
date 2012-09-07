@@ -778,9 +778,9 @@
             },
             "wrap-width": {
                 "css": "shield-wrap-width",
-                "type": "float",
+                "type": "unsigned",
                 "default-value": 0,
-                "doc": "Length before wrapping long names."
+                "doc": "Length of a chunk of text in characters before wrapping text"
             },
             "wrap-before": {
                 "css": "shield-wrap-before",
@@ -810,14 +810,14 @@
             },
             "character-spacing": {
                 "css": "shield-character-spacing",
-                "type": "float",
+                "type": "unsigned",
                 "default-value": 0,
                 "doc": "Horizontal spacing between characters (in pixels). Currently works for point placement only, not line placement."
             },
             "line-spacing": {
                 "css": "shield-line-spacing",
                 "doc": "Vertical spacing between lines of multiline labels (in pixels)",
-                "type": "float"
+                "type": "unsigned"
             },
             "dx": {
                 "css": "shield-text-dx",
@@ -1147,7 +1147,7 @@
                 "css": "raster-mesh-size",
                 "default-value": 16,
                 "default-meaning": "Reprojection mesh will be 1/16 of the resolution of the source image",
-                "type": "integer",
+                "type": "unsigned",
                 "doc": "A reduced resolution mesh is used for raster reprojection, and the total image size is divided by the mesh-size to determine the quality of that mesh. Values for mesh-size larger than the default will result in faster reprojection but might lead to distortion."
             },
             "comp-op": {
@@ -1313,13 +1313,13 @@
                 "css": "text-ratio",
                 "doc": "Define the amount of text (of the total) present on successive lines when wrapping occurs",
                 "default-value": 0,
-                "type": "float"
+                "type": "unsigned"
             },
             "wrap-width": {
                 "css": "text-wrap-width",
                 "doc": "Length of a chunk of text in characters before wrapping text",
                 "default-value": 0,
-                "type": "float"
+                "type": "unsigned"
             },
             "wrap-before": {
                 "css": "text-wrap-before",
@@ -1335,8 +1335,8 @@
             },
             "spacing": {
                 "css": "text-spacing",
-                "type": "float",
-                "doc": "Distance between repeated text labels on a line"
+                "type": "unsigned",
+                "doc": "Distance between repeated text labels on a line (aka. label-spacing)"
             },
             "character-spacing": {
                 "css": "text-character-spacing",
@@ -1347,14 +1347,14 @@
             "line-spacing": {
                 "css": "text-line-spacing",
                 "default-value": 0,
-                "type": "float",
+                "type": "unsigned",
                 "doc": "Vertical spacing adjustment between lines in pixels"
             },
             "label-position-tolerance": {
                 "css": "text-label-position-tolerance",
                 "default-value": 0,
-                "type": "float",
-                "doc": "Allows the label to be displaced from its ideal position by a number of pixels"
+                "type": "unsigned",
+                "doc": "Allows the label to be displaced from its ideal position by a number of pixels (only works with placement:line)"
             },
             "max-char-angle-delta": {
                 "css": "text-max-char-angle-delta",
@@ -1472,7 +1472,7 @@
                 "css": "text-placements",
                 "type": "string",
                 "default-value": "",
-                "doc": "If \"placement-type\" is set to \"simple\", use this \"POSITIONS,[SIZES]\" string. See TextSymbolizer docs for format."
+                "doc": "If \"placement-type\" is set to \"simple\", use this \"POSITIONS,[SIZES]\" string. An example is `text-placements: \"E,NE,SE,W,NW,SW\";` "
             },
             "text-transform": {
                 "css": "text-transform",

@@ -2,6 +2,10 @@
 
 ### 5.0.0
 
+Tagged Sept 6, 2012
+
+Updated when Mapnik master was at a513d3f97
+
 * Updates the schema by introducing a `"unsigned"` type for integer values.
   Carto and other parsers will be backwards-compatible with values specified
   in floats by rounding them to integers.
