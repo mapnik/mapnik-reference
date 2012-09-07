@@ -1354,7 +1354,7 @@
                 "css": "text-label-position-tolerance",
                 "default-value": 0,
                 "type": "unsigned",
-                "doc": "Allows the label to be displaced from its ideal position by a number of pixels"
+                "doc": "Allows the label to be displaced from its ideal position by a number of pixels (only works with placement:line)"
             },
             "max-char-angle-delta": {
                 "css": "text-max-char-angle-delta",
@@ -1472,7 +1472,7 @@
                 "css": "text-placements",
                 "type": "string",
                 "default-value": "",
-                "doc": "If \"placement-type\" is set to \"simple\", use this \"POSITIONS,[SIZES]\" string. See TextSymbolizer docs for format."
+                "doc": "If \"placement-type\" is set to \"simple\", use this \"POSITIONS,[SIZES]\" string. An example is `text-placements: \"E,NE,SE,W,NW,SW\";` "
             },
             "text-transform": {
                 "css": "text-transform",
