@@ -1,8 +1,8 @@
 # mapnik-reference
 
-`mapnik-reference` is a parse-able spec of what Mapnik can do - what symbolizers
-it supports and the properties they can contain. It's useful for building
-parsers, tests, compilers, and syntax highlighting/checking for languages.
+`mapnik-reference` is a parse-able spec of what Mapnik can do - what main structures
+it supports (like layers, styles, and symbolizers) and the properties they can contain.
+It's useful for building parsers, tests, compilers, and syntax highlighting/checking for languages.
 
 ## Versioning
 
@@ -21,7 +21,6 @@ The structure of the file is as such:
 
 * `version`: the version of Mapnik targeted. Same as the containing directory.
 * `style`: properties of the `Style` XML element
-* `font-set`: properties of the `FontSet` XML element
 * `layer`: properties of the `Layer` XML element
 * `symbolizers/*`: properties that apply to **all** symbolizers
 * `symbolizers/symbolizer`: properties that apply to **each** type of symbolizer
@@ -29,7 +28,7 @@ The structure of the file is as such:
 
 ## Using
 
-This is a valid [npm](http://npmjs.org/) module and thus is pretty easy to use from
+This is a valid [npm](http://npmjs.org/) module and therefore can easily be used with
 [node.js](http://nodejs.org/).
 
     npm install mapnik-reference
@@ -43,7 +42,8 @@ var data = mapnik_reference.version['2.1.0'];
 ```
 
 Other implementations will want to simply copy the [JSON](http://www.json.org/) file
-from the desired implementation, like `2.0.1/reference.json`.
+from the desired implementation, like `2.0.1/reference.json`. For python we could consider
+uploading to pypi if there is interest.
 
 The file can then be parsed with any of the many [json parsers](http://www.json.org/).
 
@@ -56,3 +56,4 @@ Tests require python:
 ## Users
 
 * [carto.js](https://github.com/mapbox/carto)
+* Mapnik itself (the util/validate-mapnik-instance.py is used to check binding consistency like in [#1427](https://github.com/mapnik/mapnik/issues/1427))

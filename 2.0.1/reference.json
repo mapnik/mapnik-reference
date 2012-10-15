@@ -668,8 +668,7 @@
                 "css": "text-ratio",
                 "doc": "Define the amount of text (of the total) present on successive lines when wrapping occurs",
                 "default-value": 0,
-                "type": "float",
-                "type": "none"
+                "type": "float"
             },
             "wrap-width": {
                 "css": "text-wrap-width",
