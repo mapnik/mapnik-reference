@@ -371,6 +371,11 @@
             }
         },
         "line": {
+            "line": {
+                "css": "line",
+                "type": "shorthand",
+                "elements": ["line-width", "line-color"]
+            },
             "stroke": {
                 "css": "line-color",
                 "default-value": "rgba(0,0,0,1)",
@@ -1288,6 +1293,11 @@
             }
         },
         "text": {
+            "text": {
+                "css": "text",
+                "type": "shorthand",
+                "elements": ["text-size", "text-face-name"]
+            },
             "name": {
                 "css": "text-name",
                 "type": "expression",
