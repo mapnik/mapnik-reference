@@ -846,13 +846,13 @@
             "opacity": {
                 "css": "shield-opacity",
                 "type": "float",
-                "doc": "(Default 1.0) - opacity of the image used for the shield",
+                "doc": "The opacity of the image used for the shield",
                 "default-value": 1
             },
             "text-opacity": {
                 "css": "shield-text-opacity",
                 "type": "float",
-                "doc": "(Default 1.0) - opacity of the text placed on top of the shield",
+                "doc": "The opacity of the text placed on top of the shield",
                 "default-value": 1
             },
             "horizontal-alignment": {
@@ -1041,7 +1041,7 @@
             "opacity": {
                 "css": "polygon-pattern-opacity",
                 "type": "float",
-                "doc": "(Default 1.0) - Apply an opacity level to the image used for the pattern",
+                "doc": "Apply an opacity level to the image used for the pattern",
                 "default-value": 1,
                 "default-meaning": "The image is rendered without modifications"
             },
