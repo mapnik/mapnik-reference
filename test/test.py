@@ -7,7 +7,7 @@ except ImportError:
     # >= python 2.6
     import json
 
-versions = ['2.0.1', '2.0.2', '2.1.0', 'latest']
+versions = ['2.0.0','2.0.1', '2.0.2', '2.1.0', 'latest']
 
 for v in versions:
     print '-- testing %s/reference.json' % v
@@ -26,5 +26,3 @@ for v in versions:
             assert 'type' in i[1].keys(), '%s: type not in %s' % (sym[0], i[0])
             assert 'doc' in i[1].keys(), '%s: doc string not in %s' % (sym[0], i[0])
             assert 'css' in i[1].keys(), '%s: css not in %s' % (sym[0], i[0])
-
-print '... oh yeah, tests passed'
