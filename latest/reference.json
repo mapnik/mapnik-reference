@@ -631,7 +631,7 @@
             },
             "spacing": {
                 "css": "marker-spacing",
-                "doc": "Space between repeated labels",
+                "doc": "Space between repeated markers in pixels. If the spacing is less than the marker size or larger than the line segment length then no marker will be placed",
                 "default-value": 100,
                 "type": "float"
             },
