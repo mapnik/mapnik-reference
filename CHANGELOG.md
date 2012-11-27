@@ -1,5 +1,14 @@
 ## CHANGELOG
 
+### 5.0.1
+
+Tagged November 26, 2012
+
+Updated when Mapnik master was at c39c839452 and 2.1.x branch as at 0b2f2f8ee0.
+
+* Adds new reference for Mapnik 2.1.1 (upcoming)
+* Adds marker-multi-policy option for >= 2.1.1
+
 ### 5.0.0
 
 Tagged Sept 6, 2012
