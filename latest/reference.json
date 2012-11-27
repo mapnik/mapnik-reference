@@ -577,6 +577,17 @@
                 "default-meaning": "Place markers at the center point (centroid) of the geometry",
                 "doc": "Attempt to place markers on a point, in the center of a polygon, or if markers-placement:line, then multiple times along a line. 'interior' placement can be used to ensure that points placed on polygons are forced to be inside the polygon interior"
             },
+            "multi-policy": {
+                "css": "marker-multi-policy",
+                "type": [
+                    "each",
+                    "whole",
+                    "largest"
+                ],
+                "default-value": "each",
+                "default-meaning": "If a feature contains multiple geometries and the placement type is either point or interior then a marker will be rendered for each",
+                "doc": "A special setting to allow the user to control rendering behavior for 'multi-geometries' (when a feature contains multiple geometries). This setting does not apply to markers placed along lines. The 'each' policy is default and means all geometries will get a marker. The 'whole' policy means that the aggregate centroid between all geometries will be used. The 'largest' policy means that only the largest (by bounding box areas) feature will get a rendered marker (this is how text labeling behaves by default)."
+            },
             "marker-type": {
                 "css": "marker-type",
                 "type": [
