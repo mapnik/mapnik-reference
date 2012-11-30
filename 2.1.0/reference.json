@@ -724,6 +724,13 @@
                 "default-value": "",
                 "required": true
             },
+            "unlock-image": {
+                "css": "shield-unlock-image",
+                "type": "boolean",
+                "doc": "This parameter should be set to true if you are trying to position text beside rather than on top of the shield image",
+                "default-value": false,
+                "default-meaning": "text alignment relative to the shield image uses the center of the image as the anchor for text positioning."
+            },
             "size": {
                 "css": "shield-size",
                 "type": "float",

@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+### 5.0.2
+
+Tagged November 29, 2012
+
+Updated when Mapnik master was at 26889c4761e.
+
+* Added the obscure `shield-unlock-image` parameter, long supported by Mapnik.
+
 ### 5.0.1
 
 Tagged November 26, 2012
