@@ -1,5 +1,14 @@
 ## CHANGELOG
 
+### 5.0.3
+
+Tagged January 2, 2013
+
+Updated when Mapnik master was at fd089a228b7.
+
+* Added value keywords known by Mapnik for rhs filtering (#42)
+
+
 ### 5.0.2
 
 Tagged November 29, 2012
