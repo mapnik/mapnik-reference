@@ -83,6 +83,7 @@
         "csv": {
           "file":"<@(file)",
           "base":"<@(base)",
+          "encoding":"<@(encoding)",
           "row_limit":"<@(row_limit)",
           "strict": {
               "type": "bool",
@@ -129,31 +130,39 @@
         },
         "#gdal": {
           "file":"<@(file)",
-          "base":"<@(base)"
+          "base":"<@(base)",
+          "encoding":"<@(encoding)"
         },
         "#geojson": {
           "file":"<@(file)",
-          "base":"<@(base)"
+          "base":"<@(base)",
+          "encoding":"<@(encoding)"
         },
         "#geos": {
           "file":"<@(file)",
-          "base":"<@(base)"
+          "base":"<@(base)",
+          "encoding":"<@(encoding)"
         },
         "#kismet": {
+          "encoding":"<@(encoding)"
         },
         "#occi": {
+          "encoding":"<@(encoding)"
         },
         "#ogr": {
           "file":"<@(file)",
-          "base":"<@(base)"
+          "base":"<@(base)",
+          "encoding":"<@(encoding)"
         },
         "#osm": {
           "file":"<@(file)",
-          "base":"<@(base)"
+          "base":"<@(base)",
+          "encoding":"<@(encoding)"
         },
         "#postgis": {
           "table": "<@(table)",
           "key_field": "<@(key_field)",
+          "encoding":"<@(encoding)",
           "dbname": {
             "type": "string",
             "doc": "Database name",
@@ -296,6 +305,7 @@
           }
         },
         "#python": {
+          "encoding":"<@(encoding)"
         },
         "#raster": {
           "file":"<@(file)",
@@ -307,11 +317,13 @@
         },
         "#shape": {
           "file":"<@(file)",
-          "base":"<@(base)"
+          "base":"<@(base)",
+          "encoding":"<@(encoding)"
         },
         "#sqlite": {
           "file":"<@(file)",
           "base":"<@(base)",
+          "encoding":"<@(encoding)",
           "table": "<@(table)",
           "key_field": "<@(key_field)"
         }
