@@ -1,0 +1,31 @@
+{
+  "variables": {
+    "encoding": {
+      "type": "string",
+      "doc": "The encoding value for the datasource attributes",
+      "default-value": "utf-8",
+      "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+      "required": false
+    },
+    "row_limit": {
+      "type": "integer",
+      "doc": "Max amount of features to read from the datasource",
+      "default-value": "0",
+      "default-meaning": "All features will be read from the datasource (unless row_limit is > 1)",
+      "required": false
+    },
+    "file": {
+      "type": "string",
+      "doc": "Path to the file for the datasource",
+      "default-value": "",
+      "default-meaning": "",
+      "required": true
+    }
+  },
+  "datasources": {
+    "csv": {
+      "file":"<@(file)",
+      "row_limit":"<@(row_limit)"
+    }
+  }
+}
