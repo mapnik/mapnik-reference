@@ -1,18 +1,49 @@
 {
+    "types": {
+        "type": {
+          "type": "string",
+          "doc": "The type of the option",
+          "values": ["string","float","bool","unsigned"],
+          "required": true
+        },
+        "doc": {
+          "type": "string",
+          "doc": "The basic description of the option and the expected behavior if you provide it",
+          "required": true
+        },
+        "default-value": {
+          "type": "string",
+          "doc": "Either an empty string if there is no default value, a description of the default value, or the default value itself (if appropriate)",
+          "required": true
+        },
+        "default-meaning": {
+          "type": "string",
+          "doc": "A detailed description of what the behavior will be if the default value is left unchanged",
+          "required": true
+        },
+        "required": {
+          "type": "bool",
+          "doc": "A boolean value to signify if the option is required. Can be left out and if not present it will be assumed that the option is not required",
+          "required": false
+        },
+        "recommented": {
+          "type": "bool",
+          "doc": "A boolean value to signify if the option is recommended, even if it is not required. This is meant to indicate to users that better behavior or performance will be gained if they manually provide the option and that they should seek to understand why it exists (and also why/how it needs to be manually provided)",
+          "required": false
+        }
+    },
     "variables": {
         "encoding": {
           "type": "string",
           "doc": "The encoding value for the datasource attributes",
           "default-value": "utf-8",
-          "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
-          "required": false
+          "default-meaning": "UTF8 will be the assumed encoding for string attribute values"
         },
         "row_limit": {
-          "type": "integer",
+          "type": "unsigned",
           "doc": "Max amount of features to read from the datasource",
-          "default-value": "0",
-          "default-meaning": "All features will be read from the datasource (unless row_limit is > 1)",
-          "required": false
+          "default-value": 0,
+          "default-meaning": "All features will be read from the datasource (unless row_limit is > 1)"
         },
         "file": {
           "type": "string",
@@ -21,18 +52,50 @@
           "default-meaning": "",
           "required": true
         },
+        "base": {
+          "type": "string",
+          "doc": "A base path used to complete a full path to a file.",
+          "default-value": "",
+          "default-meaning": "Only the `file` option will be used to attempt to load data from the filesystem"
+        },
+        "extent" : {
+            "type": "string",
+            "doc": "A comma or space delimited bounding box in the format of minx,miny,maxx,maxy that, if provided, will be used to report the extent of the datasource. The primary reason the option exists is for performance: providing this option at datasource creation saves the time otherwise needed to scan the data for the actual extent, which for large datasets can be very significant. The datasource extent, whether manually provided or automatically calculated is used during rendering to decide if the datasource should be queried for features or not (skipped for best performance). If the extent intersects with the map rendering extent then the datasource will be queried and the query extent will be clipped to the reported datasource extent. So, this means that this option can also be used to restrict which features are available for a given datasource",
+            "default-value": "",
+            "default-meaning": "The datasource extent will be determined at runtime by querying the data, which may be slow, although the extent only needs to be determined once per datasource initialized and it will be cached for further rendering",
+            "recommended": true
+        },
         "table" : {
             "type": "string",
             "doc": "",
             "default-value": "",
             "default-meaning": "",
             "required": true
+        },
+        "key_field": {
+          "type": "boolean",
+          "doc": "",
+          "default-value": "",
+          "default-meaning": ""
         }
     },
     "datasources": {
         "csv": {
           "file":"<@(file)",
+          "base":"<@(base)",
           "row_limit":"<@(row_limit)",
+          "strict": {
+              "type": "bool",
+              "doc": "Control if the datasource should throw on invalid rows",
+              "default-value": false,
+              "default-meaning": "Unless this option is set to true the datasource will skip invalid rows and attempt to parse as much data as possible"
+          },
+          "inline": {
+              "type": "string",
+              "doc": "Raw tabular data to be read instead of reading data from a file",
+              "default-value": "",
+              "default-meaning": "Unless this option is provided data will be read from the `file` option"
+          },
           "escape": {
               "type": "string",
               "doc": "The escape character to use for parsing data",
@@ -58,33 +121,39 @@
               "default-meaning": "Headers will be parsed from the first line of the data unless this option is set"
           },
           "filesize_max": {
-              "type": "string",
-              "doc": "A comma separated list of header names that can be set to add headers to data that lacks them",
-              "default-value": "",
-              "default-meaning": "Headers will be parsed from the first line of the data unless this option is set"
+              "type": "float",
+              "doc": "The maximum filesize in MB that will be accepted",
+              "default-value": 20.0,
+              "default-meaning": "A file that is larger that 20 MB will not be accepted and an error will be throw unless the user manually passes this option with a larger value (useful only in cases where your machine has a lot of memory)"
           }
         },
         "#gdal": {
-          "file":"<@(file)"
+          "file":"<@(file)",
+          "base":"<@(base)"
         },
         "#geojson": {
-          "file":"<@(file)"
+          "file":"<@(file)",
+          "base":"<@(base)"
         },
         "#geos": {
-          "file":"<@(file)"
+          "file":"<@(file)",
+          "base":"<@(base)"
         },
         "#kismet": {
         },
         "#occi": {
         },
         "#ogr": {
-          "file":"<@(file)"
+          "file":"<@(file)",
+          "base":"<@(base)"
         },
         "#osm": {
-          "file":"<@(file)"
+          "file":"<@(file)",
+          "base":"<@(base)"
         },
         "#postgis": {
           "table": "<@(table)",
+          "key_field": "<@(key_field)",
           "dbname": {
             "type": "string",
             "doc": "Database name",
@@ -162,13 +231,6 @@
             "default-meaning": "",
             "required": false
           },
-          "key_field": {
-            "type": "boolean",
-            "doc": "",
-            "default-value": "",
-            "default-meaning": "",
-            "required": false
-          },
           "cursor_size": {
             "type": "integer",
             "doc": "",
@@ -236,17 +298,22 @@
         "#python": {
         },
         "#raster": {
-          "file":"<@(file)"
+          "file":"<@(file)",
+          "base":"<@(base)"
         },
         "#rasterlite": {
-          "file":"<@(file)"
+          "file":"<@(file)",
+          "base":"<@(base)"
         },
         "#shape": {
-          "file":"<@(file)"
+          "file":"<@(file)",
+          "base":"<@(base)"
         },
         "#sqlite": {
           "file":"<@(file)",
-          "table": "<@(table)"
+          "base":"<@(base)",
+          "table": "<@(table)",
+          "key_field": "<@(key_field)"
         }
     }
 }

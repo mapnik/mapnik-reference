@@ -56,36 +56,55 @@ var data = JSON.parse(fs.readFileSync(input));
 
 // TODO - add support for includes?
 
-function validate_prop(prop) {
-    assert.ok('type' in prop,'type not defined for '+ util.inspect(prop));
-    assert.ok('doc' in prop,'doc not defined for '+ util.inspect(prop));
-    assert.ok('default-value' in prop,'default-value not defined for '+ util.inspect(prop));
-    assert.ok('default-meaning' in prop,'default-value not defined for '+ util.inspect(prop));
+js_numbers = {
+  'float':'number',
+  'unsigned':'number',
+  'string':'string',
+  'boolean':'boolean',
+}
+
+function validate_prop(types,prop_name,prop_value) {
+    Object.keys(types).forEach(function(key) {
+        var type_def = types[key];
+        if (type_def.required) {
+            assert.ok(key in prop_value,key+' not defined for '+ prop_name);
+        }
+        if (type_def.values) {
+            assert.ok(type_def.values.indexOf(prop_value.type) > -1,prop_value.type+' not found in '+ type_def.values);
+        }
+        if (prop_value['default-value']) {
+           assert.ok(typeof(prop_value['default-value']) === js_numbers[prop_value.type],typeof(prop_value['default-value'])+' not === '+prop_value.type+ ' for '+prop_name)
+        }
+    });
 }
 
 // expand gyp-like variables to build out entire file
 Object.keys(data.datasources).forEach(function(key) {
     var ds = data.datasources[key];
-    if (options.debug) console.warn('Handling '+key)
     // handle commented sections
     if (key[0] == '#') {
         delete data.datasources[key];
     } else {
+        if (options.debug) console.warn('Handling '+key)
         Object.keys(ds).forEach(function(prop) {
-            if (options.debug) {
-              console.warn('  parsing "'+prop+'" ('+typeof(prop)+')');
-              console.warn('  parsing "'+ util.inspect(ds[prop])+'"')
-            }
             var match = ds[prop].match && ds[prop].match(/<@\((.+)\)/);
             if (match && match[1]) {
                 ds[prop] = data.variables[prop];
+                if (options.debug) {
+                    console.warn('  handling variable for "'+prop+'"');
+                }
+            } else {
+                if (options.debug) {
+                    console.warn('  handling raw object for "'+prop+'"');
+                }
             }
-            validate_prop(ds[prop]);
+            validate_prop(data.types,prop,ds[prop]);
         });
     }
 });
 
 if (!options.debug) {
+  delete data.types;
   delete data.variables;
   console.log(JSON.stringify(data,null,"    "));
 }
