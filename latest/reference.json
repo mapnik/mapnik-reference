@@ -131,8 +131,8 @@
         "buffer-size": {
             "default-value": "0",
             "type":"float",
-            "default-meaning": "No buffer will be used",
-            "doc": "Extra tolerance around the Layer extent (in pixels) used to when querying and (potentially) clipping the layer data during rendering"
+            "default-meaning": "No custom buffer will be used for the layer and rather the Map buffer-size will be used",
+            "doc": "Extra tolerance around the Layer extent (in pixels) used when querying the layer data during rendering. If set this will override the Map buffer-size"
         },
         "maximum-extent": {
             "default-value": "none",
