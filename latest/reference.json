@@ -1209,7 +1209,7 @@
                     "value"
                 ]
             },
-            "colorizer-default-mode": {
+            "default-mode": {
                 "css": "raster-colorizer-default-mode",
                 "type": [
                     "discrete",
@@ -1218,12 +1218,12 @@
                 ],
                 "doc": "TODO"
             },
-            "colorizer-default-color": {
+            "default-color": {
                 "css": "raster-colorizer-default-color",
                 "type": "color",
                 "doc": "TODO"
             },
-            "colorizer-epsilon": {
+            "epsilon": {
                 "css": "raster-colorizer-epsilon",
                 "type": "float",
                 "doc": "TODO"
