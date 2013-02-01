@@ -1208,6 +1208,32 @@
                     "color",
                     "value"
                 ]
+            },
+            "colorizer-default-mode": {
+                "css": "raster-colorizer-default-mode",
+                "type": [
+                    "discrete",
+                    "linear",
+                    "exact"
+                ],
+                "doc": "TODO"
+            },
+            "colorizer-default-color": {
+                "css": "raster-colorizer-default-color",
+                "type": "color",
+                "doc": "TODO"
+            },
+            "colorizer-epsilon": {
+                "css": "raster-colorizer-epsilon",
+                "type": "float",
+                "doc": "TODO"
+            },
+            "stop": {
+                "css": "raster-colorizer-stops",
+                "type": "tags",
+                "serialization": "tag",
+                "tagname": "tagname",
+                "doc": "TODO"
             }
         },
         "point": {
