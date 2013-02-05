@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+### 5.0.4
+
+Tagged February 5th, 2013
+
+Updated when Mapnik master was at 19e52c013639.
+
+* Exposed simplify and simplify-algorithm properties
+
 ### 5.0.3
 
 Tagged January 2, 2013
