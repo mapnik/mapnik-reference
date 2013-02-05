@@ -320,6 +320,23 @@
                 "default-meaning": "geometry will be clipped to map bounds before rendering",
                 "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
             },
+            "simplify": {
+                "css": "polygon-simplify",
+                "type": "float",
+                "default-value": 0.0,
+                "default-meaning": "geometry will not be simplified",
+                "doc": "geometries are simplified by the given tolerance"
+            },
+            "simplify-algorithm": {
+                "css": "polygon-simplify-algorithm",
+                "type": ["radial-distance",
+                         "zhao-saalfeld",
+                         "visvalingam-whyatt"
+                        ],
+                "default-value": "radial-distance",
+                "default-meaning": "geometry will not be simplified using the radial distance algorithm",
+                "doc": "geometries are simplified by the given algorithm"
+            },
             "smooth": {
                 "css": "polygon-smooth",
                 "type": "float",
@@ -459,6 +476,23 @@
                 "default-value": true,
                 "default-meaning": "geometry will be clipped to map bounds before rendering",
                 "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+            },
+            "simplify": {
+                "css": "line-simplify",
+                "type": "float",
+                "default-value": 0.0,
+                "default-meaning": "geometry will not be simplified",
+                "doc": "geometries are simplified by the given tolerance"
+            },
+            "simplify-algorithm": {
+                "css": "line-simplify-algorithm",
+                "type": ["radial-distance",
+                         "zhao-saalfeld",
+                         "visvalingam-whyatt"
+                        ],
+                "default-value": "radial-distance",
+                "default-meaning": "geometry will not be simplified using the radial distance algorithm",
+                "doc": "geometries are simplified by the given algorithm"
             },
             "smooth": {
                 "css": "line-smooth",
@@ -981,6 +1015,23 @@
                 "default-meaning": "geometry will be clipped to map bounds before rendering",
                 "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
             },
+            "simplify": {
+                "css": "line-pattern-simplify",
+                "type": "float",
+                "default-value": 0.0,
+                "default-meaning": "geometry will not be simplified",
+                "doc": "geometries are simplified by the given tolerance"
+            },
+            "simplify-algorithm": {
+                "css": "line-pattern-simplify-algorithm",
+                "type": ["radial-distance",
+                         "zhao-saalfeld",
+                         "visvalingam-whyatt"
+                        ],
+                "default-value": "radial-distance",
+                "default-meaning": "geometry will not be simplified using the radial distance algorithm",
+                "doc": "geometries are simplified by the given algorithm"
+            },
             "smooth": {
                 "css": "line-pattern-smooth",
                 "type": "float",
@@ -1069,6 +1120,23 @@
                 "default-value": true,
                 "default-meaning": "geometry will be clipped to map bounds before rendering",
                 "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+            },
+            "simplify": {
+                "css": "polygon-pattern-simplify",
+                "type": "float",
+                "default-value": 0.0,
+                "default-meaning": "geometry will not be simplified",
+                "doc": "geometries are simplified by the given tolerance"
+            },
+            "simplify-algorithm": {
+                "css": "polygon-pattern-simplify-algorithm",
+                "type": ["radial-distance",
+                         "zhao-saalfeld",
+                         "visvalingam-whyatt"
+                        ],
+                "default-value": "radial-distance",
+                "default-meaning": "geometry will not be simplified using the radial distance algorithm",
+                "doc": "geometries are simplified by the given algorithm"
             },
             "smooth": {
                 "css": "polygon-pattern-smooth",
