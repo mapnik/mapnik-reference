@@ -1501,6 +1501,15 @@
                 "default-meaning": "no halo",
                 "type": "float"
             },
+            "halo-rasterizer": {
+                "css": "text-halo-rasterizer",
+                "type": [
+                    "full",
+                    "fast"
+                ],
+                "default-value": "full",
+                "doc": "Exposes an alternate text halo rendering method that sacrifices quality for speed."
+            },
             "dx": {
                 "css": "text-dx",
                 "type": "float",
