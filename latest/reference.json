@@ -352,10 +352,12 @@
                 "default-meaning": "geometry will not be transformed",
                 "doc": "Allows transformation functions to be applied to the geometry.",
                 "functions": [
+                    ["matrix", 6],
                     ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
                     ["skewX", 1],
-                    ["skewY", 1],
-                    ["rotate", 1]
+                    ["skewY", 1]
                 ]
             },
             "comp-op": {
@@ -538,10 +540,12 @@
                 "default-meaning": "geometry will not be transformed",
                 "doc": "Allows transformation functions to be applied to the geometry.",
                 "functions": [
+                    ["matrix", 6],
                     ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
                     ["skewX", 1],
-                    ["skewY", 1],
-                    ["rotate", 1]
+                    ["skewY", 1]
                 ]
             },
             "comp-op": {
@@ -738,10 +742,12 @@
                 "default-meaning": "geometry will not be transformed",
                 "doc": "Allows transformation functions to be applied to the geometry.",
                 "functions": [
+                    ["matrix", 6],
                     ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
                     ["skewX", 1],
-                    ["skewY", 1],
-                    ["rotate", 1]
+                    ["skewY", 1]
                 ]
             },
             "comp-op": {
@@ -1086,10 +1092,12 @@
                 "default-meaning": "geometry will not be transformed",
                 "doc": "Allows transformation functions to be applied to the geometry.",
                 "functions": [
+                    ["matrix", 6],
                     ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
                     ["skewX", 1],
-                    ["skewY", 1],
-                    ["rotate", 1]
+                    ["skewY", 1]
                 ]
             },
             "comp-op": {
@@ -1205,10 +1213,12 @@
                 "default-meaning": "geometry will not be transformed",
                 "doc": "Allows transformation functions to be applied to the geometry.",
                 "functions": [
+                    ["matrix", 6],
                     ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
                     ["skewX", 1],
-                    ["skewY", 1],
-                    ["rotate", 1]
+                    ["skewY", 1]
                 ]
             },
             "comp-op": {
