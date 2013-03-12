@@ -346,7 +346,7 @@
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
             "geometry-transform": {
-                "css": "polygon-geom-transform",
+                "css": "polygon-geometry-transform",
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "geometry will not be transformed",
@@ -532,11 +532,11 @@
                 "doc": "Exposes an alternate AGG rendering method that sacrifices some accuracy for speed."
             },
             "geometry-transform": {
-                "css": "line-geom-transform",
+                "css": "line-geometry-transform",
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "geometry will not be transformed",
-                "doc": "Allows transformation functions to be applied to the geometry. Supported functions are translate, skewX, skewY, rotate.",
+                "doc": "Allows transformation functions to be applied to the geometry.",
                 "functions": [
                     ["translate", 2],
                     ["skewX", 1],
@@ -732,11 +732,11 @@
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
             "geometry-transform": {
-                "css": "marker-geom-transform",
+                "css": "marker-geometry-transform",
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "geometry will not be transformed",
-                "doc": "Allows transformation functions to be applied to the geometry. Supported functions are translate, skewX, skewY, rotate.",
+                "doc": "Allows transformation functions to be applied to the geometry.",
                 "functions": [
                     ["translate", 2],
                     ["skewX", 1],
@@ -1080,11 +1080,11 @@
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
             "geometry-transform": {
-                "css": "line-pattern-geom-transform",
+                "css": "line-pattern-geometry-transform",
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "geometry will not be transformed",
-                "doc": "Allows transformation functions to be applied to the geometry. Supported functions are translate, skewX, skewY, rotate.",
+                "doc": "Allows transformation functions to be applied to the geometry.",
                 "functions": [
                     ["translate", 2],
                     ["skewX", 1],
@@ -1199,11 +1199,11 @@
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
             "geometry-transform": {
-                "css": "polygon-pattern-geom-transform",
+                "css": "polygon-pattern-geometry-transform",
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "geometry will not be transformed",
-                "doc": "Allows transformation functions to be applied to the geometry. Supported functions are translate, skewX, skewY, rotate.",
+                "doc": "Allows transformation functions to be applied to the geometry.",
                 "functions": [
                     ["translate", 2],
                     ["skewX", 1],
