@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+### Latest
+
+Updated when Mapnik master was at feaf757c0785.
+
+* Adds raster-colorizer, text-halo-rasterizer, geometry-transform
+
 ### 5.0.4
 
 Tagged February 5th, 2013
