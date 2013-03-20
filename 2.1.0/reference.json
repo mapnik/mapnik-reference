@@ -328,6 +328,21 @@
                 "range": "0-1",
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
+            "geometry-transform": {
+                "css": "polygon-geometry-transform",
+                "type": "functions",
+                "default-value": "none",
+                "default-meaning": "geometry will not be transformed",
+                "doc": "Allows transformation functions to be applied to the geometry.",
+                "functions": [
+                    ["matrix", 6],
+                    ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
+                    ["skewX", 1],
+                    ["skewY", 1]
+                ]
+            },
             "comp-op": {
                 "css": "polygon-comp-op",
                 "default-value": "src-over",
@@ -483,6 +498,21 @@
                 ],
                 "default-value": "full",
                 "doc": "Exposes an alternate AGG rendering method that sacrifices some accuracy for speed."
+            },
+            "geometry-transform": {
+                "css": "line-geometry-transform",
+                "type": "functions",
+                "default-value": "none",
+                "default-meaning": "geometry will not be transformed",
+                "doc": "Allows transformation functions to be applied to the geometry.",
+                "functions": [
+                    ["matrix", 6],
+                    ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
+                    ["skewX", 1],
+                    ["skewY", 1]
+                ]
             },
             "comp-op": {
                 "css": "line-comp-op",
@@ -659,6 +689,21 @@
                 "default-meaning": "no smoothing",
                 "range": "0-1",
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
+            },
+            "geometry-transform": {
+                "css": "marker-geometry-transform",
+                "type": "functions",
+                "default-value": "none",
+                "default-meaning": "geometry will not be transformed",
+                "doc": "Allows transformation functions to be applied to the geometry.",
+                "functions": [
+                    ["matrix", 6],
+                    ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
+                    ["skewX", 1],
+                    ["skewY", 1]
+                ]
             },
             "comp-op": {
                 "css": "marker-comp-op",
@@ -978,6 +1023,21 @@
                 "range": "0-1",
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
+            "geometry-transform": {
+                "css": "line-pattern-geometry-transform",
+                "type": "functions",
+                "default-value": "none",
+                "default-meaning": "geometry will not be transformed",
+                "doc": "Allows transformation functions to be applied to the geometry.",
+                "functions": [
+                    ["matrix", 6],
+                    ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
+                    ["skewX", 1],
+                    ["skewY", 1]
+                ]
+            },
             "comp-op": {
                 "css": "line-pattern-comp-op",
                 "default-value": "src-over",
@@ -1066,6 +1126,21 @@
                 "default-meaning": "no smoothing",
                 "range": "0-1",
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
+            },
+            "geometry-transform": {
+                "css": "polygon-pattern-geometry-transform",
+                "type": "functions",
+                "default-value": "none",
+                "default-meaning": "geometry will not be transformed",
+                "doc": "Allows transformation functions to be applied to the geometry.",
+                "functions": [
+                    ["matrix", 6],
+                    ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
+                    ["skewX", 1],
+                    ["skewY", 1]
+                ]
             },
             "comp-op": {
                 "css": "polygon-pattern-comp-op",
