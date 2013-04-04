@@ -975,6 +975,21 @@
                 "doc": "The shield's vertical alignment from its centerpoint",
                 "default-value": "middle"
             },
+            "placement-type": {
+                "css": "shield-placement-type",
+                "doc": "Re-position and/or re-size shield to avoid overlaps. \"simple\" for basic algorithm (using shield-placements string,) \"dummy\" to turn this feature off.",
+                "type": [
+                    "dummy",
+                    "simple"
+                ],
+                "default-value": "dummy"
+            },
+            "placements": {
+                "css": "shield-placements",
+                "type": "string",
+                "default-value": "",
+                "doc": "If \"placement-type\" is set to \"simple\", use this \"POSITIONS,[SIZES]\" string. An example is `shield-placements: \"E,NE,SE,W,NW,SW\";` "
+            },
             "text-transform": {
                 "css": "shield-text-transform",
                 "type": [
