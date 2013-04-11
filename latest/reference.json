@@ -845,7 +845,7 @@
             },
             "avoid-edges": {
                 "css": "shield-avoid-edges",
-                "doc": "Tell positioning algorithm to avoid labeling near intersection edges.",
+                "doc": "Avoid placing shields that intersect with tile boundaries.",
                 "type": "boolean",
                 "default-value": false
             },
@@ -1612,7 +1612,7 @@
             },
             "avoid-edges": {
                 "css": "text-avoid-edges",
-                "doc": "Tell positioning algorithm to avoid labeling near intersection edges.",
+                "doc": "Avoid placing labels that intersect with tile boundaries.",
                 "default-value": false,
                 "type": "boolean"
             },
