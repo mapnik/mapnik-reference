@@ -7,7 +7,7 @@ Updated when Mapnik master was at feaf757c0785.
 * Added raster-colorizer
 * Added text-halo-rasterizer
 * Added geometry-transform
-* Added shield-transform
+* Added shield-transform, shield-placements, and shield-placement-type
 
 ### 5.0.4
 
