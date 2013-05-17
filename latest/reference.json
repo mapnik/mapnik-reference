@@ -997,6 +997,21 @@
                 "doc": "Define how text in a shield's label is justified",
                 "default-value": "auto"
             },
+            "transform": {
+                "css": "shield-transform",
+                "type": "functions",
+                "functions": [
+                    ["matrix", 6],
+                    ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
+                    ["skewX", 1],
+                    ["skewY", 1]
+                ],
+                "default-value": "",
+                "default-meaning": "No transformation",
+                "doc": "SVG transformation definition"
+            },
             "clip": {
                 "css": "shield-clip",
                 "type": "boolean",

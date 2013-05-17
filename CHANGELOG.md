@@ -4,7 +4,10 @@
 
 Updated when Mapnik master was at feaf757c0785.
 
-* Adds raster-colorizer, text-halo-rasterizer, geometry-transform
+* Added raster-colorizer
+* Added text-halo-rasterizer
+* Added geometry-transform
+* Added shield-transform
 
 ### 5.0.4
 
