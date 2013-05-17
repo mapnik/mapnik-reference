@@ -137,15 +137,7 @@
           "file":"<@(file)",
           "base":"<@(base)",
           "encoding":"<@(encoding)"
-        },
-        "#geos": {
-          "file":"<@(file)",
-          "base":"<@(base)",
-          "encoding":"<@(encoding)"
-        },
-        "#kismet": {
-          "encoding":"<@(encoding)"
-        },
+        }
         "#occi": {
           "encoding":"<@(encoding)"
         },
