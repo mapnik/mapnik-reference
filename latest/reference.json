@@ -1803,7 +1803,16 @@
                 "type": "expression",
                 "default-value": "0"
             }
+        },
+        "debug": {
+            "mode": {
+                "css": "debug-mode",
+                "default-value": "",
+                "doc": "The mode for debug rendering - currently no options available",
+                "type": "string"
+            }
         }
+
     },
     "colors": {
         "aliceblue":  [240, 248, 255],
