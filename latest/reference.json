@@ -523,7 +523,7 @@
                 "type": "float",
                 "default-value": 0,
                 "default-meaning": "no offset",
-                "doc": "Offsets a line a number of pixels parallel to its actual path. Postive values move the line left, negative values move it right (relative to the directionality of the line)."
+                "doc": "Offsets a line a number of pixels parallel to its actual path. Positive values move the line left, negative values move it right (relative to the directionality of the line)."
             },
             "rasterizer": {
                 "css": "line-rasterizer",
@@ -1807,8 +1807,12 @@
         "debug": {
             "mode": {
                 "css": "debug-mode",
-                "default-value": "",
-                "doc": "The mode for debug rendering - currently no options available",
+                "type": [
+                    "collision",
+                    "vertex"
+                ],
+                "default-value": "collision",
+                "doc": "The mode for debug rendering",
                 "type": "string"
             }
         }
