@@ -871,7 +871,7 @@
             "minimum-padding": {
                 "css": "shield-min-padding",
                 "default-value": 0,
-                "doc": "Determines the minimum amount of padding that a shield gets relative to other shields",
+                "doc": "Minimum distance a shield will be placed from the edge of a metatile.",
                 "type": "float"
             },
             "wrap-width": {
