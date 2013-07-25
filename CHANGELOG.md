@@ -4,11 +4,13 @@
 
 Updated when Mapnik master was at feaf757c0785.
 
-* Added raster-colorizer
-* Added text-halo-rasterizer
-* Added geometry-transform
-* Added shield-transform, shield-placements, and shield-placement-type
-* Added debug-mode to visualize collision boxes
+* Added `direct-image-filters`
+* Added `scale-hsla` `image-filter`
+* Added `raster-colorizer`
+* Added `text-halo-rasterizer`
+* Added `geometry-transform`
+* Added `shield-transform`, `shield-placements`, and `shield-placement-type`
+* Added `debug-mode` to visualize collision boxes
 
 ### 5.0.4
 
