@@ -1698,7 +1698,7 @@
             },
             "minimum-padding": {
                 "css": "text-min-padding",
-                "doc": "Determines the minimum amount of padding that a text symbolizer gets relative to other text",
+                "doc": "Minimum distance a text label will be placed from the edge of a metatile.",
                 "type": "float"
             },
             "minimum-path-length": {
