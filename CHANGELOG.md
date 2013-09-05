@@ -2,9 +2,12 @@
 
 ### Latest
 
-Updated when Mapnik master was at 69185339a575.
+Updated when Mapnik master was at c5dd5487a5d6.
 
+* Removed uneeded `description` properties.
 * Corrected the `text-min-padding` doc to note that it only relates to whether a label is within a given distance of the edge of a (meta)tile not other text.
+* Added Map `background-image-opacity` and `background-image-comp-op`
+* Added `line-pattern-offset`
 * Added `line-pattern-offset`
 * Added `direct-image-filters`
 * Added `scale-hsla` `image-filter`
