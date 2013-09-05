@@ -2,9 +2,10 @@
 
 ### Latest
 
-Updated when Mapnik master was at feaf757c0785.
+Updated when Mapnik master was at 69185339a575.
 
 * Corrected the `text-min-padding` doc to note that it only relates to whether a label is within a given distance of the edge of a (meta)tile not other text.
+* Added `line-pattern-offset`
 * Added `direct-image-filters`
 * Added `scale-hsla` `image-filter`
 * Added `raster-colorizer`

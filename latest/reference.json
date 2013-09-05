@@ -1161,6 +1161,13 @@
                 "range": "0-1",
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
+            "offset": {
+                "css": "line-pattern-offset",
+                "type": "float",
+                "default-value": 0,
+                "default-meaning": "no offset",
+                "doc": "Offsets a line a number of pixels parallel to its actual path. Positive values move the line left, negative values move it right (relative to the directionality of the line)."
+            },
             "geometry-transform": {
                 "css": "line-pattern-geometry-transform",
                 "type": "functions",
