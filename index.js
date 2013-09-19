@@ -8,4 +8,9 @@ module.exports.version = {};
     module.exports.version[version] = JSON.parse(
         fs.readFileSync(
             path.join(__dirname, version, 'reference.json'), 'utf8'));
+    if (version === 'latest') {
+        module.exports.version[version].datasources = JSON.parse(
+            fs.readFileSync(
+                path.join(__dirname, version, 'datasources.json'), 'utf8')).datasources;
+    }
 });
