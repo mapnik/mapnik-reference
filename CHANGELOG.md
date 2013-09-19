@@ -1,8 +1,10 @@
 ## CHANGELOG
 
-### Latest
+### 5.0.5
 
-Updated when Mapnik master was at c5dd5487a5d6.
+Tagged Sept 19, 2012
+
+Updated when Mapnik master was at 2ebd3e9bf8.
 
 * Removed uneeded `description` properties.
 * Corrected the `text-min-padding` doc to note that it only relates to whether a label is within a given distance of the edge of a (meta)tile not other text.
@@ -15,6 +17,7 @@ Updated when Mapnik master was at c5dd5487a5d6.
 * Added `geometry-transform`
 * Added `shield-transform`, `shield-placements`, and `shield-placement-type`
 * Added `debug-mode` to visualize collision boxes
+* Moved experimental `latest/datasources.json` to `latest/datasources.template` so `datasources.json` now is fully baked
 
 ### 5.0.4
 
