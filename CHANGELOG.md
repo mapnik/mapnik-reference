@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+### 5.0.6
+
+Tagged Sept 26, 2012
+
+Updated when Mapnik 2.3.x was at 68ff3ce.
+
+* Added `color-to-alpha` image filter
+
 ### 5.0.5
 
 Tagged Sept 19, 2012
