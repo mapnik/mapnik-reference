@@ -1674,8 +1674,8 @@
             },
             "label-position-tolerance": {
                 "css": "text-label-position-tolerance",
-                "default-value": 0,
-                "type": "unsigned",
+                "default-value": 0.0,
+                "type": "float",
                 "doc": "Allows the label to be displaced from its ideal position by a number of pixels (only works with placement:line)"
             },
             "max-char-angle-delta": {
