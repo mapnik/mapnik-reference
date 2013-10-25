@@ -1,8 +1,14 @@
 ## CHANGELOG
 
+### 5.0.7
+
+Tagged Oct 25, 2013
+
+* Added `v2.2.0` reference
+
 ### 5.0.6
 
-Tagged Sept 26, 2012
+Tagged Sept 26, 2013
 
 Updated when Mapnik 2.3.x was at 68ff3ce.
 
@@ -10,7 +16,7 @@ Updated when Mapnik 2.3.x was at 68ff3ce.
 
 ### 5.0.5
 
-Tagged Sept 19, 2012
+Tagged Sept 19, 2013
 
 Updated when Mapnik master was at 2ebd3e9bf8.
 
