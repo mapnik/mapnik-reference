@@ -47,10 +47,7 @@
                 ["x-gradient", 0],
                 ["y-gradient", 0],
                 ["invert", 0],
-                ["sharpen", 0],
-                ["colorize-alpha", -1],
-                ["color-to-alpha", 1],
-                ["scale-hsla", 8]
+                ["sharpen", 0]
             ],
             "doc": "A list of image filters to apply to the main canvas (see the `image-filters` doc for how they work on a separate canvas)"
         },
@@ -183,10 +180,7 @@
                     ["x-gradient", 0],
                     ["y-gradient", 0],
                     ["invert", 0],
-                    ["sharpen", 0],
-                    ["colorize-alpha", -1],
-                    ["color-to-alpha", 1],
-                    ["scale-hsla", 8]
+                    ["sharpen", 0]
                 ],
                 "doc": "A list of image filters that will be applied to the active rendering canvas for a given style. The presence of one more more `image-filters` will trigger a new canvas to be created before starting to render a style and then this canvas will be composited back into the main canvas after rendering all features and after all `image-filters` have been applied. See `direct-image-filters` if you want to apply a filter directly to the main canvas."
             },
@@ -205,10 +199,7 @@
                     ["x-gradient", 0],
                     ["y-gradient", 0],
                     ["invert", 0],
-                    ["sharpen", 0],
-                    ["colorize-alpha", -1],
-                    ["color-to-alpha", 1],
-                    ["scale-hsla", 8]
+                    ["sharpen", 0]
                 ],
                 "doc": "A list of image filters to apply to the main canvas (see the `image-filters` doc for how they work on a separate canvas)"
             },
@@ -275,55 +266,6 @@
                 "default-value": "",
                 "default-meaning": "transparent",
                 "doc": "An image that is repeated below all features on a map as a background."
-            },
-            "background-image-comp-op": {
-                "css": "background-image-comp-op",
-                "type": "float",
-                "doc": "Set the compositing operation used to blend the image into the background",
-                "default-value": "src-over",
-                "default-meaning": "The background-image will be blended with the background normally (placed on top of any existing background-color)",
-                "type": ["clear",
-                    "src",
-                    "dst",
-                    "src-over",
-                    "dst-over",
-                    "src-in",
-                    "dst-in",
-                    "src-out",
-                    "dst-out",
-                    "src-atop",
-                    "dst-atop",
-                    "xor",
-                    "plus",
-                    "minus",
-                    "multiply",
-                    "screen",
-                    "overlay",
-                    "darken",
-                    "lighten",
-                    "color-dodge",
-                    "color-burn",
-                    "hard-light",
-                    "soft-light",
-                    "difference",
-                    "exclusion",
-                    "contrast",
-                    "invert",
-                    "invert-rgb",
-                    "grain-merge",
-                    "grain-extract",
-                    "hue",
-                    "saturation",
-                    "color",
-                    "value"
-                ]
-            },
-            "background-image-opacity": {
-                "css": "background-image-opacity",
-                "type": "float",
-                "doc": "Set the opacity of the image",
-                "default-value": 1,
-                "default-meaning": "The image opacity will not be changed when applied to the map background"
             },
             "srs": {
                 "css": "srs",
@@ -1213,13 +1155,6 @@
                 "range": "0-1",
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
-            "offset": {
-                "css": "line-pattern-offset",
-                "type": "float",
-                "default-value": 0,
-                "default-meaning": "no offset",
-                "doc": "Offsets a line a number of pixels parallel to its actual path. Positive values move the line left, negative values move it right (relative to the directionality of the line)."
-            },
             "geometry-transform": {
                 "css": "line-pattern-geometry-transform",
                 "type": "functions",
@@ -1674,8 +1609,8 @@
             },
             "label-position-tolerance": {
                 "css": "text-label-position-tolerance",
-                "default-value": 0.0,
-                "type": "float",
+                "default-value": 0,
+                "type": "unsigned",
                 "doc": "Allows the label to be displaced from its ideal position by a number of pixels (only works with placement:line)"
             },
             "max-char-angle-delta": {
