@@ -1,0 +1,295 @@
+{
+  "variables": {
+    "encoding": {
+      "type": "string",
+      "doc": "The encoding value for the datasource attributes",
+      "default-value": "utf-8",
+      "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+      "required": false
+    },
+    "row_limit": {
+      "type": "integer",
+      "doc": "Max amount of features to read from the datasource",
+      "default-value": "0",
+      "default-meaning": "All features will be read from the datasource (unless row_limit is > 1)",
+      "required": false
+    },
+    "file": {
+      "type": "string",
+      "doc": "Path to the file for the datasource",
+      "default-value": "",
+      "default-meaning": "",
+      "required": true
+    }
+  },
+  "datasources": {
+    "csv": {
+      "file":"<@(file)",
+      "row_limit":"<@(row_limit)"
+    },
+    "gdal": {
+      "file": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      }
+    },
+    "geojson": {
+      "file": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      }
+    },
+    "geos": {
+      "file": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      }
+    },
+    "kismet": {
+      "file": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      }
+    },
+    "occi": {
+      "file": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      }
+    },
+    "ogr": {
+      "file": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      }
+    },
+    "osm": {
+      "file": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      }
+    },
+    "postgis": {
+      "table": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      },
+      "dbname": {
+        "type": "string",
+        "doc": "Database name",
+        "default-value": "username",
+        "default-meaning": "Will default to a database named after the user (as per libpq defaults)",
+        "required": false
+      },
+      "host": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "password": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "port": {
+        "type": "integer",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "user": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "connect_timeout": {
+        "type": "integer",
+        "doc": "",
+        "default-value": "4",
+        "default-meaning": "",
+        "required": false
+      },
+      "schema": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "extent": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "estimate_extent": {
+        "type": "boolean",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "geometry_table": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "geometry_field": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "key_field": {
+        "type": "boolean",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "cursor_size": {
+        "type": "integer",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "row_limit": {
+        "type": "integer",
+        "doc": "Max amount of features to read from the datasource",
+        "default-value": "0",
+        "default-meaning": "All features will be read from the datasource (unless row_limit is > 1)",
+        "required": false
+      },
+      "srid": {
+        "type": "integer",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "initial_size": {
+        "type": "integer",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "max_size": {
+        "type": "integer",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": false
+      },
+      "simplify_geometries": {
+        "type": "boolean",
+        "doc": "",
+        "default-value": false,
+        "default-meaning": "",
+        "required": false
+      },
+      "autodetect_key_field": {
+        "type": "boolean",
+        "doc": "",
+        "default-value": false,
+        "default-meaning": "",
+        "required": false
+      },
+      "persist_connection": {
+        "type": "boolean",
+        "doc": "",
+        "default-value": true,
+        "default-meaning": "Connections, successfully created, will be kept open until Mapnik shuts down",
+        "required": false
+      },
+      "extent_from_subquery": {
+        "type": "boolean",
+        "doc": "",
+        "default-value": false,
+        "default-meaning": "",
+        "required": false
+      }
+    },
+    "python": {
+      "file": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      }
+    },
+    "raster": {
+      "file": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      }
+    },
+    "rasterlite": {
+      "file": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      }
+    },
+    "shape": {
+      "file": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      }
+    },
+    "sqlite": {
+      "file": {
+        "type": "string",
+        "doc": "",
+        "default-value": "",
+        "default-meaning": "",
+        "required": true
+      }
+    }
+  }
+}
