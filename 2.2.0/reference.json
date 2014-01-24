@@ -47,7 +47,8 @@
                 ["x-gradient", 0],
                 ["y-gradient", 0],
                 ["invert", 0],
-                ["sharpen", 0]
+                ["sharpen", 0],
+                ["colorize-alpha", -1]
             ],
             "doc": "A list of image filters to apply to the main canvas (see the `image-filters` doc for how they work on a separate canvas)"
         },
@@ -180,7 +181,8 @@
                     ["x-gradient", 0],
                     ["y-gradient", 0],
                     ["invert", 0],
-                    ["sharpen", 0]
+                    ["sharpen", 0],
+                    ["colorize-alpha", -1]
                 ],
                 "doc": "A list of image filters that will be applied to the active rendering canvas for a given style. The presence of one more more `image-filters` will trigger a new canvas to be created before starting to render a style and then this canvas will be composited back into the main canvas after rendering all features and after all `image-filters` have been applied. See `direct-image-filters` if you want to apply a filter directly to the main canvas."
             },
@@ -199,7 +201,8 @@
                     ["x-gradient", 0],
                     ["y-gradient", 0],
                     ["invert", 0],
-                    ["sharpen", 0]
+                    ["sharpen", 0],
+                    ["colorize-alpha", -1]
                 ],
                 "doc": "A list of image filters to apply to the main canvas (see the `image-filters` doc for how they work on a separate canvas)"
             },
