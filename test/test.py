@@ -7,7 +7,7 @@ except ImportError:
     # >= python 2.6
     import json
 
-versions = ['2.0.0','2.0.1', '2.0.2', '2.1.0', '2.1.1', 'latest']
+versions = ['2.0.0','2.0.1', '2.0.2', '2.1.0', '2.1.1', '2.3.0', 'latest']
 
 for v in versions:
     print '-- testing %s/reference.json' % v
