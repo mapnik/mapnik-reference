@@ -378,14 +378,14 @@
         "polygon": {
             "fill": {
                 "css": "polygon-fill",
-                "type": "color",
+                "type": "expression",
                 "default-value": "rgba(128,128,128,1)",
                 "default-meaning": "gray and fully opaque (alpha = 1), same as rgb(128,128,128)",
                 "doc": "Fill color to assign to a polygon"
             },
             "fill-opacity": {
                 "css": "polygon-opacity",
-                "type": "float",
+                "type": "expression",
                 "doc": "The opacity of the polygon",
                 "default-value": 1,
                 "default-meaning": "opaque"
@@ -504,20 +504,20 @@
             "stroke": {
                 "css": "line-color",
                 "default-value": "rgba(0,0,0,1)",
-                "type": "color",
+                "type": "expression",
                 "default-meaning": "black and fully opaque (alpha = 1), same as rgb(0,0,0)",
                 "doc": "The color of a drawn line"
             },
             "stroke-width": {
                 "css": "line-width",
                 "default-value": 1,
-                "type": "float",
+                "type": "expression",
                 "doc": "The width of a line in pixels"
             },
             "stroke-opacity": {
                 "css": "line-opacity",
                 "default-value": 1,
-                "type": "float",
+                "type": "expression",
                 "default-meaning": "opaque",
                 "doc": "The opacity of a line"
             },
@@ -714,7 +714,7 @@
                 "css": "marker-line-color",
                 "doc": "The color of the stroke around a marker shape.",
                 "default-value": "black",
-                "type": "color"
+                "type": "expression"
             },
             "stroke-width": {
                 "css": "marker-line-width",
@@ -726,7 +726,7 @@
                 "default-value": 1,
                 "default-meaning": "opaque",
                 "doc": "The opacity of a line",
-                "type": "float"
+                "type": "expression"
             },
             "placement": {
                 "css": "marker-placement",
@@ -775,7 +775,7 @@
                 "css": "marker-fill",
                 "default-value": "blue",
                 "doc": "The color of the area of the marker.",
-                "type": "color"
+                "type": "expression"
             },
             "allow-overlap": {
                 "css": "marker-allow-overlap",
@@ -1539,7 +1539,7 @@
             },
             "opacity": {
                 "css": "point-opacity",
-                "type": "float",
+                "type": "expression",
                 "default-value": 1.0,
                 "default-meaning": "Fully opaque",
                 "doc": "A value from 0 to 1 to control the opacity of the point"
@@ -1899,7 +1899,7 @@
             },
             "fill-opacity": {
                 "css": "building-fill-opacity",
-                "type": "float",
+                "type": "expression",
                 "doc": "The opacity of the building as a whole, including all walls.",
                 "default-value": 1
             },
