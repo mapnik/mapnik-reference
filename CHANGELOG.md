@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### Future
+
+* Added `image-filters-inflate`
+
 ### 5.0.7
 
 Tagged Oct 25, 2013
