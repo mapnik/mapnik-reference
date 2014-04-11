@@ -2,7 +2,15 @@
 
 ### Future
 
+### 5.0.8
+
+Tagged Oct 25, 2013
+
+* Added `v2.3.0` reference
 * Added `image-filters-inflate`
+* Re-enable colorize-alpha for 2.2.0
+* Added experimental support for `text-placement-type:list` and `shield-placement-type:list`
+* Moved `fill`, `stroke-width`, and `opacity` on all symbolizers to expressions targeting Mapnik 3.x
 
 ### 5.0.7
 
