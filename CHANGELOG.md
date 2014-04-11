@@ -4,7 +4,7 @@
 
 ### 5.0.8
 
-Tagged Oct 25, 2013
+Tagged Apr 10, 2014
 
 * Added `v2.3.0` reference
 * Added `image-filters-inflate`
