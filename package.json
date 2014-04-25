@@ -2,7 +2,7 @@
   "author": "Mapnik Developers",
   "name": "mapnik-reference",
   "description": "Reference for Mapnik Styling Options",
-  "version": "5.0.8",
+  "version": "5.0.9",
   "repository": {
     "type": "git",
     "url": "git://github.com/mapnik/mapnik-reference.git"

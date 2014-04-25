@@ -2,6 +2,12 @@
 
 ### Future
 
+### 5.0.9
+
+Tagged Apr 25, 2014
+
+* Added `shield-halo-rasterizer`
+
 ### 5.0.8
 
 Tagged Apr 10, 2014
