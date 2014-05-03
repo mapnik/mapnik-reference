@@ -354,10 +354,10 @@
                 "doc": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with \"avoid-edges\"."
             },
             "maximum-extent": {
-                "css": "",
-                "default-value": "none",
-                "type":"bbox",
-                "default-meaning": "No clipping extent will be used",
+                "css": "maximum-extent",
+                "default-value": "-20037508.34,-20037508.34,20037508.34,20037508.34",
+                "type":"string",
+                "default-meaning": "All data will be clipped to global mercator extent (default is applied in Carto.js)",
                 "doc": "An extent to be used to limit the bounds used to query all layers during rendering. Should be minx, miny, maxx, maxy in the coordinates of the Map."
             },
             "base": {
