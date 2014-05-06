@@ -1747,13 +1747,13 @@
             "dx": {
                 "css": "text-dx",
                 "type": "float",
-                "doc": "Displace text by fixed amount, in pixels, +/- along the X axis.  A positive value will shift the text right",
+                "doc": "Displace text by fixed amount, in pixels, +/- along the X axis.  With \"dummy\" placement-type, a positive value displaces to the right. With \"simple\" placement-type, it is either left, right or unchanged, depending on the placement selected. Any non-zero value implies \"horizontal-alignment\" changes to \"left\" by default. Has no effect with 'line' text-placement-type.",
                 "default-value": 0
             },
             "dy": {
                 "css": "text-dy",
                 "type": "float",
-                "doc": "Displace text by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the text down",
+                "doc": "Displace text by fixed amount, in pixels, +/- along the Y axis.  With \"dummy\" placement-type, a positive value displaces downwards. With \"simple\" placement-type, it is either up, down or unchanged, depending on the placement selected. With \"line\" placement-type, a positive value displaces below the path.",
                 "default-value": 0
             },
             "vertical-alignment": {
