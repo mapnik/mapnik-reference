@@ -2,6 +2,8 @@
 
 ### Future
 
+* Added `text-halo-transform` and `shield-halo-transform`
+
 ### 5.0.9
 
 Tagged Apr 25, 2014

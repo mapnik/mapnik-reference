@@ -1026,6 +1026,21 @@
                 "default-value": "full",
                 "doc": "Exposes an alternate text halo rendering method that sacrifices quality for speed."
             },
+            "halo-transform": {
+                "css": "shield-halo-transform",
+                "type": "functions",
+                "functions": [
+                    ["matrix", 6],
+                    ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
+                    ["skewX", 1],
+                    ["skewY", 1]
+                ],
+                "default-value": "",
+                "default-meaning": "No transformation",
+                "doc": "SVG transformation definition applied to halo relative to the actual text. Allows for shadow or embossed effects"
+            },
             "character-spacing": {
                 "css": "shield-character-spacing",
                 "type": "unsigned",
@@ -1743,6 +1758,21 @@
                 ],
                 "default-value": "full",
                 "doc": "Exposes an alternate text halo rendering method that sacrifices quality for speed."
+            },
+            "halo-transform": {
+                "css": "text-halo-transform",
+                "type": "functions",
+                "functions": [
+                    ["matrix", 6],
+                    ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
+                    ["skewX", 1],
+                    ["skewY", 1]
+                ],
+                "default-value": "",
+                "default-meaning": "No transformation",
+                "doc": "SVG transformation definition applied to halo relative to the actual text. Allows for shadow or embossed effects"
             },
             "dx": {
                 "css": "text-dx",
