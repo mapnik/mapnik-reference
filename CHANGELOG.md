@@ -2,7 +2,8 @@
 
 ### Future
 
-# Added `linear-dodge`, `linear-burn`, and `divide` to `comp-op`
+* Removed `wrap-character` (https://github.com/mapnik/mapnik/issues/2333)
+* Added `linear-dodge`, `linear-burn`, and `divide` to `comp-op`
 * Added `text-halo-transform` and `shield-halo-transform`
 
 ### 5.0.9
