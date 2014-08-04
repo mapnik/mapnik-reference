@@ -5,6 +5,7 @@
 * Removed `wrap-character` (https://github.com/mapnik/mapnik/issues/2333)
 * Added `linear-dodge`, `linear-burn`, and `divide` to `comp-op`
 * Added `text-halo-transform` and `shield-halo-transform`
+* Changed `polygon-pattern-alignment` default to `global`
 
 ### 5.0.9
 

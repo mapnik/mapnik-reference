@@ -1353,11 +1353,12 @@
             "alignment": {
                 "css": "polygon-pattern-alignment",
                 "type": [
-                    "local",
-                    "global"
+                    "global",
+                    "local"
                 ],
-                "default-value": "local",
-                "doc": "Specify whether to align pattern fills to the layer or to the map."
+                "default-value": "global",
+                "doc": "Specify whether to align pattern fills to the layer's geometry (local) or to the map (global).",
+                "default-meaning":"Patterns will be aligned to the map (or tile boundaries) when being repeated across polygons. This is ideal for seamless patterns in tiled rendering."
             },
             "gamma": {
                 "css": "polygon-pattern-gamma",
