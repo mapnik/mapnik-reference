@@ -1249,6 +1249,13 @@
                 "default-meaning": "geometry will be clipped to map bounds before rendering",
                 "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
             },
+            "opacity": {
+                "css": "line-pattern-opacity",
+                "type": "float",
+                "doc": "Apply an opacity level to the image used for the pattern",
+                "default-value": 1,
+                "default-meaning": "The image is rendered without modifications"
+            },
             "simplify": {
                 "css": "line-pattern-simplify",
                 "type": "float",
@@ -1489,7 +1496,6 @@
                     "near",
                     "fast",
                     "bilinear",
-                    "bilinear8",
                     "bicubic",
                     "spline16",
                     "spline36",

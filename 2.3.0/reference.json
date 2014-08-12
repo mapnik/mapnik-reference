@@ -1443,7 +1443,6 @@
                     "near",
                     "fast",
                     "bilinear",
-                    "bilinear8",
                     "bicubic",
                     "spline16",
                     "spline36",

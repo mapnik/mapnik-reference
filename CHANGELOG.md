@@ -2,6 +2,8 @@
 
 ### Future
 
+* Removed `bilinear8` option for `scaling` (https://github.com/mapnik/mapnik/issues/2076)
+* Added `line-pattern-opacity`
 * Removed `wrap-character` (https://github.com/mapnik/mapnik/issues/2333)
 * Added `linear-dodge`, `linear-burn`, and `divide` to `comp-op`
 * Added `text-halo-transform` and `shield-halo-transform`
