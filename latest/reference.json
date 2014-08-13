@@ -767,11 +767,13 @@
                 "type": [
                     "point",
                     "line",
-                    "interior"
+                    "interior",
+                    "vertex-first",
+                    "vertex-last"
                 ],
                 "default-value": "point",
                 "default-meaning": "Place markers at the center point (centroid) of the geometry",
-                "doc": "Attempt to place markers on a point, in the center of a polygon, or if markers-placement:line, then multiple times along a line. 'interior' placement can be used to ensure that points placed on polygons are forced to be inside the polygon interior"
+                "doc": "Attempt to place markers on a point, in the center of a polygon, or if markers-placement:line, then multiple times along a line. 'interior' placement can be used to ensure that points placed on polygons are forced to be inside the polygon interior. The 'vertex-first' and 'vertex-last' options can be used to place markers at the first or last vertex of lines or polygons."
             },
             "multi-policy": {
                 "css": "marker-multi-policy",

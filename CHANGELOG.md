@@ -2,6 +2,7 @@
 
 ### Future
 
+* Added `vertex-first` and `vertex-last` `marker-placement` options (https://github.com/mapnik/mapnik/pull/2338)
 * Removed `bilinear8` option for `scaling` (https://github.com/mapnik/mapnik/issues/2076)
 * Added `line-pattern-opacity`
 * Removed `wrap-character` (https://github.com/mapnik/mapnik/issues/2333)
