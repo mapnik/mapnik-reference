@@ -2,6 +2,7 @@
 
 ### Future
 
+* Updated new default of `clip:false` for Mapnik >= 3.x
 * Added `shield-label-position-tolerance`
 * Added `vertex-first` and `vertex-last` `marker-placement` options (https://github.com/mapnik/mapnik/pull/2338)
 * Removed `bilinear8` option for `scaling` (https://github.com/mapnik/mapnik/issues/2076)

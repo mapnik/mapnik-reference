@@ -440,9 +440,9 @@
             "clip": {
                 "css": "polygon-clip",
                 "type": "boolean",
-                "default-value": true,
-                "default-meaning": "geometry will be clipped to map bounds before rendering",
-                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+                "default-value": false,
+                "default-meaning": "geometry will not be clipped to map bounds before rendering",
+                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
             "simplify": {
                 "css": "polygon-simplify",
@@ -616,9 +616,9 @@
             "clip": {
                 "css": "line-clip",
                 "type": "boolean",
-                "default-value": true,
-                "default-meaning": "geometry will be clipped to map bounds before rendering",
-                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+                "default-value": false,
+                "default-meaning": "geometry will not be clipped to map bounds before rendering",
+                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
             "simplify": {
                 "css": "line-simplify",
@@ -857,9 +857,9 @@
             "clip": {
                 "css": "marker-clip",
                 "type": "boolean",
-                "default-value": true,
-                "default-meaning": "geometry will be clipped to map bounds before rendering",
-                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+                "default-value": false,
+                "default-meaning": "geometry will not be clipped to map bounds before rendering",
+                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
             "smooth": {
                 "css": "marker-smooth",
@@ -1192,9 +1192,9 @@
             "clip": {
                 "css": "shield-clip",
                 "type": "boolean",
-                "default-value": true,
-                "default-meaning": "geometry will be clipped to map bounds before rendering",
-                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+                "default-value": false,
+                "default-meaning": "geometry will not be clipped to map bounds before rendering",
+                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
             "comp-op": {
                 "css": "shield-comp-op",
@@ -1253,9 +1253,9 @@
             "clip": {
                 "css": "line-pattern-clip",
                 "type": "boolean",
-                "default-value": true,
-                "default-meaning": "geometry will be clipped to map bounds before rendering",
-                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+                "default-value": false,
+                "default-meaning": "geometry will not be clipped to map bounds before rendering",
+                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
             "opacity": {
                 "css": "line-pattern-opacity",
@@ -1393,9 +1393,9 @@
             "clip": {
                 "css": "polygon-pattern-clip",
                 "type": "boolean",
-                "default-value": true,
-                "default-meaning": "geometry will be clipped to map bounds before rendering",
-                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+                "default-value": false,
+                "default-meaning": "geometry will not be clipped to map bounds before rendering",
+                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
             "simplify": {
                 "css": "polygon-pattern-simplify",
@@ -1944,9 +1944,9 @@
             "clip": {
                 "css": "text-clip",
                 "type": "boolean",
-                "default-value": true,
-                "default-meaning": "geometry will be clipped to map bounds before rendering",
-                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+                "default-value": false,
+                "default-meaning": "geometry will not be clipped to map bounds before rendering",
+                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
             "comp-op": {
                 "css": "text-comp-op",
