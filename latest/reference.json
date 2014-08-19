@@ -1011,6 +1011,12 @@
                 "doc": "Minimum distance a shield will be placed from the edge of a metatile. This option is similiar to shield-avoid-edges:true except that the extra margin is used to discard cases where the shield+margin are not fully inside the metatile",
                 "type": "float"
             },
+            "label-position-tolerance": {
+                "css": "shield-label-position-tolerance",
+                "default-value": 0.0,
+                "type": "float",
+                "doc": "Allows the shield to be displaced from its ideal position by a number of pixels (only works with placement:line)"
+            },
             "wrap-width": {
                 "css": "shield-wrap-width",
                 "type": "unsigned",
