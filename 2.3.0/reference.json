@@ -1668,7 +1668,7 @@
             },
             "wrap-width": {
                 "css": "text-wrap-width",
-                "doc": "Length of a chunk of text in characters before wrapping text",
+                "doc": "Length of a chunk of text in characters before wrapping text. If set to zero, text doesn't wrap.",
                 "default-value": 0,
                 "type": "unsigned"
             },
