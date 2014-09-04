@@ -446,7 +446,7 @@
                          "visvalingam-whyatt"
                         ],
                 "default-value": "radial-distance",
-                "default-meaning": "geometry will not be simplified using the radial distance algorithm",
+                "default-meaning": "geometry will be simplified using the radial distance algorithm",
                 "doc": "Simplify gemoetries by the given algorithm."
             },
             "smooth": {
@@ -618,7 +618,7 @@
                          "visvalingam-whyatt"
                         ],
                 "default-value": "radial-distance",
-                "default-meaning": "geometry will not be simplified using the radial distance algorithm",
+                "default-meaning": "geometry will be simplified using the radial distance algorithm",
                 "doc": "Simplify gemoetries by the given algorithm."
             },
             "smooth": {
@@ -1231,7 +1231,7 @@
                          "visvalingam-whyatt"
                         ],
                 "default-value": "radial-distance",
-                "default-meaning": "geometry will not be simplified using the radial distance algorithm",
+                "default-meaning": "geometry will be simplified using the radial distance algorithm",
                 "doc": "geometries are simplified by the given algorithm."
             },
             "smooth": {
@@ -1359,7 +1359,7 @@
                          "visvalingam-whyatt"
                         ],
                 "default-value": "radial-distance",
-                "default-meaning": "geometry will not be simplified using the radial distance algorithm",
+                "default-meaning": "geometry will be simplified using the radial distance algorithm",
                 "doc": "geometries are simplified by the given algorithm"
             },
             "smooth": {
