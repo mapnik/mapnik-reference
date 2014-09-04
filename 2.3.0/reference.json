@@ -288,7 +288,7 @@
                 "type": "uri",
                 "default-value": "",
                 "default-meaning": "transparent",
-                "doc": "An image that is repeated below all features on a map as a background."
+                "doc": "An image that is repeated below all features on a map as a background. Accepted formats: JPG, PNG."
             },
             "background-image-comp-op": {
                 "css": "background-image-comp-op",
@@ -705,7 +705,7 @@
         "markers": {
             "file": {
                 "css": "marker-file",
-                "doc": "An SVG file that this marker shows at each placement. If no file is given, the marker will show an ellipse.",
+                "doc": "A file that this marker shows at each placement. If no file is given, the marker will show an ellipse. Accepted formats: SVG, JPG, PNG.",
                 "default-value": "none",
                 "default-meaning": "An ellipse or circle, if width equals height.",
                 "type": "uri"
@@ -918,7 +918,7 @@
                 "required": true,
                 "type": "uri",
                 "default-value": "none",
-                "doc": "Image file to render behind the shield text."
+                "doc": "Image file to render behind the shield text. Accepted formats: SVG, JPG, PNG."
             },
             "face-name": {
                 "css": "shield-face-name",
@@ -1208,7 +1208,7 @@
                 "type": "uri",
                 "default-value": "none",
                 "required": true,
-                "doc": "An image file to be repeated and warped along a line"
+                "doc": "An image file to be repeated and warped along a line. Accepted formats: JPG, PNG."
             },
             "clip": {
                 "css": "line-pattern-clip",
@@ -1312,7 +1312,7 @@
                 "type": "uri",
                 "default-value": "none",
                 "required": true,
-                "doc": "Image to use as a repeated pattern fill within a polygon"
+                "doc": "Image to use as a repeated pattern fill within a polygon. Accepted formats: JPG, PNG."
             },
             "alignment": {
                 "css": "polygon-pattern-alignment",
@@ -1548,7 +1548,7 @@
                 "type": "uri",
                 "required": false,
                 "default-value": "none",
-                "doc": "Image file to represent a point."
+                "doc": "Image file to represent a point. Accepted formats: SVG, PNG, JPG."
             },
             "allow-overlap": {
                 "css": "point-allow-overlap",
