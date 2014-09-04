@@ -993,7 +993,7 @@
                 "css": "shield-wrap-width",
                 "type": "unsigned",
                 "default-value": 0,
-                "doc": "Length of a chunk of text in characters before wrapping text. If set to zero, text doesn't wrap."
+                "doc": "Length of a chunk of text in pixels before wrapping text. If set to zero, text doesn't wrap."
             },
             "wrap-before": {
                 "css": "shield-wrap-before",
@@ -1124,7 +1124,7 @@
                     "lowercase",
                     "capitalize"
                 ],
-                "doc": "Transform the case of the characters",
+                "doc": "Transform the case of the characters.",
                 "default-value": "none"
             },
             "justify-alignment": {
@@ -1135,7 +1135,7 @@
                     "right",
                     "auto"
                 ],
-                "doc": "Define how text in a shield's label is justified",
+                "doc": "Define how text in a shield's label is justified.",
                 "default-value": "auto"
             },
             "transform": {
@@ -1151,7 +1151,7 @@
                 ],
                 "default-value": "none",
                 "default-meaning": "No transformation",
-                "doc": "SVG transformation definition"
+                "doc": "SVG transformation definition."
             },
             "clip": {
                 "css": "shield-clip",
@@ -1232,7 +1232,7 @@
                         ],
                 "default-value": "radial-distance",
                 "default-meaning": "geometry will not be simplified using the radial distance algorithm",
-                "doc": "geometries are simplified by the given algorithm"
+                "doc": "geometries are simplified by the given algorithm."
             },
             "smooth": {
                 "css": "line-pattern-smooth",
@@ -1593,7 +1593,7 @@
                 ],
                 "default-value": "none",
                 "default-meaning": "No transformation",
-                "doc": "SVG transformation definition"
+                "doc": "SVG transformation definition."
             },
             "comp-op": {
                 "css": "point-comp-op",
@@ -1668,7 +1668,7 @@
             },
             "wrap-width": {
                 "css": "text-wrap-width",
-                "doc": "Length of a chunk of text in characters before wrapping text. If set to zero, text doesn't wrap.",
+                "doc": "Length of a chunk of text in pixels before wrapping text. If set to zero, text doesn't wrap.",
                 "default-value": 0,
                 "type": "unsigned"
             },
@@ -1814,6 +1814,7 @@
             },
             "placement": {
                 "css": "text-placement",
+                "default-value": "point",
                 "type": [
                     "point",
                     "line",
