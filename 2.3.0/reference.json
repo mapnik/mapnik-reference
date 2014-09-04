@@ -6,7 +6,7 @@
                 "all",
                 "first"
             ],
-            "doc": "Control the processing behavior of Rule filters within a Style. If 'all' is used then all Rules are processed sequentially independent of whether any previous filters matched. If 'first' is used then it means processing ends after the first match (a positive filter evaluation) and no further Rules in the Style are processed ('first' is usually the default for CSS implementations on top of Mapnik to simplify translation from CSS to Mapnik XML)",
+            "doc": "Control the processing behavior of Rule filters within a Style. If 'all' is used then all Rules are processed sequentially independent of whether any previous filters matched. If 'first' is used then it means processing ends after the first match (a positive filter evaluation) and no further Rules in the Style are processed ('first' is usually the default for CSS implementations on top of Mapnik to simplify translation from CSS to Mapnik XML).",
             "default-value": "all",
             "default-meaning": "All Rules in a Style are processed whether they have filters or not and whether or not the filter conditions evaluate to true."
         },
@@ -37,7 +37,7 @@
             "default-value": false,
             "type":"boolean",
             "default-meaning": "No special handling will be done and image filters that blur data will only blur up to the edge of a tile boundary",
-            "doc": "A property that can be set to true to enable using an inflated image internally for seamless blurring across tiles (requires buffered data)"
+            "doc": "A property that can be set to true to enable using an inflated image internally for seamless blurring across tiles (requires buffered data)."
         },
         "direct-image-filters": {
             "css": "direct-image-filters",
@@ -59,7 +59,7 @@
                 ["color-to-alpha", 1],
                 ["scale-hsla", 8]
             ],
-            "doc": "A list of image filters to apply to the main canvas (see the `image-filters` doc for how they work on a separate canvas)"
+            "doc": "A list of image filters to apply to the main canvas (see the `image-filters` doc for how they work on a separate canvas)."
         },
         "comp-op": {
             "css": "comp-op",
@@ -105,7 +105,7 @@
         "opacity": {
             "css": "opacity",
             "type": "float",
-            "doc": "An alpha value for the style (which means an alpha applied to all features in separate buffer and then composited back to main buffer)",
+            "doc": "An alpha value for the style (which means an alpha applied to all features in separate buffer and then composited back to main buffer).",
             "default-value": 1,
             "default-meaning": "no separate buffer will be used and no alpha will be applied to the style after rendering"
         }
@@ -116,43 +116,43 @@
             "type":"string",
             "required" : true,
             "default-meaning": "No layer name has been provided",
-            "doc": "The name of a layer. Can be anything you wish and is not strictly validated, but ideally unique  in the map"
+            "doc": "The name of a layer. Can be anything you wish and is not strictly validated, but ideally unique  in the map."
         },
         "srs": {
             "default-value": "",
             "type":"string",
             "default-meaning": "No srs value is provided and the value will be inherited from the Map's srs",
-            "doc": "The spatial reference system definition for the layer, aka the projection. Can either be a proj4 literal string like '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs' or, if the proper proj4 epsg/nad/etc identifier files are installed, a string that uses an id like: '+init=epsg:4326'"
+            "doc": "The spatial reference system definition for the layer, aka the projection. Can either be a proj4 literal string like '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs' or, if the proper proj4 epsg/nad/etc identifier files are installed, a string that uses an id like: '+init=epsg:4326'."
         },
         "status": {
             "default-value": true,
             "type":"boolean",
             "default-meaning": "This layer will be marked as active and available for processing",
-            "doc": "A property that can be set to false to disable this layer from being processed"
+            "doc": "A property that can be set to false to disable this layer from being processed."
         },
         "minzoom": {
             "default-value": "0",
             "type":"float",
             "default-meaning": "The layer will be visible at the minimum possible scale",
-            "doc": "The minimum scale denominator that this layer will be visible at. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6"
+            "doc": "The minimum scale denominator that this layer will be visible at. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6."
         },
         "maxzoom": {
             "default-value": "1.79769e+308",
             "type":"float",
             "default-meaning": "The layer will be visible at the maximum possible scale",
-            "doc": "The maximum scale denominator that this layer will be visible at. The default is the numeric limit of the C++ double type, which may vary slightly by system, but is likely a massive number like 1.79769e+308 and ensures that this layer will always be visible unless the value is reduced. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6"
+            "doc": "The maximum scale denominator that this layer will be visible at. The default is the numeric limit of the C++ double type, which may vary slightly by system, but is likely a massive number like 1.79769e+308 and ensures that this layer will always be visible unless the value is reduced. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6."
         },
         "queryable": {
             "default-value": false,
             "type":"boolean",
             "default-meaning": "The layer will not be available for the direct querying of data values",
-            "doc": "This property was added for GetFeatureInfo/WMS compatibility and is rarely used. It is off by default meaning that in a WMS context the layer will not be able to be queried unless the property is explicitly set to true"
+            "doc": "This property was added for GetFeatureInfo/WMS compatibility and is rarely used. It is off by default meaning that in a WMS context the layer will not be able to be queried unless the property is explicitly set to true."
         },
         "clear-label-cache": {
             "default-value": false,
             "type":"boolean",
             "default-meaning": "The renderer's collision detector cache (used for avoiding duplicate labels and overlapping markers) will not be cleared immediately before processing this layer",
-            "doc": "This property, by default off, can be enabled to allow a user to clear the collision detector cache before a given layer is processed. This may be desirable to ensure that a given layers data shows up on the map even if it normally would not because of collisions with previously rendered labels or markers"
+            "doc": "This property, by default off, can be enabled to allow a user to clear the collision detector cache before a given layer is processed. This may be desirable to ensure that a given layers data shows up on the map even if it normally would not because of collisions with previously rendered labels or markers."
         },
         "group-by": {
             "default-value": "",
@@ -164,7 +164,7 @@
             "default-value": "0",
             "type":"float",
             "default-meaning": "No custom buffer will be used for the layer and rather the Map buffer-size will be used",
-            "doc": "Extra tolerance around the Layer extent (in pixels) used when querying the layer data during rendering. If set this will override the Map buffer-size"
+            "doc": "Extra tolerance around the Layer extent (in pixels) used when querying the layer data during rendering. If set this will override the Map buffer-size."
         },
         "maximum-extent": {
             "default-value": "none",
@@ -202,7 +202,7 @@
                 "default-value": false,
                 "type":"boolean",
                 "default-meaning": "No special handling will be done and image filters that blur data will only blur up to the edge of a tile boundary",
-                "doc": "A property that can be set to true to enable using an inflated image internally for seamless blurring across tiles (requires buffered data)"
+                "doc": "A property that can be set to true to enable using an inflated image internally for seamless blurring across tiles (requires buffered data)."
             },
             "direct-image-filters": {
                 "css": "direct-image-filters",
@@ -224,7 +224,7 @@
                     ["color-to-alpha", 1],
                     ["scale-hsla", 8]
                 ],
-                "doc": "A list of image filters to apply to the main canvas (see the `image-filters` doc for how they work on a separate canvas)"
+                "doc": "A list of image filters to apply to the main canvas (see the `image-filters` doc for how they work on a separate canvas)."
             },
             "comp-op": {
                 "css": "comp-op",
@@ -270,7 +270,7 @@
             "opacity": {
                 "css": "opacity",
                 "type": "float",
-                "doc": "An alpha value for the style (which means an alpha applied to all features in separate buffer and then composited back to main buffer)",
+                "doc": "An alpha value for the style (which means an alpha applied to all features in separate buffer and then composited back to main buffer).",
                 "default-value": 1,
                 "default-meaning": "no separate buffer will be used and no alpha will be applied to the style after rendering"
             }
@@ -281,19 +281,19 @@
                 "default-value": "none",
                 "default-meaning": "transparent",
                 "type": "color",
-                "doc": "Map Background color"
+                "doc": "Map Background color."
             },
             "background-image": {
                 "css": "background-image",
                 "type": "uri",
                 "default-value": "",
                 "default-meaning": "transparent",
-                "doc": "An image that is repeated below all features on a map as a background."
+                "doc": "An image that is repeated below all features on a map as a background. Accepted formats: JPG, PNG."
             },
             "background-image-comp-op": {
                 "css": "background-image-comp-op",
                 "type": "float",
-                "doc": "Set the compositing operation used to blend the image into the background",
+                "doc": "Set the compositing operation used to blend the image into the background.",
                 "default-value": "src-over",
                 "default-meaning": "The background-image will be blended with the background normally (placed on top of any existing background-color)",
                 "type": ["clear",
@@ -335,7 +335,7 @@
             "background-image-opacity": {
                 "css": "background-image-opacity",
                 "type": "float",
-                "doc": "Set the opacity of the image",
+                "doc": "Set the opacity of the image.",
                 "default-value": 1,
                 "default-meaning": "The image opacity will not be changed when applied to the map background"
             },
@@ -344,7 +344,7 @@
                 "type": "string",
                 "default-value": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
                 "default-meaning": "The proj4 literal of EPSG:4326 is assumed to be the Map's spatial reference and all data from layers within this map will be plotted using this coordinate system. If any layers do not declare an srs value then they will be assumed to be in the same srs as the Map and not transformations will be needed to plot them in the Map's coordinate space",
-                "doc": "Map spatial reference (proj4 string)"
+                "doc": "Map spatial reference (proj4 string)."
             },
             "buffer-size": {
                 "css": "buffer-size",
@@ -372,14 +372,14 @@
                 "default-value": true,
                 "default-meaning": "Paths read from XML will be interpreted from the location of the XML",
                 "type": "boolean",
-                "doc": "value to control whether paths in the XML will be interpreted from the location of the XML or from the working directory of the program that calls load_map()"
+                "doc": "Value to control whether paths in the XML will be interpreted from the location of the XML or from the working directory of the program that calls load_map()."
             },
             "minimum-version": {
                 "css": "",
                 "default-value": "none",
                 "default-meaning": "Mapnik version will not be detected and no error will be thrown about compatibility",
                 "type": "string",
-                "doc": "The minumum Mapnik version (e.g. 0.7.2) needed to use certain functionality in the stylesheet"
+                "doc": "The minumum Mapnik version (e.g. 0.7.2) needed to use certain functionality in the stylesheet."
             },
             "font-directory": {
                 "css": "font-directory",
@@ -395,12 +395,12 @@
                 "type": "color",
                 "default-value": "rgba(128,128,128,1)",
                 "default-meaning": "gray and fully opaque (alpha = 1), same as rgb(128,128,128)",
-                "doc": "Fill color to assign to a polygon"
+                "doc": "Fill color to assign to a polygon."
             },
             "fill-opacity": {
                 "css": "polygon-opacity",
                 "type": "float",
-                "doc": "The opacity of the polygon",
+                "doc": "The opacity of the polygon.",
                 "default-value": 1,
                 "default-meaning": "opaque"
             },
@@ -410,7 +410,7 @@
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
                 "range": "0-1",
-                "doc": "Level of antialiasing of polygon edges"
+                "doc": "Level of antialiasing of polygon edges."
             },
             "gamma-method": {
                 "css": "polygon-gamma-method",
@@ -423,21 +423,21 @@
                 ],
                 "default-value": "power",
                 "default-meaning": "pow(x,gamma) is used to calculate pixel gamma, which produces slightly smoother line and polygon antialiasing than the 'linear' method, while other methods are usually only used to disable AA",
-                "doc": "An Antigrain Geometry specific rendering hint to control the quality of antialiasing. Under the hood in Mapnik this method is used in combination with the 'gamma' value (which defaults to 1). The methods are in the AGG source at https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions.h"
+                "doc": "An Antigrain Geometry specific rendering hint to control the quality of antialiasing. Under the hood in Mapnik this method is used in combination with the 'gamma' value (which defaults to 1). The methods are in the AGG source at https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions."
             },
             "clip": {
                 "css": "polygon-clip",
                 "type": "boolean",
                 "default-value": true,
                 "default-meaning": "geometry will be clipped to map bounds before rendering",
-                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+                "doc": "Geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
             },
             "simplify": {
                 "css": "polygon-simplify",
                 "type": "float",
                 "default-value": 0.0,
                 "default-meaning": "geometry will not be simplified",
-                "doc": "geometries are simplified by the given tolerance"
+                "doc": "Simplify geometries by the given tolerance."
             },
             "simplify-algorithm": {
                 "css": "polygon-simplify-algorithm",
@@ -446,8 +446,8 @@
                          "visvalingam-whyatt"
                         ],
                 "default-value": "radial-distance",
-                "default-meaning": "geometry will not be simplified using the radial distance algorithm",
-                "doc": "geometries are simplified by the given algorithm"
+                "default-meaning": "geometry will be simplified using the radial distance algorithm",
+                "doc": "Simplify gemoetries by the given algorithm."
             },
             "smooth": {
                 "css": "polygon-smooth",
@@ -520,20 +520,20 @@
                 "default-value": "rgba(0,0,0,1)",
                 "type": "color",
                 "default-meaning": "black and fully opaque (alpha = 1), same as rgb(0,0,0)",
-                "doc": "The color of a drawn line"
+                "doc": "The color of a drawn line."
             },
             "stroke-width": {
                 "css": "line-width",
                 "default-value": 1,
                 "type": "float",
-                "doc": "The width of a line in pixels"
+                "doc": "The width of a line in pixels."
             },
             "stroke-opacity": {
                 "css": "line-opacity",
                 "default-value": 1,
                 "type": "float",
                 "default-meaning": "opaque",
-                "doc": "The opacity of a line"
+                "doc": "The opacity of a line."
             },
             "stroke-linejoin": {
                 "css": "line-join",
@@ -543,7 +543,7 @@
                     "round",
                     "bevel"
                 ],
-                "doc": "The behavior of lines when joining"
+                "doc": "The behavior of lines when joining."
             },
             "stroke-linecap": {
                 "css": "line-cap",
@@ -553,7 +553,7 @@
                     "round",
                     "square"
                 ],
-                "doc": "The display of line endings"
+                "doc": "The display of line endings."
             },
             "stroke-gamma": {
                 "css": "line-gamma",
@@ -561,7 +561,7 @@
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
                 "range": "0-1",
-                "doc": "Level of antialiasing of stroke line"
+                "doc": "Level of antialiasing of stroke line."
             },
             "stroke-gamma-method": {
                 "css": "line-gamma-method",
@@ -574,7 +574,7 @@
                 ],
                 "default-value": "power",
                 "default-meaning": "pow(x,gamma) is used to calculate pixel gamma, which produces slightly smoother line and polygon antialiasing than the 'linear' method, while other methods are usually only used to disable AA",
-                "doc": "An Antigrain Geometry specific rendering hint to control the quality of antialiasing. Under the hood in Mapnik this method is used in combination with the 'gamma' value (which defaults to 1). The methods are in the AGG source at https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions.h"
+                "doc": "An Antigrain Geometry specific rendering hint to control the quality of antialiasing. Under the hood in Mapnik this method is used in combination with the 'gamma' value (which defaults to 1). The methods are in the AGG source at https://github.com/mapnik/mapnik/blob/master/deps/agg/include/agg_gamma_functions."
             },
             "stroke-dasharray": {
                 "css": "line-dasharray",
@@ -586,7 +586,7 @@
             "stroke-dashoffset": {
                 "css": "line-dash-offset",
                 "type": "numbers",
-                "doc": "valid parameter but not currently used in renderers (only exists for experimental svg support in Mapnik which is not yet enabled)",
+                "doc": "Valid parameter but not currently used in renderers (only exists for experimental svg support in Mapnik which is not yet enabled).",
                 "default-value": "none",
                 "default-meaning": "solid line"
             },
@@ -602,14 +602,14 @@
                 "type": "boolean",
                 "default-value": true,
                 "default-meaning": "geometry will be clipped to map bounds before rendering",
-                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+                "doc": "Geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
             },
             "simplify": {
                 "css": "line-simplify",
                 "type": "float",
                 "default-value": 0.0,
                 "default-meaning": "geometry will not be simplified",
-                "doc": "geometries are simplified by the given tolerance"
+                "doc": "Simplify gemoetries by the given tolerance"
             },
             "simplify-algorithm": {
                 "css": "line-simplify-algorithm",
@@ -618,8 +618,8 @@
                          "visvalingam-whyatt"
                         ],
                 "default-value": "radial-distance",
-                "default-meaning": "geometry will not be simplified using the radial distance algorithm",
-                "doc": "geometries are simplified by the given algorithm"
+                "default-meaning": "geometry will be simplified using the radial distance algorithm",
+                "doc": "Simplify gemoetries by the given algorithm."
             },
             "smooth": {
                 "css": "line-smooth",
@@ -705,41 +705,42 @@
         "markers": {
             "file": {
                 "css": "marker-file",
-                "doc": "An SVG file that this marker shows at each placement. If no file is given, the marker will show an ellipse.",
-                "default-value": "",
-                "default-meaning": "An ellipse or circle, if width equals height",
+                "doc": "A file that this marker shows at each placement. If no file is given, the marker will show an ellipse. Accepted formats: SVG, JPG, PNG.",
+                "default-value": "none",
+                "default-meaning": "An ellipse or circle, if width equals height.",
                 "type": "uri"
             },
             "opacity": {
                 "css": "marker-opacity",
                 "doc": "The overall opacity of the marker, if set, overrides both the opacity of both the fill and stroke",
                 "default-value": 1,
-                "default-meaning": "The stroke-opacity and fill-opacity will be used",
+                "default-meaning": "The stroke-opacity and fill-opacity of the marker.",
                 "type": "float"
             },
             "fill-opacity": {
                 "css": "marker-fill-opacity",
-                "doc": "The fill opacity of the marker",
+                "doc": "The fill opacity of the marker.",
                 "default-value": 1,
                 "default-meaning": "opaque",
                 "type": "float"
             },
             "stroke": {
                 "css": "marker-line-color",
-                "doc": "The color of the stroke around a marker shape.",
+                "doc": "The color of the stroke around the marker.",
                 "default-value": "black",
                 "type": "color"
             },
             "stroke-width": {
                 "css": "marker-line-width",
-                "doc": "The width of the stroke around a marker shape, in pixels. This is positioned on the boundary, so high values can cover the area itself.",
+                "default-value": 0.5,
+                "doc": "The width of the stroke around the marker, in pixels. This is positioned on the boundary, so high values can cover the area itself.",
                 "type": "float"
             },
             "stroke-opacity": {
                 "css": "marker-line-opacity",
                 "default-value": 1,
                 "default-meaning": "opaque",
-                "doc": "The opacity of a line",
+                "doc": "The opacity of the line.",
                 "type": "float"
             },
             "placement": {
@@ -751,7 +752,7 @@
                 ],
                 "default-value": "point",
                 "default-meaning": "Place markers at the center point (centroid) of the geometry",
-                "doc": "Attempt to place markers on a point, in the center of a polygon, or if markers-placement:line, then multiple times along a line. 'interior' placement can be used to ensure that points placed on polygons are forced to be inside the polygon interior"
+                "doc": "Attempt to place markers on a point, in the center of a polygon, or if markers-placement:line, then multiple times along a line. 'interior' placement can be used to ensure that points placed on polygons are forced to be inside the polygon interior."
             },
             "multi-policy": {
                 "css": "marker-multi-policy",
@@ -771,7 +772,7 @@
                     "ellipse"
                 ],
                 "default-value": "ellipse",
-                "doc": "The default marker-type. If a SVG file is not given as the marker-file parameter, the renderer provides either an arrow or an ellipse (a circle if height is equal to width)"
+                "doc": "The default marker-type. If a SVG file is not given as the marker-file parameter, the renderer provides either an arrow or an ellipse (a circle if height is equal to width)."
             },
             "width": {
                 "css": "marker-width",
@@ -803,11 +804,11 @@
                 "type": "boolean",
                 "default-value": false,
                 "default-meaning": "do not store the bbox of this geometry in the collision detector cache",
-                "doc": "value to control whether the placement of the feature will prevent the placement of other features"
+                "doc": "Value to control whether the placement of the feature will prevent the placement of other features."
             },
             "spacing": {
                 "css": "marker-spacing",
-                "doc": "Space between repeated markers in pixels. If the spacing is less than the marker size or larger than the line segment length then no marker will be placed",
+                "doc": "Space between repeated markers in pixels. If the spacing is less than the marker size or larger than the line segment length then no marker will be placed.",
                 "default-value": 100,
                 "type": "float"
             },
@@ -828,9 +829,9 @@
                     ["skewX", 1],
                     ["skewY", 1]
                 ],
-                "default-value": "",
+                "default-value": "none",
                 "default-meaning": "No transformation",
-                "doc": "SVG transformation definition"
+                "doc": "SVG transformation definition."
             },
             "clip": {
                 "css": "marker-clip",
@@ -909,14 +910,15 @@
                 "css": "shield-name",
                 "type": "expression",
                 "serialization": "content",
-                "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]"
+                "default-value": "",
+                "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]."
             },
             "file": {
                 "css": "shield-file",
                 "required": true,
                 "type": "uri",
                 "default-value": "none",
-                "doc": "Image file to render behind the shield text"
+                "doc": "Image file to render behind the shield text. Accepted formats: SVG, JPG, PNG."
             },
             "face-name": {
                 "css": "shield-face-name",
@@ -936,12 +938,14 @@
             "size": {
                 "css": "shield-size",
                 "type": "float",
-                "doc": "The size of the shield text in pixels"
+                "default-value": 10,
+                "doc": "The size of the shield text in pixels."
             },
             "fill": {
                 "css": "shield-fill",
                 "type": "color",
-                "doc": "The color of the shield text"
+                "default-value": "black",
+                "doc": "The color of the shield text."
             },
             "placement": {
                 "css": "shield-placement",
@@ -977,19 +981,19 @@
                 "css": "shield-spacing",
                 "type": "float",
                 "default-value": 0,
-                "doc": "The spacing between repeated occurrences of the same shield on a line"
+                "doc": "The spacing between repeated occurrences of the same shield on a line."
             },
             "minimum-padding": {
                 "css": "shield-min-padding",
                 "default-value": 0,
-                "doc": "Minimum distance a shield will be placed from the edge of a metatile. This option is similiar to shield-avoid-edges:true except that the extra margin is used to discard cases where the shield+margin are not fully inside the metatile",
+                "doc": "Minimum distance a shield will be placed from the edge of a metatile. This option is similiar to shield-avoid-edges:true except that the extra margin is used to discard cases where the shield+margin are not fully inside the metatile.",
                 "type": "float"
             },
             "wrap-width": {
                 "css": "shield-wrap-width",
                 "type": "unsigned",
                 "default-value": 0,
-                "doc": "Length of a chunk of text in characters before wrapping text"
+                "doc": "Length of a chunk of text in pixels before wrapping text. If set to zero, text doesn't wrap."
             },
             "wrap-before": {
                 "css": "shield-wrap-before",
@@ -1000,21 +1004,21 @@
             "wrap-character": {
                 "css": "shield-wrap-character",
                 "type": "string",
-                "default-value": " ",
+                "default-value": "\" \"",
                 "doc": "Use this character instead of a space to wrap long names."
             },
             "halo-fill": {
                 "css": "shield-halo-fill",
                 "type": "color",
                 "default-value": "#FFFFFF",
-                "default-meaning": "white",
-                "doc": "Specifies the color of the halo around the text."
+                "doc": "Specifies the color of the halo around the text.",
+                "default-meaning": "white"
             },
             "halo-radius": {
                 "css": "shield-halo-radius",
-                "doc": "Specify the radius of the halo in pixels",
                 "default-value": 0,
                 "default-meaning": "no halo",
+                "doc": "Specify the radius of the halo in pixels.",
                 "type": "float"
             },
             "halo-rasterizer": {
@@ -1034,31 +1038,32 @@
             },
             "line-spacing": {
                 "css": "shield-line-spacing",
-                "doc": "Vertical spacing between lines of multiline labels (in pixels)",
+                "default-value": 0,
+                "doc": "Vertical spacing between lines of multiline labels (in pixels).",
                 "type": "unsigned"
             },
             "dx": {
                 "css": "shield-text-dx",
                 "type": "float",
-                "doc": "Displace text within shield by fixed amount, in pixels, +/- along the X axis.  A positive value will shift the text right",
+                "doc": "Displace text within shield by fixed amount, in pixels, +/- along the X axis.  A positive value will shift the shield right.",
                 "default-value": 0
             },
             "dy": {
                 "css": "shield-text-dy",
                 "type": "float",
-                "doc": "Displace text within shield by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the text down",
+                "doc": "Displace text within shield by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the shield down.",
                 "default-value": 0
             },
             "shield-dx": {
                 "css": "shield-dx",
                 "type": "float",
-                "doc": "Displace shield by fixed amount, in pixels, +/- along the X axis.  A positive value will shift the text right",
+                "doc": "Displace shield by fixed amount, in pixels, +/- along the X axis.  A positive value will shift the text right.",
                 "default-value": 0
             },
             "shield-dy": {
                 "css": "shield-dy",
                 "type": "float",
-                "doc": "Displace shield by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the text down",
+                "doc": "Displace shield by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the text down.",
                 "default-value": 0
             },
             "opacity": {
@@ -1119,7 +1124,7 @@
                     "lowercase",
                     "capitalize"
                 ],
-                "doc": "Transform the case of the characters",
+                "doc": "Transform the case of the characters.",
                 "default-value": "none"
             },
             "justify-alignment": {
@@ -1130,7 +1135,7 @@
                     "right",
                     "auto"
                 ],
-                "doc": "Define how text in a shield's label is justified",
+                "doc": "Define how text in a shield's label is justified.",
                 "default-value": "auto"
             },
             "transform": {
@@ -1144,9 +1149,9 @@
                     ["skewX", 1],
                     ["skewY", 1]
                 ],
-                "default-value": "",
+                "default-value": "none",
                 "default-meaning": "No transformation",
-                "doc": "SVG transformation definition"
+                "doc": "SVG transformation definition."
             },
             "clip": {
                 "css": "shield-clip",
@@ -1203,7 +1208,7 @@
                 "type": "uri",
                 "default-value": "none",
                 "required": true,
-                "doc": "An image file to be repeated and warped along a line"
+                "doc": "An image file to be repeated and warped along a line. Accepted formats: JPG, PNG."
             },
             "clip": {
                 "css": "line-pattern-clip",
@@ -1226,8 +1231,8 @@
                          "visvalingam-whyatt"
                         ],
                 "default-value": "radial-distance",
-                "default-meaning": "geometry will not be simplified using the radial distance algorithm",
-                "doc": "geometries are simplified by the given algorithm"
+                "default-meaning": "geometry will be simplified using the radial distance algorithm",
+                "doc": "geometries are simplified by the given algorithm."
             },
             "smooth": {
                 "css": "line-pattern-smooth",
@@ -1307,7 +1312,7 @@
                 "type": "uri",
                 "default-value": "none",
                 "required": true,
-                "doc": "Image to use as a repeated pattern fill within a polygon"
+                "doc": "Image to use as a repeated pattern fill within a polygon. Accepted formats: JPG, PNG."
             },
             "alignment": {
                 "css": "polygon-pattern-alignment",
@@ -1354,7 +1359,7 @@
                          "visvalingam-whyatt"
                         ],
                 "default-value": "radial-distance",
-                "default-meaning": "geometry will not be simplified using the radial distance algorithm",
+                "default-meaning": "geometry will be simplified using the radial distance algorithm",
                 "doc": "geometries are simplified by the given algorithm"
             },
             "smooth": {
@@ -1543,7 +1548,7 @@
                 "type": "uri",
                 "required": false,
                 "default-value": "none",
-                "doc": "Image file to represent a point"
+                "doc": "Image file to represent a point. Accepted formats: SVG, PNG, JPG."
             },
             "allow-overlap": {
                 "css": "point-allow-overlap",
@@ -1557,14 +1562,14 @@
                 "type": "boolean",
                 "default-value": false,
                 "default-meaning": "do not store the bbox of this geometry in the collision detector cache",
-                "doc": "value to control whether the placement of the feature will prevent the placement of other features"
+                "doc": "Control whether the placement of the feature will prevent the placement of other features."
             },
             "opacity": {
                 "css": "point-opacity",
                 "type": "float",
                 "default-value": 1.0,
                 "default-meaning": "Fully opaque",
-                "doc": "A value from 0 to 1 to control the opacity of the point"
+                "doc": "A value from 0 to 1 to control the opacity of the point."
             },
             "placement": {
                 "css": "point-placement",
@@ -1572,7 +1577,7 @@
                     "centroid",
                     "interior"
                 ],
-                "doc": "How this point should be placed. Centroid calculates the geometric center of a polygon, which can be outside of it, while interior always places inside of a polygon.",
+                "doc": "Control how this point should be placed. Centroid calculates the geometric center of a polygon, which can be outside of it, while interior always places inside of a polygon.",
                 "default-value": "centroid"
             },
             "transform": {
@@ -1586,9 +1591,9 @@
                     ["skewX", 1],
                     ["skewY", 1]
                 ],
-                "default-value": "",
+                "default-value": "none",
                 "default-meaning": "No transformation",
-                "doc": "SVG transformation definition"
+                "doc": "SVG transformation definition."
             },
             "comp-op": {
                 "css": "point-comp-op",
@@ -1645,6 +1650,7 @@
                 "css": "text-face-name",
                 "type": "string",
                 "validate": "font",
+                "default-value": "",
                 "doc": "Font name and style to render a label in",
                 "required": true
             },
@@ -1662,7 +1668,7 @@
             },
             "wrap-width": {
                 "css": "text-wrap-width",
-                "doc": "Length of a chunk of text in characters before wrapping text",
+                "doc": "Length of a chunk of text in pixels before wrapping text. If set to zero, text doesn't wrap.",
                 "default-value": 0,
                 "type": "unsigned"
             },
@@ -1681,30 +1687,31 @@
             "spacing": {
                 "css": "text-spacing",
                 "type": "unsigned",
-                "doc": "Distance between repeated text labels on a line (aka. label-spacing)"
+                "default-value": 0,
+                "doc": "Distance between repeated text labels on a line (aka. label-spacing)."
             },
             "character-spacing": {
                 "css": "text-character-spacing",
                 "type": "float",
                 "default-value": 0,
-                "doc": "Horizontal spacing adjustment between characters in pixels"
+                "doc": "Horizontal spacing adjustment between characters in pixels."
             },
             "line-spacing": {
                 "css": "text-line-spacing",
                 "default-value": 0,
                 "type": "unsigned",
-                "doc": "Vertical spacing adjustment between lines in pixels"
+                "doc": "Vertical spacing adjustment between lines in pixels."
             },
             "label-position-tolerance": {
                 "css": "text-label-position-tolerance",
                 "default-value": 0.0,
                 "type": "float",
-                "doc": "Allows the label to be displaced from its ideal position by a number of pixels (only works with placement:line)"
+                "doc": "Allows the label to be displaced from its ideal position by a number of pixels (only works with placement:line)."
             },
             "max-char-angle-delta": {
                 "css": "text-max-char-angle-delta",
                 "type": "float",
-                "default-value": "22.5",
+                "default-value": 22.5,
                 "doc": "The maximum angle change, in degrees, allowed between adjacent characters in a label. This value internally is converted to radians to the default is 22.5*math.pi/180.0. The higher the value the fewer labels will be placed around around sharp corners."
             },
             "fill": {
@@ -1746,13 +1753,13 @@
             "dx": {
                 "css": "text-dx",
                 "type": "float",
-                "doc": "Displace text by fixed amount, in pixels, +/- along the X axis.  A positive value will shift the text right",
+                "doc": "Displace text by fixed amount, in pixels, +/- along the X axis.  A positive value will shift the text right.",
                 "default-value": 0
             },
             "dy": {
                 "css": "text-dy",
                 "type": "float",
-                "doc": "Displace text by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the text down",
+                "doc": "Displace text by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the text down.",
                 "default-value": 0
             },
             "vertical-alignment": {
@@ -1776,11 +1783,13 @@
             "minimum-distance": {
                 "css": "text-min-distance",
                 "doc": "Minimum permitted distance to the next text symbolizer.",
+                "default-value": 0,
                 "type": "float"
             },
             "minimum-padding": {
                 "css": "text-min-padding",
-                "doc": "Minimum distance a text label will be placed from the edge of a metatile. This option is similiar to shield-avoid-edges:true except that the extra margin is used to discard cases where the shield+margin are not fully inside the metatile",
+                "default-value": 0,
+                "doc": "Minimum distance a text label will be placed from the edge of a metatile. This option is similiar to shield-avoid-edges:true except that the extra margin is used to discard cases where the shield+margin are not fully inside the metatile.",
                 "type": "float"
             },
             "minimum-path-length": {
@@ -1800,17 +1809,18 @@
             "orientation": {
                 "css": "text-orientation",
                 "type": "expression",
+                "default-value": "0",
                 "doc": "Rotate the text."
             },
             "placement": {
                 "css": "text-placement",
+                "default-value": "point",
                 "type": [
                     "point",
                     "line",
                     "vertex",
                     "interior"
                 ],
-                "default-value": "point",
                 "doc": "Control the style of placement of a point versus the geometry it is attached to."
             },
             "placement-type": {
@@ -1837,7 +1847,7 @@
                     "lowercase",
                     "capitalize"
                 ],
-                "doc": "Transform the case of the characters",
+                "doc": "Transform the case of the characters.",
                 "default-value": "none"
             },
             "horizontal-alignment": {
@@ -1848,7 +1858,7 @@
                     "right",
                     "auto"
                 ],
-                "doc": "The text's horizontal alignment from its centerpoint",
+                "doc": "The text's horizontal alignment from its centerpoint.",
                 "default-value": "auto"
             },
             "justify-alignment": {
@@ -1861,14 +1871,14 @@
                 ],
                 "doc": "Define how text is justified",
                 "default-value": "auto",
-                "default-meaning": "Auto alignment means that text will be centered by default except when using the `placement-type` parameter - in that case either right or left justification will be used automatically depending on where the text could be fit given the `text-placements` directives"
+                "default-meaning": "Auto alignment means that text will be centered by default except when using the `placement-type` parameter - in that case either right or left justification will be used automatically depending on where the text could be fit given the `text-placements` directives."
             },
             "clip": {
                 "css": "text-clip",
                 "type": "boolean",
                 "default-value": true,
                 "default-meaning": "geometry will be clipped to map bounds before rendering",
-                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+                "doc": "Geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
             },
             "comp-op": {
                 "css": "text-comp-op",
@@ -1940,7 +1950,7 @@
                     "vertex"
                 ],
                 "default-value": "collision",
-                "doc": "The mode for debug rendering",
+                "doc": "The mode for debug rendering.",
                 "type": "string"
             }
         }
