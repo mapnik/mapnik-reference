@@ -1045,13 +1045,13 @@
             "dx": {
                 "css": "shield-text-dx",
                 "type": "float",
-                "doc": "Displace text within shield by fixed amount, in pixels, +/- along the X axis.  A positive value will shift the text right.",
+                "doc": "Displace text within shield by fixed amount, in pixels, +/- along the X axis.  A positive value will shift the shield right.",
                 "default-value": 0
             },
             "dy": {
                 "css": "shield-text-dy",
                 "type": "float",
-                "doc": "Displace text within shield by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the text down.",
+                "doc": "Displace text within shield by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the shield down.",
                 "default-value": 0
             },
             "shield-dx": {
