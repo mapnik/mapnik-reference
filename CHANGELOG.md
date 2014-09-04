@@ -1,6 +1,8 @@
 ## CHANGELOG
 
-### Future
+### 5.1.0
+
+Tagged Sep 4, 2014
 
 * Updated new default of `clip:false` for Mapnik >= 3.x
 * Added `shield-label-position-tolerance`
@@ -11,6 +13,7 @@
 * Added `linear-dodge`, `linear-burn`, and `divide` to `comp-op`
 * Added `text-halo-transform` and `shield-halo-transform`
 * Changed `polygon-pattern-alignment` default to `global`
+* Improved coverage of docs overall.
 
 ### 5.0.9
 
