@@ -821,6 +821,12 @@
                 "doc": "Control whether overlapping markers are shown or hidden.",
                 "default-meaning": "Do not allow makers to overlap with each other - overlapping markers will not be shown."
             },
+            "avoid-edges": {
+                "css": "marker-avoid-edges",
+                "doc": "Avoid placing markers that intersect with tile boundaries.",
+                "type": "boolean",
+                "default-value": false
+            },
             "ignore-placement": {
                 "css": "marker-ignore-placement",
                 "type": "boolean",
