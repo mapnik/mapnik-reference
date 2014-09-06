@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### Future
+
+* Added `marker-avoid-edges`
+
 ### 5.1.0
 
 Tagged Sep 4, 2014
