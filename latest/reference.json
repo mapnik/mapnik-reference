@@ -868,6 +868,23 @@
                 "default-meaning": "geometry will not be clipped to map bounds before rendering",
                 "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
+            "simplify": {
+                "css": "marker-simplify",
+                "type": "float",
+                "default-value": 0.0,
+                "default-meaning": "geometry will not be simplified",
+                "doc": "geometries are simplified by the given tolerance"
+            },
+            "simplify-algorithm": {
+                "css": "marker-simplify-algorithm",
+                "type": ["radial-distance",
+                         "zhao-saalfeld",
+                         "visvalingam-whyatt"
+                        ],
+                "default-value": "radial-distance",
+                "default-meaning": "geometry will be simplified using the radial distance algorithm",
+                "doc": "geometries are simplified by the given algorithm."
+            },
             "smooth": {
                 "css": "marker-smooth",
                 "type": "float",
@@ -890,6 +907,13 @@
                     ["skewX", 1],
                     ["skewY", 1]
                 ]
+            },
+            "offset": {
+                "css": "marker-offset",
+                "type": "float",
+                "default-value": 0,
+                "default-meaning": "no offset",
+                "doc": "Offsets a marker from a line a number of pixels parallel to its actual path. Positive values move the marker left, negative values move it right (relative to the directionality of the line)."
             },
             "comp-op": {
                 "css": "marker-comp-op",
