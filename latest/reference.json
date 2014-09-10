@@ -1027,6 +1027,18 @@
                 "doc": "Control whether overlapping shields are shown or hidden.",
                 "default-meaning": "Do not allow shields to overlap with other map elements already placed."
             },
+            "margin": {
+                "css": "shield-margin",
+                "type": "float",
+                "default-value": 0,
+                "doc": "Minimum distance that a shield can be placed from any other text, shield, or marker."
+            },
+            "repeat-distance": {
+                "css": "shield-repeat-distance",
+                "type": "float",
+                "default-value": 0,
+                "doc": "Minimum distance between repeated shields."
+            },
             "minimum-distance": {
                 "css": "shield-min-distance",
                 "type": "float",
@@ -1942,6 +1954,18 @@
                 "doc": "Avoid placing labels that intersect with tile boundaries.",
                 "default-value": false,
                 "type": "boolean"
+            },
+            "margin": {
+                "css": "text-margin",
+                "type": "float",
+                "default-value": 0,
+                "doc": "Minimum distance that a label can be placed from any other text, shield, or marker."
+            },
+            "repeat-distance": {
+                "css": "text-repeat-distance",
+                "type": "float",
+                "default-value": 0,
+                "doc": "Minimum distance between repeated labels."
             },
             "minimum-distance": {
                 "css": "text-min-distance",
