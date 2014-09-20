@@ -1075,6 +1075,12 @@
                 "default-value": false,
                 "doc": "Wrap text before wrap-width is reached. If false, wrapped lines will be a bit longer than wrap-width."
             },
+            "wrap-character": {
+                "css": "shield-wrap-character",
+                "type": "string",
+                "default-value": " ",
+                "doc": "Use this character instead of a space to wrap long names."
+            },
             "halo-fill": {
                 "css": "shield-halo-fill",
                 "type": "color",
@@ -1836,6 +1842,12 @@
                 "type": "boolean",
                 "default-value": false,
                 "doc": "Wrap text before wrap-width is reached. If false, wrapped lines will be a bit longer than wrap-width."
+            },
+            "wrap-character": {
+                "css": "text-wrap-character",
+                "type": "string",
+                "default-value": " ",
+                "doc": "Use this character instead of a space to wrap long text."
             },
             "spacing": {
                 "css": "text-spacing",
