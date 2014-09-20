@@ -1681,7 +1681,7 @@
             "wrap-character": {
                 "css": "text-wrap-character",
                 "type": "string",
-                "default-value": " ",
+                "default-value": "\" \"",
                 "doc": "Use this character instead of a space to wrap long text."
             },
             "spacing": {
