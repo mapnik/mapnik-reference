@@ -7,8 +7,6 @@ var lint_ref = function(ver) {
     var ref = references.version[ver]
     var symbolizers = ref.symbolizers;
 
-    console.log('Missing doc properties');
-    console.log('----------------------');
     var missing_doc_properties = 0;
     var cursim = '';
     for (var symbolizer in symbolizers) {
@@ -24,13 +22,9 @@ var lint_ref = function(ver) {
             }
         }
     }
-    console.log('----------------------');
-    console.log(missing_doc_properties, 'missing doc properties');
-    console.log('----------------------');
+    if (missing_doc_properties > 0) console.log(missing_doc_properties, 'missing doc properties');
 
-    console.log('Missing default value');
-    console.log('----------------------');
-    var missing_doc_properties = 0;
+    var miss_default_value = 0;
     var cursim = '';
     for (var symbolizer in symbolizers) {
         if (symbolizer === 'colors') continue;
@@ -41,12 +35,11 @@ var lint_ref = function(ver) {
                     console.log(symbolizer);
                 }
                 console.log('- ' + prop);
-                missing_doc_properties++;
+                miss_default_value++;
             }
         }
     }
-    console.log('----------------------');
-    console.log(missing_doc_properties, 'missing default-value');
+    if (miss_default_value > 0) console.log(miss_default_value, 'missing default-value');
 }
 
 for (var key in references.version) {
