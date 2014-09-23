@@ -164,14 +164,14 @@
         "postgis": {
             "table": {
                 "type": "string",
-                "doc": "",
+                "doc": "The table or query used",
                 "default-value": "",
                 "default-meaning": "",
                 "required": true
             },
             "key_field": {
                 "type": "boolean",
-                "doc": "",
+                "doc": "The primary key of the table",
                 "default-value": "",
                 "default-meaning": ""
             },
@@ -232,37 +232,37 @@
             },
             "extent": {
                 "type": "string",
-                "doc": "",
+                "doc": "Manually specified data extent (comma delimited string)",
                 "default-value": "",
                 "default-meaning": "",
                 "required": false
             },
             "estimate_extent": {
                 "type": "boolean",
-                "doc": "",
-                "default-value": "",
+                "doc": "Direct mapnik to use the faster, less accurate `estimate_extent` over `extent`",
+                "default-value": false,
                 "default-meaning": "",
                 "required": false
             },
             "geometry_table": {
                 "type": "string",
-                "doc": "",
+                "doc": "Specifies geometry table to use to look up metadata",
                 "default-value": "",
-                "default-meaning": "",
+                "default-meaning": "Automatically parsed from 'table' value",
                 "required": false
             },
             "geometry_field": {
                 "type": "string",
-                "doc": "",
+                "doc": "Specifies geometry field to use",
                 "default-value": "",
-                "default-meaning": "",
+                "default-meaning": "First entry in geometry_columns",
                 "required": false
             },
             "cursor_size": {
                 "type": "unsigned",
-                "doc": "",
-                "default-value": "",
-                "default-meaning": "",
+                "doc": "Integer size of binary cursor to use",
+                "default-value": 0,
+                "default-meaning": "No binary cursor is used",
                 "required": false
             },
             "row_limit": {
@@ -274,51 +274,51 @@
             },
             "srid": {
                 "type": "unsigned",
-                "doc": "",
+                "doc": "SRID to use",
                 "default-value": 0,
-                "default-meaning": "",
+                "default-meaning": "Auto-detected from geometry_field",
                 "required": false
             },
             "initial_size": {
                 "type": "unsigned",
-                "doc": "",
+                "doc": "Integer size of connection pool",
                 "default-value": 1,
                 "default-meaning": "",
                 "required": false
             },
             "max_size": {
                 "type": "unsigned",
-                "doc": "",
+                "doc": "Integer max of connection pool",
                 "default-value": 10,
                 "default-meaning": "",
                 "required": false
             },
             "simplify_geometries": {
                 "type": "boolean",
-                "doc": "",
+                "doc": "Simplify geometries with ST_Simplify",
                 "default-value": false,
-                "default-meaning": "",
+                "default-meaning": "Don't simplify geometries",
                 "required": false
             },
             "autodetect_key_field": {
                 "type": "boolean",
-                "doc": "",
+                "doc": "Attempt to autodetect a primary key field",
                 "default-value": false,
-                "default-meaning": "",
+                "default-meaning": "Don't autodetect a primary key field",
                 "required": false
             },
             "persist_connection": {
                 "type": "boolean",
-                "doc": "",
+                "doc": "Keep connection open",
                 "default-value": true,
                 "default-meaning": "Connections, successfully created, will be kept open until Mapnik shuts down",
                 "required": false
             },
             "extent_from_subquery": {
                 "type": "boolean",
-                "doc": "",
+                "doc": "Direct Mapnik to query Postgis for the extent of the raw 'table' value",
                 "default-value": false,
-                "default-meaning": "",
+                "default-meaning": "Uses 'geometry_table' instead of querying",
                 "required": false
             }
         },
@@ -403,14 +403,14 @@
             },
             "table": {
                 "type": "string",
-                "doc": "",
+                "doc": "The table or query used",
                 "default-value": "",
                 "default-meaning": "",
                 "required": true
             },
             "key_field": {
                 "type": "boolean",
-                "doc": "",
+                "doc": "The primary key of the table",
                 "default-value": "",
                 "default-meaning": ""
             }
