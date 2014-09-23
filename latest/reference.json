@@ -2055,9 +2055,10 @@
                     "left",
                     "middle",
                     "right",
-                    "auto"
+                    "auto",
+                    "adjust"
                 ],
-                "doc": "The text's horizontal alignment from its centerpoint.",
+                "doc": "The text's horizontal alignment from it's centerpoint. If `placement` is set to `line`, then `adjust` can be set to auto-fit the text to the length of the path by dynamically calculating `character-spacing`.",
                 "default-value": "auto"
             },
             "justify-alignment": {
