@@ -2,6 +2,7 @@
 
 ### Future
 
+* Added `adjust` option to `text-horizontal-alignment` (https://github.com/mapnik/mapnik/pull/2426)
 * Added `marker-avoid-edges`, `marker-simplify`, `marker-simplify-algorithm`, and `marker-offset`
 * Added `text-halo-opacity`, `text-halo-comp-op`, `shield-halo-opacity`, and `shield-halo-comp-op`
 
