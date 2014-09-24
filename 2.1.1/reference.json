@@ -883,6 +883,7 @@
             },
             "line-spacing": {
                 "css": "shield-line-spacing",
+                "default-value": 0,
                 "doc": "Vertical spacing between lines of multiline labels (in pixels)",
                 "type": "unsigned"
             },
@@ -1397,6 +1398,7 @@
                 "css": "text-face-name",
                 "type": "string",
                 "validate": "font",
+                "default-value": "",
                 "doc": "Font name and style to render a label in",
                 "required": true
             },
@@ -1433,6 +1435,7 @@
             "spacing": {
                 "css": "text-spacing",
                 "type": "unsigned",
+                "default-value": 0,
                 "doc": "Distance between repeated text labels on a line (aka. label-spacing)"
             },
             "character-spacing": {
@@ -1519,11 +1522,13 @@
             "minimum-distance": {
                 "css": "text-min-distance",
                 "doc": "Minimum permitted distance to the next text symbolizer.",
+                "default-value": 0,
                 "type": "float"
             },
             "minimum-padding": {
                 "css": "text-min-padding",
                 "doc": "Determines the minimum amount of padding that a text symbolizer gets relative to other text",
+                "default-value": 0,
                 "type": "float"
             },
             "minimum-path-length": {
@@ -1543,6 +1548,7 @@
             "orientation": {
                 "css": "text-orientation",
                 "type": "expression",
+                "default-value": 0,
                 "doc": "Rotate the text."
             },
             "placement": {
