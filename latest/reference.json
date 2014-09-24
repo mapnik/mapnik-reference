@@ -533,9 +533,9 @@
         "line": {
             "stroke": {
                 "css": "line-color",
-                "default-value": "rgba(0,0,0,1)",
+                "default-value": "black",
                 "type": "expression",
-                "default-meaning": "black and fully opaque (alpha = 1), same as rgb(0,0,0).",
+                "default-meaning": "black and fully opaque (alpha = 1), same as rgb(0,0,0) or rgba(0,0,0,1).",
                 "doc": "The color of a drawn line."
             },
             "stroke-width": {

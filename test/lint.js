@@ -47,7 +47,6 @@ var lint_ref = function(ver) {
                         console.log('expected default-meaning of ""',sym.css,sym['default-meaning']);
                     }
                 }
-
             }
         }
     }
