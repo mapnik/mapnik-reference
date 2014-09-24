@@ -22,7 +22,7 @@ var lint_ref = function(ver) {
             }
         }
     }
-    if (missing_doc_properties > 0) console.log(missing_doc_properties, 'missing doc properties');
+    if (missing_doc_properties > 0) console.log(missing_doc_properties, 'missing doc properties',ver);
 
     var miss_default_value = 0;
     var cursim = '';
@@ -39,7 +39,7 @@ var lint_ref = function(ver) {
             }
         }
     }
-    if (miss_default_value > 0) console.log(miss_default_value, 'missing default-value');
+    if (miss_default_value > 0) console.log(miss_default_value, 'missing default-value',ver);
 }
 
 for (var key in references.version) {
