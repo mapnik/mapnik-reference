@@ -764,6 +764,7 @@
                 "css": "shield-name",
                 "type": "expression",
                 "serialization": "content",
+                "default-value": "",
                 "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]"
             },
             "file": {
@@ -791,11 +792,13 @@
             "size": {
                 "css": "shield-size",
                 "type": "float",
+                "default-value": 10,
                 "doc": "The size of the shield text in pixels"
             },
             "fill": {
                 "css": "shield-fill",
                 "type": "color",
+                "default-value": "black",
                 "doc": "The color of the shield text"
             },
             "placement": {
