@@ -19,17 +19,40 @@ var lint_ref = function(ver) {
                 sym.css.indexOf(group_name) == -1)
                 console.log('invalid prefix for property',sym.css,ver);
             if (!sym.type) {
-                console.log('missing type for',symbolizer+'-'+prop,ver);
+                console.log('missing type for',sym.css,ver);
             }
             if (!sym.doc) {
-                console.log('missing doc for',symbolizer+'-'+prop,ver);
+                console.log('missing doc for',sym.css,ver);
             }
-            if (sym['default-value'] === undefined) {
-                console.log('missing default-value for',symbolizer+'-'+prop,ver);
+            // strictness with latest going forward
+            if (ver === 'latest') {
+                if (sym.doc && sym.doc.slice(-1) != '.') {
+                    console.log('missing ending period for doc of',sym.css);
+                }
+                if (sym['default-value'] === undefined) {
+                    console.log('missing default-value for',sym.css,ver);
+                }
+                if (sym['default-meaning'] === undefined) {
+                    console.log('missing default-meaning for',sym.css,sym['default-meaning']);
+                } else {
+                    if (sym['default-meaning'] != ""  && sym['default-meaning'].slice(-1) != '.') {
+                        console.log('missing ending period for doc of',sym.css,sym['default-meaning']);
+                    }
+                }
+                if (sym.required === true) {
+                    if (sym['default-value'] != "none") {
+                        console.log('expected default-value of none',sym.css,sym['default-value']);
+                    }
+                    if (sym['default-meaning'] != "") {
+                        console.log('expected default-meaning of ""',sym.css,sym['default-meaning']);
+                    }
+                }
+
             }
         }
     }
 }
+
 
 for (var key in references.version) {
     lint_ref(key);
