@@ -405,8 +405,8 @@
             "fill": {
                 "css": "polygon-fill",
                 "type": "expression",
-                "default-value": "rgba(128,128,128,1)",
-                "default-meaning": "gray and fully opaque (alpha = 1), same as rgb(128,128,128)",
+                "default-value": "gray",
+                "default-meaning": "gray and fully opaque (alpha = 1), same as rgb(128,128,128) or rgba(128,128,128,1)",
                 "doc": "Fill color to assign to a polygon."
             },
             "fill-opacity": {
@@ -847,15 +847,17 @@
             },
             "spacing": {
                 "css": "marker-spacing",
-                "doc": "Space between repeated markers in pixels. If the spacing is less than the marker size or larger than the line segment length then no marker will be placed.",
+                "doc": "Space between repeated markers in pixels. If the spacing is less than the marker size or larger than the line segment length then no marker will be placed. Any value less than 1 will be ignored and the default will be used instead.",
                 "default-value": 100,
+                "default-meaning": "In the case of marker-placement:line then draw a marker every 100 pixels along a line",
                 "type": "float"
             },
             "max-error": {
                 "css": "marker-max-error",
                 "type": "float",
                 "default-value": 0.2,
-                "doc": "The maximum difference between actual marker placement and the marker-spacing parameter. Setting a high value can allow the renderer to try to resolve placement conflicts with other symbolizers."
+                "default-meaning": "N/A: not intended to be changed",
+                "doc": "N/A: not intended to be changed"
             },
             "transform": {
                 "css": "marker-transform",
@@ -978,6 +980,7 @@
                 "type": "expression",
                 "serialization": "content",
                 "default-value": "",
+                "default-meaning": "No text label will be rendered with the shield.",
                 "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]."
             },
             "file": {
@@ -1008,13 +1011,15 @@
                 "css": "shield-size",
                 "type": "float",
                 "default-value": 10,
-                "doc": "The size of the shield text in pixels."
+                "doc": "The size of the shield text in pixels.",
+                "default-meaning": "Font size of 10 will be used to render text"
             },
             "fill": {
                 "css": "shield-fill",
                 "type": "color",
                 "default-value": "black",
-                "doc": "The color of the shield text."
+                "doc": "The color of the shield text.",
+                "default-meaning": "The shield text will be rendered black"
             },
             "placement": {
                 "css": "shield-placement",
@@ -1062,7 +1067,8 @@
                 "css": "shield-spacing",
                 "type": "float",
                 "default-value": 0,
-                "doc": "The spacing between repeated occurrences of the same shield on a line."
+                "default-meaning": "Only one shield per line will attempt to be placed.",
+                "doc": "Distance the renderer should use to try to place repeated shields on a line."
             },
             "minimum-padding": {
                 "css": "shield-min-padding",
@@ -1092,14 +1098,15 @@
                 "css": "shield-wrap-character",
                 "type": "string",
                 "default-value": "\" \"",
+                "default-meaning": "Lines will be wrapped when whitespace is encountered",
                 "doc": "Use this character instead of a space to wrap long names."
             },
             "halo-fill": {
                 "css": "shield-halo-fill",
                 "type": "color",
-                "default-value": "#FFFFFF",
+                "default-value": "white",
                 "doc": "Specifies the color of the halo around the text.",
-                "default-meaning": "white"
+                "default-meaning": "The shield halo text will be rendered white"
             },
             "halo-radius": {
                 "css": "shield-halo-radius",
@@ -1184,6 +1191,7 @@
                 "css": "shield-character-spacing",
                 "type": "unsigned",
                 "default-value": 0,
+                "default-meaning": "The default character spacing of the font will be used.",
                 "doc": "Horizontal spacing between characters (in pixels). Currently works for point placement only, not line placement."
             },
             "line-spacing": {
@@ -1637,6 +1645,7 @@
                     "blackman"
                 ],
                 "default-value": "near",
+                "default-meaning": "Nearest neighboor resampling will be used to scale the image to the target size of the map",
                 "doc": "The scaling algorithm used to making different resolution versions of this raster layer. Bilinear is a good compromise between speed and accuracy, while lanczos gives the highest quality."
             },
             "mesh-size": {
@@ -1732,6 +1741,7 @@
                 "type": "uri",
                 "required": false,
                 "default-value": "none",
+                "default-meaning": "A 4x4 black square will be rendered.",
                 "doc": "Image file to represent a point. Accepted formats: svg, jpg, png, tiff, and webp."
             },
             "allow-overlap": {
@@ -1762,6 +1772,7 @@
                     "interior"
                 ],
                 "doc": "Control how this point should be placed. Centroid calculates the geometric center of a polygon, which can be outside of it, while interior always places inside of a polygon.",
+                "default-meaning": "The centroid of the geometry will be used to place the point.",
                 "default-value": "centroid"
             },
             "transform": {
@@ -1872,18 +1883,21 @@
                 "css": "text-wrap-character",
                 "type": "string",
                 "default-value": "\" \"",
+                "default-meaning": "Lines will be wrapped when whitespace is encountered",
                 "doc": "Use this character instead of a space to wrap long text."
             },
             "spacing": {
                 "css": "text-spacing",
                 "type": "unsigned",
                 "default-value": 0,
-                "doc": "Distance between repeated text labels on a line (aka. label-spacing)."
+                "default-meaning": "Only one label per line will attempt to be placed.",
+                "doc": "Distance the renderer should use to try to place repeated text labels on a line."
             },
             "character-spacing": {
                 "css": "text-character-spacing",
                 "type": "float",
                 "default-value": 0,
+                "default-meaning": "The default character spacing of the font will be used.",
                 "doc": "Horizontal spacing adjustment between characters in pixels."
             },
             "line-spacing": {
@@ -1907,7 +1921,8 @@
             "fill": {
                 "css": "text-fill",
                 "doc": "Specifies the color for the text",
-                "default-value": "#000000",
+                "default-value": "black",
+                "default-meaning": "The text will be rendered black",
                 "type": "color"
             },
             "opacity": {
@@ -1927,8 +1942,8 @@
             "halo-fill": {
                 "css": "text-halo-fill",
                 "type": "color",
-                "default-value": "#FFFFFF",
-                "default-meaning": "white",
+                "default-value": "white",
+                "default-meaning": "The halo will be rendered white",
                 "doc": "Specifies the color of the halo around the text."
             },
             "halo-radius": {
@@ -2195,21 +2210,24 @@
         "building": {
             "fill": {
                 "css": "building-fill",
-                "default-value": "#FFFFFF",
-                "doc": "The color of the buildings walls.",
-                "type": "color"
+                "type": "color",
+                "default-value": "gray",
+                "default-meaning": "gray and fully opaque (alpha = 1), same as rgb(128,128,128) or rgba(128,128,128,1)",
+                "doc": "The color of the buildings fill. Note: 0.8 will be used to multiply each color component to auto-generate a darkened wall color"
             },
             "fill-opacity": {
                 "css": "building-fill-opacity",
                 "type": "expression",
                 "doc": "The opacity of the building as a whole, including all walls.",
-                "default-value": 1
+                "default-value": 1,
+                "default-meaning": "opaque"
             },
             "height": {
                 "css": "building-height",
                 "doc": "The height of the building in pixels.",
                 "type": "expression",
-                "default-value": 0
+                "default-value": 0,
+                "default-meaning": "Buildings will not have a visual height and will instead look like flat polygons."
             }
         },
         "debug": {
