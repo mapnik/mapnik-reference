@@ -32,7 +32,7 @@
             "doc": "A property that can be set to false to disable this layer from being processed"
         },
         "minzoom": {
-            "default-value": "0",
+            "default-value": 0,
             "type":"float",
             "default-meaning": "The layer will be visible at the minimum possible scale",
             "doc": "The minimum scale denominator that this layer will be visible at. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6"
@@ -82,7 +82,7 @@
             },
             "buffer-size": {
                 "css": "buffer-size",
-                "default-value": "0",
+                "default-value": 0,
                 "type":"float",
                 "default-meaning": "No buffer will be used",
                 "doc": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with \"avoid-edges\"."
@@ -126,7 +126,6 @@
         "polygon": {
             "fill": {
                 "css": "polygon-fill",
-                "api": "fill",
                 "type": "color",
                 "default-value": "rgba(128,128,128,1)",
                 "default-meaning": "gray and fully opaque (alpha = 1), same as rgb(128,128,128)",
@@ -134,7 +133,6 @@
             },
             "gamma": {
                 "css": "polygon-gamma",
-                "api": "gamma",
                 "type": "float",
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
@@ -150,7 +148,6 @@
             },
             "smooth": {
                 "css": "polygon-smooth",
-                "api": "smooth",
                 "type": "float",
                 "default-value": 0,
                 "default-meaning": "no smoothing",
@@ -201,7 +198,6 @@
             },
             "stroke-gamma": {
                 "css": "line-gamma",
-                "api": "gamma",
                 "type": "float",
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
@@ -255,7 +251,8 @@
             },
             "stroke-width": {
                 "css": "marker-line-width",
-                "doc": "The width of the stroke around a marker shape, in pixels. This is positioned on the boundary, so high values can cover the area itself.",
+                "default-value": 0.5,
+                "doc": "The width of the stroke around the marker, in pixels. This is positioned on the boundary, so high values can cover the area itself.",
                 "type": "float"
             },
             "stroke-opacity": {
@@ -341,6 +338,7 @@
                 "type": "string",
                 "required": true,
                 "serialization": "content",
+                "default-value": "",
                 "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]"
             },
             "face-name": {
@@ -361,11 +359,13 @@
             "size": {
                 "css": "shield-size",
                 "type": "float",
+                "default-value": 10,
                 "doc": "The size of the shield text in pixels"
             },
             "fill": {
                 "css": "shield-fill",
                 "type": "color",
+                "default-value": "black",
                 "doc": "The color of the shield text"
             },
             "placement": {
@@ -437,6 +437,7 @@
             },
             "line-spacing": {
                 "css": "shield-line-spacing",
+                "default-value": 0,
                 "doc": "Vertical spacing between lines of multiline labels (in pixels)",
                 "type": "float"
             },
@@ -542,7 +543,6 @@
             },
             "gamma": {
                 "css": "polygon-pattern-gamma",
-                "api": "gamma",
                 "type": "float",
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
@@ -662,6 +662,7 @@
                 "css": "text-face-name",
                 "type": "string",
                 "validate": "font",
+                "default-value": "",
                 "doc": "Font name and style to render a label in",
                 "required": true
             },
@@ -692,6 +693,7 @@
             "spacing": {
                 "css": "text-spacing",
                 "type": "float",
+                "default-value": 0,
                 "doc": "Distance between repeated text labels on a line"
             },
             "character-spacing": {
@@ -777,11 +779,13 @@
             "minimum-distance": {
                 "css": "text-min-distance",
                 "doc": "Minimum permitted distance to the next text symbolizer.",
+                "default-value": 0,
                 "type": "float"
             },
             "minimum-padding": {
                 "css": "text-min-padding",
                 "doc": "Determines the minimum amount of padding that a text symbolizer gets relative to other text",
+                "default-value": 0,
                 "type": "float"
             },
             "minimum-path-length": {
@@ -801,6 +805,7 @@
             "orientation": {
                 "css": "text-orientation",
                 "type": "float",
+                "default-value": 0,
                 "doc": "Rotate the text."
             },
             "placement": {
@@ -879,7 +884,7 @@
                 "css": "building-height",
                 "doc": "The height of the building in pixels.",
                 "type": "float",
-                "default-value": "0"
+                "default-value": 0
             }
         }
     },

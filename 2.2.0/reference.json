@@ -120,7 +120,7 @@
             "doc": "A property that can be set to false to disable this layer from being processed"
         },
         "minzoom": {
-            "default-value": "0",
+            "default-value": 0,
             "type":"float",
             "default-meaning": "The layer will be visible at the minimum possible scale",
             "doc": "The minimum scale denominator that this layer will be visible at. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6"
@@ -150,7 +150,7 @@
             "doc": "https://github.com/mapnik/mapnik/wiki/Grouped-rendering"
         },
         "buffer-size": {
-            "default-value": "0",
+            "default-value": 0,
             "type":"float",
             "default-meaning": "No custom buffer will be used for the layer and rather the Map buffer-size will be used",
             "doc": "Extra tolerance around the Layer extent (in pixels) used when querying the layer data during rendering. If set this will override the Map buffer-size"
@@ -277,7 +277,7 @@
             },
             "buffer-size": {
                 "css": "buffer-size",
-                "default-value": "0",
+                "default-value": 0,
                 "type":"float",
                 "default-meaning": "No buffer will be used",
                 "doc": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with \"avoid-edges\"."
@@ -661,6 +661,7 @@
             },
             "stroke-width": {
                 "css": "marker-line-width",
+                "default-value": 0.5,
                 "doc": "The width of the stroke around a marker shape, in pixels. This is positioned on the boundary, so high values can cover the area itself.",
                 "type": "float"
             },
@@ -838,6 +839,7 @@
                 "css": "shield-name",
                 "type": "expression",
                 "serialization": "content",
+                "default-value": "",
                 "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]"
             },
             "file": {
@@ -865,11 +867,13 @@
             "size": {
                 "css": "shield-size",
                 "type": "float",
+                "default-value": 10,
                 "doc": "The size of the shield text in pixels"
             },
             "fill": {
                 "css": "shield-fill",
                 "type": "color",
+                "default-value": "black",
                 "doc": "The color of the shield text"
             },
             "placement": {
@@ -954,6 +958,7 @@
             },
             "line-spacing": {
                 "css": "shield-line-spacing",
+                "default-value": 0,
                 "doc": "Vertical spacing between lines of multiline labels (in pixels)",
                 "type": "unsigned"
             },
@@ -1430,24 +1435,32 @@
                     "linear",
                     "exact"
                 ],
-                "doc": "TODO"
+                "doc": "This can be either `discrete`, `linear` or `exact`. If it is not specified then the default is `linear`.",
+                "default-value": "linear",
+                "default-meaning": "A linear interpolation is used to generate colors between the two nearest stops."
             },
             "default-color": {
                 "css": "raster-colorizer-default-color",
                 "type": "color",
-                "doc": "TODO"
+                "doc": "This can be any color. Sets the color that is applied to all values outside of the range of the colorizer-stops. If not supplied pixels will be fully transparent",
+                "default-value": "transparent",
+                "default-meaning": "Pixels that are not colored by the colorizer stops will be transparent"
             },
             "epsilon": {
                 "css": "raster-colorizer-epsilon",
                 "type": "float",
-                "doc": "TODO"
+                "doc": "This can be any positive floating point value and will be used as a tolerance in floating point comparisions. The higher the value the more likely a stop will match and color data.",
+                "default-value": "1.1920928955078125e-07",
+                "default-meaning": "Pixels must very closely match the stop filter otherwise they will not be colored."
             },
             "stop": {
                 "css": "raster-colorizer-stops",
                 "type": "tags",
                 "serialization": "tag",
                 "tagname": "tagname",
-                "doc": "TODO"
+                "doc": "Assigns raster data values to colors. Stops must be listed in ascending order, and contain at a minimum the value and the associated color. You can also include the color-mode as a third argument, like `stop(100,#fff,exact)`.",
+                "default-value": "",
+                "default-meaning": "No colorization will happen without supplying stops."
             }
         },
         "point": {
@@ -1558,6 +1571,7 @@
                 "css": "text-face-name",
                 "type": "string",
                 "validate": "font",
+                "default-value": "",
                 "doc": "Font name and style to render a label in",
                 "required": true
             },
@@ -1594,6 +1608,7 @@
             "spacing": {
                 "css": "text-spacing",
                 "type": "unsigned",
+                "default-value": 0,
                 "doc": "Distance between repeated text labels on a line (aka. label-spacing)"
             },
             "character-spacing": {
@@ -1689,11 +1704,13 @@
             "minimum-distance": {
                 "css": "text-min-distance",
                 "doc": "Minimum permitted distance to the next text symbolizer.",
+                "default-value": 0,
                 "type": "float"
             },
             "minimum-padding": {
                 "css": "text-min-padding",
                 "doc": "Minimum distance a text label will be placed from the edge of a metatile.",
+                "default-value": 0,
                 "type": "float"
             },
             "minimum-path-length": {
@@ -1713,6 +1730,7 @@
             "orientation": {
                 "css": "text-orientation",
                 "type": "expression",
+                "default-value": 0,
                 "doc": "Rotate the text."
             },
             "placement": {
@@ -1841,7 +1859,7 @@
                 "css": "building-height",
                 "doc": "The height of the building in pixels.",
                 "type": "expression",
-                "default-value": "0"
+                "default-value": 0
             }
         },
         "debug": {
