@@ -126,7 +126,6 @@
         "polygon": {
             "fill": {
                 "css": "polygon-fill",
-                "api": "fill",
                 "type": "color",
                 "default-value": "rgba(128,128,128,1)",
                 "default-meaning": "gray and fully opaque (alpha = 1), same as rgb(128,128,128)",
@@ -134,7 +133,6 @@
             },
             "gamma": {
                 "css": "polygon-gamma",
-                "api": "gamma",
                 "type": "float",
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
@@ -150,7 +148,6 @@
             },
             "smooth": {
                 "css": "polygon-smooth",
-                "api": "smooth",
                 "type": "float",
                 "default-value": 0,
                 "default-meaning": "no smoothing",
@@ -201,7 +198,6 @@
             },
             "stroke-gamma": {
                 "css": "line-gamma",
-                "api": "gamma",
                 "type": "float",
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
@@ -547,7 +543,6 @@
             },
             "gamma": {
                 "css": "polygon-pattern-gamma",
-                "api": "gamma",
                 "type": "float",
                 "default-value": 1,
                 "default-meaning": "fully antialiased",
