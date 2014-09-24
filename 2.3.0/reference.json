@@ -131,7 +131,7 @@
             "doc": "A property that can be set to false to disable this layer from being processed."
         },
         "minzoom": {
-            "default-value": "0",
+            "default-value": 0,
             "type":"float",
             "default-meaning": "The layer will be visible at the minimum possible scale",
             "doc": "The minimum scale denominator that this layer will be visible at. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6."
@@ -161,7 +161,7 @@
             "doc": "https://github.com/mapnik/mapnik/wiki/Grouped-rendering"
         },
         "buffer-size": {
-            "default-value": "0",
+            "default-value": 0,
             "type":"float",
             "default-meaning": "No custom buffer will be used for the layer and rather the Map buffer-size will be used",
             "doc": "Extra tolerance around the Layer extent (in pixels) used when querying the layer data during rendering. If set this will override the Map buffer-size."
@@ -348,7 +348,7 @@
             },
             "buffer-size": {
                 "css": "buffer-size",
-                "default-value": "0",
+                "default-value": 0,
                 "type":"float",
                 "default-meaning": "No buffer will be used",
                 "doc": "Extra tolerance around the map (in pixels) used to ensure labels crossing tile boundaries are equally rendered in each tile (e.g. cut in each tile). Not intended to be used in combination with \"avoid-edges\"."
@@ -1817,7 +1817,7 @@
             "orientation": {
                 "css": "text-orientation",
                 "type": "expression",
-                "default-value": "0",
+                "default-value": 0,
                 "doc": "Rotate the text."
             },
             "placement": {
@@ -1947,7 +1947,7 @@
                 "css": "building-height",
                 "doc": "The height of the building in pixels.",
                 "type": "expression",
-                "default-value": "0"
+                "default-value": 0
             }
         },
         "debug": {
