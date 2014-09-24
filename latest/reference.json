@@ -542,7 +542,8 @@
                 "css": "line-width",
                 "default-value": 1,
                 "type": "expression",
-                "doc": "The width of a line in pixels."
+                "doc": "The width of a line in pixels.",
+                "default-meaning": "The line will be rendered 1 pixel wide."
             },
             "stroke-opacity": {
                 "css": "line-opacity",
@@ -559,7 +560,8 @@
                     "round",
                     "bevel"
                 ],
-                "doc": "The behavior of lines when joining."
+                "doc": "The behavior of lines when joining.",
+                "default-meaning": "The line joins will be rendered using a miter look."
             },
             "stroke-linecap": {
                 "css": "line-cap",
@@ -569,7 +571,8 @@
                     "round",
                     "square"
                 ],
-                "doc": "The display of line endings."
+                "doc": "The display of line endings.",
+                "default-meaning": "The line endings will be rendered using a butt look."
             },
             "stroke-gamma": {
                 "css": "line-gamma",
@@ -659,7 +662,8 @@
                     "fast"
                 ],
                 "default-value": "full",
-                "doc": "Exposes an alternate AGG rendering method that sacrifices some accuracy for speed."
+                "doc": "Exposes an alternate AGG rendering method that sacrifices some accuracy for speed.",
+                "default-meaning": "The line will be rendered using the highest quality method rather than the fastest."
             },
             "geometry-transform": {
                 "css": "line-geometry-transform",
@@ -974,7 +978,8 @@
                 "required": true,
                 "type": "uri",
                 "default-value": "none",
-                "doc": "Image file to render behind the shield text. Accepted formats: svg, jpg, png, tiff, and webp."
+                "doc": "Image file to render behind the shield text. Accepted formats: svg, jpg, png, tiff, and webp.",
+                "default-meaning": ""
             },
             "face-name": {
                 "css": "shield-face-name",
@@ -982,7 +987,8 @@
                 "validate": "font",
                 "doc": "Font name and style to use for the shield text",
                 "default-value": "",
-                "required": true
+                "required": true,
+                "default-meaning": ""
             },
             "unlock-image": {
                 "css": "shield-unlock-image",
@@ -1349,7 +1355,8 @@
                 "type": "uri",
                 "default-value": "none",
                 "required": true,
-                "doc": "An image file to be repeated and warped along a line. Accepted formats: svg, jpg, png, tiff, and webp."
+                "doc": "An image file to be repeated and warped along a line. Accepted formats: svg, jpg, png, tiff, and webp.",
+                "default-meaning": ""
             },
             "clip": {
                 "css": "line-pattern-clip",
@@ -1464,7 +1471,8 @@
                 "type": "uri",
                 "default-value": "none",
                 "required": true,
-                "doc": "Image to use as a repeated pattern fill within a polygon. Accepted formats: svg, jpg, png, tiff, and webp."
+                "doc": "Image to use as a repeated pattern fill within a polygon. Accepted formats: svg, jpg, png, tiff, and webp.",
+                "default-meaning": ""
             },
             "alignment": {
                 "css": "polygon-pattern-alignment",
@@ -1817,7 +1825,8 @@
                 "required": true,
                 "default-value": "",
                 "serialization": "content",
-                "doc": "Value to use for a text label. Data columns are specified using brackets like [column_name]"
+                "doc": "Value to use for a text label. Data columns are specified using brackets like [column_name]",
+                "default-meaning": ""
             },
             "face-name": {
                 "css": "text-face-name",
@@ -1825,7 +1834,8 @@
                 "validate": "font",
                 "default-value": "",
                 "doc": "Font name and style to render a label in",
-                "required": true
+                "required": true,
+                "default-meaning": ""
             },
             "size": {
                 "css": "text-size",
