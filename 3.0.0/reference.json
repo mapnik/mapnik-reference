@@ -2049,7 +2049,7 @@
                 "expression":true,
                 "default-value": 0,
                 "default-meaning": "The default character spacing of the font will be used.",
-                "doc": "Horizontal spacing adjustment between characters in pixels."
+                "doc": "Horizontal spacing adjustment between characters in pixels. This value is ignored when `horizontal-alignment` is set to `adjust`. Typographic ligatures are turned off when this value is greater than zero."
             },
             "line-spacing": {
                 "css": "text-line-spacing",
