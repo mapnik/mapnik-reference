@@ -586,6 +586,7 @@
             },
             "stroke-width": {
                 "css": "marker-line-width",
+                "default-value": 0.5,
                 "doc": "The width of the stroke around a marker shape, in pixels. This is positioned on the boundary, so high values can cover the area itself.",
                 "type": "float"
             },

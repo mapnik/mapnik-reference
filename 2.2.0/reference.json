@@ -661,6 +661,7 @@
             },
             "stroke-width": {
                 "css": "marker-line-width",
+                "default-value": 0.5,
                 "doc": "The width of the stroke around a marker shape, in pixels. This is positioned on the boundary, so high values can cover the area itself.",
                 "type": "float"
             },
@@ -1430,24 +1431,32 @@
                     "linear",
                     "exact"
                 ],
-                "doc": "TODO"
+                "doc": "This can be either `discrete`, `linear` or `exact`. If it is not specified then the default is `linear`.",
+                "default-value": "linear",
+                "default-meaning": "A linear interpolation is used to generate colors between the two nearest stops."
             },
             "default-color": {
                 "css": "raster-colorizer-default-color",
                 "type": "color",
-                "doc": "TODO"
+                "doc": "This can be any color. Sets the color that is applied to all values outside of the range of the colorizer-stops. If not supplied pixels will be fully transparent",
+                "default-value": "transparent",
+                "default-meaning": "Pixels that are not colored by the colorizer stops will be transparent"
             },
             "epsilon": {
                 "css": "raster-colorizer-epsilon",
                 "type": "float",
-                "doc": "TODO"
+                "doc": "This can be any positive floating point value and will be used as a tolerance in floating point comparisions. The higher the value the more likely a stop will match and color data.",
+                "default-value": "1.1920928955078125e-07",
+                "default-meaning": "Pixels must very closely match the stop filter otherwise they will not be colored."
             },
             "stop": {
                 "css": "raster-colorizer-stops",
                 "type": "tags",
                 "serialization": "tag",
                 "tagname": "tagname",
-                "doc": "TODO"
+                "doc": "Assigns raster data values to colors. Stops must be listed in ascending order, and contain at a minimum the value and the associated color. You can also include the color-mode as a third argument, like `stop(100,#fff,exact)`.",
+                "default-value": "",
+                "default-meaning": "No colorization will happen without supplying stops."
             }
         },
         "point": {
