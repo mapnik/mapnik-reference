@@ -627,8 +627,8 @@
                 "css": "line-simplify",
                 "type": "float",
                 "default-value": 0.0,
-                "default-meaning": "geometry will not be simplified",
-                "doc": "Simplify gemoetries by the given tolerance"
+                "default-meaning": "geometry will not be simplified.",
+                "doc": "Simplify gemoetries by the given tolerance."
             },
             "simplify-algorithm": {
                 "css": "line-simplify-algorithm",
@@ -736,7 +736,7 @@
             },
             "opacity": {
                 "css": "marker-opacity",
-                "doc": "The overall opacity of the marker, if set, overrides both the opacity of both the fill and stroke",
+                "doc": "The overall opacity of the marker, if set, overrides both the opacity of both the fill and stroke.",
                 "default-value": 1,
                 "default-meaning": "The stroke-opacity and fill-opacity of the marker.",
                 "type": "float"
@@ -752,12 +752,14 @@
                 "css": "marker-line-color",
                 "doc": "The color of the stroke around the marker.",
                 "default-value": "black",
+                "default-meaning": "The marker will be drawn with a black outline",
                 "type": "expression"
             },
             "stroke-width": {
                 "css": "marker-line-width",
                 "default-value": 0.5,
                 "doc": "The width of the stroke around the marker, in pixels. This is positioned on the boundary, so high values can cover the area itself.",
+                "default-meaning": "The marker will be drawn with an outline of .5 pixels wide",
                 "type": "float"
             },
             "stroke-opacity": {
@@ -798,24 +800,28 @@
                     "ellipse"
                 ],
                 "default-value": "ellipse",
+                "default-meaning": "The marker shape is an ellipse",
                 "doc": "The default marker-type. If a SVG file is not given as the marker-file parameter, the renderer provides either an arrow or an ellipse (a circle if height is equal to width)."
             },
             "width": {
                 "css": "marker-width",
                 "default-value": 10,
                 "doc": "The width of the marker, if using one of the default types.",
+                "default-meaning": "The marker width is 10 pixels",
                 "type": "expression"
             },
             "height": {
                 "css": "marker-height",
                 "default-value": 10,
                 "doc": "The height of the marker, if using one of the default types.",
+                "default-meaning": "The marker height is 10 pixels",
                 "type": "expression"
             },
             "fill": {
                 "css": "marker-fill",
                 "default-value": "blue",
                 "doc": "The color of the area of the marker.",
+                "default-meaning": "The marker fill color is blue.",
                 "type": "expression"
             },
             "allow-overlap": {
@@ -829,6 +835,7 @@
                 "css": "marker-avoid-edges",
                 "doc": "Avoid placing markers that intersect with tile boundaries.",
                 "type": "boolean",
+                "default-meaning": "Markers will be potentially placed near tile edges and therefore may look cut off unless they are rendered on each adjacent tile.",
                 "default-value": false
             },
             "ignore-placement": {
@@ -869,15 +876,15 @@
                 "css": "marker-clip",
                 "type": "boolean",
                 "default-value": false,
-                "default-meaning": "geometry will not be clipped to map bounds before rendering",
+                "default-meaning": "Geometry will not be clipped to map bounds before rendering.",
                 "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
             "simplify": {
                 "css": "marker-simplify",
                 "type": "float",
                 "default-value": 0.0,
-                "default-meaning": "geometry will not be simplified",
-                "doc": "geometries are simplified by the given tolerance"
+                "default-meaning": "Geometry will not be simplified.",
+                "doc": "geometries are simplified by the given tolerance."
             },
             "simplify-algorithm": {
                 "css": "marker-simplify-algorithm",
@@ -2214,7 +2221,8 @@
                 ],
                 "default-value": "collision",
                 "doc": "The mode for debug rendering.",
-                "type": "string"
+                "type": "string",
+                "default-meaning": "The otherwise invisible collision boxes will be rendered as squares on the map"
             }
         }
 
