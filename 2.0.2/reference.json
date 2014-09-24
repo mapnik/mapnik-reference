@@ -255,7 +255,8 @@
             },
             "stroke-width": {
                 "css": "marker-line-width",
-                "doc": "The width of the stroke around a marker shape, in pixels. This is positioned on the boundary, so high values can cover the area itself.",
+                "default-value": 0.5,
+                "doc": "The width of the stroke around the marker, in pixels. This is positioned on the boundary, so high values can cover the area itself.",
                 "type": "float"
             },
             "stroke-opacity": {
@@ -341,6 +342,7 @@
                 "type": "string",
                 "required": true,
                 "serialization": "content",
+                "default-value": "",
                 "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]"
             },
             "face-name": {
@@ -361,11 +363,13 @@
             "size": {
                 "css": "shield-size",
                 "type": "float",
+                "default-value": 10,
                 "doc": "The size of the shield text in pixels"
             },
             "fill": {
                 "css": "shield-fill",
                 "type": "color",
+                "default-value": "black",
                 "doc": "The color of the shield text"
             },
             "placement": {
@@ -437,6 +441,7 @@
             },
             "line-spacing": {
                 "css": "shield-line-spacing",
+                "default-value": 0,
                 "doc": "Vertical spacing between lines of multiline labels (in pixels)",
                 "type": "float"
             },
@@ -662,6 +667,7 @@
                 "css": "text-face-name",
                 "type": "string",
                 "validate": "font",
+                "default-value": "",
                 "doc": "Font name and style to render a label in",
                 "required": true
             },
@@ -692,6 +698,7 @@
             "spacing": {
                 "css": "text-spacing",
                 "type": "float",
+                "default-value": 0,
                 "doc": "Distance between repeated text labels on a line"
             },
             "character-spacing": {
@@ -777,11 +784,13 @@
             "minimum-distance": {
                 "css": "text-min-distance",
                 "doc": "Minimum permitted distance to the next text symbolizer.",
+                "default-value": 0,
                 "type": "float"
             },
             "minimum-padding": {
                 "css": "text-min-padding",
                 "doc": "Determines the minimum amount of padding that a text symbolizer gets relative to other text",
+                "default-value": 0,
                 "type": "float"
             },
             "minimum-path-length": {
@@ -801,6 +810,7 @@
             "orientation": {
                 "css": "text-orientation",
                 "type": "float",
+                "default-value": 0,
                 "doc": "Rotate the text."
             },
             "placement": {
