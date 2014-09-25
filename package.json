@@ -9,5 +9,11 @@
   },
   "engines": {
     "node": "*"
+  },
+  "scripts": {
+      "test": "mocha -R spec --timeout 50000"
+  },
+  "devDependencies": {
+    "mocha": "1.x"
   }
 }

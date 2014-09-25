@@ -8,7 +8,7 @@ before_install:
  - true
 
 install:
- - true
+ - npm install
 
 before_script:
  - make
