@@ -621,13 +621,15 @@
                 "css": "marker-width",
                 "default-value": 10,
                 "doc": "The width of the marker, if using one of the default types.",
-                "type": "expression"
+                "type": "float",
+                "expression":true
             },
             "height": {
                 "css": "marker-height",
                 "default-value": 10,
                 "doc": "The height of the marker, if using one of the default types.",
-                "type": "expression"
+                "type": "float",
+                "expression":true
             },
             "fill": {
                 "css": "marker-fill",
@@ -751,7 +753,8 @@
         "shield": {
             "name": {
                 "css": "shield-name",
-                "type": "expression",
+                "type": "string",
+                "expression":true,
                 "serialization": "content",
                 "default-value": "",
                 "doc": "Value to use for a shield\"s text label. Data columns are specified using brackets like [column_name]"
@@ -1377,7 +1380,8 @@
         "text": {
             "name": {
                 "css": "text-name",
-                "type": "expression",
+                "type": "string",
+                "expression":true,
                 "required": true,
                 "default-value": "",
                 "serialization": "content",
@@ -1536,7 +1540,8 @@
             },
             "orientation": {
                 "css": "text-orientation",
-                "type": "expression",
+                "type": "float",
+                "expression":true,
                 "default-value": 0,
                 "doc": "Rotate the text."
             },
@@ -1666,7 +1671,8 @@
             "height": {
                 "css": "building-height",
                 "doc": "The height of the building in pixels.",
-                "type": "expression",
+                "type": "float",
+                "expression":true,
                 "default-value": 0
             }
         }
