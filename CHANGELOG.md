@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 6.0.0
+
+* Format change: now properties that are expressions report `expression:true` and their `type` represents the expected type post-evaluation.
+
 ### 5.1.1
 
 * Added more docs and default value descriptions
