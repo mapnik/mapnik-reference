@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### 6.0.2
+
+* Added `font-feature-settings` for v3.0.0 ref (@talaj)
+* Updated `text-character-spacing` and `text-dy` doc for v3.0.0 ref (@talaj)
+
 ### 6.0.1
 
 * Now reporting Mapnik 3.0.0
