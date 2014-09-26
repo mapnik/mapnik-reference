@@ -13,7 +13,7 @@ var refs = [
  '2.1.1',
  '2.2.0',
  '2.3.0',
- 'latest'
+ '3.0.0'
 ];
 
 refs.map(function(version) {
