@@ -3,7 +3,7 @@ var path = require('path');
 var util = require('util');
 var assert = require('assert');
 var references = require("..");
-var existsSync = require('fs').existsSync || require('path').existsSync
+var existsSync = require('fs').existsSync || require('path').existsSync;
 
 var options = {
     debug:false

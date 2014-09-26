@@ -1,10 +1,17 @@
 var assert = require('assert');
-var mapnikref = require('mapnik-reference').version.latest;
+var references = require('mapnik-reference');
 
 describe('datasources', function() {
-    it('show provide metadata', function() {
-        var spec = mapnikref.datasources['postgis'];
-        assert.ok(spec['table'].type,'string');
-        assert.equal(spec['table'].required,true);
-    });
+    for (var key in references.version) {
+        var spec = references.version[key];
+        if (spec.datasources) {
+            it('show provide metadata for '+key, function() {
+                var ds_spec = spec.datasources['postgis'];
+                assert.ok(ds_spec['table'].type,'string');
+                assert.equal(ds_spec['table'].required,true);
+            });
+        } else {
+            it.skip('show provide metadata for '+key, function() {});
+        }
+    }
 });
