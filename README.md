@@ -1,8 +1,7 @@
 # mapnik-reference
 
-`mapnik-reference` is a parse-able spec of what Mapnik can do - what main structures
-it supports (like layers, styles, and symbolizers) and the properties they can contain.
-It's useful for building parsers, tests, compilers, and syntax highlighting/checking for languages.
+`mapnik-reference` is a spec of what Mapnik styling and datasource are supported for each version.
+It is useful for building parsers, tests, compilers, and syntax highlighting/checking for languages.
 
 ## Versioning
 
@@ -12,8 +11,7 @@ of a parser, so they will increment the major version of this repository in
 [semver style](http://semver.org/).
 
 The directories in this repository directly correspond to released versions of Mapnik
-and the next targeted release of Mapnik. The latest reference, usually targeted
-toward a pre-release, is copied into `/latest` for convenience.
+and the next targeted release of Mapnik.
 
 ## Meaning
 
@@ -42,14 +40,13 @@ var data = mapnik_reference.version['2.1.0'];
 ```
 
 Other implementations will want to simply copy the [JSON](http://www.json.org/) file
-from the desired implementation, like `2.0.1/reference.json`. For python we could consider
-uploading to pypi if there is interest.
+from the desired implementation, like `2.0.1/reference.json`.
 
 The file can then be parsed with any of the many [json parsers](http://www.json.org/).
 
 ## Testing
 
-Tests require python:
+Tests require python and node.js:
 
     make test
 
