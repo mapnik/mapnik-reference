@@ -1,11 +1,11 @@
-all: latest/datasources.json
+all: build
 
-latest/datasources.json:
+build:
 	node scripts/make-datasource-ref.js
 
-check test: latest/datasources.json
-	npm test
+check test: build
 	python scripts/test.py
 	node scripts/lint.js
+	npm test
 
-.PHONY: test latest/datasources.json
+.PHONY: test build
