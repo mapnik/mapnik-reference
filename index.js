@@ -1,5 +1,6 @@
 var fs = require('fs'),
-    path = require('path');
+    path = require('path'),
+    existsSync = require('fs').existsSync || require('path').existsSync;
 
 // Load all stated versions into the module exports
 module.exports.version = {};
@@ -17,7 +18,8 @@ var refs = [
 
 refs.map(function(version) {
     module.exports.version[version] = require(path.join(__dirname, version, 'reference.json'));
-    if (version === 'latest') {
-        module.exports.version[version].datasources = require(path.join(__dirname, version, 'datasources.json')).datasources;
+    var ds_path = path.join(__dirname, version, 'datasources.json');
+    if (existsSync(ds_path)) {
+        module.exports.version[version].datasources = require(ds_path).datasources;
     }
 });
