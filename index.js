@@ -16,12 +16,8 @@ var refs = [
 ];
 
 refs.map(function(version) {
-    module.exports.version[version] = JSON.parse(
-        fs.readFileSync(
-            path.join(__dirname, version, 'reference.json'), 'utf8'));
+    module.exports.version[version] = require(path.join(__dirname, version, 'reference.json'));
     if (version === 'latest') {
-        module.exports.version[version].datasources = JSON.parse(
-            fs.readFileSync(
-                path.join(__dirname, version, 'datasources.json'), 'utf8')).datasources;
+        module.exports.version[version].datasources = require(path.join(__dirname, version, 'datasources.json')).datasources;
     }
 });
