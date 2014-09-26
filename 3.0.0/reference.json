@@ -2155,7 +2155,7 @@
                 "css": "text-dy",
                 "type": "float",
                 "expression":true,
-                "doc": "Displace text by fixed amount, in pixels, +/- along the Y axis.  With \"dummy\" placement-type, a positive value displaces downwards. With \"simple\" placement-type, it is either up, down or unchanged, depending on the placement selected. With \"line\" placement-type, a positive value displaces below the path.",
+                "doc": "Displace text by fixed amount, in pixels, +/- along the Y axis.  With \"dummy\" placement-type, a positive value displaces downwards. With \"simple\" placement-type, it is either up, down or unchanged, depending on the placement selected. With \"line\" placement-type, a positive value displaces above the path.",
                 "default-meaning": "Text will not be displaced.",
                 "default-value": 0
             },
@@ -2170,7 +2170,7 @@
                 "expression":true,
                 "doc": "Position of label relative to point position.",
                 "default-value": "auto",
-                "default-meaning": "Default affected by value of dy; \"bottom\" for dy>0, \"top\" for dy<0."
+                "default-meaning": "Default affected by value of dy; \"top\" for dy>0, \"bottom\" for dy<0."
             },
             "avoid-edges": {
                 "css": "text-avoid-edges",
