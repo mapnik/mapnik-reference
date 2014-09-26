@@ -15,8 +15,8 @@ mapnik_version = mapnik.mapnik_version_string().replace('-pre','')
 
 reference_file = './%s/reference.json' % mapnik_version
 if not os.path.exists(reference_file):
-    print '\n*** WARNING *** reference.json not found for your mapnik version (%s), defaulting to latest\n' % mapnik_version
-    reference_file = './latest/reference.json'
+    print 'Error: could not find file %s' % reference_file
+    sys.exit(1)
 
 reference = json.load(open(reference_file, 'r'))
 
