@@ -1771,7 +1771,7 @@
             "dy": {
                 "css": "text-dy",
                 "type": "float",
-                "doc": "Displace text by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the text down.",
+                "doc": "Displace text by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the text up.",
                 "default-value": 0
             },
             "vertical-alignment": {
@@ -1784,7 +1784,7 @@
                 ],
                 "doc": "Position of label relative to point position.",
                 "default-value": "auto",
-                "default-meaning": "Default affected by value of dy; \"bottom\" for dy>0, \"top\" for dy<0."
+                "default-meaning": "Default affected by value of dy; \"top\" for dy>0, \"bottom\" for dy<0."
             },
             "avoid-edges": {
                 "css": "text-avoid-edges",
