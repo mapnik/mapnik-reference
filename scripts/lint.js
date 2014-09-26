@@ -24,8 +24,8 @@ var lint_ref = function(ver) {
             if (!sym.doc) {
                 console.log('missing doc for',sym.css,ver);
             }
-            // strictness with latest going forward
-            if (ver === 'latest') {
+            // strictness with >= 3.x going forward
+            if (+ver.split('.')[0] >= 3) {
                 if (sym.doc && sym.doc.slice(-1) != '.') {
                     console.log('missing ending period for doc of',sym.css);
                 }
