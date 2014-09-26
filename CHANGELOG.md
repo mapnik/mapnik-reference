@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 6.0.1
+
+* Now reporting Mapnik 3.0.0
+
 ### 6.0.0
 
 * Format change: now properties that are expressions report `expression:true` and their `type` represents the expected type post-evaluation.
