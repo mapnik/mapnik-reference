@@ -1,5 +1,5 @@
 var assert = require('assert');
-var references = require('mapnik-reference');
+var references = require('../');
 var glob = require('glob');
 var path = require('path');
 
