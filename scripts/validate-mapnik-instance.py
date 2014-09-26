@@ -5,6 +5,8 @@ import sys
 import json
 import mapnik
 
+##### WARNING: this script is out of date and does not yet work with Mapnik 3.x
+
 if not mapnik.mapnik_version() > 200100:
     print 'Error: this script is only designed to work with Mapnik 2.1 and above (you have %s)' % mapnik.mapnik_version_string()
     sys.exit(1)
