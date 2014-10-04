@@ -2453,8 +2453,25 @@
                 "expression":true,
                 "default-meaning": "The otherwise invisible collision boxes will be rendered as squares on the map."
             }
+        },
+        "dot": {
+            "fill": {
+                "css": "dot-fill",
+                "type": "color",
+                "expression":true,
+                "default-value": "TODO",
+                "default-meaning": "TODO",
+                "doc": "TODO"
+            },
+            "fill-opacity": {
+                "css": "dot-opacity",
+                "type": "float",
+                "expression":true,
+                "default-value": "TODO",
+                "default-meaning": "TODO",
+                "doc": "TODO"
+            }
         }
-
     },
     "colors": {
         "aliceblue":  [240, 248, 255],
