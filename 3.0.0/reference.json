@@ -466,7 +466,7 @@
                 "expression":true,
                 "default-value": "radial-distance",
                 "default-meaning": "The geometry will be simplified using the radial distance algorithm.",
-                "doc": "Simplify gemoetries by the given algorithm."
+                "doc": "Simplify geometries by the given algorithm."
             },
             "smooth": {
                 "css": "polygon-smooth",
@@ -649,7 +649,7 @@
                 "expression":true,
                 "default-value": 0.0,
                 "default-meaning": "geometry will not be simplified.",
-                "doc": "Simplify gemoetries by the given tolerance."
+                "doc": "Simplify geometries by the given tolerance."
             },
             "simplify-algorithm": {
                 "css": "line-simplify-algorithm",
@@ -660,7 +660,7 @@
                 "expression":true,
                 "default-value": "radial-distance",
                 "default-meaning": "The geometry will be simplified using the radial distance algorithm.",
-                "doc": "Simplify gemoetries by the given algorithm."
+                "doc": "Simplify geometries by the given algorithm."
             },
             "smooth": {
                 "css": "line-smooth",
