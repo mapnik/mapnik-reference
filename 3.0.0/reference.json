@@ -2035,6 +2035,14 @@
                 "default-meaning": "Lines will be wrapped when whitespace is encountered.",
                 "doc": "Use this character instead of a space to wrap long text."
             },
+            "repeat-wrap-character": {
+                "css": "text-repeat-wrap-character",
+                "type": "boolean",
+                "expression": true,
+                "default-value": false,
+                "default-meaning": "Character will be removed when used to wrap a line.",
+                "doc": "Keep the character used to wrap a line instead of removing it, and repeat it on the new line."
+            },
             "spacing": {
                 "css": "text-spacing",
                 "type": "unsigned",
