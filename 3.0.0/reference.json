@@ -482,7 +482,7 @@
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform polygon geometry with specified function.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -695,7 +695,7 @@
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform line geometry with specified function.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -916,7 +916,7 @@
                 ],
                 "default-value": "none",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition."
+                "doc": "Transform marker instance with specified function. Ignores map scale factor."
             },
             "clip": {
                 "css": "marker-clip",
@@ -960,7 +960,7 @@
                 "expression":true,
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform marker geometry with specified function.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -1220,7 +1220,7 @@
                 ],
                 "default-value": "",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition applied to halo relative to the actual text. Allows for shadow or embossed effects."
+                "doc": "Transform shield halo relative to the actual text with specified function. Allows for shadow or embossed effects. Ignores map scale factor."
             },
             "halo-comp-op": {
                 "css": "shield-halo-comp-op",
@@ -1422,7 +1422,7 @@
                 ],
                 "default-value": "none",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition."
+                "doc": "Transform shield instance with specified function. Ignores map scale factor."
             },
             "clip": {
                 "css": "shield-clip",
@@ -1546,7 +1546,7 @@
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform line geometry with specified function and apply pattern to transformed geometry.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -1682,7 +1682,7 @@
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform polygon geometry with specified function and apply pattern to transformed geometry.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -1925,7 +1925,7 @@
                 ],
                 "default-value": "none",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition."
+                "doc": "Transform point instance with specified function. Ignores map scale factor"
             },
             "comp-op": {
                 "css": "point-comp-op",
@@ -2141,7 +2141,7 @@
                 ],
                 "default-value": "",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition applied to halo relative to the actual text. Allows for shadow or embossed effects."
+                "doc": "Transform text halo relative to the actual text with specified function. Allows for shadow or embossed effects. Ignores map scale factor."
             },
             "dx": {
                 "css": "text-dx",
@@ -2280,7 +2280,7 @@
                 ],
                 "expression":true,
                 "doc": "Transform the case of the characters.",
-                "default-meaning": "No text transformation will be applied.",
+                "default-meaning": "Transform text instance with specified function. Ignores map scale factor.",
                 "default-value": "none"
             },
             "horizontal-alignment": {
