@@ -447,7 +447,7 @@
                 "expression":true,
                 "default-value": false,
                 "default-meaning": "The geometry will not be clipped to map bounds before rendering.",
-                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
+                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extend outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
             "simplify": {
                 "css": "polygon-simplify",
