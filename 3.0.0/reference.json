@@ -447,7 +447,7 @@
                 "expression":true,
                 "default-value": false,
                 "default-meaning": "The geometry will not be clipped to map bounds before rendering.",
-                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
+                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extend outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
             "simplify": {
                 "css": "polygon-simplify",
@@ -466,7 +466,7 @@
                 "expression":true,
                 "default-value": "radial-distance",
                 "default-meaning": "The geometry will be simplified using the radial distance algorithm.",
-                "doc": "Simplify gemoetries by the given algorithm."
+                "doc": "Simplify geometries by the given algorithm."
             },
             "smooth": {
                 "css": "polygon-smooth",
@@ -482,7 +482,7 @@
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform polygon geometry with specified function.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -649,7 +649,7 @@
                 "expression":true,
                 "default-value": 0.0,
                 "default-meaning": "geometry will not be simplified.",
-                "doc": "Simplify gemoetries by the given tolerance."
+                "doc": "Simplify geometries by the given tolerance."
             },
             "simplify-algorithm": {
                 "css": "line-simplify-algorithm",
@@ -660,7 +660,7 @@
                 "expression":true,
                 "default-value": "radial-distance",
                 "default-meaning": "The geometry will be simplified using the radial distance algorithm.",
-                "doc": "Simplify gemoetries by the given algorithm."
+                "doc": "Simplify geometries by the given algorithm."
             },
             "smooth": {
                 "css": "line-smooth",
@@ -695,7 +695,7 @@
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform line geometry with specified function.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -916,7 +916,7 @@
                 ],
                 "default-value": "none",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition."
+                "doc": "Transform marker instance with specified function. Ignores map scale factor."
             },
             "clip": {
                 "css": "marker-clip",
@@ -960,7 +960,7 @@
                 "expression":true,
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform marker geometry with specified function.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -1220,7 +1220,7 @@
                 ],
                 "default-value": "",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition applied to halo relative to the actual text. Allows for shadow or embossed effects."
+                "doc": "Transform shield halo relative to the actual text with specified function. Allows for shadow or embossed effects. Ignores map scale factor."
             },
             "halo-comp-op": {
                 "css": "shield-halo-comp-op",
@@ -1422,7 +1422,7 @@
                 ],
                 "default-value": "none",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition."
+                "doc": "Transform shield instance with specified function. Ignores map scale factor."
             },
             "clip": {
                 "css": "shield-clip",
@@ -1546,7 +1546,7 @@
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform line geometry with specified function and apply pattern to transformed geometry.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -1682,7 +1682,7 @@
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform polygon geometry with specified function and apply pattern to transformed geometry.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -1925,7 +1925,7 @@
                 ],
                 "default-value": "none",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition."
+                "doc": "Transform point instance with specified function. Ignores map scale factor"
             },
             "comp-op": {
                 "css": "point-comp-op",
@@ -2084,7 +2084,7 @@
                 "default-meaning": "The text will be rendered black."
             },
             "opacity": {
-                "css": "text-opacity.",
+                "css": "text-opacity",
                 "doc": "A number from 0 to 1 specifying the opacity for the text.",
                 "default-value": 1.0,
                 "default-meaning": "Fully opaque",
@@ -2141,7 +2141,7 @@
                 ],
                 "default-value": "",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition applied to halo relative to the actual text. Allows for shadow or embossed effects."
+                "doc": "Transform text halo relative to the actual text with specified function. Allows for shadow or embossed effects. Ignores map scale factor."
             },
             "dx": {
                 "css": "text-dx",
@@ -2280,7 +2280,7 @@
                 ],
                 "expression":true,
                 "doc": "Transform the case of the characters.",
-                "default-meaning": "No text transformation will be applied.",
+                "default-meaning": "Transform text instance with specified function. Ignores map scale factor.",
                 "default-value": "none"
             },
             "horizontal-alignment": {
