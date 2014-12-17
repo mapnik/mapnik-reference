@@ -1,8 +1,12 @@
 ## CHANGELOG
 
-### 6.0.4
+### 6.0.5
 
 * Added `dots` symbolizer
+
+### 6.0.4
+
+* Doc improvements
 
 ### 6.0.3
 
