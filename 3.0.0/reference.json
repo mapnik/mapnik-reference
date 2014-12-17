@@ -1925,7 +1925,7 @@
                 ],
                 "default-value": "none",
                 "default-meaning": "No transformation.",
-                "doc": "Transform point instance with specified function. Ignores map scale factor"
+                "doc": "Transform point instance with specified function. Ignores map scale factor."
             },
             "comp-op": {
                 "css": "point-comp-op",
@@ -2453,8 +2453,86 @@
                 "expression":true,
                 "default-meaning": "The otherwise invisible collision boxes will be rendered as squares on the map."
             }
+        },
+        "dot": {
+            "fill": {
+                "css": "dot-fill",
+                "default-value": "gray",
+                "doc": "The color of the area of the dot.",
+                "type": "color",
+                "expression":true,
+                "default-meaning": "The dot fill color is gray."
+            },
+            "opacity": {
+                "css": "dot-opacity",
+                "doc": "The overall opacity of the dot.",
+                "default-value": 1,
+                "default-meaning": "The opacity of the dot.",
+                "type": "float",
+                "expression":true
+            },
+            "width": {
+                "css": "dot-width",
+                "default-value": 1,
+                "doc": "The width of the dot in pixels.",
+                "type": "float",
+                "expression":true,
+                "default-meaning": "The marker width is 1 pixel."
+            },
+            "height": {
+                "css": "dot-height",
+                "default-value": 1,
+                "doc": "The height of the dot in pixels.",
+                "type": "float",
+                "expression":true,
+                "default-meaning": "The marker height is 1 pixels."
+            },
+            "comp-op": {
+                "css": "dot-comp-op",
+                "default-value": "src-over",
+                "default-meaning": "Add the current layer on top of other layers.",
+                "doc": "Composite operation. This defines how this layer should behave relative to layers atop or below it.",
+                "type": [
+                    "clear",
+                    "src",
+                    "dst",
+                    "src-over",
+                    "dst-over",
+                    "src-in",
+                    "dst-in",
+                    "src-out",
+                    "dst-out",
+                    "src-atop",
+                    "dst-atop",
+                    "xor",
+                    "plus",
+                    "minus",
+                    "multiply",
+                    "divide",
+                    "screen",
+                    "overlay",
+                    "darken",
+                    "lighten",
+                    "color-dodge",
+                    "color-burn",
+                    "linear-dodge",
+                    "linear-burn",
+                    "hard-light",
+                    "soft-light",
+                    "difference",
+                    "exclusion",
+                    "contrast",
+                    "invert",
+                    "invert-rgb",
+                    "grain-merge",
+                    "grain-extract",
+                    "hue",
+                    "saturation",
+                    "color",
+                    "value"
+                ]
+            }
         }
-
     },
     "colors": {
         "aliceblue":  [240, 248, 255],
