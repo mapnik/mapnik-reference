@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 6.0.4
+
+* Added `dots` symbolizer
+
 ### 6.0.3
 
 * Fix a typo in text-opacity css name.
