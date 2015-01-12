@@ -1389,7 +1389,8 @@
                     "none",
                     "uppercase",
                     "lowercase",
-                    "capitalize"
+                    "capitalize",
+                    "reverse"
                 ],
                 "expression":true,
                 "doc": "Transform the case of the characters.",
@@ -2276,7 +2277,8 @@
                     "none",
                     "uppercase",
                     "lowercase",
-                    "capitalize"
+                    "capitalize",
+                    "reverse"
                 ],
                 "expression":true,
                 "doc": "Transform the case of the characters.",
