@@ -2532,163 +2532,165 @@
                     "value"
                 ]
             }
+        },
+       "group": {
+            "style-name": {
+                "css": "group-name",
+                "type": "string",
+                "required": false,
+                "default-value": "",
+                "serialization": "rules",
+                "tag-name": "GroupRule",
+                "expression":true,
+                "doc": "Name to be used for matching style definitions to the group symbolizer."
+            },
+            "style-class": {
+                "css": "group-class",
+                "type": "string",
+                "required": false,
+                "default-value": "",
+                "serialization": "rules",
+                "tag-name": "GroupRule",
+                "expression":true,
+                "doc": "Class names, seperated by spaces, to be used for matching style definitions to the group symbolizer."
+            },
+            "layout": {
+                "css": "group-layout",
+                "required": true,
+                "type": "tags",
+                "serialization": "tag",
+                "expression":true,
+                "doc": "Layout definition for the group."
+            },
+            "start-column": {
+                "css": "group-start-column",
+                "doc": "Starting index for indexed column names.",
+                "type": "unsigned",
+                "expression":true,
+                "default-value": 1
+            },
+            "num-columns": {
+                "css": "group-num-columns",
+                "doc": "Range of indexed columns. Index values will range from group-start-column to group-start-column + group-num-columns.",
+                "type": "unsigned",
+                "default-value": 0,
+                "expression":true,
+                "default-meaning": "Zero means that no indexed columns will be used."
+            },
+            "repeat-key": {
+                "css": "group-repeat-key",
+                "doc": "Pattern to create unique key from data columns to indicate identical labels. This is used with minimum-distance to avoid excessive repetition of identical labels across features.",
+                "type": "unsigned",
+                "expression":true,
+                "default-value": 1
+            },
+            "placement": {
+                "css": "group-placement",
+                "type": [
+                    "point",
+                    "line",
+                    "vertex",
+                    "interior"
+                ],
+                "default-value": "point",
+                "expression":true,
+                "doc": "How this group should be placed. Point placement attempts to place it on top of points, line places along lines multiple times per feature, vertex places on the vertexes of polygons, and interior attempts to place inside of polygons."
+            },
+            "avoid-edges": {
+                "css": "group-avoid-edges",
+                "doc": "Avoid placing groups that intersect with tile boundaries.",
+                "type": "boolean",
+                "expression":true,
+                "default-value": false
+            },
+            "allow-overlap": {
+                "css": "group-allow-overlap",
+                "type": "boolean",
+                "default-value": false,
+                "doc": "Control whether overlapping groups are shown or hidden.",
+                "expression":true,
+                "default-meaning": "Do not allow groups to overlap with other map elements already placed."
+            },
+            "minimum-distance": {
+                "css": "group-min-distance",
+                "type": "float",
+                "default-value": 0,
+                "expression":true,
+                "doc": "Minimum distance to the next group, not necessarily the same group."
+            },
+            "spacing": {
+                "css": "group-spacing",
+                "type": "float",
+                "default-value": 0,
+                "expression":true,
+                "doc": "The spacing between repeated occurrences of the same group on a line"
+            },
+            "minimum-padding": {
+                "css": "group-min-padding",
+                "default-value": 0,
+                "doc": "Minimum distance a group will be placed from the edge of a metatile. This option is similiar to group-avoid-edges:true except that the extra margin is used to discard cases where the group+margin are not fully inside the metatile",
+                "expression":true,
+                "type": "float"
+            },
+            "opacity": {
+                "css": "group-opacity",
+                "type": "float",
+                "doc": "The opacity of the image used for the group",
+                "expression":true,
+                "default-value": 1
+            },
+            "clip": {
+                "css": "group-clip",
+                "type": "boolean",
+                "default-value": true,
+                "default-meaning": "geometry will be clipped to map bounds before rendering",
+                "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
+            },
+            "comp-op": {
+                "css": "group-comp-op",
+                "default-value": "src-over",
+                "default-meaning": "add the current symbolizer on top of other symbolizer",
+                "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
+                "expression":true,
+                "type": ["clear",
+                    "src",
+                    "dst",
+                    "src-over",
+                    "dst-over",
+                    "src-in",
+                    "dst-in",
+                    "src-out",
+                    "dst-out",
+                    "src-atop",
+                    "dst-atop",
+                    "xor",
+                    "plus",
+                    "minus",
+                    "multiply",
+                    "screen",
+                    "overlay",
+                    "darken",
+                    "lighten",
+                    "color-dodge",
+                    "color-burn",
+                    "hard-light",
+                    "soft-light",
+                    "difference",
+                    "exclusion",
+                    "contrast",
+                    "invert",
+                    "invert-rgb",
+                    "grain-merge",
+                    "grain-extract",
+                    "hue",
+                    "saturation",
+                    "color",
+                    "value"
+                ]
+            }
         }
     },
-    "group": {
-        "style-name": {
-            "css": "group-name",
-            "type": "string",
-            "required": false,
-            "default-value": "",
-            "serialization": "rules",
-            "tag-name": "GroupRule",
-            "doc": "Name to be used for matching style definitions to the group symbolizer."
-        },
-        "style-class": {
-            "css": "group-class",
-            "type": "string",
-            "required": false,
-            "default-value": "",
-            "serialization": "rules",
-            "tag-name": "GroupRule",
-            "doc": "Class names, seperated by spaces, to be used for matching style definitions to the group symbolizer."
-        },
-        "layout": {
-            "css": "group-layout",
-            "required": true,
-            "type": "tags",
-            "serialization": "tag",
-            "doc": "Layout definition for the group."
-        },
-        "start-column": {
-            "css": "group-start-column",
-            "doc": "Starting index for indexed column names.",
-            "type": "unsigned",
-            "default-value": 1
-        },
-        "num-columns": {
-            "css": "group-num-columns",
-            "doc": "Range of indexed columns. Index values will range from group-start-column to group-start-column + group-num-columns.",
-            "type": "unsigned",
-            "default-value": 0,
-            "default-meaning": "Zero means that no indexed columns will be used."
-        },
-        "repeat-key": {
-            "css": "group-repeat-key",
-            "doc": "Pattern to create unique key from data columns to indicate identical labels. This is used with minimum-distance to avoid excessive repetition of identical labels across features.",
-            "type": "unsigned",
-            "default-value": 1
-        },
-        "placement": {
-            "css": "group-placement",
-            "type": [
-                "point",
-                "line",
-                "vertex",
-                "interior"
-            ],
-            "default-value": "point",
-            "doc": "How this group should be placed. Point placement attempts to place it on top of points, line places along lines multiple times per feature, vertex places on the vertexes of polygons, and interior attempts to place inside of polygons."
-        },
-        "avoid-edges": {
-            "css": "group-avoid-edges",
-            "doc": "Avoid placing groups that intersect with tile boundaries.",
-            "type": "boolean",
-            "default-value": false
-        },
-        "allow-overlap": {
-            "css": "group-allow-overlap",
-            "type": "boolean",
-            "default-value": false,
-            "doc": "Control whether overlapping groups are shown or hidden.",
-            "default-meaning": "Do not allow groups to overlap with other map elements already placed."
-        },
-        "minimum-distance": {
-            "css": "group-min-distance",
-            "type": "float",
-            "default-value": 0,
-            "doc": "Minimum distance to the next group, not necessarily the same group."
-        },
-        "spacing": {
-            "css": "group-spacing",
-            "type": "float",
-            "default-value": 0,
-            "doc": "The spacing between repeated occurrences of the same group on a line"
-        },
-        "minimum-padding": {
-            "css": "group-min-padding",
-            "default-value": 0,
-            "doc": "Minimum distance a group will be placed from the edge of a metatile. This option is similiar to group-avoid-edges:true except that the extra margin is used to discard cases where the group+margin are not fully inside the metatile",
-            "type": "float"
-        },
-        "opacity": {
-            "css": "group-opacity",
-            "type": "float",
-            "doc": "The opacity of the image used for the group",
-            "default-value": 1
-        },
-        "clip": {
-            "css": "group-clip",
-            "type": "boolean",
-            "default-value": true,
-            "default-meaning": "geometry will be clipped to map bounds before rendering",
-            "doc": "geometries are clipped to map bounds by default for best rendering performance. In some cases users may wish to disable this to avoid rendering artifacts."
-        },
-        "comp-op": {
-            "css": "group-comp-op",
-            "default-value": "src-over",
-            "default-meaning": "add the current symbolizer on top of other symbolizer",
-            "doc": "Composite operation. This defines how this symbolizer should behave relative to symbolizers atop or below it.",
-            "type": ["clear",
-                "src",
-                "dst",
-                "src-over",
-                "dst-over",
-                "src-in",
-                "dst-in",
-                "src-out",
-                "dst-out",
-                "src-atop",
-                "dst-atop",
-                "xor",
-                "plus",
-                "minus",
-                "multiply",
-                "screen",
-                "overlay",
-                "darken",
-                "lighten",
-                "color-dodge",
-                "color-burn",
-                "hard-light",
-                "soft-light",
-                "difference",
-                "exclusion",
-                "contrast",
-                "invert",
-                "invert-rgb",
-                "grain-merge",
-                "grain-extract",
-                "hue",
-                "saturation",
-                "color",
-                "value"
-            ]
-        }
-    },
-    "debug": {
-        "mode": {
-            "css": "debug-mode",
-            "type": [
-                "collision",
-                "vertex"
-            ],
-            "default-value": "collision",
-            "doc": "The mode for debug rendering",
-            "type": "string"
-        }
-    },
-    "colors": {
+     "colors": {
         "aliceblue":  [240, 248, 255],
         "antiquewhite":  [250, 235, 215],
         "aqua":  [0, 255, 255],

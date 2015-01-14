@@ -31,6 +31,12 @@ describe('styles', function() {
         assert.ok(references.version['2.3.0'].symbolizers.markers['geometry-transform']);
         assert.ok(!references.version['2.0.0'].symbolizers.markers['geometry-transform']);
     });
+
+    it('show reveal new properties in Mapnik 3.3.0', function() {
+        assert.ok(references.version['3.0.0'].symbolizers.dot['width']);
+        assert.ok(references.version['3.0.0'].symbolizers.group['style-name']);
+    });
+
 });
 
 
