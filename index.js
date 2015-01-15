@@ -1,25 +1,17 @@
-var fs = require('fs'),
-    path = require('path'),
-    existsSync = require('fs').existsSync || require('path').existsSync;
-
 // Load all stated versions into the module exports
-module.exports.version = {};
 
-var refs = [
- '2.0.0',
- '2.0.1',
- '2.0.2',
- '2.1.0',
- '2.1.1',
- '2.2.0',
- '2.3.0',
- '3.0.0'
-];
+var v = module.exports.version = {
+  '2.0.0': require('./2.0.0/reference.json'),
+  '2.0.1': require('./2.0.1/reference.json'),
+  '2.0.2': require('./2.0.2/reference.json'),
+  '2.1.0': require('./2.1.0/reference.json'),
+  '2.1.1': require('./2.1.1/reference.json'),
+  '2.2.0': require('./2.2.0/reference.json'),
+  '2.3.0': require('./2.3.0/reference.json'),
+  '3.0.0': require('./3.0.0/reference.json')
+};
 
-refs.map(function(version) {
-    module.exports.version[version] = require(path.join(__dirname, version, 'reference.json'));
-    var ds_path = path.join(__dirname, version, 'datasources.json');
-    if (existsSync(ds_path)) {
-        module.exports.version[version].datasources = require(ds_path).datasources;
-    }
-});
+v['2.3.0'].datasources = require('./2.3.0/datasources.json').datasources;
+v['3.0.0'].datasources = require('./3.0.0/datasources.json').datasources;
+
+
