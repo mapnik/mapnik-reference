@@ -2,6 +2,8 @@
 
 ### 7.0.0
 
+* Added `text-transform:reverse`
+* Added `text-upright`
 * Changed API to lazily load each reference (helps avoid `require` performance cost).
 
 Changes are:
