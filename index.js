@@ -2,10 +2,7 @@ var fs = require('fs'),
     path = require('path'),
     existsSync = require('fs').existsSync || require('path').existsSync;
 
-// Load all stated versions into the module exports
-module.exports.version = {};
-
-var refs = [
+var versions = [
  '2.0.0',
  '2.0.1',
  '2.0.2',
@@ -16,10 +13,16 @@ var refs = [
  '3.0.0'
 ];
 
-refs.map(function(version) {
-    module.exports.version[version] = require(path.join(__dirname, version, 'reference.json'));
+module.exports.versions = versions;
+
+module.exports.load = function(version) {
+    if (versions.indexOf(version) <= -1) {
+        throw new Error("Unknown mapnik-reference version: '" + version + "'");
+    }
+    var ref = require(path.join(__dirname, version, 'reference.json'));
     var ds_path = path.join(__dirname, version, 'datasources.json');
     if (existsSync(ds_path)) {
-        module.exports.version[version].datasources = require(ds_path).datasources;
+        ref.datasources = require(ds_path).datasources;
     }
-});
+    return ref;
+}

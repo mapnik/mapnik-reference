@@ -1,5 +1,15 @@
 ## CHANGELOG
 
+### 7.0.0
+
+* Changed API to lazily load each reference (helps avoid `require` performance cost).
+
+Changes are:
+
+ - Removed `mapnik-reference.version` object
+ - Added `mapnik-reference.versions` array
+ - Added `mapnik-reference.load()` function. Accepts ref version string, returns the reference instance
+
 ### 6.0.5
 
 * Added `dots` symbolizer

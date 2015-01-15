@@ -31,12 +31,27 @@ This is a valid [npm](http://npmjs.org/) module and therefore can easily be used
 
     npm install mapnik-reference
 
-Once installing it as a dependency (like it's used in Carto), it can be included
-and used for a specific version of Mapnik:
+Install it as a dependency of your application. Then use that API to get a reference instance
+for a specific version of Mapnik:
 
 ```javascript
 var mapnik_reference = require('mapnik-reference');
-var data = mapnik_reference.version['2.1.0'];
+var ref = mapnik_reference.load('3.0.0');
+```
+
+You can also get access to an array of all known versions:
+
+```javascript
+var mapnik_reference = require('mapnik-reference');
+mapnik_reference.versions;
+[ '2.0.0',
+  '2.0.1',
+  '2.0.2',
+  '2.1.0',
+  '2.1.1',
+  '2.2.0',
+  '2.3.0',
+  '3.0.0' ]
 ```
 
 Other implementations will want to simply copy the [JSON](http://www.json.org/) file
