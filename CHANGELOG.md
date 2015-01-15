@@ -1,5 +1,17 @@
 ## CHANGELOG
 
+### 6.0.5
+
+* Added `dots` symbolizer
+
+### 6.0.4
+
+* Doc improvements
+
+### 6.0.3
+
+* Fix a typo in text-opacity css name.
+
 ### 6.0.2
 
 * Added `font-feature-settings` for v3.0.0 ref (@talaj)

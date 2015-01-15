@@ -447,7 +447,7 @@
                 "expression":true,
                 "default-value": false,
                 "default-meaning": "The geometry will not be clipped to map bounds before rendering.",
-                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
+                "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extend outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
             "simplify": {
                 "css": "polygon-simplify",
@@ -466,7 +466,7 @@
                 "expression":true,
                 "default-value": "radial-distance",
                 "default-meaning": "The geometry will be simplified using the radial distance algorithm.",
-                "doc": "Simplify gemoetries by the given algorithm."
+                "doc": "Simplify geometries by the given algorithm."
             },
             "smooth": {
                 "css": "polygon-smooth",
@@ -482,7 +482,7 @@
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform polygon geometry with specified function.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -649,7 +649,7 @@
                 "expression":true,
                 "default-value": 0.0,
                 "default-meaning": "geometry will not be simplified.",
-                "doc": "Simplify gemoetries by the given tolerance."
+                "doc": "Simplify geometries by the given tolerance."
             },
             "simplify-algorithm": {
                 "css": "line-simplify-algorithm",
@@ -660,7 +660,7 @@
                 "expression":true,
                 "default-value": "radial-distance",
                 "default-meaning": "The geometry will be simplified using the radial distance algorithm.",
-                "doc": "Simplify gemoetries by the given algorithm."
+                "doc": "Simplify geometries by the given algorithm."
             },
             "smooth": {
                 "css": "line-smooth",
@@ -695,7 +695,7 @@
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform line geometry with specified function.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -916,7 +916,7 @@
                 ],
                 "default-value": "none",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition."
+                "doc": "Transform marker instance with specified function. Ignores map scale factor."
             },
             "clip": {
                 "css": "marker-clip",
@@ -960,7 +960,7 @@
                 "expression":true,
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform marker geometry with specified function.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -1220,7 +1220,7 @@
                 ],
                 "default-value": "",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition applied to halo relative to the actual text. Allows for shadow or embossed effects."
+                "doc": "Transform shield halo relative to the actual text with specified function. Allows for shadow or embossed effects. Ignores map scale factor."
             },
             "halo-comp-op": {
                 "css": "shield-halo-comp-op",
@@ -1389,7 +1389,8 @@
                     "none",
                     "uppercase",
                     "lowercase",
-                    "capitalize"
+                    "capitalize",
+                    "reverse"
                 ],
                 "expression":true,
                 "doc": "Transform the case of the characters.",
@@ -1422,7 +1423,7 @@
                 ],
                 "default-value": "none",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition."
+                "doc": "Transform shield instance with specified function. Ignores map scale factor."
             },
             "clip": {
                 "css": "shield-clip",
@@ -1546,7 +1547,7 @@
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform line geometry with specified function and apply pattern to transformed geometry.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -1682,7 +1683,7 @@
                 "type": "functions",
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
-                "doc": "Allows transformation functions to be applied to the geometry.",
+                "doc": "Transform polygon geometry with specified function and apply pattern to transformed geometry.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
@@ -1925,7 +1926,7 @@
                 ],
                 "default-value": "none",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition."
+                "doc": "Transform point instance with specified function. Ignores map scale factor."
             },
             "comp-op": {
                 "css": "point-comp-op",
@@ -2084,7 +2085,7 @@
                 "default-meaning": "The text will be rendered black."
             },
             "opacity": {
-                "css": "text-opacity.",
+                "css": "text-opacity",
                 "doc": "A number from 0 to 1 specifying the opacity for the text.",
                 "default-value": 1.0,
                 "default-meaning": "Fully opaque",
@@ -2141,7 +2142,7 @@
                 ],
                 "default-value": "",
                 "default-meaning": "No transformation.",
-                "doc": "SVG transformation definition applied to halo relative to the actual text. Allows for shadow or embossed effects."
+                "doc": "Transform text halo relative to the actual text with specified function. Allows for shadow or embossed effects. Ignores map scale factor."
             },
             "dx": {
                 "css": "text-dx",
@@ -2234,8 +2235,22 @@
                 "type": "float",
                 "expression":true,
                 "default-value": 0,
-                "doc": "Rotate the text.",
+                "doc": "Rotate the text. (only works with text-placement:point).",
                 "default-meaning": "Text is not rotated and is displayed upright."
+            },
+            "upright": {
+                "css": "text-upright",
+                "default-value": "auto",
+                "type": [
+                    "auto",
+                    "left",
+                    "right",
+                    "left_only",
+                    "right_only"
+                ],
+                "expression":true,
+                "default-meaning": "Text will be positioned upright automatically.",
+                "doc": "How this label should be placed along lines. By default when more than half of a labels characters are upside down the label is automatically flipped to keep it upright. By changing this parameter you can prevent this \"auto-upright\" behavior. The \"left\" or \"right\" settings can be used to force text to always be placed along a line in a given direction and therefore disables flipping if text appears upside down. The \"left_only\" or \"right_only\" properties also force a given direction but will discard upside down text rather than trying to flip it."
             },
             "placement": {
                 "css": "text-placement",
@@ -2276,11 +2291,12 @@
                     "none",
                     "uppercase",
                     "lowercase",
-                    "capitalize"
+                    "capitalize",
+                    "reverse"
                 ],
                 "expression":true,
                 "doc": "Transform the case of the characters.",
-                "default-meaning": "No text transformation will be applied.",
+                "default-meaning": "Transform text instance with specified function. Ignores map scale factor.",
                 "default-value": "none"
             },
             "horizontal-alignment": {
@@ -2453,8 +2469,86 @@
                 "expression":true,
                 "default-meaning": "The otherwise invisible collision boxes will be rendered as squares on the map."
             }
+        },
+        "dot": {
+            "fill": {
+                "css": "dot-fill",
+                "default-value": "gray",
+                "doc": "The color of the area of the dot.",
+                "type": "color",
+                "expression":true,
+                "default-meaning": "The dot fill color is gray."
+            },
+            "opacity": {
+                "css": "dot-opacity",
+                "doc": "The overall opacity of the dot.",
+                "default-value": 1,
+                "default-meaning": "The opacity of the dot.",
+                "type": "float",
+                "expression":true
+            },
+            "width": {
+                "css": "dot-width",
+                "default-value": 1,
+                "doc": "The width of the dot in pixels.",
+                "type": "float",
+                "expression":true,
+                "default-meaning": "The marker width is 1 pixel."
+            },
+            "height": {
+                "css": "dot-height",
+                "default-value": 1,
+                "doc": "The height of the dot in pixels.",
+                "type": "float",
+                "expression":true,
+                "default-meaning": "The marker height is 1 pixels."
+            },
+            "comp-op": {
+                "css": "dot-comp-op",
+                "default-value": "src-over",
+                "default-meaning": "Add the current layer on top of other layers.",
+                "doc": "Composite operation. This defines how this layer should behave relative to layers atop or below it.",
+                "type": [
+                    "clear",
+                    "src",
+                    "dst",
+                    "src-over",
+                    "dst-over",
+                    "src-in",
+                    "dst-in",
+                    "src-out",
+                    "dst-out",
+                    "src-atop",
+                    "dst-atop",
+                    "xor",
+                    "plus",
+                    "minus",
+                    "multiply",
+                    "divide",
+                    "screen",
+                    "overlay",
+                    "darken",
+                    "lighten",
+                    "color-dodge",
+                    "color-burn",
+                    "linear-dodge",
+                    "linear-burn",
+                    "hard-light",
+                    "soft-light",
+                    "difference",
+                    "exclusion",
+                    "contrast",
+                    "invert",
+                    "invert-rgb",
+                    "grain-merge",
+                    "grain-extract",
+                    "hue",
+                    "saturation",
+                    "color",
+                    "value"
+                ]
+            }
         }
-
     },
     "colors": {
         "aliceblue":  [240, 248, 255],
