@@ -2243,6 +2243,7 @@
                 "default-value": "auto",
                 "type": [
                     "auto",
+                    "auto-down",
                     "left",
                     "right",
                     "left_only",
@@ -2250,7 +2251,7 @@
                 ],
                 "expression":true,
                 "default-meaning": "Text will be positioned upright automatically.",
-                "doc": "How this label should be placed along lines. By default when more than half of a labels characters are upside down the label is automatically flipped to keep it upright. By changing this parameter you can prevent this \"auto-upright\" behavior. The \"left\" or \"right\" settings can be used to force text to always be placed along a line in a given direction and therefore disables flipping if text appears upside down. The \"left_only\" or \"right_only\" properties also force a given direction but will discard upside down text rather than trying to flip it."
+                "doc": "How this label should be placed along lines. By default when more than half of a label's characters are upside down the label is automatically flipped to keep it upright. By changing this parameter you can prevent this \"auto-upright\" behavior. The \"auto-down\" value places text in the oposite orientation to \"auto\". The \"left\" or \"right\" settings can be used to force text to always be placed along a line in a given direction and therefore disables flipping if text appears upside down. The \"left_only\" or \"right_only\" properties also force a given direction but will discard upside down text rather than trying to flip it."
             },
             "placement": {
                 "css": "text-placement",
