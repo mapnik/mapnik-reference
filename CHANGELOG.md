@@ -4,6 +4,7 @@
 
 * Added `text-transform:reverse`
 * Added `text-upright`
+* Added `marker-direction` (https://github.com/mapnik/mapnik/pull/2621)
 * Changed API to lazily load each reference (helps avoid `require` performance cost).
 
 Changes are:

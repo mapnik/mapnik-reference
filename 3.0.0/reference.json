@@ -1023,6 +1023,23 @@
                     "value"
                 ],
                 "expression":true
+            },
+            "direction": {
+                "css": "marker-direction",
+                "default-value": "right",
+                "type": [
+                    "auto",
+                    "auto-down",
+                    "left",
+                    "right",
+                    "left-only",
+                    "right-only",
+                    "up",
+                    "down"
+                ],
+                "expression": true,
+                "default-meaning": "Markers are oriented to the right in the line direction.",
+                "doc": "How markers should be placed along lines. With the \"auto\" setting when marker is upside down the marker is automatically rotated by 180 degrees to keep it upright. The \"auto-down\" value places marker in the oposite orientation to \"auto\". The \"left\" or \"right\" settings can be used to force marker to always be placed along a line in a given direction and therefore disables rotating if marker appears upside down. The \"left-only\" or \"right-only\" properties also force a given direction but will discard upside down markers rather than trying to flip it. The \"up\" and \"down\" settings don't adjust marker's orientation to the line direction."
             }
         },
         "shield": {
