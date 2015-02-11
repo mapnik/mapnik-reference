@@ -1,10 +1,19 @@
-language: node_js
+language: cpp
 
-node_js:
-  - "0.10"
+os:
+ - osx
+ - linux
+
+env:
+  matrix:
+   - NODE_NVM_VERSION="0.10.36"
+   - NODE_NVM_VERSION="0.12.0"
 
 before_install:
- - true
+ - git clone --depth 1 https://github.com/creationix/nvm.git ../.nvm
+ - source ../.nvm/nvm.sh
+ - nvm install $NODE_NVM_VERSION
+ - nvm use $NODE_NVM_VERSION
 
 install:
  - npm install
