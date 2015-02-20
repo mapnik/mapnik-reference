@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### 7.0.1
+
+* Added `topojson` datasource
+* Added `text-upright:auto-down;`
+
 ### 7.0.0
 
 * Added `text-transform:reverse`
