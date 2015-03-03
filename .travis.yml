@@ -4,6 +4,8 @@ os:
  - osx
  - linux
 
+sudo: false
+
 env:
   matrix:
    - NODE_NVM_VERSION="0.10.36"
