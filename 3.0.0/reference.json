@@ -2429,6 +2429,14 @@
                 "default-value": "",
                 "default-meaning": "Default set of typographic features recommended by OpenType specification. Ligatures are turned off by default when `character-spacing` is greater than zero.",
                 "doc": "Comma separated list of OpenType typographic features. The syntax and semantics conforms to `font-feature-settings` from W3C CSS."
+            },
+            "largest-bbox-only": {
+                "css": "text-largest-bbox-only",
+                "type": "boolean",
+                "expression": true,
+                "default-value": true,
+                "default-meaning": "Only geometry with largest bbox is labeled.",
+                "doc": "Controls default labeling behavior on multigeometries. The default is true and means that only the geometry with largest bbox is labeled."
             }
         },
         "building": {
