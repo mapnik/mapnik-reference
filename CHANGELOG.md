@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### 7.0.2
+
+* Added `miter-revert` to `stroke-linejoin`
+* Renamed `left-only` and `right-only` of `text-upright` to use hyphens rather than underscores (https://github.com/mapnik/mapnik/pull/2682)
+
 ### 7.0.1
 
 * Added `topojson` datasource
