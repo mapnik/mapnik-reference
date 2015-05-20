@@ -466,7 +466,7 @@
                 "default-meaning": "Unless this option is provided data will be read from the `file` option",
                 "required": false
             }
-        }, 
+        },
     "references" : {
         "vector_tiles": {
             "minzoom": {
