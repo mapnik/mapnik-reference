@@ -466,8 +466,9 @@
                 "default-meaning": "Unless this option is provided data will be read from the `file` option",
                 "required": false
             }
-        },
-    "references" : {
+        }
+	},
+    "references": {
         "vector_tiles": {
             "minzoom": {
                 "css": "minzoom",
@@ -522,6 +523,6 @@
                 "type": "trouble-shooting",
                 "doc": "Mapnik renderer requires the_geom column data as WKT, which results in file-type error."
             }
-        } 
+        }
     }
 }
