@@ -499,7 +499,8 @@
                 "default-meaning": "Re-projection algorithm converting data into Web Mercator (EPSG:3857).",
                 "type": "string",
                 "doc": "Input data clipped to (±180/±85) WGS84 then reprojected to WebMercator."
-        },
+        	}
+		},
         "shapefile": {
             "points": {
                 "css": "points",
@@ -525,5 +526,4 @@
             }
         }
     }
-}
 }
