@@ -2221,7 +2221,7 @@
                 "default-value": 0,
                 "type": "float",
                 "expression":true,
-                "default-meaning": "Shields with the same text will be rendered without restriction.",
+                "default-meaning": "Labels with the same text will be rendered without restriction.",
                 "doc": "Minimum distance to the next label with the same text. Only works for line placement."
             },
             "minimum-padding": {
