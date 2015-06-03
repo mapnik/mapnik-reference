@@ -2256,6 +2256,13 @@
                 "doc": "Rotate the text. (only works with text-placement:point).",
                 "default-meaning": "Text is not rotated and is displayed upright."
             },
+            "rotate-displacement": {
+                "css": "text-rotate-displacement",
+                "type": "boolean",
+                "doc": "Rotates the displacement around the placement origin by the angle given by \"orientation\".",
+                "default-value": false,
+                "default-meaning": "Label center is used for rotation."
+            },
             "upright": {
                 "css": "text-upright",
                 "default-value": "auto",
