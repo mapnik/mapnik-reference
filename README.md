@@ -24,6 +24,16 @@ The structure of the file is as such:
 * `symbolizers/symbolizer`: properties that apply to **each** type of symbolizer
 * `colors`: named colors supported by Mapnik. see `include/mapnik/css_color_grammar.hpp`
 
+### Property stability
+The `status` key be used to define the stability of a property. By default, the `status`
+if `stable`. Possible values are:
+
+- **stable:** `property` is here to stay and its behavior is not anticipated to change
+- **unstable:** `property` is here to stay but its behavior/meaning of `property` may change
+- **deprecated:** `property` should not be used and will be removed in upcoming major version of Mapnik
+- **experimental:** `property` should not be used and may change, be re-named, or disappear at any time
+
+
 ## Using
 
 This is a valid [npm](http://npmjs.org/) module and therefore can easily be used with

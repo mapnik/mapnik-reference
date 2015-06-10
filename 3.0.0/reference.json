@@ -678,7 +678,8 @@
                 "expression":true,
                 "default-value": 0,
                 "default-meaning": "Will not be offset.",
-                "doc": "Offsets a line a number of pixels parallel to its actual path. Positive values move the line left, negative values move it right (relative to the directionality of the line)."
+                "doc": "Offsets a line a number of pixels parallel to its actual path. Positive values move the line left, negative values move it right (relative to the directionality of the line).",
+                "status": "unstable"
             },
             "rasterizer": {
                 "css": "line-rasterizer",
@@ -838,7 +839,8 @@
                 "expression":true,
                 "default-value": "ellipse",
                 "default-meaning": "The marker shape is an ellipse.",
-                "doc": "The default marker-type. If a SVG file is not given as the marker-file parameter, the renderer provides either an arrow or an ellipse (a circle if height is equal to width)."
+                "doc": "The default marker-type. If a SVG file is not given as the marker-file parameter, the renderer provides either an arrow or an ellipse (a circle if height is equal to width).",
+                "status": "deprecated"
             },
             "width": {
                 "css": "marker-width",
@@ -2060,7 +2062,8 @@
                 "expression": true,
                 "default-value": false,
                 "default-meaning": "Character will be removed when used to wrap a line.",
-                "doc": "Keep the character used to wrap a line instead of removing it, and repeat it on the new line."
+                "doc": "Keep the character used to wrap a line instead of removing it, and repeat it on the new line.",
+                "status": "unstable"
             },
             "spacing": {
                 "css": "text-spacing",
@@ -2230,7 +2233,8 @@
                 "type": "float",
                 "expression":true,
                 "default-meaning": "Labels with the same text will be rendered without restriction.",
-                "doc": "Minimum distance to the next label with the same text. Only works for line placement."
+                "doc": "Minimum distance to the next label with the same text. Only works for line placement. Deprecated: replaced by `text-repeat-distance` and `text-margin`",
+                "status": "deprecated"
             },
             "minimum-padding": {
                 "css": "text-min-padding",
@@ -2469,7 +2473,8 @@
                 "expression": true,
                 "default-value": true,
                 "default-meaning": "Only geometry with largest bbox is labeled.",
-                "doc": "Controls default labeling behavior on multigeometries. The default is true and means that only the geometry with largest bbox is labeled."
+                "doc": "Controls default labeling behavior on multigeometries. The default is true and means that only the geometry with largest bbox is labeled.",
+                "status": "experimental"
             }
         },
         "building": {

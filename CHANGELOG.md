@@ -4,6 +4,10 @@
 
 * Added `miter-revert` to `stroke-linejoin`
 * Renamed `left-only` and `right-only` of `text-upright` to use hyphens rather than underscores (https://github.com/mapnik/mapnik/pull/2682)
+* Added `repeat-wrap-character` (unstable, https://github.com/mapnik/mapnik/issues/2333)
+* Added `largest-bbox-only` (experimental)
+* Added `rotate-displacement`
+* Added `status` key to symbolizer property scheme (https://github.com/mapnik/mapnik-reference/issues/101)
 
 ### 7.0.1
 
