@@ -25,8 +25,8 @@ The structure of the file is as such:
 * `colors`: named colors supported by Mapnik. see `include/mapnik/css_color_grammar.hpp`
 
 ### Property stability
-The `status` key be used to define the stability of a property. By default, the `status`
-if `stable`. Possible values are:
+The `status` key may be used to define the stability of a property. When the key is not defined,
+the `status` is `stable`. Possible values are:
 
 - **stable:** `property` is here to stay and its behavior is not anticipated to change
 - **unstable:** `property` is here to stay but its behavior/meaning of `property` may change
