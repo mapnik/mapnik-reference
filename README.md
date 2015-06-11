@@ -1,7 +1,10 @@
 # mapnik-reference
 
-`mapnik-reference` is a spec of what Mapnik styling and datasource are supported for each version.
+`mapnik-reference` is a spec of what Mapnik styling and datasource properties are supported for each version.
+
 It is useful for building parsers, tests, compilers, and syntax highlighting/checking for languages.
+
+[![Build Status](https://travis-ci.org/mapnik/mapnik-reference.svg?branch=master)](https://travis-ci.org/mapnik/mapnik-reference)
 
 ## Versioning
 
