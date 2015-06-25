@@ -1453,6 +1453,34 @@
                 "default-meaning": "The geometry will not be clipped to map bounds before rendering.",
                 "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
+            "simplify": {
+                "css": "shield-simplify",
+                "type": "float",
+                "expression": true,
+                "default-value": 0.0,
+                "default-meaning": "geometry will not be simplified.",
+                "doc": "Simplify the geometries used for shield placement by the given tolerance."
+            },
+            "simplify-algorithm": {
+                "css": "shield-simplify-algorithm",
+                "type": ["radial-distance",
+                         "zhao-saalfeld",
+                         "visvalingam-whyatt"
+                        ],
+                "expression": true,
+                "default-value": "radial-distance",
+                "default-meaning": "The geometry will be simplified using the radial distance algorithm.",
+                "doc": "Simplify the geometries used for shield placement by the given algorithm."
+            },
+            "smooth": {
+                "css": "shield-smooth",
+                "type": "float",
+                "expression": true,
+                "default-value": 0,
+                "default-meaning": "No smoothing.",
+                "range": "0-1",
+                "doc": "Smooths out the angles of the geometry used for shield placement. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
+            },
             "comp-op": {
                 "css": "shield-comp-op",
                 "default-value": "src-over",
@@ -2372,6 +2400,34 @@
                 "default-meaning": "The geometry will not be clipped to map bounds before rendering.",
                 "doc": "Turning on clipping can help performance in the case that the boundaries of the geometry extent outside of tile extents. But clipping can result in undesirable rendering artifacts in rare cases."
             },
+            "simplify": {
+                "css": "text-simplify",
+                "type": "float",
+                "expression": true,
+                "default-value": 0.0,
+                "default-meaning": "geometry will not be simplified.",
+                "doc": "Simplify the geometries used for text placement by the given tolerance."
+            },
+            "simplify-algorithm": {
+                "css": "text-simplify-algorithm",
+                "type": ["radial-distance",
+                         "zhao-saalfeld",
+                         "visvalingam-whyatt"
+                        ],
+                "expression": true,
+                "default-value": "radial-distance",
+                "default-meaning": "The geometry will be simplified using the radial distance algorithm.",
+                "doc": "Simplify the geometries used for text placement by the given algorithm."
+            },
+            "smooth": {
+                "css": "text-smooth",
+                "type": "float",
+                "expression": true,
+                "default-value": 0,
+                "default-meaning": "No smoothing.",
+                "range": "0-1",
+                "doc": "Smooths out the angles of the geometry used for text placement. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
+            },
             "comp-op": {
                 "css": "text-comp-op",
                 "default-value": "src-over",
@@ -2758,4 +2814,3 @@
         ]
     }
 }
-
