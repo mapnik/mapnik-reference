@@ -110,7 +110,7 @@
             "css": "opacity",
             "type": "float",
             "doc": "An alpha value for the style (which means an alpha applied to all features in separate buffer and then composited back to main buffer).",
-            "default-value": 1,
+            "default-value": 1.0,
             "default-meaning": "No separate buffer will be used and no alpha will be applied to the style after rendering."
         }
     },
@@ -279,7 +279,7 @@
                 "css": "opacity",
                 "type": "float",
                 "doc": "An alpha value for the style (which means an alpha applied to all features in separate buffer and then composited back to main buffer).",
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "No separate buffer will be used and no alpha will be applied to the style after rendering."
             }
         },
@@ -300,7 +300,6 @@
             },
             "background-image-comp-op": {
                 "css": "background-image-comp-op",
-                "type": "float",
                 "doc": "Set the compositing operation used to blend the image into the background.",
                 "default-value": "src-over",
                 "default-meaning": "The background-image will be blended with the background normally (placed on top of any existing background-color).",
@@ -348,7 +347,7 @@
                 "css": "background-image-opacity",
                 "type": "float",
                 "doc": "Set the opacity of the image.",
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "The image opacity will not be changed when applied to the map background."
             },
             "srs": {
@@ -415,14 +414,14 @@
                 "type": "float",
                 "expression":true,
                 "doc": "The opacity of the polygon.",
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "Color is fully opaque."
             },
             "gamma": {
                 "css": "polygon-gamma",
                 "type": "float",
                 "expression":true,
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "Fully antialiased.",
                 "range": "0-1",
                 "doc": "Level of antialiasing of polygon edges."
@@ -472,7 +471,7 @@
                 "css": "polygon-smooth",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "No smoothing.",
                 "range": "0-1",
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
@@ -550,7 +549,7 @@
             },
             "stroke-width": {
                 "css": "line-width",
-                "default-value": 1,
+                "default-value": 1.0,
                 "type": "float",
                 "expression":true,
                 "doc": "The width of a line in pixels.",
@@ -558,7 +557,7 @@
             },
             "stroke-opacity": {
                 "css": "line-opacity",
-                "default-value": 1,
+                "default-value": 1.0,
                 "type": "float",
                 "expression":true,
                 "default-meaning": "Color is fully opaque.",
@@ -593,7 +592,7 @@
                 "css": "line-gamma",
                 "type": "float",
                 "expression":true,
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "Fully antialiased.",
                 "range": "0-1",
                 "doc": "Level of antialiasing of stroke line."
@@ -667,7 +666,7 @@
                 "css": "line-smooth",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "No smoothing.",
                 "range": "0-1",
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
@@ -676,7 +675,7 @@
                 "css": "line-offset",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "Will not be offset.",
                 "doc": "Offsets a line a number of pixels parallel to its actual path. Positive values move the line left, negative values move it right (relative to the directionality of the line).",
                 "status": "unstable"
@@ -766,7 +765,7 @@
             "opacity": {
                 "css": "marker-opacity",
                 "doc": "The overall opacity of the marker, if set, overrides both the opacity of both the fill and stroke.",
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "The stroke-opacity and fill-opacity of the marker.",
                 "type": "float",
                 "expression":true
@@ -774,8 +773,7 @@
             "fill-opacity": {
                 "css": "marker-fill-opacity",
                 "doc": "The fill opacity of the marker.",
-                "default-value": 1,
-                "type": "float",
+                "default-value": 1.0,
                 "expression":true,
                 "default-meaning": "Color is fully opaque.",
                 "type": "float"
@@ -798,7 +796,7 @@
             },
             "stroke-opacity": {
                 "css": "marker-line-opacity",
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "Color is fully opaque.",
                 "doc": "The opacity of a line.",
                 "type": "float",
@@ -844,7 +842,7 @@
             },
             "width": {
                 "css": "marker-width",
-                "default-value": 10,
+                "default-value": 10.0,
                 "doc": "The width of the marker, if using one of the default types.",
                 "type": "float",
                 "expression":true,
@@ -852,7 +850,7 @@
             },
             "height": {
                 "css": "marker-height",
-                "default-value": 10,
+                "default-value": 10.0,
                 "doc": "The height of the marker, if using one of the default types.",
                 "type": "float",
                 "expression":true,
@@ -893,7 +891,7 @@
             "spacing": {
                 "css": "marker-spacing",
                 "doc": "Space between repeated markers in pixels. If the spacing is less than the marker size or larger than the line segment length then no marker will be placed. Any value less than 1 will be ignored and the default will be used instead.",
-                "default-value": 100,
+                "default-value": 100.0,
                 "type": "float",
                 "expression":true,
                 "default-meaning": "In the case of marker-placement:line then draw a marker every 100 pixels along a line."
@@ -952,7 +950,7 @@
                 "css": "marker-smooth",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "No smoothing.",
                 "range": "0-1",
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
@@ -977,7 +975,7 @@
                 "css": "marker-offset",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "Will not be offset.",
                 "doc": "Offsets a marker from a line a number of pixels parallel to its actual path. Positive values move the marker left, negative values move it right (relative to the directionality of the line)."
             },
@@ -1086,7 +1084,7 @@
                 "css": "shield-size",
                 "type": "float",
                 "expression":true,
-                "default-value": 10,
+                "default-value": 10.0,
                 "doc": "The size of the shield text in pixels.",
                 "default-meaning": "Font size of 10 will be used to render text."
             },
@@ -1132,7 +1130,7 @@
                 "css": "shield-margin",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "No extra margin will be used to determine if a shield collides with any other text, shield, or marker.",
                 "doc": "Minimum distance that a shield can be placed from any other text, shield, or marker."
             },
@@ -1140,7 +1138,7 @@
                 "css": "shield-repeat-distance",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "Shields with the same text will be rendered without restriction.",
                 "doc": "Minimum distance between repeated shields. If set this will prevent shields being rendered nearby each other that contain the same text. Similiar to shield-min-distance with the difference that it works the same no matter what placement strategy is used."
             },
@@ -1148,7 +1146,7 @@
                 "css": "shield-min-distance",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "Shields with the same text will be rendered without restriction.",
                 "doc": "Minimum distance to the next shield with the same text. Only works for line placement."
             },
@@ -1156,14 +1154,14 @@
                 "css": "shield-spacing",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "Only one shield per line will attempt to be placed.",
                 "doc": "Distance the renderer should use to try to place repeated shields on a line."
             },
             "minimum-padding": {
                 "css": "shield-min-padding",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "doc": "Minimum distance a shield will be placed from the edge of a tile. This option is similiar to shield-avoid-edges:true except that the extra margin is used to discard cases where the shield+margin are not fully inside the tile.",
                 "default-meaning": "No margin will be used to detect if a shield is nearby a tile boundary.",
                 "type": "float"
@@ -1210,7 +1208,7 @@
             },
             "halo-radius": {
                 "css": "shield-halo-radius",
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "no halo.",
                 "doc": "Specify the radius of the halo in pixels.",
                 "type": "float",
@@ -1314,7 +1312,7 @@
                 "expression":true,
                 "doc": "Displace text within shield by fixed amount, in pixels, +/- along the X axis.  A positive value will shift the shield right.",
                 "default-meaning": "Text will not be displaced.",
-                "default-value": 0
+                "default-value": 0.0
             },
             "dy": {
                 "css": "shield-text-dy",
@@ -1322,7 +1320,7 @@
                 "expression":true,
                 "doc": "Displace text within shield by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the shield down.",
                 "default-meaning": "Text will not be displaced.",
-                "default-value": 0
+                "default-value": 0.0
             },
             "shield-dx": {
                 "css": "shield-dx",
@@ -1330,7 +1328,7 @@
                 "expression":true,
                 "doc": "Displace shield by fixed amount, in pixels, +/- along the X axis.  A positive value will shift the text right.",
                 "default-meaning": "Shield will not be displaced.",
-                "default-value": 0
+                "default-value": 0.0
             },
             "shield-dy": {
                 "css": "shield-dy",
@@ -1338,7 +1336,7 @@
                 "expression":true,
                 "doc": "Displace shield by fixed amount, in pixels, +/- along the Y axis.  A positive value will shift the text down.",
                 "default-meaning": "Shield will not be displaced.",
-                "default-value": 0
+                "default-value": 0.0
             },
             "opacity": {
                 "css": "shield-opacity",
@@ -1346,7 +1344,7 @@
                 "expression":true,
                 "doc": "The opacity of the image used for the shield.",
                 "default-meaning": "Color is fully opaque.",
-                "default-value": 1
+                "default-value": 1.0
             },
             "text-opacity": {
                 "css": "shield-text-opacity",
@@ -1354,7 +1352,7 @@
                 "expression":true,
                 "doc": "The opacity of the text placed on top of the shield.",
                 "default-meaning": "Color is fully opaque.",
-                "default-value": 1
+                "default-value": 1.0
 
             },
             "horizontal-alignment": {
@@ -1476,7 +1474,7 @@
                 "css": "shield-smooth",
                 "type": "float",
                 "expression": true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "No smoothing.",
                 "range": "0-1",
                 "doc": "Smooths out the angles of the geometry used for shield placement. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
@@ -1551,7 +1549,7 @@
                 "type": "float",
                 "expression":true,
                 "doc": "Apply an opacity level to the image used for the pattern.",
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "The image is rendered without modifications."
             },
             "simplify": {
@@ -1577,7 +1575,7 @@
                 "css": "line-pattern-smooth",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "No smoothing.",
                 "range": "0-1",
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
@@ -1586,7 +1584,7 @@
                 "css": "line-pattern-offset",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "The line will not be offset.",
                 "doc": "Offsets a line a number of pixels parallel to its actual path. Positive values move the line left, negative values move it right (relative to the directionality of the line)."
             },
@@ -1677,7 +1675,7 @@
                 "css": "polygon-pattern-gamma",
                 "type": "float",
                 "expression":true,
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "Fully antialiased.",
                 "range": "0-1",
                 "doc": "Level of antialiasing of polygon pattern edges."
@@ -1687,7 +1685,7 @@
                 "type": "float",
                 "expression":true,
                 "doc": "Apply an opacity level to the image used for the pattern.",
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "The image is rendered without modifications."
             },
             "clip": {
@@ -1721,7 +1719,7 @@
                 "css": "polygon-pattern-smooth",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "No smoothing.",
                 "range": "0-1",
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
@@ -1791,14 +1789,14 @@
         "raster": {
             "opacity": {
                 "css": "raster-opacity",
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "Color is fully opaque.",
                 "type": "float",
                 "doc": "The opacity of the raster symbolizer on top of other symbolizers."
             },
             "filter-factor": {
                 "css": "raster-filter-factor",
-                "default-value": -1,
+                "default-value": -1.0,
                 "default-meaning": "Allow the datasource to choose appropriate downscaling.",
                 "type": "float",
                 "doc": "This is used by the Raster or Gdal datasources to pre-downscale images using overviews. Higher numbers can sometimes cause much better scaled image output, at the cost of speed."
@@ -2048,7 +2046,7 @@
                 "css": "text-size",
                 "type": "float",
                 "expression":true,
-                "default-value": 10,
+                "default-value": 10.0,
                 "doc": "Text size in pixels.",
                 "default-meaning": "Font size of 10 will be used to render text."
             },
@@ -2105,7 +2103,7 @@
                 "css": "text-character-spacing",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "The default character spacing of the font will be used.",
                 "doc": "Horizontal spacing adjustment between characters in pixels. This value is ignored when `horizontal-alignment` is set to `adjust`. Typographic ligatures are turned off when this value is greater than zero."
             },
@@ -2169,7 +2167,7 @@
             "halo-radius": {
                 "css": "text-halo-radius",
                 "doc": "Specify the radius of the halo in pixels.",
-                "default-value": 0,
+                "default-value": 0.0,
                 "type": "float",
                 "expression":true,
                 "default-meaning": "no halo."
@@ -2207,7 +2205,7 @@
                 "expression":true,
                 "doc": "Displace text by fixed amount, in pixels, +/- along the X axis.  With \"dummy\" placement-type, a positive value displaces to the right. With \"simple\" placement-type, it is either left, right or unchanged, depending on the placement selected. Any non-zero value implies \"horizontal-alignment\" changes to \"left\" by default. Has no effect with 'line' text-placement-type.",
                 "default-meaning": "Text will not be displaced.",
-                "default-value": 0
+                "default-value": 0.0
             },
             "dy": {
                 "css": "text-dy",
@@ -2215,7 +2213,7 @@
                 "expression":true,
                 "doc": "Displace text by fixed amount, in pixels, +/- along the Y axis.  With \"dummy\" placement-type, a positive value displaces downwards. With \"simple\" placement-type, it is either up, down or unchanged, depending on the placement selected. With \"line\" placement-type, a positive value displaces above the path.",
                 "default-meaning": "Text will not be displaced.",
-                "default-value": 0
+                "default-value": 0.0
             },
             "vertical-alignment": {
                 "css": "text-vertical-alignment",
@@ -2242,7 +2240,7 @@
                 "css": "text-margin",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "No extra margin will be used to determine if a label collides with any other text, shield, or marker.",
                 "doc": "Minimum distance that a label can be placed from any other text, shield, or marker."
             },
@@ -2250,15 +2248,14 @@
                 "css": "text-repeat-distance",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "Labels with the same text will be rendered without restriction.",
                 "doc": "Minimum distance between repeated text. If set this will prevent text labels being rendered nearby each other that contain the same text. Similiar to text-min-distance with the difference that it works the same no matter what placement strategy is used."
             },
             "minimum-distance": {
                 "css": "text-min-distance",
                 "type": "float",
-                "default-value": 0,
-                "type": "float",
+                "default-value": 0.0,
                 "expression":true,
                 "default-meaning": "Labels with the same text will be rendered without restriction.",
                 "doc": "Minimum distance to the next label with the same text. Only works for line placement. Deprecated: replaced by `text-repeat-distance` and `text-margin`",
@@ -2266,7 +2263,7 @@
             },
             "minimum-padding": {
                 "css": "text-min-padding",
-                "default-value": 0,
+                "default-value": 0.0,
                 "type": "float",
                 "expression":true,
                 "doc": "Minimum distance a text label will be placed from the edge of a tile. This option is similiar to shield-avoid-edges:true except that the extra margin is used to discard cases where the shield+margin are not fully inside the tile.",
@@ -2276,7 +2273,7 @@
                 "css": "text-min-path-length",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "place labels on all geometries no matter how small they are.",
                 "doc": "Place labels only on polygons and lines with a bounding width longer than this value (in pixels)."
             },
@@ -2292,7 +2289,7 @@
                 "css": "text-orientation",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "doc": "Rotate the text. (only works with text-placement:point).",
                 "default-meaning": "Text is not rotated and is displayed upright."
             },
@@ -2423,7 +2420,7 @@
                 "css": "text-smooth",
                 "type": "float",
                 "expression": true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "No smoothing.",
                 "range": "0-1",
                 "doc": "Smooths out the angles of the geometry used for text placement. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
@@ -2547,7 +2544,7 @@
                 "type": "float",
                 "expression":true,
                 "doc": "The opacity of the building as a whole, including all walls.",
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "Color is fully opaque."
             },
             "height": {
@@ -2555,7 +2552,7 @@
                 "doc": "The height of the building in pixels.",
                 "type": "float",
                 "expression":true,
-                "default-value": 0,
+                "default-value": 0.0,
                 "default-meaning": "Buildings will not have a visual height and will instead look like flat polygons."
             }
         },
@@ -2585,14 +2582,14 @@
             "opacity": {
                 "css": "dot-opacity",
                 "doc": "The overall opacity of the dot.",
-                "default-value": 1,
+                "default-value": 1.0,
                 "default-meaning": "The opacity of the dot.",
                 "type": "float",
                 "expression":true
             },
             "width": {
                 "css": "dot-width",
-                "default-value": 1,
+                "default-value": 1.0,
                 "doc": "The width of the dot in pixels.",
                 "type": "float",
                 "expression":true,
@@ -2600,7 +2597,7 @@
             },
             "height": {
                 "css": "dot-height",
-                "default-value": 1,
+                "default-value": 1.0,
                 "doc": "The height of the dot in pixels.",
                 "type": "float",
                 "expression":true,
