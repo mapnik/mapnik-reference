@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-### 7.0.2
+### 8.0.0
 
 * Added `miter-revert` to `stroke-linejoin`
 * Renamed `left-only` and `right-only` of `text-upright` to use hyphens rather than underscores (https://github.com/mapnik/mapnik/pull/2682)
