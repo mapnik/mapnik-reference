@@ -870,7 +870,7 @@
                 "expression":true,
                 "default-value": false,
                 "doc": "Control whether overlapping markers are shown or hidden.",
-                "default-meaning": "Do not allow makers to overlap with each other - overlapping markers will not be shown."
+                "default-meaning": "Do not allow markers to overlap with each other - overlapping markers will not be shown."
             },
             "avoid-edges": {
                 "css": "marker-avoid-edges",
