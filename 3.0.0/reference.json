@@ -2326,7 +2326,7 @@
                 ],
                 "expression":true,
                 "default-meaning": "One shield will be placed per geometry.",
-                "doc": "How this label should be placed. Point placement places one label on top of a point geometry and at the centriod of a polygon or the middle point of a line, line places along lines multiple times per feature, vertex places on the vertexes of polygons, and interior attempts to place inside of a polygon."
+                "doc": "How this label should be placed. Point placement places one label on top of a point geometry and at the centroid of a polygon or the middle point of a line, line places along lines multiple times per feature, vertex places on the vertexes of polygons, and interior attempts to place inside of a polygon."
             },
             "placement-type": {
                 "css": "text-placement-type",
