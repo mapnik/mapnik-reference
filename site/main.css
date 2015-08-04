@@ -1,0 +1,77 @@
+:link, :visited {
+    color: #c7726b;
+}
+#menu {
+    position: fixed;
+    width: 170px;
+}
+#ref {
+    margin-left: 170px;
+}
+#version:before {
+    content: '—';
+    padding: 0 5px;
+}
+*:target {
+    padding-top: 100px;
+}
+:target:link:hover {
+    background-color: transparent;
+}
+.symbolizer {
+    padding-bottom: 30px;
+}
+.symbolizer + .symbolizer {
+    padding-top: 20px;
+    border-top: 1px #ddd solid;
+}
+.status {
+    border-radius: 1px;
+    color: #fff;
+    font-size: 0.7em;
+    margin-left: 5px;
+    padding: 2px 5px;
+    vertical-align: middle;
+    background-color: #EB974E;
+}
+.status.deprecated {
+    background-color: #D64541;
+}
+p {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+h2 {
+    padding-top: 0;
+}
+h3 {
+    margin-top: 20px;
+}
+.pad4y {
+    text-align: right;
+}
+em,
+strong {
+    font-size: 0.9em;
+}
+em {
+    color: #aaa;
+}
+b {
+    font-family: monospace;
+    font-size: 0.9em;
+    background-color: #eee;
+    padding: 0 2px;
+}
+.versions a {
+    color: #999;
+}
+.versions h5 {
+    margin-top: 10px;
+}
+a.current:before {
+    content: ' ✓ ';
+}
+a.current {
+    color: #c7726b;
+}

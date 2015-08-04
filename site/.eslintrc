@@ -1,0 +1,16 @@
+{
+    "env": {
+        "browser": true
+    },
+    "rules": {
+        "quotes": [2, "single"],
+        "curly": 0,
+        "new-cap": 0,
+        "strict": [2, "global"],
+        "semi-spacing": 0
+    },
+    "globals": {
+        "UI": true,
+        "nanoajax": true
+    }
+}
