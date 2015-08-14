@@ -11,7 +11,7 @@ var versions = [
  '2.2.0',
  '2.3.0',
  '3.0.0',
- '3.0.0'
+ '3.0.3'
 ];
 
 module.exports.versions = versions;
