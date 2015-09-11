@@ -8,7 +8,7 @@
         var self = this;
         window.addEventListener('hashchange', function () {self.fetchFromHash();});
     };
-    UI.versions = ['3.0.0', '2.3.0', '2.2.0', '2.1.0', '2.0.0'];
+    UI.versions = ['3.0.4', '3.0.3', '3.0.0', '2.3.0', '2.2.0', '2.1.0', '2.0.0'];
     UI.prototype = {
 
         isArray: Array.isArray || function (obj) {
