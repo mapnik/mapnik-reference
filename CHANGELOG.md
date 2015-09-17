@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 8.4.0
+
+* Added support for mapnik 3.0.5
+
 ### 8.3.0
 
 * Added support for mapnik 3.0.4
@@ -7,7 +11,7 @@
 ### 8.2.0
 
 * Added support for mapnik 3.0.3
-* Added new colorblind filters 
+* Added new colorblind filters
 
 ### 8.0.0
 
