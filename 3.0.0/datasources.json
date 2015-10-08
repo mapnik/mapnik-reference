@@ -35,12 +35,6 @@
                 "default-value": false,
                 "default-meaning": "Unless this option is set to true the datasource will skip invalid rows and attempt to parse as much data as possible"
             },
-            "inline": {
-                "type": "string",
-                "doc": "Raw tabular data to be read instead of reading data from a file",
-                "default-value": "",
-                "default-meaning": "Unless this option is provided data will be read from the `file` option"
-            },
             "escape": {
                 "type": "string",
                 "doc": "The escape character to use for parsing data",
@@ -116,6 +110,12 @@
                 "default-value": "utf-8",
                 "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
                 "required": false
+            },
+            "inline": {
+                "type": "string",
+                "doc": "Raw tabular data to be read instead of reading data from a file",
+                "default-value": "",
+                "default-meaning": "Unless this option is provided data will be read from the `file` option"
             }
         },
         "occi": {
@@ -463,8 +463,7 @@
                 "type": "string",
                 "doc": "Raw tabular data to be read instead of reading data from a file",
                 "default-value": "",
-                "default-meaning": "Unless this option is provided data will be read from the `file` option",
-                "required": false
+                "default-meaning": "Unless this option is provided data will be read from the `file` option"
             }
         }
     }
