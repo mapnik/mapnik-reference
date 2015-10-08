@@ -2,6 +2,7 @@
 
 ### 8.5.0
 
+* Fixed missing support for `inline` and `filesize_max` options in some datasource refs.
 * Added support for mapnik 3.0.6
 * Added `key_field_as_attribute` option for Postgis datasource
 
