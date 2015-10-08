@@ -40,6 +40,7 @@ And commit the changes. This will edit the `datasources.json` based on the `data
 
 ```bash
 git tag -a v0.8.1 -m "tagging v0.8.1"
+git push --tags
 ```
 
 6) Publish to npm
