@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### 8.5.0
+
+* Added support for mapnik 3.0.6
+* Added `key_field_as_attribute` option for Postgis datasource
+
 ### 8.4.0
 
 * Added support for mapnik 3.0.5
