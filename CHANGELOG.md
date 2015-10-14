@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 8.5.1
+
+* Added support for mapnik 3.0.7
+
 ### 8.5.0
 
 * Fixed missing support for `inline` and `filesize_max` options in some datasource refs.
