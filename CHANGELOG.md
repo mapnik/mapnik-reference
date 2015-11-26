@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 8.5.2
+
+* Added support for mapnik 3.0.9
+
 ### 8.5.1
 
 * Added support for mapnik 3.0.7

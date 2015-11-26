@@ -13,7 +13,8 @@ var versions = [
  '3.0.4',
  '3.0.5',
  '3.0.6',
- '3.0.7'
+ '3.0.7',
+ '3.0.9'
 ];
 
 // These older versions don't have the datasource info
@@ -33,7 +34,7 @@ module.exports.load = function(version) {
     }
     var ref = require(path.join(__dirname, version, 'reference.json'));
     if (no_datasources.indexOf(version) <= -1) {
-        ref.datasources = require(path.join(__dirname, version, 'datasources.json')).datasources;
+	ref.datasources = require(path.join(__dirname, version, 'datasources.json')).datasources;
     }
     return ref;
 }
