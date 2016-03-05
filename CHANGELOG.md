@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 8.5.5
+
+* Fix ref loading bug
+
 ### 8.5.4
 
 * Add support for loading latest reference using sevmer (https://github.com/mapnik/mapnik-reference/issues/108)

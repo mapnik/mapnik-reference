@@ -3,7 +3,7 @@ var semver = require('semver');
 var fs = require('fs');
 
 var getVersions = function () {
-    var names = fs.readdirSync('./');
+    var names = fs.readdirSync(__dirname);
     return names.filter(semver.valid);
 };
 var versions = semver.sort(getVersions());
