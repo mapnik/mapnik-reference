@@ -8,10 +8,13 @@
     "url": "git://github.com/mapnik/mapnik-reference.git"
   },
   "scripts": {
-      "test": "mocha -R spec --timeout 50000"
+    "test": "mocha -R spec --timeout 50000"
   },
   "devDependencies": {
     "mocha": "1.x",
-    "glob":"4.x"
+    "glob": "4.x"
+  },
+  "dependencies": {
+    "semver": "^5.1.0"
   }
 }

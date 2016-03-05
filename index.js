@@ -1,22 +1,12 @@
 var path = require('path');
+var semver = require('semver');
+var fs = require('fs');
 
-var versions = [
- '2.0.0',
- '2.0.1',
- '2.0.2',
- '2.1.0',
- '2.1.1',
- '2.2.0',
- '2.3.0',
- '3.0.0',
- '3.0.10',
- '3.0.3',
- '3.0.4',
- '3.0.5',
- '3.0.6',
- '3.0.7',
- '3.0.9'
-];
+var getVersions = function () {
+    var names = fs.readdirSync('./');
+    return names.filter(semver.valid);
+};
+var versions = semver.sort(getVersions());
 
 // These older versions don't have the datasource info
 var no_datasources = [
@@ -28,14 +18,30 @@ var no_datasources = [
   '2.2.0'
 ]
 module.exports.versions = versions;
+module.exports.latest = versions[versions.length - 1];
 
-module.exports.load = function(version) {
-    if (versions.indexOf(version) <= -1) {
-	throw new Error("Unknown mapnik-reference version: '" + version + "'");
+var getSatisfyingVersion = function (wanted) {
+    var version = semver.maxSatisfying(versions, wanted), parsed;
+    if (!version) {
+        try {
+            parsed = semver(wanted);
+            parsed.patch = 'x';
+            version = semver.maxSatisfying(versions, parsed.format());
+        } catch (err) {
+            version = null;
+        }
+    }
+    return version;
+};
+
+module.exports.load = function(wanted) {
+    var version = getSatisfyingVersion(wanted);
+    if (!version) {
+        throw new Error("Unknown mapnik-reference version: '" + wanted + "'");
     }
     var ref = require(path.join(__dirname, version, 'reference.json'));
     if (no_datasources.indexOf(version) <= -1) {
-	ref.datasources = require(path.join(__dirname, version, 'datasources.json')).datasources;
+        ref.datasources = require(path.join(__dirname, version, 'datasources.json')).datasources;
     }
     return ref;
 }
