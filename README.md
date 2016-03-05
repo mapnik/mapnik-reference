@@ -4,7 +4,9 @@
 
 It is useful for building parsers, tests, compilers, and syntax highlighting/checking for languages.
 
-[![Build Status](https://travis-ci.org/mapnik/mapnik-reference.svg?branch=master)](https://travis-ci.org/mapnik/mapnik-reference)
+[![Build Status](https://travis-ci.org/mapnik/mapnik-reference.svg)](https://travis-ci.org/mapnik/mapnik-reference)
+
+Default branch is `gh-pages` which is displayed at http://mapnik.org/mapnik-reference
 
 ## Versioning
 
