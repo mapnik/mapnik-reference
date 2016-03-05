@@ -1,3 +1,8 @@
+Makefile
+.npmignore
+.travis.yml
+scripts
+test
 node_modules
 npm-debug.log
 index.html

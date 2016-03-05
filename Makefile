@@ -8,4 +8,10 @@ check test: build
 	node scripts/lint.js
 	npm test
 
+testpack:
+	rm -f ./*tgz
+	npm pack
+	tar -ztvf *tgz
+	rm -f ./*tgz
+
 .PHONY: test build
