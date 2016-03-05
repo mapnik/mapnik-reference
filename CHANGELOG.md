@@ -1,6 +1,14 @@
 ## CHANGELOG
 
-### 8.5.2
+### 8.5.4
+
+* Add support for loading latest reference using sevmer (https://github.com/mapnik/mapnik-reference/issues/108)
+
+### 8.5.3
+
+* Added support for mapnik 3.0.10
+
+### 8.52
 
 * Added support for mapnik 3.0.9
 
