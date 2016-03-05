@@ -784,7 +784,7 @@
             },
             "fill-opacity": {
                 "css": "marker-fill-opacity",
-                "doc": "The fill opacity of the marker.",
+                "doc": "The fill opacity of the marker. This property will also set the `fill-opacity` of elements in an SVG loaded from a file.",
                 "default-value": 1.0,
                 "expression":true,
                 "default-meaning": "Color is fully opaque.",
@@ -792,7 +792,7 @@
             },
             "stroke": {
                 "css": "marker-line-color",
-                "doc": "The color of the stroke around the marker.",
+                "doc": "The color of the stroke around the marker. This property will also set the `stroke` of elements in an SVG loaded from a file.",
                 "default-value": "black",
                 "type": "color",
                 "expression":true,
@@ -801,7 +801,7 @@
             "stroke-width": {
                 "css": "marker-line-width",
                 "default-value": 0.5,
-                "doc": "The width of the stroke around the marker, in pixels. This is positioned on the boundary, so high values can cover the area itself.",
+                "doc": "The width of the stroke around the marker, in pixels. This is positioned on the boundary, so high values can cover the area itself. This property will also set the `stroke-width` of elements in an SVG loaded from a file.",
                 "type": "float",
                 "expression":true,
                 "default-meaning": "The marker will be drawn with an outline of .5 pixels wide."
@@ -809,7 +809,7 @@
             "stroke-opacity": {
                 "css": "marker-line-opacity",
                 "default-value": 1.0,
-                "default-meaning": "Color is fully opaque.",
+                "default-meaning": "Color is fully opaque. This property will also set the `stroke-opacity` of elements in an SVG loaded from a file.",
                 "doc": "The opacity of a line.",
                 "type": "float",
                 "expression":true
@@ -871,7 +871,7 @@
             "fill": {
                 "css": "marker-fill",
                 "default-value": "blue",
-                "doc": "The color of the area of the marker.",
+                "doc": "The color of the area of the marker. This property will also set the `fill` of elements in an SVG loaded from a file.",
                 "type": "color",
                 "expression":true,
                 "default-meaning": "The marker fill color is blue."
