@@ -59,7 +59,7 @@ function process(data) {
     });    
 }
 
-for (var key in references.version) {
+references.versions.forEach(function(key) {
     var template = path.join(__dirname,'..',key,'datasources.template.json');
     if (existsSync(template)) {
         var data = JSON.parse(fs.readFileSync(template));
@@ -71,5 +71,5 @@ for (var key in references.version) {
     } else {
         console.error('ref '+ key + ' missing datasources metadata')
     }
-}
+});
 

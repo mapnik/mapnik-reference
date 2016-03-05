@@ -21,7 +21,18 @@ git commit -a -m "bump to v0.8.1"
 
 Only bump the version when committing to master (not in pull requests).
 
-3) Make sure all tests are passing on travis: [![Build Status](https://travis-ci.org/mapnik/mapnik-reference.svg?branch=master)](https://travis-ci.org/mapnik/mapnik-reference)
+3) Update the datasources:
+
+Run:
+
+```
+make
+```
+
+And commit the changes. This will edit the `datasources.json` based on the `datasources.template.json`.
+
+
+4) Make sure all tests are passing on travis: [![Build Status](https://travis-ci.org/mapnik/mapnik-reference.svg?branch=master)](https://travis-ci.org/mapnik/mapnik-reference)
 
 4) Ensure the changelog lists the upcoming version and details of what changed
 
@@ -29,6 +40,7 @@ Only bump the version when committing to master (not in pull requests).
 
 ```bash
 git tag -a v0.8.1 -m "tagging v0.8.1"
+git push --tags
 ```
 
 6) Publish to npm

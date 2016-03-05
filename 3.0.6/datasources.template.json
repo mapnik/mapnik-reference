@@ -159,6 +159,13 @@
         "postgis": {
           "table": "<@(table)",
           "key_field": "<@(key_field)",
+          "key_field_as_attribute": {
+              "type": "boolean",
+              "doc": "User provided option to control whether the key_field will be duplicated as a feature attribute (as well as being used for the feature.id value)",
+              "default-value": true,
+              "default-meaning": "By default if key_field is provided then it is also available in the feature attributes by field name",
+              "required": false
+          },
           "encoding":"<@(encoding)",
           "dbname": {
             "type": "string",

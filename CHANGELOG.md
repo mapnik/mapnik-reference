@@ -1,5 +1,32 @@
 ## CHANGELOG
 
+### 8.5.2
+
+* Added support for mapnik 3.0.9
+
+### 8.5.1
+
+* Added support for mapnik 3.0.7
+
+### 8.5.0
+
+* Fixed missing support for `inline` and `filesize_max` options in some datasource refs.
+* Added support for mapnik 3.0.6
+* Added `key_field_as_attribute` option for Postgis datasource
+
+### 8.4.0
+
+* Added support for mapnik 3.0.5
+
+### 8.3.0
+
+* Added support for mapnik 3.0.4
+
+### 8.2.0
+
+* Added support for mapnik 3.0.3
+* Added new colorblind filters
+
 ### 8.0.0
 
 * Added `miter-revert` to `stroke-linejoin`
