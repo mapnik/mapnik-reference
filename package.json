@@ -11,8 +11,9 @@
     "test": "mocha -R spec --timeout 50000"
   },
   "devDependencies": {
-    "mocha": "1.x",
-    "glob": "4.x"
+    "glob": "4.x",
+    "lodash": "^4.11.1",
+    "mocha": "1.x"
   },
   "dependencies": {
     "semver": "^5.1.0"
