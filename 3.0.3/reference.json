@@ -1314,7 +1314,7 @@
                 "css": "shield-line-spacing",
                 "default-value": 0,
                 "doc": "Vertical spacing between lines of multiline labels (in pixels).",
-                "type": "unsigned",
+                "type": "float",
                 "expression":true,
                 "default-meaning": "The default font spacing will be used."
             },
@@ -2122,7 +2122,7 @@
             "line-spacing": {
                 "css": "text-line-spacing",
                 "default-value": 0,
-                "type": "unsigned",
+                "type": "float",
                 "expression":true,
                 "default-meaning": "The default font spacing will be used.",
                 "doc": "Vertical spacing adjustment between lines in pixels."

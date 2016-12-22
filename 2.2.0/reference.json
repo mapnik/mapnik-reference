@@ -963,7 +963,7 @@
                 "css": "shield-line-spacing",
                 "default-value": 0,
                 "doc": "Vertical spacing between lines of multiline labels (in pixels)",
-                "type": "unsigned"
+                "type": "float"
             },
             "dx": {
                 "css": "shield-text-dx",
@@ -1624,7 +1624,7 @@
             "line-spacing": {
                 "css": "text-line-spacing",
                 "default-value": 0,
-                "type": "unsigned",
+                "type": "float",
                 "doc": "Vertical spacing adjustment between lines in pixels"
             },
             "label-position-tolerance": {
@@ -2043,4 +2043,3 @@
         ]
     }
 }
-
