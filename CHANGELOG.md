@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+### 8.5.6
+
+* Changed wording on description for `marker-opacity`
+* Added `polygon-pattern-transform` and `line-pattern-transform`
+* Fixed datatype of `shield-line-spacing` and `text-line-spacing`
+* Fixed a typo
+
 ### 8.5.5
 
 * Fix ref loading bug
