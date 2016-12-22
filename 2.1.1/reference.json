@@ -566,7 +566,7 @@
             },
             "opacity": {
                 "css": "marker-opacity",
-                "doc": "The overall opacity of the marker, if set, overrides both the opacity of both the fill and stroke",
+                "doc": "The overall opacity of the marker, if set, overrides both the opacity of the fill and the opacity of the stroke.",
                 "default-value": 1,
                 "default-meaning": "The stroke-opacity and fill-opacity will be used",
                 "type": "float"
