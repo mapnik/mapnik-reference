@@ -6,6 +6,11 @@ os:
 
 sudo: false
 
+branches:
+  only:
+    - gh-pages
+    - /^.*$/
+
 env:
   matrix:
    - NODE_NVM_VERSION="0.10.36"
