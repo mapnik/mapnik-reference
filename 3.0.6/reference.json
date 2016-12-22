@@ -1615,6 +1615,21 @@
                     ["skewY", 1]
                 ]
             },
+            "transform": {
+                "css": "line-pattern-transform",
+                "type": "functions",
+                "default-value": "none",
+                "default-meaning": "No transformation.",
+                "doc": "Transform line pattern instance with specified function.",
+                "functions": [
+                    ["matrix", 6],
+                    ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
+                    ["skewX", 1],
+                    ["skewY", 1]
+                ]
+            },
             "comp-op": {
                 "css": "line-pattern-comp-op",
                 "default-value": "src-over",
@@ -1742,6 +1757,21 @@
                 "default-value": "none",
                 "default-meaning": "The geometry will not be transformed.",
                 "doc": "Transform polygon geometry with specified function and apply pattern to transformed geometry.",
+                "functions": [
+                    ["matrix", 6],
+                    ["translate", 2],
+                    ["scale", 2],
+                    ["rotate", 3],
+                    ["skewX", 1],
+                    ["skewY", 1]
+                ]
+            },
+            "transform": {
+                "css": "polygon-pattern-transform",
+                "type": "functions",
+                "default-value": "none",
+                "default-meaning": "No transformation.",
+                "doc": "Transform polygon pattern instance with specified function.",
                 "functions": [
                     ["matrix", 6],
                     ["translate", 2],
