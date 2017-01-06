@@ -1,0 +1,95 @@
+var path = require('path');
+var semver = require('semver');
+
+
+var versions = [
+<% _.forEach(versions, function (value, key) {
+        print("    '" + value + "'");
+        if (key < versions.length - 1) {
+            print(",\n");
+        }
+    });
+%>
+];
+
+// These older versions don't have the datasource info
+var no_datasources = [
+<% _.forEach(no_datasources, function (value, key) {
+        print("    '" + value + "'");
+        if (key < no_datasources.length - 1) {
+            print(",\n");
+        }
+    });
+%>
+];
+module.exports.versions = versions;
+module.exports.latest = versions[versions.length - 1];
+
+var getSatisfyingVersion = function (wanted) {
+    var version = semver.maxSatisfying(versions, wanted), parsed;
+    if (!version) {
+        try {
+            parsed = semver(wanted);
+            parsed.patch = 'x';
+            version = semver.maxSatisfying(versions, parsed.format());
+        } catch (err) {
+            version = null;
+        }
+    }
+    return version;
+};
+
+var loadBrowser = function (version) {
+    var versionRefs = {
+<% _.forEach(versions, function (value, key) {
+        print("       '" + value + "': {\n");
+        print("            'ref': require('./" + value + "/reference.json'),\n");
+        print("            'datasources': ");
+        if (_.some(no_datasources, function (ds) { return value === ds; })) {
+            print("null\n");
+        }
+        else {
+            print("require('./" + value + "/datasources.json').datasources\n");
+        }
+        if (key < versions.length - 1) {
+            print("        },\n");
+        }
+        else {
+            print("        }");
+        }
+    });
+%>
+    };
+
+    var ref = versionRefs[version].ref;
+    if (no_datasources.indexOf(version) <= -1) {
+        ref.datasources = versionRefs[version].datasources;
+    }
+
+    return ref;
+};
+
+var load = function (version) {
+    var ref = require(path.join(__dirname, version, 'reference.json'));
+    if (no_datasources.indexOf(version) <= -1) {
+        ref.datasources = require(path.join(__dirname, version, 'datasources.json')).datasources;
+    }
+
+    return ref;
+};
+
+module.exports.load = function(wanted) {
+    var version = getSatisfyingVersion(wanted),
+        ref;
+    if (!version) {
+        throw new Error("Unknown mapnik-reference version: '" + wanted + "'");
+    }
+    if (process.browser) {
+        ref = loadBrowser(version);
+    }
+    else {
+        ref = load(version);
+    }
+
+    return ref;
+}
