@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 8.6.0
+
+* Support for running in the browser
+
 ### 8.5.6
 
 * Changed wording on description for `marker-opacity`
