@@ -14,10 +14,10 @@
   },
   "devDependencies": {
     "glob": "4.x",
-    "lodash": "^4.11.1",
     "mocha": "1.x"
   },
   "dependencies": {
+    "lodash.template": "^4.4.0",
     "semver": "^5.1.0"
   }
 }

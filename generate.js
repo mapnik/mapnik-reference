@@ -1,10 +1,10 @@
 var fs = require('fs'),
     path = require('path'),
     semver = require('semver'),
-    _ = require('lodash');
+    _tpl = require('lodash.template');
 
 if (!fs.existsSync('index.js')) {
-    var template = _.template(fs.readFileSync(path.join(__dirname, 'index._'), 'utf-8'));
+    var template = _tpl.template(fs.readFileSync(path.join(__dirname, 'index._'), 'utf-8'));
 
     var getVersions = function () {
         var names = fs.readdirSync(__dirname);
