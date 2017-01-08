@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 8.6.1
+
+* Fixed a problem with generating index.js on Git installs with NPM
+
 ### 8.6.0
 
 * Support for running in the browser
