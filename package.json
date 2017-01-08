@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "mocha -R spec --timeout 50000",
-    "prepublish": "node generate.js"
+    "prepublish": "node generate.js",
+    "postinstall": "node generate.js"
   },
   "devDependencies": {
     "glob": "4.x",
