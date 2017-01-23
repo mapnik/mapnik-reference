@@ -1876,8 +1876,7 @@
                     "vertex"
                 ],
                 "default-value": "collision",
-                "doc": "The mode for debug rendering",
-                "type": "string"
+                "doc": "The mode for debug rendering"
             }
         }
 
