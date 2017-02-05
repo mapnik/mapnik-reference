@@ -13,8 +13,9 @@ branches:
 
 env:
   matrix:
-   - NODE_NVM_VERSION="0.10.36"
-   - NODE_NVM_VERSION="0.12.0"
+   - NODE_NVM_VERSION="4"
+   - NODE_NVM_VERSION="6"
+   - NODE_NVM_VERSION="7"
 
 before_install:
  - git clone --depth 1 https://github.com/creationix/nvm.git ../.nvm
