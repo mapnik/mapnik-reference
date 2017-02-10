@@ -2607,7 +2607,6 @@
                 ],
                 "default-value": "collision",
                 "doc": "The mode for debug rendering.",
-                "type": "string",
                 "expression":true,
                 "default-meaning": "The otherwise invisible collision boxes will be rendered as squares on the map."
             }
