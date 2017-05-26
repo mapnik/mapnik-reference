@@ -175,6 +175,12 @@
             "type":"bbox",
             "default-meaning": "No clipping extent will be used",
             "doc": "An extent to be used to limit the bounds used to query this specific layer data during rendering. Should be minx, miny, maxx, maxy in the coordinates of the Layer."
+        },
+        "cache-features": {
+            "type":"boolean",
+            "default-value": "off",
+            "default-meaning": "Features are not cached between rendering multiple styles. The datasource is queried for each style.",
+            "doc": "Setting this to `on` triggers Mapnik to attempt to cache features in memory for rendering when (and only when) a layer has multiple styles attached to it."
         }
     },
     "symbolizers" : {
