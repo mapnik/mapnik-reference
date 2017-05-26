@@ -8,9 +8,7 @@
     "url": "git://github.com/mapnik/mapnik-reference.git"
   },
   "scripts": {
-    "test": "mocha -R spec --timeout 50000",
-    "prepublish": "node generate.js",
-    "postinstall": "node generate.js"
+    "test": "mocha -R spec --timeout 50000"
   },
   "devDependencies": {
     "glob": "4.x",
