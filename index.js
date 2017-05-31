@@ -8,24 +8,26 @@ var semver = require('semver');
 
 
 var versions = [
-<% _.forEach(versions, function (value, key) {
-        print("    '" + value + "'");
-        if (key < versions.length - 1) {
-            print(",\n");
-        }
-    });
-%>
+    '2.0.0',
+    '2.0.1',
+    '2.0.2',
+    '2.1.0',
+    '2.1.1',
+    '2.2.0',
+    '2.3.0',
+    '3.0.0',
+    '3.0.3',
+    '3.0.6'
 ];
 
 // These older versions don't have the datasource info
 var no_datasources = [
-<% _.forEach(no_datasources, function (value, key) {
-        print("    '" + value + "'");
-        if (key < no_datasources.length - 1) {
-            print(",\n");
-        }
-    });
-%>
+    '2.0.0',
+    '2.0.1',
+    '2.0.2',
+    '2.1.0',
+    '2.1.1',
+    '2.2.0'
 ];
 module.exports.versions = versions;
 module.exports.latest = versions[versions.length - 1];
@@ -46,24 +48,46 @@ var getSatisfyingVersion = function (wanted) {
 
 var loadBrowser = function (version) {
     var versionRefs = {
-<% _.forEach(versions, function (value, key) {
-        print("       '" + value + "': {\n");
-        print("            'ref': require('./" + value + "/reference.json'),\n");
-        print("            'datasources': ");
-        if (_.some(no_datasources, function (ds) { return value === ds; })) {
-            print("null\n");
+       '2.0.0': {
+            'ref': require('./2.0.0/reference.json'),
+            'datasources': null
+        },
+       '2.0.1': {
+            'ref': require('./2.0.1/reference.json'),
+            'datasources': null
+        },
+       '2.0.2': {
+            'ref': require('./2.0.2/reference.json'),
+            'datasources': null
+        },
+       '2.1.0': {
+            'ref': require('./2.1.0/reference.json'),
+            'datasources': null
+        },
+       '2.1.1': {
+            'ref': require('./2.1.1/reference.json'),
+            'datasources': null
+        },
+       '2.2.0': {
+            'ref': require('./2.2.0/reference.json'),
+            'datasources': null
+        },
+       '2.3.0': {
+            'ref': require('./2.3.0/reference.json'),
+            'datasources': require('./2.3.0/datasources.json').datasources
+        },
+       '3.0.0': {
+            'ref': require('./3.0.0/reference.json'),
+            'datasources': require('./3.0.0/datasources.json').datasources
+        },
+       '3.0.3': {
+            'ref': require('./3.0.3/reference.json'),
+            'datasources': require('./3.0.3/datasources.json').datasources
+        },
+       '3.0.6': {
+            'ref': require('./3.0.6/reference.json'),
+            'datasources': require('./3.0.6/datasources.json').datasources
         }
-        else {
-            print("require('./" + value + "/datasources.json').datasources\n");
-        }
-        if (key < versions.length - 1) {
-            print("        },\n");
-        }
-        else {
-            print("        }");
-        }
-    });
-%>
     };
 
     var ref = versionRefs[version].ref;

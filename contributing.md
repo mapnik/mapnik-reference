@@ -2,6 +2,12 @@
 
 We welcome contributions. Please provide pull requests and notify @springmeyer for review.
 
+### Changing index.js
+
+Do not change index.js directly as it is generated. Modify index._ instead and run
+`node generate.js` instead. If the node binary is differently named on your operating
+system (e.g. nodejs) use that instead.
+
 ### Releasing
 
 1) Create a milestone for the upcoming release
@@ -50,4 +56,3 @@ NOTE: make sure your git checkout is clean first: `git status` should show no ch
 ```bash
 npm publish
 ```
-
