@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+### 8.7.0
+
+* Removed generating index.js on prepublish and postpublish and add index.js to version control instead
+* Added `cache-features`
+* Removed redundant type for `debug-mode`
+
 ### 8.6.1
 
 * Fixed a problem with generating index.js on Git installs with NPM
