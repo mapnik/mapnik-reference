@@ -26,6 +26,7 @@
     border-top: 1px #ddd solid;
 }
 .status {
+    float: right;
     border-radius: 1px;
     color: #fff;
     font-size: 0.7em;
@@ -37,6 +38,18 @@
 .status.deprecated {
     background-color: #D64541;
 }
+
+.expressions-support {
+    float: right;
+    border-radius: 1px;
+    color: #fff;
+    font-size: 0.7em;
+    margin-left: 5px;
+    padding: 2px 5px;
+    vertical-align: middle;
+    background-color: #45C559;
+}
+
 p {
     margin-bottom: 5px;
     margin-top: 5px;
