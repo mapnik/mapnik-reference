@@ -84,6 +84,7 @@
             id = props.css || id;
             this.node('a', {id: this.anchor(id), href: '#' + this.anchor(id)}, title, id);
             this.node('span', 'type', title, '=' + (this.isArray(props.type) ? 'list' : props.type));
+            if (props.expression) this.node('span', {className: 'expressions-support'}, title, 'expressions');
             if (props.status && props.status !== 'stable') this.node('span', {className: 'status ' + props.status}, title, props.status);
             this.node('p', {}, parent, props.doc.replace(/`([^`]*)`/g, '<b>$1</b>'));
             var defaultValue = this.node('p', {}, parent, '<strong>Default: </strong>' + (props['default-value'] || 'none'));
