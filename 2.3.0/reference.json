@@ -390,6 +390,14 @@
             }
         },
         "polygon": {
+            "default": {
+                "css": "polygon",
+                "type": [
+                    "auto",
+                    "none"
+                ],
+                "status": "unstable"
+            },
             "fill": {
                 "css": "polygon-fill",
                 "type": "color",
@@ -515,6 +523,14 @@
             }
         },
         "line": {
+            "default": {
+                "css": "line",
+                "type": [
+                    "auto",
+                    "none"
+                ],
+                "status": "unstable"
+            },
             "stroke": {
                 "css": "line-color",
                 "default-value": "rgba(0,0,0,1)",
@@ -703,6 +719,14 @@
             }
         },
         "markers": {
+            "default": {
+                "css": "marker",
+                "type": [
+                    "auto",
+                    "none"
+                ],
+                "status": "unstable"
+            },
             "file": {
                 "css": "marker-file",
                 "doc": "A file that this marker shows at each placement. If no file is given, the marker will show an ellipse. Accepted formats: SVG, JPG, PNG.",
@@ -908,6 +932,13 @@
             }
         },
         "shield": {
+            "default": {
+                "css": "shield",
+                "type": [
+                    "none"
+                ],
+                "status": "unstable"
+            },
             "name": {
                 "css": "shield-name",
                 "type": "string",
@@ -1206,6 +1237,14 @@
             }
         },
         "line-pattern": {
+            "default": {
+                "css": "line-pattern",
+                "type": [
+                    "auto",
+                    "none"
+                ],
+                "status": "unstable"
+            },
             "file": {
                 "css": "line-pattern-file",
                 "type": "uri",
@@ -1310,6 +1349,14 @@
             }
         },
         "polygon-pattern": {
+            "default": {
+                "css": "polygon-pattern",
+                "type": [
+                    "auto",
+                    "none"
+                ],
+                "status": "unstable"
+            },
             "file": {
                 "css": "polygon-pattern-file",
                 "type": "uri",
@@ -1431,6 +1478,14 @@
             }
         },
         "raster": {
+            "default": {
+                "css": "raster",
+                "type": [
+                    "auto",
+                    "none"
+                ],
+                "status": "unstable"
+            },
             "opacity": {
                 "css": "raster-opacity",
                 "default-value": 1,
@@ -1554,6 +1609,14 @@
             }
         },
         "point": {
+            "default": {
+                "css": "point",
+                "type": [
+                    "auto",
+                    "none"
+                ],
+                "status": "unstable"
+            },
             "file": {
                 "css": "point-file",
                 "type": "uri",
@@ -1649,6 +1712,13 @@
             }
         },
         "text": {
+            "default": {
+                "css": "text",
+                "type": [
+                    "none"
+                ],
+                "status": "unstable"
+            },
             "name": {
                 "css": "text-name",
                 "type": "string",
@@ -1936,6 +2006,14 @@
             }
         },
         "building": {
+            "default": {
+                "css": "building",
+                "type": [
+                    "auto",
+                    "none"
+                ],
+                "status": "unstable"
+            },
             "fill": {
                 "css": "building-fill",
                 "default-value": "#FFFFFF",
