@@ -314,6 +314,7 @@
                     "auto",
                     "none"
                 ],
+                "doc": "Allows omitting a polygon symbolizer rule or emitting it with default values.",
                 "status": "unstable"
             },
             "fill": {
@@ -460,6 +461,7 @@
                     "auto",
                     "none"
                 ],
+                "doc": "Allows omitting a line symbolizer rule or emitting it with default values.",
                 "status": "unstable"
             },
             "stroke": {
@@ -683,6 +685,7 @@
                     "auto",
                     "none"
                 ],
+                "doc": "Allows omitting a marker symbolizer rule or emitting it with default values.",
                 "status": "unstable"
             },
             "file": {
@@ -980,6 +983,7 @@
                 "type": [
                     "none"
                 ],
+                "doc": "Allows omitting a shield symbolizer rule.",
                 "status": "unstable"
             },
             "name": {
@@ -1471,6 +1475,7 @@
                     "auto",
                     "none"
                 ],
+                "doc": "Allows omitting a line pattern symbolizer rule or emitting it with default values.",
                 "status": "unstable"
             },
             "file": {
@@ -1618,6 +1623,7 @@
                     "auto",
                     "none"
                 ],
+                "doc": "Allows omitting a polygon pattern symbolizer rule or emitting it with default values.",
                 "status": "unstable"
             },
             "file": {
@@ -1777,6 +1783,7 @@
                     "auto",
                     "none"
                 ],
+                "doc": "Allows omitting a raster symbolizer rule or emitting it with default values.",
                 "status": "unstable"
             },
             "opacity": {
@@ -1913,6 +1920,7 @@
                     "auto",
                     "none"
                 ],
+                "doc": "Allows omitting a point symbolizer rule or emitting it with default values.",
                 "status": "unstable"
             },
             "file": {
@@ -2027,6 +2035,7 @@
                 "type": [
                     "none"
                 ],
+                "doc": "Allows omitting a text symbolizer rule.",
                 "status": "unstable"
             },
             "name": {
@@ -2544,6 +2553,7 @@
                     "auto",
                     "none"
                 ],
+                "doc": "Allows omitting a building symbolizer rule or emitting it with default values.",
                 "status": "unstable"
             },
             "fill": {
@@ -2591,6 +2601,7 @@
                     "auto",
                     "none"
                 ],
+                "doc": "Allows omitting a dot symbolizer rule or emitting it with default values.",
                 "status": "unstable"
             },
             "fill": {
