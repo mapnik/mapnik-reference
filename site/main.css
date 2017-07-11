@@ -75,3 +75,9 @@ a.current:before {
 a.current {
     color: #c7726b;
 }
+.headerBlock {
+    margin-top: 10px;
+}
+.headerBlock a {
+    display: block;
+}
