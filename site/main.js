@@ -46,8 +46,60 @@
             this.container.innerHTML = '';
             this.menu.innerHTML = '';
             this.versionLabel.innerHTML = this.version;
-            this.node('h5', {}, this.menu, 'Symbolizers');
+
+            var hasStyleCss = false,
+                hasLayerCss = false;
+
+            for (var id in ref.style) {
+                if (ref.style[id].hasOwnProperty('css')) {
+                    hasStyleCss = true;
+                    break;
+                }
+            }
+            for (var id in ref.layer) {
+                if (ref.layer[id].hasOwnProperty('css')) {
+                    hasLayerCss = true;
+                    break;
+                }
+            }
+
+            if (hasStyleCss) {
+                var styleMenu = this.node('h5', {className: 'headerBlock'}, this.menu);
+                this.node('a', {href: '#' + this.version + '/style'}, styleMenu, 'Style');
+            }
+            if (hasLayerCss) {
+                var layerMenu = this.node('h5', {className: 'headerBlock'}, this.menu);
+                this.node('a', {href: '#' + this.version + '/layer'}, layerMenu, 'Layer');
+            }
+            var symbolizerMenu = this.node('h5', {className: 'headerBlock'}, this.menu);
+            this.node('a', {href: '#' + this.version + '/symbolizers'}, symbolizerMenu, 'Symbolizers');
+
+            if (hasStyleCss) {
+                var styleHeading = this.node('h2', {}, this.container);
+                this.node('a', {id: this.version + '/style', href: '#' + this.version + '/style'}, styleHeading, 'Style');
+                var styleContainer = this.node('div', {className: 'symbolizer'}, this.container);
+                for (var id in ref.style) {
+                    if (ref.style[id].hasOwnProperty('css')) {
+                        this.addRule(id, ref.style[id], styleContainer);
+                    }
+                }
+            }
+
+            if (hasLayerCss) {
+                var layerHeading = this.node('h2', {}, this.container);
+                this.node('a', {id: this.version + '/layer', href: '#' + this.version + '/layer'}, layerHeading, 'Layer');
+                var layerContainer = this.node('div', {className: 'symbolizer'}, this.container);
+                for (var id in ref.layer) {
+                    if (ref.layer[id].hasOwnProperty('css')) {
+                        this.addRule(id, ref.layer[id], layerContainer);
+                    }
+                }
+            }
+
+            var symbolizerHeading = this.node('h2', {}, this.container);
+            this.node('a', {id: this.version + '/symbolizers', href: '#' + this.version + '/symbolizers'}, symbolizerHeading, 'Symbolizers');
             for (var id in ref.symbolizers) this.addSymbolizer(id, ref.symbolizers[id]);
+
             this.addVersions();
             if (window.location.hash) window.location = window.location;  // we have rebuild the DOM, help the browser find the North again.
         },
@@ -103,4 +155,3 @@
     };
     window.UI = UI;
 })(window);
-
