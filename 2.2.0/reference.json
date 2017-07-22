@@ -1073,7 +1073,6 @@
             "default": {
                 "css": "line-pattern",
                 "type": [
-                    "auto",
                     "none"
                 ],
                 "doc": "Allows omitting a line pattern symbolizer rule or emitting it with default values.",
@@ -1179,7 +1178,6 @@
             "default": {
                 "css": "polygon-pattern",
                 "type": [
-                    "auto",
                     "none"
                 ],
                 "doc": "Allows omitting a polygon pattern symbolizer rule or emitting it with default values.",
