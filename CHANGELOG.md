@@ -1,9 +1,13 @@
 ## CHANGELOG
 
+### 8.8.1
+
+* Removed some wrong `auto` keywords on rules for the whole symbolizer where the symbolizer had required properties
+
 ### 8.8.0
 
 * Removed * symbolizer and reference rules within `style` instead
-* Added rules that work on the whole symbolizer and allow to either suppress it or output it with default values 
+* Added rules that work on the whole symbolizer and allow to either suppress it or output it with default values
 
 ### 8.7.0
 
