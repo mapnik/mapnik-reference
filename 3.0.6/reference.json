@@ -321,7 +321,7 @@
                 "css": "polygon-fill",
                 "type": "color",
                 "expression":true,
-                "default-value": "The color gray will be used for fill.",
+                "default-value": "rgba(128,128,128,1)",
                 "default-meaning": "Gray and fully opaque (alpha = 1), same as rgb(128,128,128) or rgba(128,128,128,1).",
                 "doc": "Fill color to assign to a polygon."
             },
