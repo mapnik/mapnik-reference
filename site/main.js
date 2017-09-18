@@ -1,7 +1,7 @@
 'use strict';
 (function (window) {
     var UI = function (version) {
-        this.menu = document.querySelector('#menu');
+        this.menu = document.querySelector('#menu .main');
         this.container = document.querySelector('#symbolizers');
         this.versionLabel = document.querySelector('#version');
         this.fetchFromHash() || this.fetch(version);
