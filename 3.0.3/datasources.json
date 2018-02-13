@@ -87,6 +87,34 @@
                 "default-value": "utf-8",
                 "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
                 "required": false
+            },
+            "band": {
+                "type": "integer",
+                "doc": "A particular raster band to work with.",
+                "default-value": "-1",
+                "default-meaning": "No particular raster band set, working with all bands.",
+                "required": false
+            },
+            "nodata": {
+                "type": "float",
+                "doc": "Overrides nodata value from the raster.",
+                "default-value": "none",
+                "default-meaning": "Nodata value from the raster is used.",
+                "required": false
+            },
+            "nodata_tolerance": {
+                "type": "float",
+                "doc": "Make pixels in this tolerance around nodata value transparent.",
+                "default-value": "1e-12",
+                "default-meaning": "The tolerance is effectively zero.",
+                "required": false
+            },
+            "shared": {
+                "type": "boolean",
+                "doc": "Allows to share the GDAL dataset handle with other GDAL datasources with the same file path.",
+                "default-value": false,
+                "default-meaning": "The datasource will use unique dataset instance.",
+                "required": false
             }
         },
         "geojson": {
