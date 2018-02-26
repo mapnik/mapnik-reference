@@ -370,7 +370,8 @@
                 "css": "polygon-simplify-algorithm",
                 "type": ["radial-distance",
                          "zhao-saalfeld",
-                         "visvalingam-whyatt"
+                         "visvalingam-whyatt",
+                         "douglas-peucker"
                         ],
                 "expression":true,
                 "default-value": "radial-distance",
@@ -574,7 +575,8 @@
                 "css": "line-simplify-algorithm",
                 "type": ["radial-distance",
                          "zhao-saalfeld",
-                         "visvalingam-whyatt"
+                         "visvalingam-whyatt",
+                         "douglas-peucker"
                         ],
                 "expression":true,
                 "default-value": "radial-distance",
@@ -867,7 +869,8 @@
                 "css": "marker-simplify-algorithm",
                 "type": ["radial-distance",
                          "zhao-saalfeld",
-                         "visvalingam-whyatt"
+                         "visvalingam-whyatt",
+                         "douglas-peucker"
                         ],
                 "expression":true,
                 "default-value": "radial-distance",
@@ -1399,7 +1402,8 @@
                 "css": "shield-simplify-algorithm",
                 "type": ["radial-distance",
                          "zhao-saalfeld",
-                         "visvalingam-whyatt"
+                         "visvalingam-whyatt",
+                         "douglas-peucker"
                         ],
                 "expression": true,
                 "default-value": "radial-distance",
@@ -1508,7 +1512,8 @@
                 "css": "line-pattern-simplify-algorithm",
                 "type": ["radial-distance",
                          "zhao-saalfeld",
-                         "visvalingam-whyatt"
+                         "visvalingam-whyatt",
+                         "douglas-peucker"
                         ],
                 "expression":true,
                 "default-value": "radial-distance",
@@ -1675,7 +1680,8 @@
                 "css": "polygon-pattern-simplify-algorithm",
                 "type": ["radial-distance",
                          "zhao-saalfeld",
-                         "visvalingam-whyatt"
+                         "visvalingam-whyatt",
+                         "douglas-peucker"
                         ],
                 "expression":true,
                 "default-value": "radial-distance",
@@ -2417,7 +2423,8 @@
                 "css": "text-simplify-algorithm",
                 "type": ["radial-distance",
                          "zhao-saalfeld",
-                         "visvalingam-whyatt"
+                         "visvalingam-whyatt",
+                         "douglas-peucker"
                         ],
                 "expression": true,
                 "default-value": "radial-distance",
