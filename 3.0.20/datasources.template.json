@@ -139,7 +139,7 @@
           "max_image_area": {
             "type": "integer",
             "doc": "Maximum memory limitation for image will be simply based on the maximum area we allow for an image. The true memory footprint therefore will vary based on the type of imagery that exists. This is not the maximum size of an image on disk but rather the maximum size we will load into mapnik from GDAL. `max_im_area` based on 50 mb limit for RGBA",
-            "default-value": (50*1024*1024)/4,
+            "default-value": 13107200,
             "default-meaning": "50Mb",
             "required":false
           }
