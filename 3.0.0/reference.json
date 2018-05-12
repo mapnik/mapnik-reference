@@ -1134,8 +1134,8 @@
                 "type": "string",
                 "expression":true,
                 "default-value": "\" \"",
-                "default-meaning": "Lines will be wrapped when whitespace is encountered.",
-                "doc": "Use this character instead of a space to wrap long names."
+                "default-meaning": "Lines will be wrapped conforming to the (untailored) Unicode Line Break Algorithm provided by ICU BreakIterator.",
+                "doc": "Must be a single character. If you set it to other than the space character, Mapnik will wrap strictly on that character without involving any additional rules."
             },
             "halo-fill": {
                 "css": "shield-halo-fill",
@@ -2093,8 +2093,8 @@
                 "type": "string",
                 "expression":true,
                 "default-value": "\" \"",
-                "default-meaning": "Lines will be wrapped when whitespace is encountered.",
-                "doc": "Use this character instead of a space to wrap long text."
+                "default-meaning": "Lines will be wrapped conforming to the (untailored) Unicode Line Break Algorithm provided by ICU BreakIterator.",
+                "doc": "Must be a single character. If you set it to other than the space character, Mapnik will wrap strictly on that character without involving any additional rules."
             },
             "repeat-wrap-character": {
                 "css": "text-repeat-wrap-character",
