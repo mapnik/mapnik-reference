@@ -1047,7 +1047,9 @@
                     "point",
                     "line",
                     "vertex",
-                    "interior"
+                    "interior",
+                    "grid",
+                    "alternating-grid"
                 ],
                 "expression":true,
                 "default-value": "point",
@@ -1470,6 +1472,22 @@
                     "value"
                 ],
                 "expression":true
+            },
+            "grid-cell-width": {
+                "css": "shield-grid-cell-width",
+                "type": "float",
+                "expression": true,
+                "default-value": 0,
+                "default-meaning": "No placement will be done.",
+                "doc": "Controls horizontal spacing between placements of placement type `grid` or `alternating-grid`."
+            },
+            "grid-cell-height": {
+                "css": "shield-grid-cell-height",
+                "type": "float",
+                "expression": true,
+                "default-value": 0,
+                "default-meaning": "No placement will be done.",
+                "doc": "Controls vertical spacing between placements of placement type `grid` or `alternating-grid`."
             }
         },
         "line-pattern": {
@@ -2341,7 +2359,9 @@
                     "point",
                     "line",
                     "vertex",
-                    "interior"
+                    "interior",
+                    "grid",
+                    "alternating-grid"
                 ],
                 "expression":true,
                 "default-meaning": "One shield will be placed per geometry.",
@@ -2548,6 +2568,22 @@
                 "default-meaning": "For multipolygons only polygon with largest bbox area is labeled (does not apply to other geometries).",
                 "doc": "Controls default labeling behavior on multipolygons. The default is true and means that only the polygon with largest bbox is labeled.",
                 "status": "experimental"
+            },
+            "grid-cell-width": {
+                "css": "text-grid-cell-width",
+                "type": "float",
+                "expression": true,
+                "default-value": 0,
+                "default-meaning": "No placement will be done.",
+                "doc": "Controls horizontal spacing between placements of placement type `grid` or `alternating-grid`."
+            },
+            "grid-cell-height": {
+                "css": "text-grid-cell-height",
+                "type": "float",
+                "expression": true,
+                "default-value": 0,
+                "default-meaning": "No placement will be done.",
+                "doc": "Controls vertical spacing between placements of placement type `grid` or `alternating-grid`."
             }
         },
         "building": {
