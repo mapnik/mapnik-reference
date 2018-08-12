@@ -93,26 +93,26 @@
                 "doc": "Maximum memory limitation for image will be simply based on the maximum area we allow for an image. The true memory footprint therefore will vary based on the type of imagery that exists. This is not the maximum size of an image on disk but rather the maximum size we will load into mapnik from GDAL. `max_im_area` based on 50 mb limit for RGBA",
                 "default-value": 13107200,
                 "default-meaning": "50Mb",
-                "required":false
+                "required": false
             },
             "band": {
-                "type": "integer",
+                "type": "unsigned",
                 "doc": "A particular raster band to work with.",
-                "default-value": "-1",
+                "default-value": 0,
                 "default-meaning": "No particular raster band set, working with all bands.",
                 "required": false
             },
             "nodata": {
                 "type": "float",
                 "doc": "Overrides nodata value from the raster.",
-                "default-value": "none",
+                "default-value": 0,
                 "default-meaning": "Nodata value from the raster is used.",
                 "required": false
             },
             "nodata_tolerance": {
                 "type": "float",
                 "doc": "Make pixels in this tolerance around nodata value transparent.",
-                "default-value": "1e-12",
+                "default-value": 1e-12,
                 "default-meaning": "The tolerance is effectively zero.",
                 "required": false
             },
