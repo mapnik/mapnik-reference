@@ -1,5 +1,15 @@
 ## CHANGELOG
 
+### 8.9.0
+
+* Added support for mapnik 3.0.20
+* Fixed default value for `polygon-fill`
+* Ramer douglas peucker algorithm added to the list of simplification algorithms
+* Better documentation for wrap-character
+* `shield-min-distance` marked deprecated, fixed description
+* Added new `text-placement` and  `shield-placement` values `grid` and `alternating-grid`
+* Added `band`, `nodata`, `nodata_tolerance`, `shared` options of GDAL datasource
+
 ### 8.8.1
 
 * Removed some wrong `auto` keywords on rules for the whole symbolizer where the symbolizer had required properties
