@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 8.9.1
+
+Fixed missing options in datasource template for GDAL
+
 ### 8.9.0
 
 * Added support for mapnik 3.0.20
