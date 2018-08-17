@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### 8.9.2
+
+* Deprecated `minzoom` and `maxzoom` in favor of `minimum-scale-denominator` and `maximum-scale-denominator`
+* Added `text-offset` and `shield-offset`
+
 ### 8.9.1
 
 * Fixed missing options in datasource template for GDAL
