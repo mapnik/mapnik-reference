@@ -2,14 +2,14 @@
 
 ### 8.9.1
 
-Fixed missing options in datasource template for GDAL
+* Fixed missing options in datasource template for GDAL
 
 ### 8.9.0
 
 * Added support for mapnik 3.0.20
 * Fixed default value for `polygon-fill`
 * Ramer douglas peucker algorithm added to the list of simplification algorithms
-* Better documentation for wrap-character
+* Better documentation for `wrap-character`
 * `shield-min-distance` marked deprecated, fixed description
 * Added new `text-placement` and  `shield-placement` values `grid` and `alternating-grid`
 * Added `band`, `nodata`, `nodata_tolerance`, `shared` options of GDAL datasource
