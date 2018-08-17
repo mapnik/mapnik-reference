@@ -144,13 +144,27 @@
             "default-value": 0,
             "type":"float",
             "default-meaning": "The layer will be visible at the minimum possible scale",
-            "doc": "The minimum scale denominator that this layer will be visible at. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6."
+            "doc": "The minimum scale denominator that this layer will be visible at. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6. This option has been deprecated in favor of `minimum-scale-denominator`.",
+            "status": "deprecated"
         },
         "maxzoom": {
             "default-value": "1.79769e+308",
             "type":"float",
             "default-meaning": "The layer will be visible at the maximum possible scale",
-            "doc": "The maximum scale denominator that this layer will be visible at. The default is the numeric limit of the C++ double type, which may vary slightly by system, but is likely a massive number like 1.79769e+308 and ensures that this layer will always be visible unless the value is reduced. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6."
+            "doc": "The maximum scale denominator that this layer will be visible at. The default is the numeric limit of the C++ double type, which may vary slightly by system, but is likely a massive number like 1.79769e+308 and ensures that this layer will always be visible unless the value is reduced. A layer's visibility is determined by whether its status is true and if the Map scale >= minzoom - 1e-6 and scale < maxzoom + 1e-6. This option has been deprecated in favor of `maximum-scale-denominator`.",
+            "status": "deprecated"
+        },
+        "minimum-scale-denominator": {
+            "default-value": 0,
+            "type":"float",
+            "default-meaning": "The layer will be visible at the minimum possible scale denominator",
+            "doc": "The minimum scale denominator that this layer will be visible at. A layer's visibility is determined by whether its status is true and if the Map scale denominator >= `minimum-scale-denominator` - 1e-6 and scale denominator < 'maximum-scale-denominator' + 1e-6."
+        },
+        "maximum-scale-denominator": {
+            "default-value": "1.79769e+308",
+            "type":"float",
+            "default-meaning": "The layer will be visible at the maximum possible scale denominator",
+            "doc": "The maximum scale denominator that this layer will be visible at. The default is the numeric limit of the C++ double type, which may vary slightly by system, but is likely a massive number like 1.79769e+308 and ensures that this layer will always be visible unless the value is reduced. A layer's visibility is determined by whether its status is true and if the Map scale denominator >= `minimum-scale-denominator` - 1e-6 and scale denominator < `maximum-scale-denominator` + 1e-6."
         },
         "queryable": {
             "default-value": false,
