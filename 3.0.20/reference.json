@@ -1109,7 +1109,7 @@
                 "expression":true,
                 "default-value": 0.0,
                 "default-meaning": "Shields with the same text will be rendered without restriction.",
-                "doc": "Minimum distance to any other collision object. Deprecated: replaced by `text-margin`.",
+                "doc": "Minimum distance to any other collision object. Deprecated: replaced by `shield-margin`.",
                 "status": "deprecated"
             },
             "spacing": {
