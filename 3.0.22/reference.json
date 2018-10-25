@@ -1523,6 +1523,16 @@
                 "doc": "Allows omitting a line pattern symbolizer rule or emitting it with default values.",
                 "status": "unstable"
             },
+            "line-pattern": {
+                "css": "line-pattern-type",
+                "type": ["warp",
+                         "repeat"
+                        ],
+                "expression": true,
+                "default-value": "warp",
+                "default-meaning": "The pattern will be warped along a linear geometry.",
+                "doc": "Sets the way how pattern is rendered. The `warp` options warps the pattern in direction of the geometry. The `repeat` option can be used to repeat pattern in an area given by options `stroke-pattern-width`, `stroke-pattern-linecap`, `line-pattern-join`, `line-pattern-miterlimit`, `line-pattern-dasharray`."
+            },
             "file": {
                 "css": "line-pattern-file",
                 "type": "uri",
@@ -1660,6 +1670,66 @@
                     "value"
                 ],
                 "expression":true
+            },
+            "alignment": {
+                "css": "line-pattern-alignment",
+                "type": [
+                    "global",
+                    "local"
+                ],
+                "expression": true,
+                "default-value": "global",
+                "doc": "Specify whether to align pattern fills to the feature's geometry (local) or to the map (global).",
+                "default-meaning":"Patterns will be aligned to the map when being repeated. This is ideal for seamless patterns in tiled rendering."
+            },
+            "stroke-width": {
+                "css": "line-pattern-width",
+                "default-value": 1.0,
+                "type": "float",
+                "expression": true,
+                "doc": "The width of a line in pixels. Used for rendering line pattern of type `repeat`.",
+                "default-meaning": "The line will be rendered 1 pixel wide."
+            },
+            "stroke-linecap": {
+                "css": "line-pattern-cap",
+                "default-value": "butt",
+                "type": [
+                    "butt",
+                    "round",
+                    "square"
+                ],
+                "expression": true,
+                "doc": "The display of line endings. Used for rendering line pattern of type `repeat`.",
+                "default-meaning": "The line endings will be rendered using a butt look."
+            },
+            "stroke-linejoin": {
+                "css": "line-pattern-join",
+                "default-value": "miter",
+                "type": [
+                    "miter",
+                    "miter-revert",
+                    "round",
+                    "bevel"
+                ],
+                "expression": true,
+                "doc": "The behavior of lines when joining. Used for rendering line pattern of type `repeat`.",
+                "default-meaning": "The line joins will be rendered using a miter look."
+            },
+            "stroke-miterlimit": {
+                "css": "line-pattern-miterlimit",
+                "type": "float",
+                "expression": true,
+                "doc": "The limit on the ratio of the miter length to the stroke-width. Used to automatically convert miter joins to bevel joins for sharp angles to avoid the miter extending beyond the thickness of the stroking path. Normally will not need to be set, but a larger value can sometimes help avoid jaggy artifacts. Used for rendering line pattern of type `repeat`.",
+                "default-value": 4.0,
+                "default-meaning": "Will auto-convert miters to bevel line joins when theta is less than 29 degrees as per the SVG spec: 'miterLength / stroke-width = 1 / sin ( theta / 2 )'."
+            },
+            "stroke-dasharray": {
+                "css": "line-pattern-dasharray",
+                "type": "numbers",
+                "expression": true,
+                "doc": "A pair of length values [a,b], where (a) is the dash length and (b) is the gap length respectively. More than two values are supported for more complex patterns. Used for rendering line pattern of type `repeat`.",
+                "default-value": "none",
+                "default-meaning": "The line will be drawn without dashes."
             }
         },
         "polygon-pattern": {
