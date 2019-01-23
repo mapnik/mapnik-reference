@@ -18,7 +18,8 @@ var versions = [
     '3.0.0',
     '3.0.3',
     '3.0.6',
-    '3.0.20'
+    '3.0.20',
+    '3.0.22',
 ];
 
 // These older versions don't have the datasource info

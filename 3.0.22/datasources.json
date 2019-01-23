@@ -1,0 +1,512 @@
+{
+    "datasources": {
+        "csv": {
+            "file": {
+                "type": "string",
+                "doc": "Path to the file for the datasource",
+                "default-value": "",
+                "default-meaning": "",
+                "required": true
+            },
+            "base": {
+                "type": "string",
+                "doc": "A base path used to complete a full path to a file.",
+                "default-value": "",
+                "default-meaning": "Only the `file` option will be used to attempt to load data from the filesystem",
+                "required": false
+            },
+            "encoding": {
+                "type": "string",
+                "doc": "The encoding value for the datasource attributes",
+                "default-value": "utf-8",
+                "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+                "required": false
+            },
+            "row_limit": {
+                "type": "unsigned",
+                "doc": "Max amount of features to read from the datasource",
+                "default-value": 0,
+                "default-meaning": "All features will be read from the datasource (unless row_limit is > 1)",
+                "required": false
+            },
+            "strict": {
+                "type": "boolean",
+                "doc": "Control if the datasource should throw on invalid rows",
+                "default-value": false,
+                "default-meaning": "Unless this option is set to true the datasource will skip invalid rows and attempt to parse as much data as possible"
+            },
+            "escape": {
+                "type": "string",
+                "doc": "The escape character to use for parsing data",
+                "default-value": "A single backslash (aka. reverse solidus): \\",
+                "default-meaning": "A backslash will be used as the assumed character that the data uses for escaping other characters"
+            },
+            "quote": {
+                "type": "string",
+                "doc": "The quote character to use for parsing data",
+                "default-value": "A quotation mark (aka. double quote): \"",
+                "default-meaning": "A backslash will be used as the assumed character that the data uses for escaping other characters"
+            },
+            "separator": {
+                "type": "string",
+                "doc": "The separator character to use for parsing data",
+                "default-value": "Basic autodetection is used to determine the best default value if the user does not manually supply a separator.",
+                "default-meaning": "A comma will be used unless more tabs (\t), pipes (|), or semicolons (;) are detected than commas in the header row (in that order of preference)"
+            },
+            "headers": {
+                "type": "string",
+                "doc": "A comma separated list of header names that can be set to add headers to data that lacks them",
+                "default-value": "",
+                "default-meaning": "Headers will be parsed from the first line of the data unless this option is set"
+            },
+            "filesize_max": {
+                "type": "float",
+                "doc": "The maximum filesize in MB that will be accepted",
+                "default-value": 20,
+                "default-meaning": "A file that is larger that 20 MB will not be accepted and an error will be throw unless the user manually passes this option with a larger value (useful only in cases where your machine has a lot of memory)"
+            }
+        },
+        "gdal": {
+            "file": {
+                "type": "string",
+                "doc": "Path to the file for the datasource",
+                "default-value": "",
+                "default-meaning": "",
+                "required": true
+            },
+            "base": {
+                "type": "string",
+                "doc": "A base path used to complete a full path to a file.",
+                "default-value": "",
+                "default-meaning": "Only the `file` option will be used to attempt to load data from the filesystem",
+                "required": false
+            },
+            "encoding": {
+                "type": "string",
+                "doc": "The encoding value for the datasource attributes",
+                "default-value": "utf-8",
+                "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+                "required": false
+            },
+            "max_image_area": {
+                "type": "unsigned",
+                "doc": "Maximum memory limitation for image will be simply based on the maximum area we allow for an image. The true memory footprint therefore will vary based on the type of imagery that exists. This is not the maximum size of an image on disk but rather the maximum size we will load into mapnik from GDAL. `max_im_area` based on 50 mb limit for RGBA",
+                "default-value": 13107200,
+                "default-meaning": "50Mb",
+                "required": false
+            },
+            "band": {
+                "type": "unsigned",
+                "doc": "A particular raster band to work with.",
+                "default-value": 0,
+                "default-meaning": "No particular raster band set, working with all bands.",
+                "required": false
+            },
+            "nodata": {
+                "type": "float",
+                "doc": "Overrides nodata value from the raster.",
+                "default-value": 0,
+                "default-meaning": "Nodata value from the raster is used.",
+                "required": false
+            },
+            "nodata_tolerance": {
+                "type": "float",
+                "doc": "Make pixels in this tolerance around nodata value transparent.",
+                "default-value": 1e-12,
+                "default-meaning": "The tolerance is effectively zero.",
+                "required": false
+            },
+            "shared": {
+                "type": "boolean",
+                "doc": "Allows to share the GDAL dataset handle with other GDAL datasources with the same file path.",
+                "default-value": false,
+                "default-meaning": "The datasource will use unique dataset instance.",
+                "required": false
+            }
+        },
+        "geojson": {
+            "file": {
+                "type": "string",
+                "doc": "Path to the file for the datasource",
+                "default-value": "",
+                "default-meaning": "",
+                "required": true
+            },
+            "base": {
+                "type": "string",
+                "doc": "A base path used to complete a full path to a file.",
+                "default-value": "",
+                "default-meaning": "Only the `file` option will be used to attempt to load data from the filesystem",
+                "required": false
+            },
+            "encoding": {
+                "type": "string",
+                "doc": "The encoding value for the datasource attributes",
+                "default-value": "utf-8",
+                "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+                "required": false
+            },
+            "inline": {
+                "type": "string",
+                "doc": "Raw tabular data to be read instead of reading data from a file",
+                "default-value": "",
+                "default-meaning": "Unless this option is provided data will be read from the `file` option"
+            }
+        },
+        "occi": {
+            "encoding": {
+                "type": "string",
+                "doc": "The encoding value for the datasource attributes",
+                "default-value": "utf-8",
+                "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+                "required": false
+            }
+        },
+        "ogr": {
+            "file": {
+                "type": "string",
+                "doc": "Path to the file for the datasource",
+                "default-value": "",
+                "default-meaning": "",
+                "required": true
+            },
+            "base": {
+                "type": "string",
+                "doc": "A base path used to complete a full path to a file.",
+                "default-value": "",
+                "default-meaning": "Only the `file` option will be used to attempt to load data from the filesystem",
+                "required": false
+            },
+            "encoding": {
+                "type": "string",
+                "doc": "The encoding value for the datasource attributes",
+                "default-value": "utf-8",
+                "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+                "required": false
+            }
+        },
+        "osm": {
+            "file": {
+                "type": "string",
+                "doc": "Path to the file for the datasource",
+                "default-value": "",
+                "default-meaning": "",
+                "required": true
+            },
+            "base": {
+                "type": "string",
+                "doc": "A base path used to complete a full path to a file.",
+                "default-value": "",
+                "default-meaning": "Only the `file` option will be used to attempt to load data from the filesystem",
+                "required": false
+            },
+            "encoding": {
+                "type": "string",
+                "doc": "The encoding value for the datasource attributes",
+                "default-value": "utf-8",
+                "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+                "required": false
+            }
+        },
+        "postgis": {
+            "table": {
+                "type": "string",
+                "doc": "The table or query used",
+                "default-value": "",
+                "default-meaning": "",
+                "required": true
+            },
+            "key_field": {
+                "type": "boolean",
+                "doc": "User provided field name to interpret as the primary key of the table. If provided then the values from this field (which must be an integer) will be used as the feature id of the returned data",
+                "default-value": "",
+                "default-meaning": "By default no primary key is required and in this case the feature id for returned features will be auto-generated by Mapnik and is not certain to be globally unique.",
+                "required": false
+            },
+            "key_field_as_attribute": {
+                "type": "boolean",
+                "doc": "User provided option to control whether the key_field will be duplicated as a feature attribute (as well as being used for the feature.id value)",
+                "default-value": true,
+                "default-meaning": "By default if key_field is provided then it is also available in the feature attributes by field name",
+                "required": false
+            },
+            "encoding": {
+                "type": "string",
+                "doc": "The encoding value for the datasource attributes",
+                "default-value": "utf-8",
+                "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+                "required": false
+            },
+            "dbname": {
+                "type": "string",
+                "doc": "Database name",
+                "default-value": "username",
+                "default-meaning": "Will default to a database named after the user (as per libpq defaults)",
+                "required": false
+            },
+            "host": {
+                "type": "string",
+                "doc": "",
+                "default-value": "",
+                "default-meaning": "",
+                "required": false
+            },
+            "password": {
+                "type": "string",
+                "doc": "",
+                "default-value": "",
+                "default-meaning": "",
+                "required": false
+            },
+            "port": {
+                "type": "unsigned",
+                "doc": "",
+                "default-value": "",
+                "default-meaning": "",
+                "required": false
+            },
+            "user": {
+                "type": "string",
+                "doc": "",
+                "default-value": "",
+                "default-meaning": "",
+                "required": false
+            },
+            "connect_timeout": {
+                "type": "unsigned",
+                "doc": "",
+                "default-value": 4,
+                "default-meaning": "",
+                "required": false
+            },
+            "schema": {
+                "type": "string",
+                "doc": "",
+                "default-value": "",
+                "default-meaning": "",
+                "required": false
+            },
+            "extent": {
+                "type": "string",
+                "doc": "A comma or space delimited bounding box in the format of minx,miny,maxx,maxy that, if provided, will be used to report the extent of the datasource. The primary reason the option exists is for performance: providing this option at datasource creation saves the time otherwise needed to scan the data for the actual extent, which for large datasets can be very significant. The datasource extent, whether manually provided or automatically calculated is used during rendering to decide if the datasource should be queried for features or not (skipped for best performance). If the extent intersects with the map rendering extent then the datasource will be queried and the query extent will be clipped to the reported datasource extent. So, this means that this option can also be used to restrict which features are available for a given datasource",
+                "default-value": "",
+                "default-meaning": "The datasource extent will be determined at runtime by querying the data, which may be slow, although the extent only needs to be determined once per datasource initialized and it will be cached for further rendering",
+                "recommended": true
+            },
+            "estimate_extent": {
+                "type": "boolean",
+                "doc": "If an `extent` string is not provided then Mapnik dynamically queries the table to determine the extent. If this option is true then the faster but less accurate PostGIS `ST_EstimatedExtent` function is used instead of `ST_Extent`.",
+                "default-value": false,
+                "default-meaning": "",
+                "required": false
+            },
+            "geometry_table": {
+                "type": "string",
+                "doc": "Specifies geometry table to use to look up metadata",
+                "default-value": "",
+                "default-meaning": "Automatically parsed from 'table' value",
+                "required": false
+            },
+            "geometry_field": {
+                "type": "string",
+                "doc": "Specifies geometry field to use",
+                "default-value": "",
+                "default-meaning": "First entry in geometry_columns",
+                "required": false
+            },
+            "cursor_size": {
+                "type": "unsigned",
+                "doc": "Integer size of binary cursor to use",
+                "default-value": 0,
+                "default-meaning": "No binary cursor is used",
+                "required": false
+            },
+            "row_limit": {
+                "type": "unsigned",
+                "doc": "Max amount of features to read from the datasource",
+                "default-value": 0,
+                "default-meaning": "All features will be read from the datasource (unless row_limit is > 1)",
+                "required": false
+            },
+            "srid": {
+                "type": "unsigned",
+                "doc": "SRID to use",
+                "default-value": 0,
+                "default-meaning": "Auto-detected from geometry_field",
+                "required": false
+            },
+            "initial_size": {
+                "type": "unsigned",
+                "doc": "Integer size of connection pool",
+                "default-value": 1,
+                "default-meaning": "",
+                "required": false
+            },
+            "max_size": {
+                "type": "unsigned",
+                "doc": "Integer max of connection pool",
+                "default-value": 10,
+                "default-meaning": "",
+                "required": false
+            },
+            "simplify_geometries": {
+                "type": "boolean",
+                "doc": "Simplify geometries with ST_Simplify",
+                "default-value": false,
+                "default-meaning": "Don't simplify geometries",
+                "required": false
+            },
+            "autodetect_key_field": {
+                "type": "boolean",
+                "doc": "Attempt to autodetect a primary key field",
+                "default-value": false,
+                "default-meaning": "Don't autodetect a primary key field",
+                "required": false
+            },
+            "persist_connection": {
+                "type": "boolean",
+                "doc": "Keep connection open",
+                "default-value": true,
+                "default-meaning": "Connections, successfully created, will be kept open until Mapnik shuts down",
+                "required": false
+            },
+            "extent_from_subquery": {
+                "type": "boolean",
+                "doc": "Direct Mapnik to query Postgis for the extent of the raw 'table' value",
+                "default-value": false,
+                "default-meaning": "Uses 'geometry_table' instead of querying",
+                "required": false
+            }
+        },
+        "python": {
+            "encoding": {
+                "type": "string",
+                "doc": "The encoding value for the datasource attributes",
+                "default-value": "utf-8",
+                "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+                "required": false
+            }
+        },
+        "raster": {
+            "file": {
+                "type": "string",
+                "doc": "Path to the file for the datasource",
+                "default-value": "",
+                "default-meaning": "",
+                "required": true
+            },
+            "base": {
+                "type": "string",
+                "doc": "A base path used to complete a full path to a file.",
+                "default-value": "",
+                "default-meaning": "Only the `file` option will be used to attempt to load data from the filesystem",
+                "required": false
+            }
+        },
+        "rasterlite": {
+            "file": {
+                "type": "string",
+                "doc": "Path to the file for the datasource",
+                "default-value": "",
+                "default-meaning": "",
+                "required": true
+            },
+            "base": {
+                "type": "string",
+                "doc": "A base path used to complete a full path to a file.",
+                "default-value": "",
+                "default-meaning": "Only the `file` option will be used to attempt to load data from the filesystem",
+                "required": false
+            }
+        },
+        "shape": {
+            "file": {
+                "type": "string",
+                "doc": "Path to the file for the datasource",
+                "default-value": "",
+                "default-meaning": "",
+                "required": true
+            },
+            "base": {
+                "type": "string",
+                "doc": "A base path used to complete a full path to a file.",
+                "default-value": "",
+                "default-meaning": "Only the `file` option will be used to attempt to load data from the filesystem",
+                "required": false
+            },
+            "encoding": {
+                "type": "string",
+                "doc": "The encoding value for the datasource attributes",
+                "default-value": "utf-8",
+                "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+                "required": false
+            }
+        },
+        "sqlite": {
+            "file": {
+                "type": "string",
+                "doc": "Path to the file for the datasource",
+                "default-value": "",
+                "default-meaning": "",
+                "required": true
+            },
+            "base": {
+                "type": "string",
+                "doc": "A base path used to complete a full path to a file.",
+                "default-value": "",
+                "default-meaning": "Only the `file` option will be used to attempt to load data from the filesystem",
+                "required": false
+            },
+            "encoding": {
+                "type": "string",
+                "doc": "The encoding value for the datasource attributes",
+                "default-value": "utf-8",
+                "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+                "required": false
+            },
+            "table": {
+                "type": "string",
+                "doc": "The table or query used",
+                "default-value": "",
+                "default-meaning": "",
+                "required": true
+            },
+            "key_field": {
+                "type": "boolean",
+                "doc": "User provided field name to interpret as the primary key of the table. If provided then the values from this field (which must be an integer) will be used as the feature id of the returned data",
+                "default-value": "",
+                "default-meaning": "By default no primary key is required and in this case the feature id for returned features will be auto-generated by Mapnik and is not certain to be globally unique.",
+                "required": false
+            }
+        },
+        "topojson": {
+            "file": {
+                "type": "string",
+                "doc": "Path to the file for the datasource",
+                "default-value": "",
+                "default-meaning": "",
+                "required": true
+            },
+            "base": {
+                "type": "string",
+                "doc": "A base path used to complete a full path to a file.",
+                "default-value": "",
+                "default-meaning": "Only the `file` option will be used to attempt to load data from the filesystem",
+                "required": false
+            },
+            "encoding": {
+                "type": "string",
+                "doc": "The encoding value for the datasource attributes",
+                "default-value": "utf-8",
+                "default-meaning": "UTF8 will be the assumed encoding for string attribute values",
+                "required": false
+            },
+            "inline": {
+                "type": "string",
+                "doc": "Raw tabular data to be read instead of reading data from a file",
+                "default-value": "",
+                "default-meaning": "Unless this option is provided data will be read from the `file` option"
+            }
+        }
+    }
+}
