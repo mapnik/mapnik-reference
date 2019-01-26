@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+### 8.10.0
+
+* Added support for mapnik 3.0.22
+* Added new options `line-pattern-type`, `line-pattern-alignment`, `line-pattern-width`, `line-pattern-cap`, `line-pattern-join`, `line-pattern-miterlimit`, `line-pattern-dasharray`
+* Fixed deprecation message of `shield-min-distance`
+
 ### 8.9.2
 
 * Deprecated `minzoom` and `maxzoom` in favor of `minimum-scale-denominator` and `maximum-scale-denominator`
