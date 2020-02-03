@@ -38,7 +38,7 @@ var getSatisfyingVersion = function (wanted) {
     var version = semver.maxSatisfying(versions, wanted), parsed;
     if (!version) {
         try {
-            parsed = semver(wanted);
+            parsed = semver.parse(wanted);
             parsed.patch = 'x';
             version = semver.maxSatisfying(versions, parsed.format());
         } catch (err) {
