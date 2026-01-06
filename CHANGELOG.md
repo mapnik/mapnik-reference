@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### 8.10.1
+
+* Fix mixed content warnings [ref #151]
+* Upgrade mocha to ^1.21.5
+
 ### 8.10.0
 
 * Added support for Mapnik 3.0.22
