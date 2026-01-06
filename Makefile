@@ -4,7 +4,7 @@ build:
 	node scripts/make-datasource-ref.js
 
 check test: build
-	python scripts/test.py
+	python3 scripts/test.py
 	node scripts/lint.js
 	npm test
 
