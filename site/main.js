@@ -34,7 +34,6 @@
           nanoajax.ajax('./' + this.version + '/reference.json', function (code, content) {
             var reference = JSON.parse(content);
             nanoajax.ajax('./' + version + '/datasources.json', function (code, content) {
-              console.log(code);
               if (code == 404) {
                 self.build(reference);
               }
@@ -141,7 +140,6 @@
            coll[i].addEventListener('click', function() {
              this.classList.toggle('active');
              var content = this.nextElementSibling;
-             console.log(content);
              if (content.style.display === 'block') {
                content.style.display = 'none';
              } else {
