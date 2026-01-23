@@ -29,23 +29,24 @@
         },
 
       fetch: function (version) {
-          var self = this;
-          this.version = version || window.UI.versions[0];
-          nanoajax.ajax('./' + this.version + '/reference.json', function (code, content) {
-            var reference = JSON.parse(content);
-            nanoajax.ajax('./' + version + '/datasources.json', function (code, content) {
-              if (code == 404) {
-                self.build(reference);
-              }
-              else {
-                var datasources = JSON.parse(content);
-                reference = Object.assign(reference, datasources);
-                self.build(reference);
-              }
-            });
+        var self = this;
+        this.version = version || window.UI.versions[0];
+        nanoajax.ajax('./' + self.version + '/reference.json', function (code, content) {
+          var reference = JSON.parse(content);
+          nanoajax.ajax('./' + self.version + '/datasources.json', function (code, content) {
+            console.log(code);
+            if (code == 404) {
+              self.build(reference);
+            }
+            else {
+              var datasources = JSON.parse(content);
+              reference = Object.assign(reference, datasources);
+              self.build(reference);
+            }
           });
-          return true;
-        },
+        });
+        return true;
+      },
 
       fetchFromHash: function () {
         var newVersion = window.location.hash.split('/')[0].replace('#', '');
