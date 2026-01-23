@@ -152,7 +152,7 @@
             "status": "deprecated"
         },
       "maxzoom": {
-        "css": "minzoom",
+        "css": "maxzoom",
             "default-value": "1.79769e+308",
             "type":"float",
             "default-meaning": "The layer will be visible at the maximum possible scale",
