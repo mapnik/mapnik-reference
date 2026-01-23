@@ -1,12 +1,12 @@
 'use strict';
 (function (window) {
     var UI = function (version) {
-        this.menu = document.querySelector('#menu .main');
-        this.container = document.querySelector('#symbolizers');
-        this.versionLabel = document.querySelector('#version');
-        this.fetchFromHash() || this.fetch(version);
-        var self = this;
-        window.addEventListener('hashchange', function () {self.fetchFromHash();});
+      this.menu = document.querySelector('#menu .main');
+      this.container = document.querySelector('#symbolizers');
+      this.versionLabel = document.querySelector('#version');
+      this.fetchFromHash() || this.fetch(version);
+      var self = this;
+      window.addEventListener('hashchange', function () {self.fetchFromHash();});
     };
     UI.versions = ['3.0.22', '3.0.20', '3.0.6', '3.0.3', '3.0.0', '2.3.0', '2.2.0', '2.1.0', '2.0.0'];
     UI.prototype = {
@@ -28,21 +28,32 @@
             return el;
         },
 
-        fetch: function (version) {
-            var self = this;
-            this.version = version || window.UI.versions[0];
-            nanoajax.ajax('./' + this.version + '/reference.json', function (code, content) {
-                self.build(JSON.parse(content));
+      fetch: function (version) {
+          var self = this;
+          this.version = version || window.UI.versions[0];
+          nanoajax.ajax('./' + this.version + '/reference.json', function (code, content) {
+            var reference = JSON.parse(content);
+            nanoajax.ajax('./' + version + '/datasources.json', function (code, content) {
+              console.log(code);
+              if (code == 404) {
+                self.build(reference);
+              }
+              else {
+                var datasources = JSON.parse(content);
+                reference = Object.assign(reference, datasources);
+                self.build(reference);
+              }
             });
-            return true;
+          });
+          return true;
         },
 
-        fetchFromHash: function () {
-            var newVersion = window.location.hash.split('/')[0].replace('#', '');
-            if (newVersion !== this.version && this.inArray(UI.versions, newVersion)) return this.fetch(newVersion);
-        },
+      fetchFromHash: function () {
+        var newVersion = window.location.hash.split('/')[0].replace('#', '');
+        if (newVersion !== this.version && this.inArray(UI.versions, newVersion)) return this.fetch(newVersion);
+      },
 
-        build: function (ref) {
+      build: function (ref) {
             this.container.innerHTML = '';
             this.menu.innerHTML = '';
             this.versionLabel.innerHTML = this.version;
@@ -71,65 +82,114 @@
                 var layerMenu = this.node('h5', {className: 'headerBlock'}, this.menu);
                 this.node('a', {href: '#' + this.version + '/layer'}, layerMenu, 'Layer');
             }
-            var symbolizerMenu = this.node('h5', {className: 'headerBlock'}, this.menu);
-            this.node('a', {href: '#' + this.version + '/symbolizers'}, symbolizerMenu, 'Symbolizers');
 
-            if (hasStyleCss) {
-                var styleHeading = this.node('h2', {}, this.container);
-                this.node('a', {id: this.version + '/style', href: '#' + this.version + '/style'}, styleHeading, 'Style');
-                var styleContainer = this.node('div', {className: 'symbolizer'}, this.container);
-                for (var id in ref.style) {
-                    if (ref.style[id].hasOwnProperty('css')) {
-                        this.addRule(id, ref.style[id], styleContainer);
-                    }
-                }
+
+
+          if (hasStyleCss) {
+            var styleHeading = this.node('h2', {}, this.container);
+            this.node('a', {id: this.version + '/style', href: '#' + this.version + '/style'}, styleHeading, 'Style');
+            var styleContainer = this.node('div', {className: 'symbolizer'}, this.container);
+            for (var id in ref.style) {
+              if (ref.style[id].hasOwnProperty('css')) {
+                this.addRule(id, ref.style[id], styleContainer);
+              }
             }
+          }
 
-            if (hasLayerCss) {
-                var layerHeading = this.node('h2', {}, this.container);
-                this.node('a', {id: this.version + '/layer', href: '#' + this.version + '/layer'}, layerHeading, 'Layer');
-                var layerContainer = this.node('div', {className: 'symbolizer'}, this.container);
-                for (var id in ref.layer) {
-                    if (ref.layer[id].hasOwnProperty('css')) {
-                        this.addRule(id, ref.layer[id], layerContainer);
-                    }
-                }
+        if (hasLayerCss) {
+          var layerHeading = this.node('h2', {}, this.container);
+          this.node('a', {id: this.version + '/layer', href: '#' + this.version + '/layer'}, layerHeading, 'Layer');
+          var layerContainer = this.node('div', {className: 'symbolizer'}, this.container);
+          for (var id in ref.layer) {
+            if (ref.layer[id].hasOwnProperty('css')) {
+              this.addRule(id, ref.layer[id], layerContainer);
             }
+          }
+        }
 
-            var symbolizerHeading = this.node('h2', {}, this.container);
-            this.node('a', {id: this.version + '/symbolizers', href: '#' + this.version + '/symbolizers'}, symbolizerHeading, 'Symbolizers');
-            for (var id in ref.symbolizers) this.addSymbolizer(id, ref.symbolizers[id]);
+        var collapsibleMenu = this.node('h5', {className: 'headerBlock'}, this.menu);
+        // Symbolizers
+        var button = this.node('button', {className:'collapsible'}, collapsibleMenu, '');
+        this.node('a', {href: '#' + this.version + '/symbolizers'}, button, 'Symbolizers');
+        var symbolizerHeading = this.node('h2', {}, this.container);
+        this.node('a', {id: this.version + '/symbolizers', href: '#' + this.version + '/symbolizers'}, symbolizerHeading, 'Symbolizers');
+        var content = this.node('div', {className: 'content', style: 'display:none'}, collapsibleMenu, '');
+        for (var id in ref.symbolizers) {
+          this.addSymbolizer(id, ref.symbolizers[id], content);
+        }
+        // Datasources
+        var button = this.node('button', {className:'collapsible'}, collapsibleMenu, '');
+        this.node('a', {href: '#' + this.version + '/datasources'}, button, 'Datasources');
+        var datasourcesHeading = this.node('h2', {}, this.container);
+        this.node('a', {id: this.version + '/datasources', href: '#' + this.version + '/datasources'}, datasourcesHeading, 'Datasources');
+        var content = this.node('div', {className: 'content', style: 'display:none'}, collapsibleMenu, '');
+        for (var id in ref.datasources) {
+          this.addDatasource(id, ref.datasources[id], content);
+        }
 
-            this.addVersions();
-            if (window.location.hash) window.location = window.location;  // we have rebuild the DOM, help the browser find the North again.
-        },
+        this.addVersions();
+        this.addScript();
+        if (window.location.hash) window.location = window.location;  // we have rebuild the DOM, help the browser find the North again.
+      },
 
-        addVersions: function () {
-            var container = this.node('div', {className: 'versions'}, this.menu);
-            this.node('h5', {}, container, 'Versions');
-            for (var i = 0; i < UI.versions.length; i++) this.addVersionLink(UI.versions[i], container);
-        },
+      addScript: function () {
+        var body = document.body;
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.innerHTML = `var coll = document.getElementsByClassName('collapsible');
+         for (var i = 0; i < coll.length; i++) {
+           coll[i].addEventListener('click', function() {
+             this.classList.toggle('active');
+             var content = this.nextElementSibling;
+             console.log(content);
+             if (content.style.display === 'block') {
+               content.style.display = 'none';
+             } else {
+               content.style.display = 'block';
+             }
+           });
+         }`;
+        document.body.appendChild(script);
+      },
+      addVersions: function () {
+        var container = this.node('div', {className: 'versions'}, this.menu);
+        this.node('h5', {}, container, 'Versions');
+        for (var i = 0; i < UI.versions.length; i++) this.addVersionLink(UI.versions[i], container);
+      },
 
-        addVersionLink: function (version, parent) {
-            var current = version === this.version ? ' current' : '';
-            this.node('a', {className: 'block' + current, href: '#' + version + '/'}, parent, version);
-        },
+      addVersionLink: function (version, parent) {
+        var current = version === this.version ? ' current' : '';
+        this.node('a', {className: 'block' + current, href: '#' + version + '/'}, parent, version);
+      },
 
-        anchor: function (id) {
-            return this.version + '/' + id;
-        },
 
-        addSymbolizer: function (id, rules) {
-            this.node('a', {className: 'block', href: '#' + this.anchor(id)}, this.menu, id);
-            this.addSymbolizerBlock(id, rules);
-        },
+      anchor: function (id) {
+        return this.version + '/' + id;
+      },
 
-        addSymbolizerBlock: function (id, rules) {
-            var container = this.node('div', {className: 'symbolizer'}, this.container);
-            var section = this.node('h2', {}, container);
-            this.node('a', {href: '#' + this.anchor(id), id: this.anchor(id)}, section, id);
-            for (var ruleId in rules) this.addRule(ruleId, rules[ruleId], container);
-        },
+      addSymbolizer: function (id, rules, parent) {
+        this.node('a', {className: 'block', href: '#' + this.anchor(id)}, parent, id);
+        this.addSymbolizerBlock(id, rules);
+      },
+
+      addSymbolizerBlock: function (id, rules) {
+        var container = this.node('div', {className: 'symbolizer'}, this.container);
+        var section = this.node('h2', {}, container);
+        this.node('a', {href: '#' + this.anchor(id), id: this.anchor(id)}, section, id);
+        for (var ruleId in rules) this.addRule(ruleId, rules[ruleId], container);
+      },
+
+      addDatasource: function (id, rules, parent) {
+        this.node('a', {className: 'block', href: '#' + this.anchor(id)}, parent, id);
+        this.addDatasourceBlock(id, rules);
+      },
+
+      addDatasourceBlock: function (id, rules) {
+        var container = this.node('div', {className: 'symbolizer'}, this.container);
+        var section = this.node('h2', {}, container);
+        this.node('a', {href: '#' + this.anchor(id), id: this.anchor(id)}, section, id);
+        for (var ruleId in rules) this.addRule(ruleId, rules[ruleId], container);
+      },
 
         addRule: function (id, props, parent) {
             var title = this.node('h3', {}, parent);
@@ -148,10 +208,10 @@
 
     };
     UI.init = function (version) {
-        // if (!version && window.location.hash && window.location.hash.indexOf('/') !== -1) {
-        //     version = window.location.hash.split('/')[0];
-        // }
-        return new UI(version);
+      // if (!version && window.location.hash && window.location.hash.indexOf('/') !== -1) {
+      //     version = window.location.hash.split('/')[0];
+      // }
+      return new UI(version);
     };
     window.UI = UI;
 })(window);

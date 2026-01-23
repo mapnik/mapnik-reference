@@ -94,3 +94,22 @@ a.current {
 .headerBlock a {
     display: block;
 }
+.collapsible {
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  outline: none;
+  width:100%;
+  padding:0;
+}
+
+.active, .collapsible:hover {
+    background-color: #d9eaec;
+}
+
+.content {
+  padding-left: 1em;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
