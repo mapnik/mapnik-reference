@@ -20,7 +20,7 @@ and the next targeted release of Mapnik.
 
 ## Meaning
 
-The structure of the file is as such:
+The structure of `reference.json` is:
 
 * `version`: the version of Mapnik targeted. Same as the containing directory.
 * `style`: properties of the `Style` XML element
@@ -38,6 +38,7 @@ then the `status` is `stable`. Possible values are:
 - **deprecated:** `property` should not be used and will be removed in upcoming major version of Mapnik
 - **experimental:** `property` should not be used and may change, be re-named, or disappear at any time
 
+`datasources.json` separately details the properties of the possible data sources (since version 2.3.0). 
 
 ## Using
 
@@ -82,5 +83,5 @@ Tests require python and node.js:
 
 ## Users
 
-* [carto.js](https://github.com/mapbox/carto)
-* Mapnik itself (the util/validate-mapnik-instance.py is used to check binding consistency like in [#1427](https://github.com/mapnik/mapnik/issues/1427))
+* [carto.js](https://github.com/cartocss/carto)
+* Mapnik itself (the utility [mapnik-reference-validate.py](https://gist.github.com/springmeyer/3410845) can be used to check binding consistency like in [#1427](https://github.com/mapnik/mapnik/issues/1427))
