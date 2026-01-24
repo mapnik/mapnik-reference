@@ -26,7 +26,7 @@ The structure of `reference.json` is:
 * `style`: properties of the `Style` XML element
 * `layer`: properties of the `Layer` XML element
 * `symbolizers/*`: properties that apply to **all** symbolizers
-* `symbolizers/symbolizer`: properties that apply to **each** type of symbolizer
+* `symbolizers/`_\<symbolizer\>_: properties that are specific to a given symbolizer
 * `colors`: named colors supported by Mapnik. see `include/mapnik/css_color_grammar.hpp`
 
 ### Property stability
