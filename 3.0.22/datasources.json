@@ -272,6 +272,13 @@
                 "default-meaning": "",
                 "required": false
             },
+            "application_name": {
+                "type": "string",
+                "doc": "Set application_name connection parameter",
+                "default-value": "",
+                "default-meaning": "Value of PGAPPNAME environment variable will be used if set, otherwise fallback value of mapnik used",
+                "required": false
+            },
             "connect_timeout": {
                 "type": "unsigned",
                 "doc": "",
