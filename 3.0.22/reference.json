@@ -160,14 +160,14 @@
             "status": "deprecated"
         },
       "minimum-scale-denominator": {
-        "css": "minimum-scale-denomitator",
+        "css": "minimum-scale-denominator",
             "default-value": 0,
             "type":"float",
             "default-meaning": "The layer will be visible at the minimum possible scale denominator",
             "doc": "The minimum scale denominator that this layer will be visible at. A layer's visibility is determined by whether its status is true and if the Map scale denominator >= `minimum-scale-denominator` - 1e-6 and scale denominator < 'maximum-scale-denominator' + 1e-6."
         },
       "maximum-scale-denominator": {
-        "css": "maximum-scale-denomitator",
+        "css": "maximum-scale-denominator",
             "default-value": "1.79769e+308",
             "type":"float",
             "default-meaning": "The layer will be visible at the maximum possible scale denominator",
