@@ -4,9 +4,7 @@
 
 It is useful for building parsers, tests, compilers, and syntax highlighting/checking for languages.
 
-[![Build Status](https://travis-ci.org/mapnik/mapnik-reference.svg)](https://travis-ci.org/mapnik/mapnik-reference)
-
-Default branch is `gh-pages` which is displayed at http://mapnik.org/mapnik-reference
+Default branch is `gh-pages`, which is displayed at http://mapnik.org/mapnik-reference
 
 ## Versioning
 
@@ -20,13 +18,13 @@ and the next targeted release of Mapnik.
 
 ## Meaning
 
-The structure of the file is as such:
+The structure of `reference.json` is:
 
 * `version`: the version of Mapnik targeted. Same as the containing directory.
 * `style`: properties of the `Style` XML element
 * `layer`: properties of the `Layer` XML element
-* `symbolizers/*`: properties that apply to **all** symbolizers
-* `symbolizers/symbolizer`: properties that apply to **each** type of symbolizer
+* `symbolizers`: properties that apply to all symbolizers (removed from version 2.1.0 onwards)
+* `symbolizers/`_\<symbolizer\>_: properties that are specific to a given symbolizer
 * `colors`: named colors supported by Mapnik. see `include/mapnik/css_color_grammar.hpp`
 
 ### Property stability
@@ -38,6 +36,7 @@ then the `status` is `stable`. Possible values are:
 - **deprecated:** `property` should not be used and will be removed in upcoming major version of Mapnik
 - **experimental:** `property` should not be used and may change, be re-named, or disappear at any time
 
+`datasources.json` separately details the properties of the possible data sources (since version 2.3.0). 
 
 ## Using
 
@@ -82,5 +81,5 @@ Tests require python and node.js:
 
 ## Users
 
-* [carto.js](https://github.com/mapbox/carto)
-* Mapnik itself (the util/validate-mapnik-instance.py is used to check binding consistency like in [#1427](https://github.com/mapnik/mapnik/issues/1427))
+* [carto.js](https://github.com/cartocss/carto)
+* [Mapnik documentation](http://mapnik.org/mapnik-reference)
