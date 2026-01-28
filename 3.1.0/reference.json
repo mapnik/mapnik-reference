@@ -2701,6 +2701,14 @@
                 "doc": "In case of `line` placement, offsets a text position a number of pixels parallel to its actual path. In case of `grid` placement, reduces or expands the polygon area. Positive values move the line left or expand the polygon, negative values move it right or shrink the polygon (relative to the directionality of the line or polygon winding).",
                 "status": "unstable"
             }
+            "extend": {
+                "css": "text-extend",
+                "type": "float",
+                "expression": true,
+                "default-value": 0.0,
+                "default-meaning": "",
+                "doc": "A temporary path will created that extends both the starting and final segments of a line by the given distance (starting and final segments are the same for lines with a single segment). The text will be rendered on this extended line, i.e. text will extend beyond the line length. Option is only valid with placement-line."
+            },
         },
         "building": {
             "default": {
