@@ -772,12 +772,13 @@
                     "line",
                     "interior",
                     "vertex-first",
-                    "vertex-last"
+                    "vertex-last",
+                    "angled-point"					
                 ],
                 "expression":true,
                 "default-value": "point",
                 "default-meaning": "Place markers at the center point (centroid) of the geometry.",
-                "doc": "Attempt to place markers on a point, in the center of a polygon, or if markers-placement:line, then multiple times along a line. 'interior' placement can be used to ensure that points placed on polygons are forced to be inside the polygon interior. The 'vertex-first' and 'vertex-last' options can be used to place markers at the first or last vertex of lines or polygons."
+                "doc": "'point' placement attempts to place a marker at the center point (centroid) of the geometry (i.e. halfway along line geometries). 'line' attempts multiple placements along a line. 'interior' placement ensures that a marker placed on a polygon will be inside the polygon interior. 'vertex-first' and 'vertex-last' place a marker at either the first or last vertex of lines or polygons. 'angled_point' behaves as 'point', but angles the marker to match the orientation of the (middle) segment it is placed on."
             },
             "multi-policy": {
                 "css": "marker-multi-policy",
