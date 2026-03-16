@@ -20,7 +20,7 @@ var versions = [
     '3.0.6',
     '3.0.20',
     '3.0.22',
-    '3.1.0'
+    '4.2.0'
 ];
 
 // These older versions don't have the datasource info
@@ -99,9 +99,9 @@ var loadBrowser = function (version) {
             'ref': require('./3.0.22/reference.json'),
             'datasources': require('./3.0.22/datasources.json').datasources
         },
-       '3.1.0': {
-            'ref': require('./3.1.0/reference.json'),
-            'datasources': require('./3.1.0/datasources.json').datasources
+       '4.2.0': {
+            'ref': require('./4.2.0/reference.json'),
+            'datasources': require('./4.2.0/datasources.json').datasources
         }
     };
 
