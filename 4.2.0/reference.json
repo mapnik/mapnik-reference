@@ -219,7 +219,7 @@
         "css": "comp-op",
         "default-value": "src-over",
         "default-meaning": "add the current layer on top of other layers",
-        "doc": "Composite operation. This defines how this layer should behave relative to layers atop or below it. See https://github.com/mapnik/mapnik/pull/3474.",
+        "doc": "Composite operation (added version 4). This defines how this layer should behave relative to layers atop or below it. See https://github.com/mapnik/mapnik/pull/3474.",
         "type": [
           "clear",
           "src",
@@ -263,7 +263,7 @@
       "opacity": {
         "css": "opacity",
         "type": "float",
-        "doc": "An alpha value for the layer, which means an alpha applied to all features in separate buffer and then composited back to the overall buffer for the current layer or nested set of layers.",
+        "doc": "An alpha value for the layer (added version 4), which means an alpha applied to all features in separate buffer and then composited back to the overall buffer for the current layer or nested set of layers.",
         "default-value": 1.0,
         "default-meaning": "No separate buffer will be used and no alpha will be applied to the layer after rendering."
       }
@@ -830,7 +830,7 @@
                 "expression":true,
                 "default-value": "point",
                 "default-meaning": "Place markers at the center point (centroid) of the geometry.",
-                "doc": "'point' placement attempts to place a marker at the center point (centroid) of the geometry (i.e. halfway along line geometries). 'line' attempts multiple placements along a line. 'interior' placement ensures that a marker placed on a polygon will be inside the polygon interior. 'vertex-first' and 'vertex-last' place a marker at either the first or last vertex of lines or polygons. 'angled_point' behaves as 'point', but angles the marker to match the orientation of the (middle) segment it is placed on."
+                "doc": "'point' placement attempts to place a marker at the center point (centroid) of the geometry (i.e. halfway along line geometries). 'line' attempts multiple placements along a line. 'interior' placement ensures that a marker placed on a polygon will be inside the polygon interior. 'vertex-first' and 'vertex-last' place a marker at either the first or last vertex of lines or polygons. 'angled_point' (added version 4) behaves as 'point', but angles the marker to match the orientation of the (middle) segment it is placed on."
             },
             "multi-policy": {
                 "css": "marker-multi-policy",
