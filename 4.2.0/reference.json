@@ -127,7 +127,7 @@
         "type":"string",
         "required" : true,
         "default-meaning": "No layer name has been provided",
-        "doc": "The name of a layer. Can be anything you wish and is not strictly validated, but ideally unique  in the map."
+        "doc": "The name of a layer. Can be anything you wish and is not strictly validated, but ideally unique in the map."
       },
       "srs": {
         "css": "srs",
@@ -215,6 +215,58 @@
             "default-meaning": "Features are not cached between rendering multiple styles. The datasource is queried for each style.",
             "doc": "Setting this to `on` triggers Mapnik to attempt to cache features in memory for rendering when (and only when) a layer has multiple styles attached to it."
         }
+      "comp-op": {
+        "css": "comp-op",
+        "default-value": "src-over",
+        "default-meaning": "add the current layer on top of other layers",
+        "doc": "Composite operation. This defines how this layer should behave relative to layers atop or below it. See https://github.com/mapnik/mapnik/pull/3474.",
+        "type": [
+          "clear",
+          "src",
+          "dst",
+          "src-over",
+          "dst-over",
+          "src-in",
+          "dst-in",
+          "src-out",
+          "dst-out",
+          "src-atop",
+          "dst-atop",
+          "xor",
+          "plus",
+          "minus",
+          "multiply",
+          "divide",
+          "screen",
+          "overlay",
+          "darken",
+          "lighten",
+          "color-dodge",
+          "color-burn",
+          "linear-dodge",
+          "linear-burn",
+          "hard-light",
+          "soft-light",
+          "difference",
+          "exclusion",
+          "contrast",
+          "invert",
+          "invert-rgb",
+          "grain-merge",
+          "grain-extract",
+          "hue",
+          "saturation",
+          "color",
+          "value"
+        ]
+      },
+      "opacity": {
+        "css": "opacity",
+        "type": "float",
+        "doc": "An alpha value for the layer, which means an alpha applied to all features in separate buffer and then composited back to the overall buffer for the current layer or nested set of layers.",
+        "default-value": 1.0,
+        "default-meaning": "No separate buffer will be used and no alpha will be applied to the layer after rendering."
+      }
     },
     "symbolizers" : {
         "map": {
