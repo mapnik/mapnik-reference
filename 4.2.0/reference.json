@@ -1411,7 +1411,7 @@
             },
             "placement-type": {
                 "css": "shield-placement-type",
-                "doc": "Re-position and/or re-size shield to avoid overlaps. \"simple\" for basic algorithm (using shield-placements string,) \"dummy\" to turn this feature off.",
+                "doc": "Re-position and/or re-size shield to avoid overlaps. \"simple\" for basic algorithm (using shield-placements string,) \"dummy\" to turn this feature off. The `list` placement type is not supported by CartoCSS.",
                 "type": [
                     "dummy",
                     "simple",
@@ -2529,7 +2529,7 @@
             },
             "placement-type": {
                 "css": "text-placement-type",
-                "doc": "Re-position and/or re-size text to avoid overlaps. \"simple\" for basic algorithm (using text-placements string,) \"dummy\" to turn this feature off.",
+                "doc": "Re-position and/or re-size text to avoid overlaps. \"simple\" for basic algorithm (using text-placements string,) \"dummy\" to turn this feature off. The `list` placement type is not supported by CartoCSS.",
                 "type": [
                     "dummy",
                     "simple",
