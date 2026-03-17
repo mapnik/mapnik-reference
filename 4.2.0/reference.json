@@ -922,6 +922,15 @@
                 "expression":true,
                 "default-meaning": "In the case of marker-placement:line then draw a marker every 100 pixels along a line."
             },
+            "spacing-offset": {
+                "css": "marker-spacing-offset",
+                "doc": "Offset used in `line` placement (added version 4). Markers will be offset from default starting position of half the `spacing` parameter. Note feature may be unstable on short lines, see https://github.com/mapnik/mapnik/issues/4214.",
+                "default-value": 0.0,
+                "type": "float",
+                "expression":true,
+                "default-meaning": "Markers will not be offset from normal positions with `line` placement."
+                "status": "experimental"
+            },
             "max-error": {
                 "css": "marker-max-error",
                 "type": "float",
