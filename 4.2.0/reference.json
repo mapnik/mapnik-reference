@@ -759,7 +759,7 @@
                 "expression":true
             }
         },
-        "markers": {
+        "marker": {
             "default": {
                 "css": "marker",
                 "type": [
