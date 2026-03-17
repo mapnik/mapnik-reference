@@ -2739,6 +2739,14 @@
                 "default-meaning": "Default set of typographic features recommended by OpenType specification. Ligatures are turned off by default when `character-spacing` is greater than zero.",
                 "doc": "Comma separated list of OpenType typographic features. The syntax and semantics conforms to `font-feature-settings` from W3C CSS."
             },
+            "lang": {
+                "css": "text-lang",
+                "type": "string",
+                "expression": true
+                "default-value": "",
+                "default-meaning": "No explicit shaping control of CJK characters.",
+                "doc": "Allows explicit shaping control of CJK characters by passing qualifiers such as `zh-Hant` (added version 4)."
+            },
             "largest-bbox-only": {
                 "css": "text-largest-bbox-only",
                 "type": "boolean",
