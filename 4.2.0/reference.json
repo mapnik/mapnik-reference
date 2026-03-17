@@ -685,7 +685,7 @@
                 "expression":true,
                 "default-value": "basic",
                 "default-meaning": "The geometry will be simplified using the original non-adaptive algorithm.",
-                "doc": "Set the alogorithm used to smooth geometries. `adaptive` will increase the number of interpolation points at sharper bends, leading to more realistic smoothing."
+                "doc": "Set the alogorithm used to smooth geometries (added version 4). `adaptive` will increase the number of interpolation points at sharper bends, leading to more realistic smoothing."
             },
             "offset": {
                 "css": "line-offset",
