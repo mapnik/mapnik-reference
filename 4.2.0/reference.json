@@ -1,5 +1,5 @@
 {
-    "version": "3.1.0",
+    "version": "4.2.0",
     "style": {
         "filter-mode": {
             "type": [
@@ -127,7 +127,7 @@
         "type":"string",
         "required" : true,
         "default-meaning": "No layer name has been provided",
-        "doc": "The name of a layer. Can be anything you wish and is not strictly validated, but ideally unique  in the map."
+        "doc": "The name of a layer. Can be anything you wish and is not strictly validated, but ideally unique in the map."
       },
       "srs": {
         "css": "srs",
@@ -215,6 +215,58 @@
             "default-meaning": "Features are not cached between rendering multiple styles. The datasource is queried for each style.",
             "doc": "Setting this to `on` triggers Mapnik to attempt to cache features in memory for rendering when (and only when) a layer has multiple styles attached to it."
         }
+      "comp-op": {
+        "css": "comp-op",
+        "default-value": "src-over",
+        "default-meaning": "add the current layer on top of other layers",
+        "doc": "Composite operation (added version 4). This defines how this layer should behave relative to layers atop or below it. See https://github.com/mapnik/mapnik/pull/3474.",
+        "type": [
+          "clear",
+          "src",
+          "dst",
+          "src-over",
+          "dst-over",
+          "src-in",
+          "dst-in",
+          "src-out",
+          "dst-out",
+          "src-atop",
+          "dst-atop",
+          "xor",
+          "plus",
+          "minus",
+          "multiply",
+          "divide",
+          "screen",
+          "overlay",
+          "darken",
+          "lighten",
+          "color-dodge",
+          "color-burn",
+          "linear-dodge",
+          "linear-burn",
+          "hard-light",
+          "soft-light",
+          "difference",
+          "exclusion",
+          "contrast",
+          "invert",
+          "invert-rgb",
+          "grain-merge",
+          "grain-extract",
+          "hue",
+          "saturation",
+          "color",
+          "value"
+        ]
+      },
+      "opacity": {
+        "css": "opacity",
+        "type": "float",
+        "doc": "An alpha value for the layer (added version 4), which means an alpha applied to all features in separate buffer and then composited back to the overall buffer for the current layer or nested set of layers.",
+        "default-value": 1.0,
+        "default-meaning": "No separate buffer will be used and no alpha will be applied to the layer after rendering."
+      }
     },
     "symbolizers" : {
         "map": {
@@ -625,6 +677,16 @@
                 "range": "0-1",
                 "doc": "Smooths out geometry angles. 0 is no smoothing, 1 is fully smoothed. Values greater than 1 will produce wild, looping geometries."
             },
+            "smooth-algorithm": {
+                "css": "line-smooth-algorithm",
+                "type": ["basic",
+                         "adaptive"
+                        ],
+                "expression":true,
+                "default-value": "basic",
+                "default-meaning": "The geometry will be simplified using the original non-adaptive algorithm.",
+                "doc": "Set the alogorithm used to smooth geometries (added version 4). `adaptive` will increase the number of interpolation points at sharper bends, leading to more realistic smoothing."
+            },
             "offset": {
                 "css": "line-offset",
                 "type": "float",
@@ -707,7 +769,7 @@
                 "expression":true
             }
         },
-        "markers": {
+        "marker": {
             "default": {
                 "css": "marker",
                 "type": [
@@ -772,12 +834,13 @@
                     "line",
                     "interior",
                     "vertex-first",
-                    "vertex-last"
+                    "vertex-last",
+                    "angled-point"					
                 ],
                 "expression":true,
                 "default-value": "point",
                 "default-meaning": "Place markers at the center point (centroid) of the geometry.",
-                "doc": "Attempt to place markers on a point, in the center of a polygon, or if markers-placement:line, then multiple times along a line. 'interior' placement can be used to ensure that points placed on polygons are forced to be inside the polygon interior. The 'vertex-first' and 'vertex-last' options can be used to place markers at the first or last vertex of lines or polygons."
+                "doc": "'point' placement attempts to place a marker at the center point (centroid) of the geometry (i.e. halfway along line geometries). 'line' attempts multiple placements along a line. 'interior' placement ensures that a marker placed on a polygon will be inside the polygon interior. 'vertex-first' and 'vertex-last' place a marker at either the first or last vertex of lines or polygons. 'angled_point' (added version 4) behaves as 'point', but angles the marker to match the orientation of the (middle) segment it is placed on."
             },
             "multi-policy": {
                 "css": "marker-multi-policy",
@@ -858,6 +921,15 @@
                 "type": "float",
                 "expression":true,
                 "default-meaning": "In the case of marker-placement:line then draw a marker every 100 pixels along a line."
+            },
+            "spacing-offset": {
+                "css": "marker-spacing-offset",
+                "doc": "Offset used in `line` placement (added version 4). Markers will be offset from default starting position of half the `spacing` parameter. Note feature may be unstable on short lines, see https://github.com/mapnik/mapnik/issues/4214.",
+                "default-value": 0.0,
+                "type": "float",
+                "expression":true,
+                "default-meaning": "Markers will not be offset from normal positions with `line` placement."
+                "status": "experimental"
             },
             "max-error": {
                 "css": "marker-max-error",
@@ -1358,7 +1430,7 @@
             },
             "placement-type": {
                 "css": "shield-placement-type",
-                "doc": "Re-position and/or re-size shield to avoid overlaps. \"simple\" for basic algorithm (using shield-placements string,) \"dummy\" to turn this feature off.",
+                "doc": "Re-position and/or re-size shield to avoid overlaps. \"simple\" for basic algorithm (using shield-placements string,) \"dummy\" to turn this feature off. The `list` placement type is not supported by CartoCSS.",
                 "type": [
                     "dummy",
                     "simple",
@@ -2476,7 +2548,7 @@
             },
             "placement-type": {
                 "css": "text-placement-type",
-                "doc": "Re-position and/or re-size text to avoid overlaps. \"simple\" for basic algorithm (using text-placements string,) \"dummy\" to turn this feature off.",
+                "doc": "Re-position and/or re-size text to avoid overlaps. \"simple\" for basic algorithm (using text-placements string,) \"dummy\" to turn this feature off. The `list` placement type is not supported by CartoCSS.",
                 "type": [
                     "dummy",
                     "simple",
@@ -2666,6 +2738,14 @@
                 "default-value": "",
                 "default-meaning": "Default set of typographic features recommended by OpenType specification. Ligatures are turned off by default when `character-spacing` is greater than zero.",
                 "doc": "Comma separated list of OpenType typographic features. The syntax and semantics conforms to `font-feature-settings` from W3C CSS."
+            },
+            "lang": {
+                "css": "text-lang",
+                "type": "string",
+                "expression": true
+                "default-value": "",
+                "default-meaning": "No explicit shaping control of CJK characters.",
+                "doc": "Allows explicit shaping control of CJK characters by passing qualifiers such as `zh-Hant` (added version 4)."
             },
             "largest-bbox-only": {
                 "css": "text-largest-bbox-only",
