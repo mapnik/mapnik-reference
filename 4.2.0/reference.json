@@ -214,7 +214,7 @@
             "default-value": "off",
             "default-meaning": "Features are not cached between rendering multiple styles. The datasource is queried for each style.",
             "doc": "Setting this to `on` triggers Mapnik to attempt to cache features in memory for rendering when (and only when) a layer has multiple styles attached to it."
-        }
+      },
       "comp-op": {
         "css": "comp-op",
         "default-value": "src-over",
@@ -835,7 +835,7 @@
                     "interior",
                     "vertex-first",
                     "vertex-last",
-                    "angled-point"					
+                    "angled-point"
                 ],
                 "expression":true,
                 "default-value": "point",
@@ -928,8 +928,8 @@
                 "default-value": 0.0,
                 "type": "float",
                 "expression":true,
-                "default-meaning": "Markers will not be offset from normal positions with `line` placement."
-                "status": "experimental"
+              "default-meaning": "Markers will not be offset from normal positions with `line` placement.",
+              "status": "experimental"
             },
             "max-error": {
                 "css": "marker-max-error",
@@ -2742,7 +2742,7 @@
             "lang": {
                 "css": "text-lang",
                 "type": "string",
-                "expression": true
+              "expression": true,
                 "default-value": "",
                 "default-meaning": "No explicit shaping control of CJK characters.",
                 "doc": "Allows explicit shaping control of CJK characters by passing qualifiers such as `zh-Hant` (added version 4)."
@@ -2780,7 +2780,7 @@
                 "default-meaning": "Will not be offset.",
                 "doc": "In case of `line` placement, offsets a text position a number of pixels parallel to its actual path. In case of `grid` placement, reduces or expands the polygon area. Positive values move the line left or expand the polygon, negative values move it right or shrink the polygon (relative to the directionality of the line or polygon winding).",
                 "status": "unstable"
-            }
+            },
             "extend": {
                 "css": "text-extend",
                 "type": "float",
@@ -2788,7 +2788,7 @@
                 "default-value": 0.0,
                 "default-meaning": "",
                 "doc": "A temporary path will created that extends both the starting and final segments of a line by the given distance (starting and final segments are the same for lines with a single segment). The text will be rendered on this extended line, i.e. text will extend beyond the line length. Option is only valid with placement-line."
-            },
+            }
         },
         "building": {
             "default": {
