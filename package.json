@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "lodash": "^4.11.0",
-    "semver": "^5.1.0"
+    "semver": "^5.7.2"
   }
 }
