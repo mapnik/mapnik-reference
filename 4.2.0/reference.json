@@ -1169,8 +1169,7 @@
                 "expression":true,
                 "default-value": false,
                 "doc": "Control whether overlapping shields are shown or hidden.",
-                "default-meaning": "Shields will not overlap and any shields that might collide with previously placed shields will not be rendered.",
-                "default-meaning": "Do not allow shields to overlap with other map elements already placed."
+                "default-meaning": "Shields will not overlap and any shields that might collide with previously placed shields will not be rendered."
             },
             "margin": {
                 "css": "shield-margin",
@@ -1446,7 +1445,7 @@
                 "expression":true,
                 "default-value": "",
                 "default-meaning": "No alternative placements will be used.",
-                "doc": "If \"placement-type\" is set to \"simple\", use this \"POSITIONS,[SIZES]\" string. An example is `shield-placements: \"E,NE,SE,W,NW,SW\";`."
+                "doc": "If \"placement-type\" is set to \"simple\", use this \"POSITIONS,[SIZES]\" string. An example is `shield-placements: \"E,NE,SE,W,NW,SW\";`. Note that the X placement option will apply both `dx` and `dy` offsets; use the C (centre) placement option (added version 4) to avoid offsetting the position."
             },
             "text-transform": {
                 "css": "shield-text-transform",
@@ -2564,7 +2563,7 @@
                 "default-meaning": "No alternative placements will be used.",
                 "default-value": "",
                 "expression":true,
-                "doc": "If \"placement-type\" is set to \"simple\", use this \"POSITIONS,[SIZES]\" string. An example is `text-placements: \"E,NE,SE,W,NW,SW\";`."
+                "doc": "If \"placement-type\" is set to \"simple\", use this \"POSITIONS,[SIZES]\" string. An example is `text-placements: \"E,NE,SE,W,NW,SW\";`. Note that the X placement option will apply both `dx` and `dy` offsets; use the C (centre) placement option (added version 4) to avoid offsetting the position."
             },
             "text-transform": {
                 "css": "text-transform",
