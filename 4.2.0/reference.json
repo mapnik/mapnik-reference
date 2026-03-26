@@ -626,11 +626,11 @@
             },
             "stroke-dashoffset": {
                 "css": "line-dash-offset",
-                "type": "numbers",
+                "type": "float",
                 "expression":true,
                 "doc": "Valid parameter but not currently used in renderers (only exists for experimental svg support in Mapnik which is not yet enabled).",
                 "default-value": "none",
-                "default-meaning": "The line will be drawn without dashes."
+                "default-meaning": ""
             },
             "stroke-miterlimit": {
                 "css": "line-miterlimit",
