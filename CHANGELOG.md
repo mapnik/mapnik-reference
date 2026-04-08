@@ -1,5 +1,15 @@
 ## CHANGELOG
 
+### 9.0.0
+
+#### Add support for Mapnik 4.2.x
+
+* https://github.com/mapnik/mapnik-reference/pull/166
+* https://github.com/mapnik/mapnik-reference/pull/167
+* https://github.com/mapnik/mapnik-reference/pull/168
+* https://github.com/mapnik/mapnik-reference/pull/169
+* https://github.com/mapnik/mapnik-reference/pull/170
+
 ### 8.10.1
 
 * Fix mixed content warnings [ref #151]

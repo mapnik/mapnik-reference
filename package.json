@@ -2,7 +2,7 @@
   "author": "Mapnik Developers",
   "name": "mapnik-reference",
   "description": "Reference for Mapnik Styling Options",
-  "version": "8.10.1",
+  "version": "9.0.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/mapnik/mapnik-reference.git"
@@ -11,11 +11,11 @@
     "test": "mocha -R spec --timeout 50000"
   },
   "devDependencies": {
-    "glob": "4.x",
-    "mocha": "^1.21.5"
+    "glob": "^13.0.6",
+    "mocha": "^11.7.5"
   },
   "dependencies": {
-    "lodash": "^4.11.0",
-    "semver": "^5.7.2"
+    "lodash": "^4.18.1",
+    "semver": "^7.7.4"
   }
 }
