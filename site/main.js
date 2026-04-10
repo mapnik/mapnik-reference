@@ -190,21 +190,20 @@
         for (var ruleId in rules) this.addRule(ruleId, rules[ruleId], container);
       },
 
-        addRule: function (id, props, parent) {
-            var title = this.node('h3', {}, parent);
-            id = props.css || id;
-            this.node('a', {id: this.anchor(id), href: '#' + this.anchor(id)}, title, id);
-            this.node('span', 'type', title, '=' + (this.isArray(props.type) ? 'list' : props.type));
-            if (props.expression) this.node('span', {className: 'expressions-support'}, title, 'expressions');
+      addRule: function (id, props, parent) {
+        var title = this.node('h3', {}, parent);
+        id = props.css || id;
+        this.node('a', {id: this.anchor(id), href: '#' + this.anchor(id)}, title, id);
+        this.node('span', 'type', title, '=' + (this.isArray(props.type) ? 'list' : props.type));
+        if (props.expression) this.node('span', {className: 'expressions-support'}, title, 'expressions');
             if (props.status && props.status !== 'stable') this.node('span', {className: 'status ' + props.status}, title, props.status);
-            this.node('p', {}, parent, props.doc.replace(/`([^`]*)`/g, '<b>$1</b>'));
-            var defaultValue = this.node('p', {}, parent, '<strong>Default: </strong>' + (props['default-value'] || 'none'));
-            if (props['default-meaning']) this.node('em', {}, defaultValue, ' (' + props['default-meaning'] + ')');
-            if (this.isArray(props.type)) this.node('p', '', parent, '<strong>Values: </strong>' + props.type.join(', '));
-            if (props.functions) this.node('p', '', parent, '<strong>Functions: </strong>' + props.functions.join(', '));
-            if (props.range) this.node('p', '', parent, '<strong>Range: </strong>' + props.range);
-        }
-
+        this.node('p', {}, parent, props.doc.replace(/`([^`]*)`/g, '<b>$1</b>'));
+        var defaultValue = this.node('p', {}, parent, '<strong>Default: </strong>' + (JSON.stringify(props['default-value']) || 'none'));
+        if (props['default-meaning']) this.node('em', {}, defaultValue, ' (' + props['default-meaning'] + ')');
+        if (this.isArray(props.type)) this.node('p', '', parent, '<strong>Values: </strong>' + props.type.join(', '));
+        if (props.functions) this.node('p', '', parent, '<strong>Functions: </strong>' + props.functions.join(', '));
+        if (props.range) this.node('p', '', parent, '<strong>Range: </strong>' + props.range);
+      }
     };
     UI.init = function (version) {
       // if (!version && window.location.hash && window.location.hash.indexOf('/') !== -1) {
