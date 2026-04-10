@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 9.0.2
+
+* Fix syntax in README.md
+
 ### 9.0.1
 
 * Stringify `props['default-value']`
