@@ -49,7 +49,7 @@ Install it as a dependency of your application. Then use that API to get a refer
 for a specific version of Mapnik:
 
 ```javascript
-var mapnik_reference = require('mapnik-reference');
+var mapnik_reference = require('@mapnik/mapnik-reference');
 var ref = mapnik_reference.load('4.2.0');
 ```
 
