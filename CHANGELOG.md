@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+### 9.0.1
+
+* Stringify `props['default-value']`
+* Update datasource.template in v4.2.0
+* Remove "schema" parameter + correct default values
+* Update README (package namespace + use latest version v4.2.0)
+
 ### 9.0.0
 
 #### Add support for Mapnik 4.2.x
