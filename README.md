@@ -36,36 +36,37 @@ then the `status` is `stable`. Possible values are:
 - **deprecated:** `property` should not be used and will be removed in upcoming major version of Mapnik
 - **experimental:** `property` should not be used and may change, be re-named, or disappear at any time
 
-`datasources.json` separately details the properties of the possible data sources (since version 2.3.0). 
+`datasources.json` separately details the properties of the possible data sources (since version 2.3.0).
 
 ## Using
 
 This is a valid [npm](http://npmjs.org/) module and therefore can easily be used with
 [node.js](http://nodejs.org/).
 
-    npm install mapnik-reference
+    npm install @mapnik/mapnik-reference
 
 Install it as a dependency of your application. Then use that API to get a reference instance
 for a specific version of Mapnik:
 
 ```javascript
 var mapnik_reference = require('mapnik-reference');
-var ref = mapnik_reference.load('3.0.0');
+var ref = mapnik_reference.load('4.2.0');
 ```
 
 You can also get access to an array of all known versions:
 
 ```javascript
-var mapnik_reference = require('mapnik-reference');
+var mapnik_reference = require('@mapnik/mapnik-reference');
 mapnik_reference.versions;
-[ '2.0.0',
-  '2.0.1',
-  '2.0.2',
-  '2.1.0',
-  '2.1.1',
-  '2.2.0',
-  '2.3.0',
-  '3.0.0' ]
+[
+  '2.0.0',  '2.0.1',
+  '2.0.2',  '2.1.0',
+  '2.1.1',  '2.2.0',
+  '2.3.0',  '3.0.0',
+  '3.0.3',  '3.0.6',
+  '3.0.20', '3.0.22',
+  '4.2.0'
+]
 ```
 
 Other implementations will want to simply copy the [JSON](http://www.json.org/) file
